@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="/xmlrpc.php" rel="pingback"/>
+<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4i.woff2) format('woff2');}</style><meta content="noindex, follow" name="robots"/>
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+<title>Sentimenti Team, Author at Sentimenti - Strona 31 z 32</title>
+<meta content="pl_PL" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="profile" property="og:type"/>
+<meta content="Sentimenti Team" property="og:title"/>
+<meta content="/author/zespol-sentimenti/" property="og:url"/>
+<meta content="Sentimenti" property="og:site_name"/>
+<meta content="/wp-content/litespeed/avatar/25999543a6846f821cb154aaabab051c.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@SENTIMENTIPL" name="twitter:site"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"ProfilePage","@id":"\/author\/zespol-sentimenti\/","url":"\/author\/zespol-sentimenti\/page\/31\/","name":"Sentimenti Team, Author at Sentimenti - Strona 31 z 32","isPartOf":{"@id":"\/#website"},"primaryImageOfPage":{"@id":"\/author\/zespol-sentimenti\/page\/31\/#primaryimage"},"image":{"@id":"\/author\/zespol-sentimenti\/page\/31\/#primaryimage"},"thumbnailUrl":"\/wp-content\/uploads\/2019\/04\/IMG_20190404_154135_866.jpg","breadcrumb":{"@id":"\/author\/zespol-sentimenti\/page\/31\/#breadcrumb"},"inLanguage":"pl-PL","potentialAction":[{"@type":"ReadAction","target":["\/author\/zespol-sentimenti\/page\/31\/"]}]},{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/author\/zespol-sentimenti\/page\/31\/#primaryimage","url":"\/wp-content\/uploads\/2019\/04\/IMG_20190404_154135_866.jpg","contentUrl":"\/wp-content\/uploads\/2019\/04\/IMG_20190404_154135_866.jpg","width":752,"height":442,"caption":"brexit emocje"},{"@type":"BreadcrumbList","@id":"\/author\/zespol-sentimenti\/page\/31\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"\/"},{"@type":"ListItem","position":2,"name":"Archiwa dla Sentimenti Team"}]},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Sentimenti","description":"Analiza emocji i sentymentu, sztuczna inteligencja, monitoring internetu","publisher":{"@id":"\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pl-PL"},{"@type":"Organization","@id":"\/#organization","name":"Sentimenti","url":"\/","logo":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/#\/schema\/logo\/image\/","url":"\/wp-content\/uploads\/2023\/06\/logo.svg","contentUrl":"\/wp-content\/uploads\/2023\/06\/logo.svg","width":100,"height":100,"caption":"Sentimenti"},"image":{"@id":"\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/sentimentipl","https:\/\/x.com\/SENTIMENTIPL","https:\/\/www.linkedin.com\/company\/sentimenti\/"]},{"@type":"Person","@id":"\/#\/schema\/person\/be59c40712f1ead34e314f09ca420525","name":"Sentimenti Team","image":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"https:\/\/secure.gravatar.com\/avatar\/75e5074bcbe3db6f08243927dccaebabadd73a0b100c1943ba1a55581ac8027a?s=96&d=blank&r=g","url":"https:\/\/secure.gravatar.com\/avatar\/75e5074bcbe3db6f08243927dccaebabadd73a0b100c1943ba1a55581ac8027a?s=96&d=blank&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/75e5074bcbe3db6f08243927dccaebabadd73a0b100c1943ba1a55581ac8027a?s=96&d=blank&r=g","caption":"Sentimenti Team"},"description":"Ten artykuł jest wynikiem pracy zbiorowej różnych członków zespołu Sentimenti.","sameAs":["https:\/\/www.facebook.com\/Sentimenti-1488912957904331","https:\/\/x.com\/SENTIMENTIPL"],"mainEntityOfPage":{"@id":"\/author\/zespol-sentimenti\/"}}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="Divi v.4.27.1" name="generator"/><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link href="/wp-includes/css/dist/block-library/style.min.css?ver=6.9.11" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote :where(cite),.wp-block-pullquote :where(footer),.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/css/dist/block-library/theme.min.css */
+</style>
+<style id="pdfemb-pdf-embedder-viewer-style-inline-css" type="text/css">
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+/*# sourceURL=/wp-content/plugins/pdf-embedder/block/build/style-index.css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link href="/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css?ver=2.41" id="cookies-and-content-security-policy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/custom-posts-order/css/custompostdisplay.css?ver=4.5" id="custompostdisplay-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/filter-for-divi/df-style.css?ver=2.0.2" id="df-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.13" id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/Divi/style-static.min.css?ver=4.27.1" id="divi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<!-- Fragment znacznika Google (gtag.js) dodany przez Site Kit -->
+<!-- Fragment Google Analytics dodany przez Site Kit -->
+<script async="" id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-5R823XK" type="text/javascript"></script>
+<script id="google_gtagjs-js-after" type="text/javascript">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["sentimenti.pl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5R823XK");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 6.9.11" name="generator"/>
+<meta content="Site Kit by Google 1.188.0" name="generator"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/><style id="cookies-and-content-security-policy-css-custom" type="text/css">.modal-cacsp-position .modal-cacsp-box > *,.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-show.modal-cacsp-box-bottom {background-color: #efefef;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {background-color: #e5e5e5;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {border-color: #ffffff;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {background-color: #eaeaea;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {border-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ff0087;}</style><link href="/wp-content/uploads/2023/06/cropped-ico-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-180x180.jpg" rel="apple-touch-icon"/>
+<meta content="/wp-content/uploads/2023/06/cropped-ico-270x270.jpg" name="msapplication-TileImage"/>
+<link href="/wp-content/et-cache/global/et-divi-customizer-global.min.css?ver=1794112530" id="et-divi-customizer-global-cached-inline-styles" rel="stylesheet"/><link href="/wp-content/et-cache/6466/et-core-unified-cpt-6466.min.css?ver=1794112538" id="et-core-unified-cpt-6466-cached-inline-styles" rel="stylesheet"/><style media="screen" type="text/css">.is-menu path.search-icon-path { fill: #848484;}body .popup-search-close:after, body .search-close:after { border-color: #848484;}body .popup-search-close:before, body .search-close:before { border-color: #848484;}</style> <style type="text/css">
+</style>
+<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+
+				}
+			</style></head>
+<body class="archive paged author author-zespol-sentimenti author-6 paged-31 author-paged-31 wp-theme-Divi et-tb-has-template et-tb-has-footer Divi et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_cover_background et_pb_gutter et_pb_gutters3 et_smooth_scroll et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-7993">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header data-height-onload="66" id="main-header">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="/">
+<img alt="Sentimenti" data-height-percentage="54" height="100" id="logo" src="/wp-content/uploads/2023/06/logo.svg" width="100"/>
+</a>
+</div>
+<div data-fixed-height="40" data-height="66" id="et-top-navigation">
+<nav id="top-menu-nav">
+<ul class="nav" id="top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8080"><a href="/oferta/">Oferta</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5710"><a href="/sentitool/">Sentitool</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6178"><a href="/api-2/">API</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6184"><a href="/kontakt/">Kontakt</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="/%F0%9F%87%BA%F0%9F%87%A6-ukraina/">🇺🇦 Ukraina</a></li>
+<li class="lang-item lang-item-7 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-5986-en"><a href="/en/author/zespol-sentimenti/" hreflang="en-GB" lang="en-GB"><img alt="English" height="11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" style="width: 16px; height: 11px;" width="16"/></a></li>
+</ul> </nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Zaznacz stronę</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div> </div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<div class="container">
+<div class="clearfix" id="content-area">
+<div id="left-area">
+<article class="et_pb_post post-1114 post type-post status-publish format-standard has-post-thumbnail hentry category-polityka-i-spoleczenstwo tag-analiza-danych tag-analiza-sentymentu tag-analiza-tekstu tag-brexit tag-emocje tag-emocje-w-internecie tag-emocje-w-tekscie tag-monitoring-mediow tag-sentitool tag-unia-europejska tag-wielka-brytania" id="post-1114">
+<a class="entry-featured-image-url" href="/emocje-w-impasie-na-przykladzie-brexitu/">
+<img alt="Brexit. Emocje w impasie na przykładzie wyjścia Wielkiej Brytanii z UE" class="" fetchpriority="high" height="675" src="/wp-content/uploads/2019/04/IMG_20190404_154135_866.jpg" width="1080"/> </a>
+<h2 class="entry-title"><a href="/emocje-w-impasie-na-przykladzie-brexitu/">Brexit. Emocje w impasie na przykładzie wyjścia Wielkiej Brytanii z UE</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">kwi 4, 2019</span> | <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a></p><p style="text-align: justify;"><strong>Brexit jeszcze nie nastąpił. Od trzech lat Unia Europejska rozmawia i rozmawia… Mamy wszyscy poczucie, że temat jest trudny, wywołuje emocje, jednych przeraża, innych zachwyca. Negocjacje pomiędzy UK i UE są zacięt. Obywatele żywo na nie reagują, a jednocześnie wszystko wydaje się nieustająco kręcić, ale w miejscu. Ale czy zmiany w tempie dyskusji oznaczają automatycznie zmiany natężenia emocji?</strong></p>
+<h2>Brexit wywołuje emocje</h2>
+<p style="text-align: justify;">Przeanalizowaliśmy narzędziami Sentimenti wzmianki z hasłem “Brexit” i pokrewnymi pojawiające się na Facebooku, Twitterze, na forach oraz w prasie. Temat właściwie nie znikał z sieci od początku 2016 roku. Liczba publikowanych wpisów ulegała zmianie na przestrzeni tych lat.</p>
+<p style="text-align: justify;"><strong>Najwięcej pisano w okolicach referendum, w czerwcu 2016. Kolejne miesiące, w których ten temat powracała z większą siłą, to marzec i grudzień 2017, październik 2018 oraz początek 2019, zwłaszcza styczeń i marzec.</strong> Postanowiliśmy przeanalizować je naszym SentiToolem, żeby sprawdzić, jak zmieniały się emocje wyrażane w tych okresach. Wykorzystaliśmy także narzędzia korpusowe i sentitoolową analizę sentymentu do przyjrzenia się słowom najsilniej kształtującym wydźwięk emocjonalny rozmów o wychodzeniu Wielkiej Brytanii z Unii.</p>
+<p style="text-align: justify;"><a href="/wp-content/uploads/2019/04/dynamika-dyskusji.png"><img alt="brexit wyjście wielkiej brytanii z unii europejskiej emocje sentyment" class="aligncenter wp-image-1120 size-full" decoding="async" height="1080" loading="lazy" sizes="auto, (max-width: 1920px) 100vw, 1920px" src="/wp-content/uploads/2019/04/dynamika-dyskusji.png" srcset="/wp-content/uploads/2019/04/dynamika-dyskusji.png 1920w, /wp-content/uploads/2019/04/dynamika-dyskusji-768x432.png 768w, /wp-content/uploads/2019/04/dynamika-dyskusji-512x288.png 512w, /wp-content/uploads/2019/04/dynamika-dyskusji-1024x576.png 1024w" width="1920"/></a></p>
+<h2 style="text-align: justify;">Emocje: od referendum po najnowsze negocjacje</h2>
+<p style="text-align: justify;">Początkowo sądziliśmy, także na podstawie wyników analiz sentymentu rynkowego <a href="/blog/category/gielda/">SentiStock</a>, że fluktuacje liczby wzmianek będą skorelowane ze zmianami w natężeniu emocji. Na przykład <em>złość</em> i <em>radość</em> są, w zależności od tematu, często pozytywnie powiązane z częstością pojawiania się nowych wypowiedzi. Tym razem wynik był dla nas zaskakujący.</p>
+<p style="text-align: justify;"><a href="/wp-content/uploads/2019/04/emocje_miesiace.png"><img alt="" class="aligncenter wp-image-1121 size-full" decoding="async" height="1080" loading="lazy" sizes="auto, (max-width: 1920px) 100vw, 1920px" src="/wp-content/uploads/2019/04/emocje_miesiace.png" srcset="/wp-content/uploads/2019/04/emocje_miesiace.png 1920w, /wp-content/uploads/2019/04/emocje_miesiace-768x432.png 768w, /wp-content/uploads/2019/04/emocje_miesiace-512x288.png 512w, /wp-content/uploads/2019/04/emocje_miesiace-1024x576.png 1024w" width="1920"/></a></p>
+<p style="text-align: justify;">Okazuje się, że emocje otaczające rozmowy o Brexicie nie zmieniały się w ciągu ostatnich trzech lat. Pozostawały takie same zwłaszcza wówczas, gdy nieco więcej niż zwykle mówiło się o Wielkiej Brytanii opuszczającej Wspólnotę. Żadna z emocji podstawowych nie wykazuje trendu wzrostowego ani spadkowego. Zdarzają się niewielkie wahania – zwłaszcza w przypadku <em>wstrętu</em> i <em>złości</em>. Krótko mówiąc, wynik pomiaru emocji odzwierciedla impas w negocjacjach Brexitowych trwający już od trzech lat. UK nie opuszcza UE, a odczucia obywateli i polityków pozostają niezmienne.</p>
+<p style="text-align: justify;"><a href="/wp-content/uploads/2019/04/miesiace_negpoz.png"><img alt="" class="aligncenter wp-image-1116 size-full" decoding="async" height="1080" loading="lazy" sizes="auto, (max-width: 1920px) 100vw, 1920px" src="/wp-content/uploads/2019/04/miesiace_negpoz.png" srcset="/wp-content/uploads/2019/04/miesiace_negpoz.png 1920w, /wp-content/uploads/2019/04/miesiace_negpoz-768x432.png 768w, /wp-content/uploads/2019/04/miesiace_negpoz-512x288.png 512w, /wp-content/uploads/2019/04/miesiace_negpoz-1024x576.png 1024w" width="1920"/></a></p>
+<p style="text-align: justify;">Jeśli spojrzymy na wzmianki pod kątem <a href="/oferta/">sentymentu</a>, a nie emocji podstawowych, zobaczymy charakterystyczną dla wszelkich rodzajów dyskursów przewagę pozytywnego sentymentu. Znika ona jedynie w październiku 2018. To <strong>jedyny miesiąc, kiedy odnajdujemy jakąkolwiek zmianę w wydźwięku emocjonalnym</strong> rozmów o wyjściu UK z Unii. To wówczas rozmawiano o możliwości przeprowadzenia ponownego referendum. Stałość nastrojów widać także w sondażach przeprowadzanych na społeczeństwie brytyjskim. Na przykład badanie wykonane dla <a href="https://www.economist.com/graphic-detail/2018/06/22/support-for-britains-exit-from-the-eu-is-waning">Economist</a> pokazuje, że zmiany postawy (opuścić UE lub pozostać) obejmują tylko kilka procent na przestrzeni lat. Oznacza to, że odsetek osób zmieniających odczucia na temat Brexitu jest zaniedbywalny.</p>
+<h2 style="text-align: justify;">Pobudzenie emocjonalne w dniu referendum</h2>
+<p style="text-align: justify;">Być może skala czasowa, jaką przyjęliśmy w naszym badaniu jest zbyt szeroka na tak ważny i poruszający temat? Żeby przetestować tę hipotezę, przeszliśmy z miesięcy na dni, w których najwięcej się działo – okolice referendum. Wynik nie uległ zmianie, pomiar emocji narzędziami Sentimenti wyraźnie wskazuje, że emocje wobec Brexitu nie zmieniają się w czasie. W dniu referendum (23 czerwca 2016) i kolejnych nie zauważamy większych wahnięć w emocjach wyrażanych w sieci. Jedynie <em>radość</em> wykazuje krótkotrwały wzrost, a <em>wstręt</em> oraz <em>zaufanie</em> zmieniają się do tego stopnia, że ich proporcje się odwracają. Wszystko to dzieje się jeszcze zanim ogłoszono wyniki. Po ich ogłoszeniu nie zauważamy większych zmian, także w zaskoczeniu czy oczekiwaniu. To sugeruje, że polscy internauci nie wyrażali zdziwienia wynikiem głosowania. Jedynie <em>złość</em> i <em>wstręt</em> wykazują wahnięcia i trend wzrostowy.</p>
+<p style="text-align: justify;"><a href="/wp-content/uploads/2019/04/brexit_referendum.png"><img alt="emocje brexit" class="aligncenter wp-image-1119 size-full" decoding="async" height="1080" loading="lazy" sizes="auto, (max-width: 1920px) 100vw, 1920px" src="/wp-content/uploads/2019/04/brexit_referendum.png" srcset="/wp-content/uploads/2019/04/brexit_referendum.png 1920w, /wp-content/uploads/2019/04/brexit_referendum-768x432.png 768w, /wp-content/uploads/2019/04/brexit_referendum-512x288.png 512w, /wp-content/uploads/2019/04/brexit_referendum-1024x576.png 1024w" width="1920"/></a></p>
+<h2 style="text-align: justify;">Jakich słów używamy mówiąc o Brexicie?</h2>
+<p style="text-align: justify;">Przyjrzyjmy się jeszcze wynikowi pomiaru emocji SentiTool ujętym jako chmury negatywnie i pozytywnie nacechowanych słów pojawiających się w przeanalizowanych wpisach. Poniższa pokazuje słowa najczęściej pojawiające się w czerwcu 2016, miesiącu referendum. Widać przewagę tych negatywnych – były znacznie bardziej zróżnicowane od pozytywnych, choć w czerwcu 2016 ostatecznie we wzmiankach przeważał pozytywny sentyment.</p>
+<p style="text-align: justify;"><img alt="" class="aligncenter size-large wp-image-1118" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/04/062016-1024x576.png" srcset="/wp-content/uploads/2019/04/062016-1024x576.png 1024w, /wp-content/uploads/2019/04/062016-768x432.png 768w, /wp-content/uploads/2019/04/062016-512x288.png 512w, /wp-content/uploads/2019/04/062016.png 1920w" width="1024"/></p>
+<p style="text-align: justify;">Nasza analiza najczęstszych słów pokazała, że pozostawały one we wszystkich interesujących nas miesiącach bardzo podobne. Tak jak emocje, i nie ulegają zmianie nawet w październiku 2018, kiedy ogólny wydźwięk wzmianek stał się bardziej negatywny. Dlatego pokażemy tu jedynie dwie chmury. Druga ukazuje stan rozmów na dzisiaj, czyli wyniki analizy wzmianek z marca 2019.</p>
+<p style="text-align: justify;"><em>Wojna, koniec</em> i <em>dobry</em> pojawiały się nieco rzadziej, ale wciąż są w czołówce najczęściej pojawiających się słów. Względna częstość wspominania o <em>kryzysie</em> pozostaje podobna. I to pomimo znacznych różnic w liczbie wzmianek pojawiających się w czerwcu 2016 (519 tys.) i marcu 2019 (165 tys.). Oznacza to, że opublikowano co prawda mniej wzmianek, ale o bardzo podobnej zawartości.</p>
+<p style="text-align: justify;"><img alt="" class="aligncenter size-large wp-image-1117" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/04/032019-1024x576.png" srcset="/wp-content/uploads/2019/04/032019-1024x576.png 1024w, /wp-content/uploads/2019/04/032019-768x432.png 768w, /wp-content/uploads/2019/04/032019-512x288.png 512w, /wp-content/uploads/2019/04/032019.png 1920w" width="1024"/></p>
+<p style="text-align: justify;">Impas odczuwalny w negocjacjach pomiędzy Unią Europejską i Wielką Brytanią nie jest niczym nowym. Negocjacje trwają już trzy lata, spadło zainteresowanie obywateli, ale ich emocje pozostają niezmienne. Jedynie rozmowy o ponownym referendum charakteryzowały się bardziej wydźwiękiem innym od pozostałych okresów zintensyfikowania publicznej dyskusji na temat taki jak Brexit. Wyniki naszej analizy emocji oraz tworzących ją słów podkreślają, że brak zmiany i postępu niewątpliwie rezonuje z odczuciami internautów piszących o całej sytuacji.</p>
+<h2>Szersze wnioski?</h2>
+<p style="text-align: justify;">Analiza wzmianek generowanych przez Brexit pozwala nam wyciągnąć <strong>szersze wnioski na temat monitoringu mediów</strong>. Po pierwsze, <strong>wzrost liczby wzmianek wcale nie jest jednoznaczny ze wzrostem emocjonalnej temperatury dyskusji</strong>. Po prostu informacja dotarła do większej liczby osób, które postanowiły się wypowiedzieć. Udział nowych komentatorów niekoniecznie zmienia emocjonalny krajobraz tematu. Bardzo często traktujemy intensyfikację rozmowy jako wskaźnik, że internauci są z czegoś zadowoleni lub wręcz przeciwnie. Jednak <strong>bez analizy emocji nie możemy jednoznacznie ocenić, jakie opinie wyrażają</strong>.</p>
+<p style="text-align: justify;">Tym razem pokazaliśmy też, że <strong>charakterystyczne dla Sentimenti równoległe analizowanie emocji i sentymentu prowadzi do ciekawych wniosków</strong> – czasami wahania natężenia poszczególnych emocji są bardzo subtelne, ale prowadzą do istotnej zmiany w proporcji pozytywnego i negatywnego sentymentu. Wszystkie opisane tu etapy analizowania temperatury rozmów w Sieci mają znaczenie przy badaniu dyskusji politycznych, ale także tych dotyczących marek czy produktów. Bo czy wzrost liczby wzmianek oznacza już, że reklama działa? Lepiej sprawdzić, <strong>na ile wpłynęła ona na nastroje klientów. Nastroje mogące doprowadzić do zakupu, a nie jedynie na ich świadomość istnienia danej oferty</strong>.</p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Wykonane przy pomocy </span><b>SentiToola badanie emocji</b><span style="font-weight: 400;"> płynących z internetowych wpisów, komentarzy czy artykułów może dotyczyć ważnych społecznie i wywołujących silne emocje tematów</span> <span style="font-weight: 400;">jak Brexit właśnie, ale nie tylko. Może też posłużyć na przykład <strong>do badania rynku</strong>. Sprawdzenia stopnia docierania marki do potencjalnych odbiorców i skuteczności kampanii reklamowych. Być może do sprawdzenia znajomości marki lub wyrobu i nastawienia wobec nich.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Będzie atutem w przypadku budowania wizerunku i prowadzenia komunikacji zewnętrznej firm czy urzędów, sprawdzenia stopnia zadowolenia z wykonywanych przez nie działań itd. SentiTool pozwoli automatycznie zebrać reakcje nawet z bardzo dużej liczby źródeł, uszeregować je pod względem nacechowania i zarządzić dalszymi działaniami firmy. A w zasięgu naszego narzędzia jest też analiza rozwoju trendów, zachowań konsumenckich i inne ewaluacje. Umożliwi to nie tylko lepsze zarządzanie organizacją, ale i jej harmonijny rozwój.</span></p>
+<p style="text-align: center;">Wpis przygotowany we współpracy z Łukaszem Kołtackim.</p>
+</article>
+<article class="et_pb_post post-738 post type-post status-publish format-standard has-post-thumbnail hentry category-styl-zycia tag-analiza-sentymentu tag-analiza-tekstu tag-emocje tag-emocje-w-reklamie tag-emocje-w-tekscie tag-reklama tag-sentitool" id="post-738">
+<a class="entry-featured-image-url" href="/emocje-dla-calego-swiata/">
+<img alt="Reklama i emocje dla całego świata" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 1080px, 100vw" src="/wp-content/uploads/2018/10/reklamy_WC.png" srcset="/wp-content/uploads/2018/10/reklamy_WC.png 1080w, /wp-content/uploads/2018/10/reklamy_WC-480x283.png 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/emocje-dla-calego-swiata/">Reklama i emocje dla całego świata</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">paź 23, 2018</span> | <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>Reklama powinna wzbudzać emocje, żeby zaintrygować odbiorcę najpierw swoją formą, a w efekcie produktem. Ma także zostać zapamiętana i wywołać pozytywne skojarzenia z tym, co pokazuje. To skomplikowany komunikat, który musi być jak najbardziej atrakcyjny, a jednocześnie nie może przesłonić przesłania – <em>kup, załóż konto, odwiedź, zatrudnij</em>.</strong></p>
+<h2>Przekaz reklamowy i emocje</h2>
+<p>W poprzednim wpisie analizowaliśmy polskie reklamy, które zwykle posługują się humorem i słowotwórstwem. Pokazaliśmy, jak wiele emocji zawierają i jak przechodzą od emocji negatywnych do pozytywnych. Dzisiaj zajmiemy się reklamami globalnymi, czyli prawie dosłownymi tłumaczeniami angielskich tekstów, które zostały wykorzystane (między innymi) na polskim rynku.</p>
+<p>Takie reklamy są przygotowywane z myślą o jak największej publiczności (grupie odbiorców) – wiadomo, że zostaną pokazane w wielu krajach. Dlatego skupiają się raczej na przekazaniu informacji niż zabawach słownych i żartach. Jednocześnie muszą zarysować pozytywny obraz promowanych firm i produktów, dlatego sięgają po łatwe do przetłumaczenia słowa kojarzące się dobrze.</p>
+<p>Wszystkie teksty przytaczamy za artykułem dr hab. Aleksandry Burdukiewicz “Język reklam standaryzowanych”.</p>
+<h2>Reklama firmy konsultingowej Capgemini</h2>
+<blockquote><p>Prawdziwy talent to dar wrodzony. W dzisiejszym świecie muzycznym, tak jak w świecie biznesu, aby osiągnąć trwały sukces i budować na nim przyszłość, konieczna jest współpraca. Współpraca z kimś, kto inspiruje, stawia wyzwania i mobilizuje do działania. Z kimś, kto pomoże Ci stawić czoła przyszłości. Z kimś, kto podzieli się wiedzą i doświadczeniem. Weźmie na siebie część ryzyka, by wspólnie osiągnąć sukces. Poznaj Collaborative Business Experience, poznaj Capgemini, partnera, na którego możesz zawsze liczyć. Partnera, który pomoże w osiągnięciu szybszych, lepszych i bardziej trwałych wyników. I podpisuje się pod tym.</p></blockquote>
+<p><img alt="" class="aligncenter wp-image-743 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/capgemini_nowe.png" srcset="/wp-content/uploads/2018/10/capgemini_nowe.png 1312w, /wp-content/uploads/2018/10/capgemini_nowe-768x211.png 768w, /wp-content/uploads/2018/10/capgemini_nowe-512x140.png 512w, /wp-content/uploads/2018/10/capgemini_nowe-1024x281.png 1024w" width="1312"/></p>
+<p><em>Inspirować, sukces, osiągnąć</em> – te słowa zawierają w sobie jedynie pozytywne emocje. Ale już <em>wyzwanie </em>przynosi ze sobą także trochę <em>strachu</em>, <em>ryzyko </em>element <em>złości</em>, a <em>trwały </em>nawet odrobinę <em>wstrętu</em>. Jak wspominaliśmy w poprzednich artykułach, natężenie poszczególnych składowych emocjonalnych w pojedynczym słowie zostało obliczone na podstawie badań naszym narzędziem EmoTool, więc choć wyniki czasem mogą się wydawać zastanawiające, mają empiryczne uzasadnienie.</p>
+<p>Na pierwszy plan w tej reklamie wychodzą <em>radość </em>i <em>oczekiwanie </em>– emocje powiązane z pracą na sukces i osiągnięciami, potem pojawia się <em>zaufanie </em>choć (jeśli przyjrzymy się tekstowi), jest ono raczej niesione przez frazy niż pojedyncze słowa. Klasyczna analiza sentymentu (pierwszy wykres) zatrzymuje się tutaj, podczas gdy zaszyty w SentiToolu model Plutchika pozwala nam spojrzeć też na ponad 30% negatywnych emocji, które kojarzą się z niektórymi teoretycznie pozytywnymi sformułowaniami. Możliwe, że te odcienie są charakterystyczne dla polskiego i naszej kultury, więc nie pojawiłyby się w analizie dotyczącej angielskiego oryginału reklamy.</p>
+<p><strong>Reklama telewizorów Samsung</strong></p>
+<blockquote><p>Cyfrowa dusza. Nowe telewizory LCD Samsung. Inspirują i zachwycają. Łączą w sobie niepowtarzalny styl i doskonałość technologii. System wspomagania obrazu DNIe, wysoka rozdzielczość obrazu, olśniewające kolory i krystalicznie czysty dźwięk zapewniają wrażenia, jakich jeszcze nie znałeś. Samsung. Siła płynie z wnętrza.</p></blockquote>
+<p><img alt="" class="aligncenter wp-image-742 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/samsung_nowe.png" srcset="/wp-content/uploads/2018/10/samsung_nowe.png 1312w, /wp-content/uploads/2018/10/samsung_nowe-768x211.png 768w, /wp-content/uploads/2018/10/samsung_nowe-512x140.png 512w, /wp-content/uploads/2018/10/samsung_nowe-1024x281.png 1024w" width="1312"/></p>
+<p>Ten krajobraz emocjonalny jest dużo prostszy, wygląda jak spełnienie marzeń o reklamie, a w efekcie reakcji na produkt. <em>Radość, zaufanie</em> i jeszcze <em>oczekiwania</em>. <em>Inspirują, zachwycają, są olśniewające</em>. Negatywne emocje się tu nie liczą, bo jest ich bardzo mało.</p>
+<h2>Reklama UBS Wealth</h2>
+<blockquote><p>Potencjał światowej klasy specjalistów jest do Państwa dyspozycji. Oferujemy obiektywne doradztwo. Jesteśmy światowej klasy ekspertami w dziedzinie zarządzania majątkiem. Przygotowujemy strategie inwestycyjne tak unikalne jak Państwa potrzeby. W UBS Wealth Management łączymy aktywne i dynamiczne doradztwo z potężnymi zasobami instytucji świadczącej usługi finansowe na globalną skalę. Nasze doświadczenie doradcze zapewnia zrozumienie Państwa potrzeb i oczekiwań. Nasze bogate zaplecze sprawia, że potrafimy je realizować – w ten sposób dajemy z siebie wszystko. świadczymy zindywidualizowane proaktywne usługi. Dysponujemy globalnymi możliwościami i fachową wiedzą wiodących ekspertów na świecie w dziedzinie zarządzania majątkiem. Tak idealne połączenie umożliwia nam świadczenie usług dostosowanych do Państwa potrzeb oraz buduje zaufanie zarówno do nas, jak i do podejmowanych przez Państwa decyzji.</p></blockquote>
+<p><img alt="roman giertych facebook" class="aligncenter wp-image-741 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/doradztwo_nowe.png" srcset="/wp-content/uploads/2018/10/doradztwo_nowe.png 1312w, /wp-content/uploads/2018/10/doradztwo_nowe-768x211.png 768w, /wp-content/uploads/2018/10/doradztwo_nowe-512x140.png 512w, /wp-content/uploads/2018/10/doradztwo_nowe-1024x281.png 1024w" width="1312"/></p>
+<p>SentiTool wskazuje obecność pewnych negatywnych emocji, mniej więcej ćwiartki wykresu kołowego. Skąd? Na przykład ze słów <em>specjalista </em>i <em>instytucja</em>. W języku polskim wcale nie kojarzą się jedynie dobrze i być może gdyby pozbyć się chociaż tego drugiego, tekst wciąż byłby oficjalny, ale trochę bardziej jednoznacznie pozytywny.</p>
+<h2>Reklama UBS Wealth (druga wersja)</h2>
+<blockquote><p>Eksperci UBS nie mogą przewidzieć przyszłości swoich klientów, lecz na pewno mogą ich do niej przygotować. Oferujemy elastyczne i zindywidualizowane rozwiązania oparte na dogłębnej analizie wszystkich składników majątku naszych Klientów – zarówno aktywów jak i wierzytelności, zarówno teraz, jak i w przyszłości. Dzięki globalnej sieci naszych instytucji doradcy mają natychmiastowy wgląd w rozwój wydarzeń i nieprzerwanie monitorują stan portfela każdego Klienta. Jesteśmy w stanie przewidzieć potencjalne zagrożenia oraz zapewnić, że strategie inwestycyjne Klientów zmierzają we właściwym kierunku. Nasze wszechstronne i progresywne podejście zmienia się wraz ze zmianą potrzeb Klienta. Cokolwiek robimy, potwierdzamy jedynie fakt, jak bardzo jeden z wiodących globalnych banków może pomóc Państwu w osiągnięciu sukcesu,</p></blockquote>
+<p>Reklama doradztwa finansowego UBS Wealth ma dwie wersje (zarówno po angielsku, jak i po polsku). Druga jest nieco zdepersonalizowana – nie zwraca się do konkretnego odbiorcy (używając formy <em>Państwo</em>), ale opowiada o <em>Klientach</em>. Ten większy dystans jest widoczny także w wynikach naszych analiz. Tym razem już analiza sentymentu wyłapuje negatywne odcienie. Nie pochodzą one ze słowa klient, ale <em>instytucja</em>, <em>doradca</em>, <em>potencjalnie</em>, <em>zagrożenia</em>, a nawet <em>fakt</em>.</p>
+<p><img alt="ile kosztuje reklama na facebooku" class="aligncenter wp-image-741 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/doradztwo_nowe.png" srcset="/wp-content/uploads/2018/10/doradztwo_nowe.png 1312w, /wp-content/uploads/2018/10/doradztwo_nowe-768x211.png 768w, /wp-content/uploads/2018/10/doradztwo_nowe-512x140.png 512w, /wp-content/uploads/2018/10/doradztwo_nowe-1024x281.png 1024w" width="1312"/></p>
+<h2>Podsumowanie</h2>
+<p>Język niesie emocje i przekonania swoich użytkowników. Jeśli nie lubimy przesadnie <em>instytucji </em>czy <em>doradców</em>, możemy skrzywić się słysząc te słowa także w bardzo pozytywnym przekazie promocyjnym. Możemy nabrać nieufności wobec reklamowanych produktów i usług, a w efekcie nie mieć chęci z nich korzystać. Miewamy nieciekawe skojarzenia z <em>sukcesem</em>, ale już słowa takie jak <em>inspirować, zachwycać</em> czy <em>olśniewać </em>funkcjonują w naszym odbiorze emocjonalnym zgodnie z oczekiwaniami – wywołują jedynie pozytywne skojarzenia.</p>
+<p>Nie twierdzimy, że należy w tekstach promocyjnych używać jedynie jednoznacznie pozytywnych słów czy porzucić formalny styl, często niosący za sobą poważniejsze, ciemniejsze tony. Dobrze jednak wiedzieć, jak uniknąć wywoływania w odbiorcy uprzedzeń czy chęci trzymania się na dystans od naszego produktu. Dobrze sprawdzić, jaki krajobraz emocjonalny rysuje nasza reklama w umyśle potencjalnego klienta i na wszelki wypadek zastąpić <em>instytucję firmą</em>.</p>
+<p>Jeśli chcesz sprawdzić jakie emocje wywołują twoje teksty reklamowe, napisz do nas na <strong><a href="mailto:kontakt@sentimenti.pl">kontakt@sentimenti.pl</a></strong>. Krótkie testy możesz wykonać na stronie głównej w SentiToolu.</p>
+</article>
+<article class="et_pb_post post-726 post type-post status-publish format-standard has-post-thumbnail hentry category-styl-zycia tag-analiza-sentymentu tag-emocje-w-reklamie tag-emocje-w-tekscie tag-reklama tag-sentitool tag-storytelling" id="post-726">
+<a class="entry-featured-image-url" href="/zaufanie-i-radosc-jakie-emocje-znalezlismy-w-reklamach/">
+<img alt="Zaufanie i radość. Jakie emocje znaleźliśmy w reklamach?" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2018/10/emocje-w-reklamie-renault-plus-shell-sentitool-1080x628.jpg" srcset="/wp-content/uploads/2018/10/emocje-w-reklamie-renault-plus-shell-sentitool-1080x628.jpg 1080w, /wp-content/uploads/2018/10/emocje-w-reklamie-renault-plus-shell-sentitool-980x513.jpg 980w, /wp-content/uploads/2018/10/emocje-w-reklamie-renault-plus-shell-sentitool-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/zaufanie-i-radosc-jakie-emocje-znalezlismy-w-reklamach/">Zaufanie i radość. Jakie emocje znaleźliśmy w reklamach?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">paź 22, 2018</span> | <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>Emocje w serii wpisów o politykach analizowaliśmy już wcześniej. Pokazaliśmy wydajność SentiToola na dużych zbiorach danych o polskich politykach. Mieliśmy 18 tysięcy słów, z czego 10% niosło konkretne emocje. Czy jesteśmy w stanie równie sprawnie analizować krótkie wypowiedzi? Co więcej, poprawiliśmy sposób obliczania zawartości emocjonalnej tekstu. Teraz pojedyncze słowo może nieść kilka uczuć, o ile wskazują na to wyniki naszych badań. Jak więc wyglądają emocje w reklamie?<br/>
+</strong></p>
+<h2>Emocje w reklamie – przykłady</h2>
+<p>Postanowiliśmy spróbować z czymś przydatnym, ale nieprostym – reklamami. Taki przekaz musi być zwięzły, zwracać uwagę, bawić i zaskakiwać. Badania rynku i testy na odbiorcach pokazują, że kampanie angażujące emocjonalnie, zwłaszcza pozytywnie, są skuteczniejsze od racjonalnych, a więc tym bardziej warto przeanalizować te komunikaty naszym narzędziem – SentiToolem. Taki materiał powinien dać nam ciekawe wyniki.</p>
+<p>Teksty reklam cytujemy za dwiema publikacjami prof. Ewy Rogowskiej-Cybulskiej: “<em>Nazwy nosicieli cech jako przykład perswazyjnego wyzyskiwania kategorii słowotwórczych w tekstach reklam</em>” i “<em>Żywiec pasuje jak nalał… O perswazyjnych środkach słowotwórczo-frazeologicznych w tekstach reklam</em>”. W kolejnym wpisie zajmiemy się nieco innymi reklamami opisanymi w artykule dr hab. Aleksandry Burdukiewicz “<em>Język reklam standaryzowanych</em>”. Nasza robocza hipoteza zakłada, że materiał z ostatniej publikacji będzie zawierał nieco mniej emocji (lub mniej zróżnicowane), ponieważ (jak pisze autorka) dominują w nich opisy produktów.</p>
+<p>Jak wspomnieliśmy, emocje w reklamie to sprawa ważna i opłacalna. Oczywiście – z umiarem. Jak <a href="https://nowymarketing.pl/a/17235,emocje-w-reklamie-czy-wszystko-jest-na-sprzedaz">pisze Olga Piech</a> za rzucanie się na zbytni dramatyzm można dostać od odbiorców karę. Przesadna kontrowersyjność też nie popłaca, jak na podstawie analizy seksistowskiej reklamy pokazał Bartosz Ziembiński. Najważniejsze są pozytywne emocje. Jeśli koniecznie potrzebujemy negatywnych, należy dawkować je bardzo ostrożnie i przekuć w coś dobrego.</p>
+<p>Przejdźmy do konkretów – przeanalizujmy wydźwięk emocjonalny i obecność 8 emocji podstawowych Plutchika w kilku wybranych reklamach. Na pierwszy ogień pójdą te celujące w nasz rynek, wykorzystujące humor i słowotwórstwo (czyli zacytowane w pierwszym artykule prof. Rogowskiej-Cybulskiej).</p>
+<h2>Reklama AA Prestige</h2>
+<blockquote><p>Szukasz kosmetyków skoncentrowanych na potrzebach Twojej skóry? Sięgnij po nową linię AA Prestige.<br/>
+AA prestige Age Corrector Concentrate 40+ to nowoczesne, zaawansowane technologicznie kosmetyki pielęgnacyjne. Preparaty te działają intensywnie i skutecznie – zmniejszają widoczność zmarszczek, poprawiają elastyczność skóry i chronią przed fotostarzeniem.</p></blockquote>
+<p><img alt="emocje w reklamie przykłady" class="aligncenter wp-image-732 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/aa_prestige_nowe.png" srcset="/wp-content/uploads/2018/10/aa_prestige_nowe.png 1312w, /wp-content/uploads/2018/10/aa_prestige_nowe-768x211.png 768w, /wp-content/uploads/2018/10/aa_prestige_nowe-512x140.png 512w, /wp-content/uploads/2018/10/aa_prestige_nowe-1024x281.png 1024w" width="1312"/></p>
+<p>Bardzo prosty i skuteczny krajobraz emocjonalny: tworzą go przede wszystkim <em>radość </em>i <em>zaufanie</em>. Niosą je słowa opisujące działanie korektora: <em>nowoczesny, skuteczny, chroni</em>. Skąd <em>smutek</em> i <em>zaskoczenie</em>? Ze słowa nowa, pojawiającego się w drugim zdaniu. Oprócz <em>radości</em> i <em>zaufania</em> niesie ono, według uczestników naszych badań, trochę negatywnych emocji związanych pewnie z zastępowaniem czegoś starszego, zmianą. Jednocześnie udział tych emocji zupełnie gubi się w podstawowej analizie polaryzacji, której wyniki pokazuje pierwszy wykres.</p>
+<h2>Reklama Plus GSM</h2>
+<blockquote><p>– Jak mam wymyślić maskotkę symbolizującą pięć darmowych numerów?<br/>
+– Nie, zrób, spokojnie. Pomyślmy razem. Rodzaje maskotek, podstawowy podział.<br/>
+– Pluszaki, pacyny, inne.<br/>
+– Rób inne, no.<br/>
+– No taki samolot… Jak klienci z dziećmi przychodzą, to się im podoba.<br/>
+– No to dajmy samolot i już.<br/>
+– Ale jak powiązać samolot z pięcioma darmowymi numerami?<br/>
+– A czyje to są taryfy?<br/>
+– Kubali.<br/>
+– To kto to powiąże?<br/>
+– Kubala!<br/>
+– No, ty myszko, ty!</p></blockquote>
+<p><img alt="emocje w reklamie przykłady" class="aligncenter wp-image-731 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/kubali_nowe.png" srcset="/wp-content/uploads/2018/10/kubali_nowe.png 1312w, /wp-content/uploads/2018/10/kubali_nowe-768x211.png 768w, /wp-content/uploads/2018/10/kubali_nowe-512x140.png 512w, /wp-content/uploads/2018/10/kubali_nowe-1024x281.png 1024w" width="1312"/></p>
+<p>Tego byśmy się spodziewali po skeczu Mumio – <em>radość</em> i <em>zaskoczenie</em>. Ta pierwsza bierze się głównie ze słowa <em>darmowy</em>. Skąd <em>zaskoczenie</em>? Na przykład ze słowa <em>taki&lt;e/m&gt;. Często zastanawiamy się, przeglądając wyniki SentiTool, czy powinniśmy uwzględniać w analizach anotację emotywną niektórych słów funkcyjnych, na przykład wspomnianego <em>taki</em>. Jest poparta badaniami, chociaż w wielu kontekstach ten wyraz traci swoje nacechowanie emocjonalne. Tym razem wydaje się jednak mieć sens. Użyte w tej reklamie słowa mają także inne odcienie, nawet trochę negatywnych, ale ogólny wydźwięk tekstu jest pozytywny, a ujemne spektrum emocjonalne jest tu zupełnie zdominowane pozytywnym.</em></p>
+<h2>Reklama banku Citi Handlowy</h2>
+<blockquote><p>Płyniesz na fali Nie tracisz płynności<br/>
+Faktoring w Citi Handlowy nagrodzony w konkursie Europrodukt<br/>
+Państwa firma płynie na fali, jest stabilna i ciągle się rozwija. Dlatego też ważne jest, aby<br/>
+nie traciła płynności finansowej. Citi Handlowy proponuje Faktoring obejmujący:<br/>
+– finansowanie wierzytelności do 100%,<br/>
+– łatwość obsługi,<br/>
+– elektroniczne przesyłanie danych.</p></blockquote>
+<p><img alt="emocje w reklamie przykłady" class="aligncenter wp-image-736 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1327px) 100vw, 1327px" src="/wp-content/uploads/2018/10/finansowe.png" srcset="/wp-content/uploads/2018/10/finansowe.png 1327w, /wp-content/uploads/2018/10/finansowe-768x208.png 768w, /wp-content/uploads/2018/10/finansowe-512x139.png 512w, /wp-content/uploads/2018/10/finansowe-1024x278.png 1024w" width="1327"/></p>
+<p>Pojawia się negatywny wydźwięk. Skąd, dlaczego? Czy to źle? Niesie go na przykład słowo <em>ważny</em>. To słowo uczestnikom naszych badań nad wydźwiękiem słów nie kojarzyło się dobrze, tych wyników nie możemy “poprawić”, to byłaby nieuczciwa manipulacja. W kontekście tekstu możemy się zastanowić – czy faktycznie pojawienie się tego wyrazu wprowadza do tekstu negatywne nacechowanie, zasmuca odbiorcę? O ile dla tego słowa komponent negatywny jest dominujący, są też takie jedynie lekko nim zabarwione: <em>ciągle, finansowanie</em>. Bankowość to poważna sprawa, negatywny sentyment niekoniecznie oznacza złość czy wstręt, także powagę czy stres związany z myśleniem o poważnych zagadnieniach. Oznacza to, że czasem nie da się go uniknąć, gdy interesuje nas jedynie spektrum pozytywny-negatywny (pierwszy wykres), ale zaczynamy go lepiej rozumieć dopiero analizując różne emocje i ich proporcje – w przypadku tego tekstu najważniejsze są jednak <em>radość, oczekiwanie</em> i <em>zaufanie</em>.</p>
+<p>Zobaczmy, czy SentiTool poradzi sobie z czymś bardziej enigmatycznym. Opisane wyżej reklamy, nawet Plusa, dość jasno opisywały produkt, który promowały. Kolejny tekst nie jest już taki bezpośredni.</p>
+<h2>Reklama Renault Kangoo Express</h2>
+<blockquote><p>TWARDZIEL nie pęka<br/>
+14.15 – pękła rura<br/>
+Zwykła robota, żadne tam wodotryski.<br/>
+Nie ma co się rozwodzić.<br/>
+Sprzęt na pakę i rura.<br/>
+Robi się takie rzeczy codziennie.<br/>
+A wieczorem czas na relaksujący prysznic.<br/>
+Myjnię mam tuż za rogiem.<br/>
+Renault Kangoo Express</p></blockquote>
+<p><img alt="" class="aligncenter wp-image-730 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/twardziel_nowe.png" srcset="/wp-content/uploads/2018/10/twardziel_nowe.png 1312w, /wp-content/uploads/2018/10/twardziel_nowe-768x211.png 768w, /wp-content/uploads/2018/10/twardziel_nowe-512x140.png 512w, /wp-content/uploads/2018/10/twardziel_nowe-1024x281.png 1024w" width="1312"/></p>
+<p>Nie chodzi o polskiego hydraulika, ale myjnię samochodową. Czy krajobraz emocjonalny tej reklamy także różni się od poprzednich przykładów? Tak, i to dramatycznie. Jest pełen negatywnych i ambiwalentnych emocji – ale kończy się na tych pozytywnych. Zaskakująca, niebezpośrednia reklama korzystająca z punktowego użycia radości ale ogólnie brzmiąca pozytywnie. <em>Smutek</em>, pochodzący ze słów <em>codzienny</em> i <em>pękać</em> znika zupełnie w analizie dwuwymiarowej, podczas gdy jest ważny (jako element sugerujący zmęczenie, kłopoty) w historii opowiadanej przez tą reklamę.</p>
+<h2>Reklama oleju Shell</h2>
+<blockquote><p>Oleje Shell Helix. Czysta przyjemność dla silnika Doskonale wiesz, jak przyjemnie jest odświeżyć i orzeźwić się po ciężkim dniu pracy. Teraz wyobraź sobie, że silnik Twojego samochodu może poczuć się w ten sam sposób. Oleje Shell Helix zawierają specjalne dodatki czyszczące, które nieustannie usuwają szkodliwe osady i utrzymują silnik Twojego samochodu w doskonałym stanie. Dlatego silnik jest nie tylko kompleksowo chroniony, ale także odświeżony i pełen energii. A Ty będziesz mógł cieszyć się cichą i płynną jazdą aż do kolejnej wymiany oleju Shell Helix Motor oils. Radość życia dla Twojego samochodu.</p></blockquote>
+<p><img alt="" class="aligncenter wp-image-733 size-full" decoding="async" height="360" loading="lazy" sizes="auto, (max-width: 1312px) 100vw, 1312px" src="/wp-content/uploads/2018/10/shell_nowe.png" srcset="/wp-content/uploads/2018/10/shell_nowe.png 1312w, /wp-content/uploads/2018/10/shell_nowe-768x211.png 768w, /wp-content/uploads/2018/10/shell_nowe-512x140.png 512w, /wp-content/uploads/2018/10/shell_nowe-1024x281.png 1024w" width="1312"/></p>
+<p>Sporo tekstu, wiele słów mających nacechowanie emocjonalne, wiele różnych uczuć. Pojawiają się negatywne, ale na krótko – całość dominują <em>radość</em> i <em>zaufanie</em>. To przykład podobnego storytellingu jak powyżej: bohater przechodzi przez niesprzyjające koleje losu (<em>ciężki dzień, szkodliwe osady</em>), ale ostatecznie jest chroniony i może cieszyć się życiem. Zróżnicowanie emocjonalne tego tekstu uwidacznia się w klasycznej analizie sentymentu (pierwszy wykres), ale to, z czego naprawdę składa się historia widać dopiero na wykresie kołowym.</p>
+<h2>Marketing nasycony emocjami</h2>
+<p>SentiTool poradził sobie z opisem produktu, skeczem i innymi reklamami tekstowymi całkiem nieźle. Potrafimy uzyskać dane nawet z krótkich wzmianek, które zawierają chociaż parę słów nacechowanych emocjonalnie – a przecież ciągle uzupełniamy naszą bazę o wyniki kolejnych badań z udziałem natywnych użytkowników języka polskiego, którzy oceniają dla nas słowa i frazy w EmoToolu.</p>
+<p>Przy okazji porównaliśmy wyniki obu modeli emocji, na których opiera się działanie naszej aplikacji: podstawowej analizy sentymentu czy wydźwięku, w której interesuje nas średnia polaryzacja słowa lub tekstu, oraz zaproponowanego przez Plutchika, złożonego i wychodzącego poza proste, binarne rozróżnienia. Wydaje nam się, że już w tak krótkich, ale najeżonych emocjami komunikatach widać, jakie korzyści niesie ze sobą taka bardziej kolorowa analiza.</p>
+<p>To, że reklamy zawierają i budzą emocje, jest stwierdzeniem trywialnym. Od tego przecież są. Jednak niektóre z nich (lepiej lub gorzej) sprzedają produkt, inne dają klientowi coś jeszcze – dobrą zabawę, kultowe powiedzonko, poczucie wspólnoty z tym, kto do niego mówi. No i chwilę radości. Tylko takie kampanie trafią nie tylko do opłaconych przez firmę mediów, ale także na kinowe noce reklamożerców, a przede wszystkim prywatne strony na Facebooku i Twitterze odbiorców.</p>
+<p>Jeśli chcesz sprawdzić jakie emocje wywołują twoje teksty reklamowe, napisz do nas na <strong><a href="mailto:kontakt@sentimenti.pl">kontakt@sentimenti.pl</a></strong>. Krótkie testy możesz wykonać na stronie głównej w SentiToolu.</p>
+</article>
+<article class="et_pb_post post-716 post type-post status-publish format-standard has-post-thumbnail hentry category-polityka-i-spoleczenstwo tag-emocje tag-emocje-w-tekscie tag-nastawienie-emocjonalne tag-polityka tag-polska-polityka tag-sentitool" id="post-716">
+<a class="entry-featured-image-url" href="/jak-ich-piszemy/">
+<img alt="Polityka, czyli jak „ich” piszemy?" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 1080px, 100vw" src="/wp-content/uploads/2018/10/3_wykres1_emohistogram_mini.jpg" srcset="/wp-content/uploads/2018/10/3_wykres1_emohistogram_mini.jpg 1080w, /wp-content/uploads/2018/10/3_wykres1_emohistogram_mini-480x283.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/jak-ich-piszemy/">Polityka, czyli jak „ich” piszemy?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">paź 22, 2018</span> | <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a></p><p><strong>Polityka i politycy. Jeden z bardziej nośnych tematów zarówno w internecie, ja i na rodzinnych obiadach czy przy piwie. Wszyscy musimy choć trochę żyć polityką, nawet jeśli nas nie zachwyca, ale brzydzi… No właśnie – jakie odczucia wzbudza w nas ten temat?</strong></p>
+<h2>Polityka w sieci, frekwencja, emocje i polaryzacja</h2>
+<p>Wiemy, że frekwencja wyborcza w Polsce nie zachwyca. Jak wynika z naszego wcześniejszego miniraportu, natężenie emocji i ich polaryzacja wobec liderów politycznych nie są zbyt silne. Ich poziom nieco wzrasta, gdy myślimy o partiach. Te wyniki osiągnęliśmy w badaniu <a href="https://opinie.wp.pl/zaufanie-zlosc-radosc-a-moze-wstret-wiemy-co-polacy-czuja-na-widok-czolowych-politykow-6302643512064129g">EmoTool</a>, w którym respondenci reagowali na zdjęcia lub loga. To dobry punkt wyjścia do dalszych analiz, skupionych już na tekstach opisujących polityków i ich działania. Jak pisaliśmy w poprzednim artykule, w internetowych publikacjach jest ich sporo.</p>
+<p>W SENTIMENTI bierzemy pod uwagę <a href="/oferta">osiem emocji</a>: <em>radość, zaufanie, oczekiwanie, smutek, strach, wstręt, złość</em> i <em>zaskoczenie</em>. Można je z grubsza podzielić na pozytywne i negatywne, chociaż ta ostatnia jest pod tym względem niejednoznaczna. Gdy prosimy uczestników naszych badań o ocenę słowa lub osoby, musi ona uwzględnić wszystkie te emocje. Przecież wiemy, że większość wyrażeń niesie ze sobą wiele uczuć. Jednocześnie któreś z nich może być dominujące – i to ono zostanie uznane za pierwotną, najprostszą emocję wiążącą się z danym wyrazem czy postacią.</p>
+<p>Spójrzcie na wyniki naszych badań nad tekstami dotyczącymi liderów partii i rządu. Wszystkie osiem emocji pojawia się w związku z każdym z nich (oprócz <strong>Jarosława Kaczyńskiego</strong> i <strong>Pawła Kukiza</strong>, przy okazji których nie pojawiło się ani jedno słowo wyrażające zaskoczenie). Spójrzcie na wykres:</p>
+<p><img alt="polityka w sieci politykawsieci biedroń czarzasty gowin kaczyński duda mikke kukiz schetyna ziobro" class="aligncenter wp-image-396 size-full" decoding="async" height="479" loading="lazy" src="/wp-content/uploads/2018/10/3_wykres1_emohistogram_wszystkie.jpg" width="766"/></p>
+<p>To, co widać na pierwszy rzut oka, to silna reprezentacja <em>radości </em>i <em>smutku </em>– zawsze stanowią najliczniejszą kategorię. Potem widzimy dużo <em>wstrętu </em>i <em>zaufania</em>. U niektórych licznie reprezentowaną emocją jest <em>strach </em>(<strong>Grzegorz Schetyna, Jarosław Kaczyński</strong>) czy <em>złość </em>(<strong>Paweł Kukiz</strong>), ale także <em>oczekiwanie </em>(<strong>Zbigniew Ziobro</strong>).</p>
+<h2>Analiza skupień</h2>
+<p>Sporo kolorów, jeszcze więcej danych… Co nam z tego? Możemy oglądać sobie pary polityków, kilka emocji naraz, szukać na chybił-trafił sensu w tej mozaice. W SENTIMENTI mamy lepszy pomysł. Zobaczmy, czy da się automatycznie podzielić ich na grupy korzystając ze statystycznej analizy skupień (metodą KMeans).</p>
+<p>Zarówno podział na dwie przynosi następujący wynik: po jednej stronie mamy <strong>Jarosława Gowina, Jarosława Kaczyńskiego, Grzegorza Schetynę</strong> i <strong>Zbigniewa Ziobro</strong>, po drugiej pozostałą siódemkę. Wygląda to trochę na podział na starą gwardię i nowe postacie, chociaż oczywiście <strong>Janusz Korwin-Mikke</strong> nie należy do młodych polityków… Co najbardziej różni te dwie grupy? Użyliśmy algorytmu drzewa decyzyjnego do znalezienia najlepszej ścieżki podzielenia polityków na te dwa skupienia, czyli trochę odwrotnej inżynierii, mającej na celu odkrycie, co właściwie zrobiła analiza skupień.</p>
+<p>Wystarczy znać liczbę słów wiążących się ze <em>smutkiem </em>– w tekstach o tych pierwszych, nazwijmy ich roboczo „politykami rządzącymi”, było ich znacząco więcej niż w drugiej grupie (mówimy tu o surowych wynikach, liczbie słów, a nie proporcji). Co więcej, te dwie grupy różnią się także średnią liczbą słów niosących emocje, i to bardzo wyraźnie: ponad 280 w przypadku wyróżnionej czwórki i około 130 na osobę u pozostałych.</p>
+<p>Co mówi nam taki wynik? Czyżby <em>smutek </em>był jedyną emocją wartą uwagi? Jesteśmy prawie pewni, że nie, natomiast okazał się jej wart na początku kampanii do wyborów samorządowych. Jeśli zadamy sobie inne pytanie, nie tyle „czym różni się tych trzynaście osób”, ale na przykład „czy nacechowanie emocjonalne tekstów o młodych politykach jest inne niż tych o starszych”, albo „jak różnią się te o opozycji od tych o rządzących”, otrzymamy inny wynik. Co więcej, sympatie i antypatie wyborców, jak każdej publiczności, zmieniają się jak w kalejdoskopie. Być może po 21 października kluczowa będzie <em>radość</em>, może <em>wstręt</em>…</p>
+</article>
+<article class="et_pb_post post-282 post type-post status-publish format-standard has-post-thumbnail hentry category-konferencje" id="post-282">
+<a class="entry-featured-image-url" href="/comma2018-industry-afternoon/">
+<img alt="COMMA2018: INDUSTRY AFTERNOON" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 1080px, 100vw" src="/wp-content/uploads/2018/10/usage1.jpg" srcset="/wp-content/uploads/2018/10/usage1.jpg 1080w, /wp-content/uploads/2018/10/usage1-480x480.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/comma2018-industry-afternoon/">COMMA2018: INDUSTRY AFTERNOON</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lut 11, 2018</span> | <a href="/category/konferencje/" rel="category tag">Konferencje</a></p><p><strong>COMMA2018. Chcesz poznać najlepszych specjalistów z zakresu analizy tekstu, wydobywania opinii i argumentów? Dlatego zapraszamy na Industry Afternoon w ramach międzynarodowej konferencji naukowej COMMA2018, 13 września w Warszawie, bo warto!<br/>
+</strong></p>
+<h2>COMMA2018 – zespół Sentimenti</h2>
+<p>Jesteśmy współorganizatorem tego wyjątkowego spotkania nauki, biznesu i organizacji pozarządowych z następujących obszarów.</p>
+<ul>
+<li>Automatyczne wydobywanie argumentów</li>
+<li>Analiza tekstu</li>
+<li>Analiza sentymentu</li>
+<li>Przetwarzanie języka naturalnego</li>
+<li>Monitoring Mediów (także społecznościowych)</li>
+<li>Technologie dla prawników</li>
+<li>Reklama i PR</li>
+<li>E-demokracja</li>
+<li>Humanistyka cyfrowa</li>
+</ul>
+<p>Argumentacja jest ważnym i ekscytującym tematem badawczym w sztucznej inteligencji, z szerokim spektrum działań badawczych, od teorii do zastosowań. Dlatego Międzynarodowa Konferencja na temat Obliczeniowych Modeli Argumentacji (COMMA) stanowi regularne forum prezentacji i wymiany najnowszych wyników badań związanych z obliczeniowymi aspektami argumentacji.</p>
+<p>W dniach 12-14 września 2018 r. w Instytucie Filozofii i Socjologii Polskiej Akademii Nauk (IFiS PAN) w Warszawie odbędzie się VII Międzynarodowa Konferencja na temat Obliczeniowych Modeli Argumentu. Oprócz głównej ścieżki konferencyjnej i innowacyjnej ścieżki aplikacji, odbędą się tematyczne warsztaty i pokazy systemów COMMA.</p>
+<p>COMMA 2018 będzie częścią cyklu wydarzeń w ramach Warsaw Argumentation Week WAW2018 (6-16 września). Również kolejnej edycji Letniej Szkoły Argumentacji SSA 2018 (6-10 września). Do tego też 16. konferencji ArgDiap (15-16 września) oraz innych spotkań i wydarzeń kognitywnych.</p>
+<p>Dlaczego warto? Dlatego, że podczas spotkania zainteresowane firmy będą miały okazję zaprezentować rozwijane przez siebie usługi oraz technologie nie tylko przed ekspertami z wiodących ośrodków badawczych (IBM Research, Imperial College London, University of Milan i in.), ale również nawiązać kontakt z potencjalnymi klientami.<br/>
+Chcesz wiedzieć więcej? Napisz do nas lub odwiedź stronę konferencji. <a href="http://comma2018.argdiap.pl/special-sessions/industry-afternoon/"><strong>WIĘCEJ INFORMACJI</strong></a></p>
+</article>
+<div class="pagination clearfix">
+<div class="alignleft"><a href="/author/zespol-sentimenti/page/32/">« Starsze wpisy</a></div>
+<div class="alignright"><a href="/author/zespol-sentimenti/page/30/">Kolejne wpisy »</a></div>
+</div> </div>
+<div id="sidebar">
+<div class="et_pb_widget widget_text" id="text-2"> <div class="textwidget">
+</div>
+</div><div class="et_pb_widget widget_categories" id="categories-2"><h4 class="widgettitle">Kategorie</h4>
+<ul>
+<li class="cat-item cat-item-1191"><a href="/category/polityka-i-spoleczenstwo/">Polityka i społeczeństwo</a>
+</li>
+<li class="cat-item cat-item-1193"><a href="/category/styl-zycia/">Styl życia</a>
+</li>
+<li class="cat-item cat-item-1226"><a href="/category/badania-rynku/">Badania rynku</a>
+</li>
+<li class="cat-item cat-item-1121"><a href="/category/w-mediach/">W mediach</a>
+</li>
+<li class="cat-item cat-item-1149"><a href="/category/w-mediach/podcasty-pl/">Podcasty</a>
+</li>
+<li class="cat-item cat-item-1153"><a href="/category/konferencje/">Konferencje</a>
+</li>
+<li class="cat-item cat-item-582"><a href="/category/sentibrand/">SentiBrand</a>
+</li>
+<li class="cat-item cat-item-263"><a href="/category/sentistocks-pl/">SentiStocks</a>
+</li>
+<li class="cat-item cat-item-1055"><a href="/category/publikacje-naukowe/">Publikacje naukowe</a>
+</li>
+<li class="cat-item cat-item-24"><a href="/category/okiem-badacza/">Okiem badacza</a>
+</li>
+<li class="cat-item cat-item-434"><a href="/category/kategoryzacja-komentarzy/">Kategoryzacja komentarzy</a>
+</li>
+</ul>
+</div>
+<div class="et_pb_widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widgettitle">Ostatnie wpisy</h4>
+<ul>
+<li>
+<a href="/emocje-w-biotech/">Głębsze Spojrzenie na Emocje: Jak Firmy Bio-Tech Mogą Lepiej Rozumieć Odbiór Swojej Marki?</a>
+</li>
+<li>
+<a href="/jak-emocje-ksztaltuja-nasze-spojrzenie-na-wschodnich-sasiadow-analiza-mediow-spolecznosciowych-2024/">Jak emocje kształtują nasze spojrzenie na wschodnich sąsiadów? Analiza mediów społecznościowych 2024</a>
+</li>
+<li>
+<a href="/jezyk-i-emocje-w-roznorodnosci-co-pokazuja-dane/">Poznaj słowa, które budują mosty i te, które niszczą relacje społeczne – zaskakujące wyniki badań!</a>
+</li>
+<li>
+<a href="/analiza-emocji-w-debacie-prezydenckiej-harris-vs-trump-jak-sentimenti-mierzy-emocje-i-sentymenty/">Analiza emocji w debacie prezydenckiej Harris vs Trump: Jak Sentimenti mierzy emocje i sentymenty</a>
+</li>
+<li>
+<a href="/analiza-sentymentu-nie-powie-ci-prawdy/">Analiza sentymentu nie powie Ci prawdy</a>
+</li>
+</ul>
+</div> </div>
+</div>
+</div>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-5973" decoding="async" height="100" loading="lazy" src="/wp-content/uploads/2023/06/logo2.svg" title="logo2" width="100"/></span>
+</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p><strong>Sentimenti sp. z o.o.</strong><br/><span>ul. Święty Marcin 11/8</span><br/><span>61-803 Poznań, Poland</span><br/><a href="mailto:kontakt@sentimenti.pl"></a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_0_tb_footer et_pb_widget_area clearfix et_pb_widget_area_right et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_dark et_pb_sidebar_no_border">
+<div class="fwidget et_pb_widget widget_nav_menu" id="nav_menu-4"><div class="menu-menu-w-stopce-container"><ul class="menu" id="menu-menu-w-stopce"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6425" id="menu-item-6425"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6691" id="menu-item-6691"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6421" id="menu-item-6421"><a href="/kontakt/">Kontakt</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-6415" decoding="async" height="63" loading="lazy" src="/wp-content/uploads/2023/06/UE_EFRR-black.png" title="UE_EFRR-black" width="240"/></span>
+</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link et-social-facebook"><a class="icon et_pb_with_border" href="https://www.facebook.com/sentimentipl" target="_blank" title="Śledź na Facebook"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link et-social-twitter"><a class="icon et_pb_with_border" href="https://twitter.com/SENTIMENTIPL" target="_blank" title="Śledź na X"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link et-social-linkedin"><a class="icon et_pb_with_border" href="https://www.linkedin.com/company/sentimenti/" target="_blank" title="Śledź na LinkedIn"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li>
+</ul>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_1_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light et_pb_sidebar_no_border">
+<div class="et_pb_widget widget_nav_menu" id="nav_menu-7"><div class="menu-rodo-pl-container"><ul class="menu" id="menu-rodo-pl"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6418" id="menu-item-6418"><a href="/polityka-prywatnosci/" rel="privacy-policy">Polityka prywatności RODO</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Design: <a href="https://ballaun.art/" rel="noopener" style="color: white;" target="_blank">ballaun.art</a></div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: index-->
+<div class="modal-cacsp-backdrop"></div>
+<div class="modal-cacsp-position">
+<div class="modal-cacsp-box modal-cacsp-box-info">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Używamy plików cookie, aby zapewnić prawidłowe działanie naszej strony internetowej i usług. Te pliki cookie są niezbędne i są ustawiane automatycznie. Chcielibyśmy również używać analitycznych plików cookie, aby zrozumieć, w jaki sposób wchodzisz w interakcję z naszą witryną i marketingowymi plikami cookie, aby zapewnić spersonalizowane treści i reklamy.
+Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików cookie zarówno do podstawowych, jak i nieistotnych celów. Kliknij „Ustawienia”, aby wybrać typy plików cookie, które chcesz włączyć lub wyłączyć. Więcej informacji znajdziesz w naszej Polityce prywatności RODO.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-settings" href="#">
+							Ustawienia						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+<div class="modal-cacsp-box modal-cacsp-box-settings">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Wybierz, jakie pliki cookies chcesz zaakceptować. Twój wybór zostanie zachowany przez rok.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-box-settings-list">
+<ul>
+<li>
+<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+<span>Konieczne<br/>
+<span>Te pliki cookie nie są opcjonalne. Są one potrzebne do funkcjonowania strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</span>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics" href="#statistics">
+<span>Statystyka<br/>
+<span>Abyśmy mogli poprawić funkcjonalność i strukturę strony internetowej, na podstawie tego, jak strona jest używana.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="experience" href="#experience">
+<span>Doświadczenie<br/>
+<span>Aby nasza strona internetowa działała jak najlepiej podczas twojego przejścia na nią. Jeśli odrzucisz te pliki cookie, niektóre funkcje znikną ze strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="marketing" href="#marketing">
+<span>Marketing<br/>
+<span>Udostępniając swoje zainteresowania i zachowania podczas odwiedzania naszej strony, zwiększasz szansę na zobaczenie spersonalizowanych treści i ofert.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-save" href="#">
+							Zapisz						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept-all" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+</div>
+<!--googleon: index-->
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Basic:regular&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6Fc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FE.woff2) format('woff2');}</style><script id="cookies-and-content-security-policy-cookie-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie.min.js?ver=2.41" type="text/javascript"></script>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" type="text/javascript"></script>
+<script id="jquery-js-after" type="text/javascript">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var cacsp_ajax_object = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"53e1f30221"};
+var cacspMessages = {"cacspReviewSettingsDescription":"Twoje ustawienia mog\u0105 uniemo\u017cliwi\u0107 ci obejrzenie tej tre\u015bci. Najprawdopodobniej masz wy\u0142\u0105czone Do\u015bwiadczenie.","cacspReviewSettingsButton":"Przegl\u0105daj swoje ustawienia","cacspNotAllowedDescription":"Ta tre\u015b\u0107 nie mo\u017ce by\u0107 wczytana, gdy\u017c nie jest dozwolona na witrynie.","cacspNotAllowedButton":"Skontaktuj si\u0119 z administratorem","cacspExpires":"365","cacspWpEngineCompatibilityMode":"0","cacspTimeout":"1000","cacspOptionDisableContentNotAllowedMessage":"0","cacspOptionGoogleConsentMode":"0","cacspOptionSaveConsent":"0"};
+//# sourceURL=cookies-and-content-security-policy-js-extra
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js?ver=2.41" type="text/javascript"></script>
+<script id="cookies-and-content-security-policy-error-message-js" src="/wp-content/uploads/cookies-and-content-security-policy-error-message.js?ver=2.41&amp;mod%3D20260116142405" type="text/javascript"></script>
+<script id="df-script-js" src="/wp-content/plugins/filter-for-divi/df-script.js?ver=2.0.2" type="text/javascript"></script>
+<script id="pll_cookie_script-js-after" type="text/javascript">
+/* <![CDATA[ */
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=pl; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+/* ]]> */
+</script>
+<script id="divi-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"/wp-admin/admin-ajax.php","images_uri":"/wp-content/themes/Divi/images","builder_images_uri":"/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"2b0e8fb0d2","subscription_failed":"Prosz\u0119, sprawd\u017a pola poni\u017cej, aby upewni\u0107 si\u0119, \u017ce wpisa\u0142e\u015b poprawn\u0105 informacj\u0119.","et_ab_log_nonce":"ea219785f5","fill_message":"Prosz\u0119 wype\u0142ni\u0107 nast\u0119puj\u0105ce pola:","contact_error_message":"Napraw poni\u017csze b\u0142\u0119dy:","invalid":"Nieprawid\u0142owy adres e-mail","captcha":"Captcha","prev":"Przed","previous":"Poprzednie","next":"Dalej","wrong_captcha":"Wpisa\u0142e\u015b/-a\u015b w captcha nieprawid\u0142owy numer.","wrong_checkbox":"Pole wyboru","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"1114","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#e6007a","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script id="divi-custom-script-js" src="/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="smoothscroll-js" src="/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.1" type="text/javascript"></script>
+<script id="es6-promise-js" src="/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-recaptcha-v3-js" src="https://www.google.com/recaptcha/api.js?render=6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO&amp;ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-api-spam-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO","page_action":{"action":"emocje_w_impasie_na_przykladzie_brexitu"}};
+//# sourceURL=et-core-api-spam-recaptcha-js-extra
+/* ]]> */
+</script>
+<script id="et-core-api-spam-recaptcha-js" src="/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=4.27.1" type="text/javascript"></script>
+<script id="fitvids-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.1" type="text/javascript"></script>
+<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=6.9.11" type="text/javascript"></script>
+<script id="jquery-mobile-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.27.1" type="text/javascript"></script>
+<script id="magnific-popup-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.1" type="text/javascript"></script>
+<script id="easypiechart-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.27.1" type="text/javascript"></script>
+<script id="salvattore-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-common-js" src="/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.1" type="text/javascript"></script>
+<script id="ivory-search-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+//# sourceURL=ivory-search-scripts-js-extra
+/* ]]> */
+</script>
+<script id="ivory-search-scripts-js" src="/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.13" type="text/javascript"></script>
+<script id="et-builder-modules-script-motion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+//# sourceURL=et-builder-modules-script-motion-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-motion-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-builder-modules-script-sticky-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+//# sourceURL=et-builder-modules-script-sticky-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-sticky-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.27.1" type="text/javascript"></script>
+<span class="et_pb_scroll_top et-pb-icon"></span>
+</body>
+</html>

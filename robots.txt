@@ -1,0 +1,16 @@
+# START WPFORMS BLOCK
+# ---------------------------
+User-agent: *
+Disallow: /wp-content/uploads/wpforms/
+# ---------------------------
+# END WPFORMS BLOCK
+
+Sitemap: https://sentimenti.pl/wp-sitemap.xml
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+# ---------------------------
+# END YOAST BLOCK

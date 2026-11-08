@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="/xmlrpc.php" rel="pingback"/>
+<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4i.woff2) format('woff2');}</style><meta content="noindex, follow" name="robots"/>
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+<title>2021 - Strona 2 z 10 - Sentimenti</title>
+<meta content="pl_PL" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="2021" property="og:title"/>
+<meta content="/2021/" property="og:url"/>
+<meta content="Sentimenti" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@SENTIMENTIPL" name="twitter:site"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"CollectionPage","@id":null,"url":"\/2021\/page\/2\/","name":"2021 - Strona 2 z 10 - Sentimenti","isPartOf":{"@id":"\/#website"},"primaryImageOfPage":{"@id":"\/2021\/page\/2\/#primaryimage"},"image":{"@id":"\/2021\/page\/2\/#primaryimage"},"thumbnailUrl":"\/wp-content\/uploads\/2021\/01\/emocje-depresja-stany-lekowe-epidemia-koronawirus-covid.jpg","breadcrumb":{"@id":"\/2021\/page\/2\/#breadcrumb"},"inLanguage":"pl-PL"},{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/2021\/page\/2\/#primaryimage","url":"\/wp-content\/uploads\/2021\/01\/emocje-depresja-stany-lekowe-epidemia-koronawirus-covid.jpg","contentUrl":"\/wp-content\/uploads\/2021\/01\/emocje-depresja-stany-lekowe-epidemia-koronawirus-covid.jpg","width":1200,"height":628,"caption":"emocje depresja lekowa stany lękowe objawy koronawirus epidemia"},{"@type":"BreadcrumbList","@id":"\/2021\/page\/2\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"\/"},{"@type":"ListItem","position":2,"name":"Archiwa dla 2021"}]},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Sentimenti","description":"Analiza emocji i sentymentu, sztuczna inteligencja, monitoring internetu","publisher":{"@id":"\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pl-PL"},{"@type":"Organization","@id":"\/#organization","name":"Sentimenti","url":"\/","logo":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/#\/schema\/logo\/image\/","url":"\/wp-content\/uploads\/2023\/06\/logo.svg","contentUrl":"\/wp-content\/uploads\/2023\/06\/logo.svg","width":100,"height":100,"caption":"Sentimenti"},"image":{"@id":"\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/sentimentipl","https:\/\/x.com\/SENTIMENTIPL","https:\/\/www.linkedin.com\/company\/sentimenti\/"]}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="Divi v.4.27.1" name="generator"/><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link href="/wp-includes/css/dist/block-library/style.min.css?ver=6.9.11" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote :where(cite),.wp-block-pullquote :where(footer),.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/css/dist/block-library/theme.min.css */
+</style>
+<style id="pdfemb-pdf-embedder-viewer-style-inline-css" type="text/css">
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+/*# sourceURL=/wp-content/plugins/pdf-embedder/block/build/style-index.css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link href="/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css?ver=2.41" id="cookies-and-content-security-policy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/custom-posts-order/css/custompostdisplay.css?ver=4.5" id="custompostdisplay-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/filter-for-divi/df-style.css?ver=2.0.2" id="df-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.13" id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/Divi/style-static.min.css?ver=4.27.1" id="divi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<!-- Fragment znacznika Google (gtag.js) dodany przez Site Kit -->
+<!-- Fragment Google Analytics dodany przez Site Kit -->
+<script async="" id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-5R823XK" type="text/javascript"></script>
+<script id="google_gtagjs-js-after" type="text/javascript">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["sentimenti.pl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5R823XK");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 6.9.11" name="generator"/>
+<meta content="Site Kit by Google 1.188.0" name="generator"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/><style id="cookies-and-content-security-policy-css-custom" type="text/css">.modal-cacsp-position .modal-cacsp-box > *,.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-show.modal-cacsp-box-bottom {background-color: #efefef;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {background-color: #e5e5e5;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {border-color: #ffffff;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {background-color: #eaeaea;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {border-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ff0087;}</style><link href="/wp-content/uploads/2023/06/cropped-ico-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-180x180.jpg" rel="apple-touch-icon"/>
+<meta content="/wp-content/uploads/2023/06/cropped-ico-270x270.jpg" name="msapplication-TileImage"/>
+<link href="/wp-content/et-cache/global/et-divi-customizer-global.min.css?ver=1794112530" id="et-divi-customizer-global-cached-inline-styles" rel="stylesheet"/><link href="/wp-content/et-cache/6466/et-core-unified-cpt-6466.min.css?ver=1794112538" id="et-core-unified-cpt-6466-cached-inline-styles" rel="stylesheet"/><style media="screen" type="text/css">.is-menu path.search-icon-path { fill: #848484;}body .popup-search-close:after, body .search-close:after { border-color: #848484;}body .popup-search-close:before, body .search-close:before { border-color: #848484;}</style> <style type="text/css">
+</style>
+<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+
+				}
+			</style></head>
+<body class="archive date paged paged-2 date-paged-2 wp-theme-Divi et-tb-has-template et-tb-has-footer Divi et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_cover_background et_pb_gutter et_pb_gutters3 et_smooth_scroll et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-7993">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header data-height-onload="66" id="main-header">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="/">
+<img alt="Sentimenti" data-height-percentage="54" height="100" id="logo" src="/wp-content/uploads/2023/06/logo.svg" width="100"/>
+</a>
+</div>
+<div data-fixed-height="40" data-height="66" id="et-top-navigation">
+<nav id="top-menu-nav">
+<ul class="nav" id="top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8080"><a href="/oferta/">Oferta</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5710"><a href="/sentitool/">Sentitool</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6178"><a href="/api-2/">API</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6184"><a href="/kontakt/">Kontakt</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="/%F0%9F%87%BA%F0%9F%87%A6-ukraina/">🇺🇦 Ukraina</a></li>
+<li class="lang-item lang-item-7 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-5986-en"><a href="/en/2021/" hreflang="en-GB" lang="en-GB"><img alt="English" height="11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" style="width: 16px; height: 11px;" width="16"/></a></li>
+</ul> </nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Zaznacz stronę</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div> </div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<div class="container">
+<div class="clearfix" id="content-area">
+<div id="left-area">
+<article class="et_pb_post post-4899 post type-post status-publish format-standard has-post-thumbnail hentry category-okiem-badacza category-styl-zycia tag-monitoring-emocji tag-nastawienie-emocjonalne tag-negatywne-emocje" id="post-4899">
+<a class="entry-featured-image-url" href="/ludzie-inteligentni-emocjonalnie-charakterystyka/">
+<img alt="Ludzie inteligentni emocjonalnie. Po czym można ich rozpoznać i co ich wyróżnia?" class="" fetchpriority="high" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2021/01/emocje-depresja-stany-lekowe-epidemia-koronawirus-covid-1080x628.jpg" srcset="/wp-content/uploads/2021/01/emocje-depresja-stany-lekowe-epidemia-koronawirus-covid-1080x628.jpg 1080w, /wp-content/uploads/2021/01/emocje-depresja-stany-lekowe-epidemia-koronawirus-covid-980x513.jpg 980w, /wp-content/uploads/2021/01/emocje-depresja-stany-lekowe-epidemia-koronawirus-covid-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/ludzie-inteligentni-emocjonalnie-charakterystyka/">Ludzie inteligentni emocjonalnie. Po czym można ich rozpoznać i co ich wyróżnia?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lis 29, 2021</span> | <a href="/category/okiem-badacza/" rel="category tag">Okiem badacza</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>W poniższym cytacie znany filozof Arystoteles doskonale podsumowuje koncepcję, która stała się w ostatnich miesiącach gorącym tematem w psychologii, edukacji i szeroko pojętym biznesie. Chodzi o inteligencję emocjonalną, o której pisaliśmy już na naszym blogu <a href="/blog/inteligencja-emocjonalna-czy-kontrolowanie-emocji-to-klucz-do-sukcesu-w-zyciu/">TUTAJ</a>.</strong></p>
+<blockquote><p>Każdy może się rozgniewać – to jest łatwe. Ale gniewać się na właściwą osobę, we właściwym stopniu, we właściwym czasie, we właściwym celu i we właściwy sposób – to sztuka. (Arystoteles)</p></blockquote>
+<h2>Ludzie inteligentni emocjonalnie. Co ich wyróżnia?</h2>
+<p>Ludzie inteligentni emocjonalnie co do zasady mają w sobie szereg nawyków i zachowań, które przyczyniają się do ich zdolności zarządzania własnymi emocjami i rozumienia uczuć innych osób. Jeśli znamy kogoś, kto zwraca uwagę na swoje uczucia i potrafi wyrażać emocje w odpowiedni do sytuacji sposób, a także jest empatyczny i rozumie, co czują inni, to mamy szczęście. Taka osoba jest prawdopodobnie postacią bardzo inteligentną emocjonalnie.</p>
+<p>Inteligencja emocjonalna u człowieka obejmuje cztery podstawowe umiejętności. Są to:</p>
+<ul>
+<li>zdolność do postrzegania emocji,</li>
+<li>zdolność rozumowania za pomocą emocji,</li>
+<li>zdolność rozumienia emocji,</li>
+<li>umiejętność zarządzania emocjami.</li>
+</ul>
+<p>Warto więc z bliska zapoznać się, czym dokładnie charakteryzują się takie osoby.</p>
+<h3>Zwracają uwagę na to, co czują</h3>
+<p>Psycholog i autor Daniel Goleman zidentyfikował samoświadomość jako jeden z kluczowych komponentów inteligencji emocjonalnej. Samoświadomość obejmuje zdolność do rozpoznawania nastrojów, emocji i uczuć. Część samoświadomości obejmuje również świadomość tego, w jaki sposób nasze zachowania, emocje i nastroje wpływają na innych ludzi. Ta właśnie zdolność do monitorowania własnych stanów emocjonalnych jest podstawowym wymogiem inteligencji emocjonalnej.</p>
+<h3>Rozumieją, co czują inni ludzie</h3>
+<p>Empatia jest kolejnym z głównych elementów inteligencji emocjonalnej Golemana. Obejmuje ona zdolność do rozumienia emocji innych ludzi. Aby móc wchodzić w interakcje z innymi ludźmi w wielu dziedzinach życia codziennego, takich jak praca czy szkoła, trzeba być w stanie wiedzieć, co oni czują. Jeśli współpracownik jest zdenerwowany lub sfrustrowany, wiedza o tym, co on czuje, może dać Ci znacznie lepszy pomysł na to, jak na to zachowanie zareagować.</p>
+<h3>Są w stanie regulować poziom swoich emocji</h3>
+<p>Samoregulacja emocji jest absolutnie kluczowa dla inteligencji emocjonalnej. Zrozumienie swoich emocji to wielkie osiągnięcie, ale nieszczególnie użyteczne, jeśli nie potrafimy zrobić z tej wiedzy użytku w prawdziwym życiu i w realnych sytuacjach. Ludzie inteligentni emocjonalnie myślą, zanim podejmą działania w oparciu o swoje uczucia. Są w zgodzie z tym, co czują, ale nie pozwalają, aby emocje rządziły ich życiem.</p>
+<h3>Inteligentni emocjonalnie są pełni motywacji</h3>
+<p>To fakt. Są pełni zapału na drodze do osiągania swoich celów i potrafią zarządzać swoimi zachowaniami i uczuciami, aby osiągnąć długoterminowy sukces. Mogą być zdenerwowani dokonywaniem rewolucyjnych zmian w swoim życiu, ale wiedzą, że radzenie sobie z tym strachem jest bardzo ważne. Poprzez podjęcie wyzwania i dokonanie zmiany, są przekonani, że dzięki temu mogą uczynić swoje życie lepszym i zbliżyć się o krok do osiągnięcia swoich życiowych celów.</p>
+<h3>Mają duże umiejętności społeczne</h3>
+<p>Osoby inteligentne emocjonalnie mają również inną kluczową cechę. To tendencja do posiadania silnych umiejętności społecznych. Dzieje się tak prawdopodobnie częściowo dlatego, że są to jednostki wybitnie dostrojone do własnych uczuć, jak również uczuć innych. Wiedzą, jak skutecznie radzić sobie z ludźmi i są zaangażowani w utrzymywanie zdrowych relacji społecznych i pomaganie tym, którzy ich otaczają w osiągnięciu sukcesu.</p>
+<h3>Są chętni i zdolni do rozmawiania o uczuciach</h3>
+<p>Czasami ludzie są empatyczni i dostrojeni do swoich emocji, ale mają trudności z ich uzewnętrznianiem i faktycznym dzieleniem się tymi uczuciami z innymi ludźmi. Osoby inteligentne emocjonalnie nie tylko rozumieją uczucia, ale wiedzą jak je odpowiednio wyrażać.</p>
+<p>Co dokładnie mamy na myśli mówiąc odpowiednio? Wyobraźmy sobie, na przykład, że właśnie mieliśmy wyjątkowo okropny dzień w pracy. Jesteśmy zmęczeni, sfrustrowani i źli z powodu tego, jak potoczyły się sprawy na ważnym spotkaniu biznesowym. Nieodpowiednim wyrazem tych uczuć może być powrót do domu i wdanie się w kłótnię ze współmałżonkiem lub wysłanie nieprzyjemnego maila do szefa, czego potem można żałować. To typowe działanie pod wpływem emocji i impulsu.</p>
+<p>Bardziej odpowiednią reakcją emocjonalną byłoby omówienie swoich frustracji ze współmałżonkiem, rozładowanie napięcia poprzez krótki wysiłek fizyczny i wymyślenie planu, jak sprawić, by następny dzień był lepszy od poprzedniego.</p>
+<h3>Potrafią prawidłowo zidentyfikować przyczyny leżące u podstaw ich emocji</h3>
+<p>Wyobraźmy sobie, że jesteśmy wyjątkowo sfrustrowani i źli na kolegę lub koleżankę z pracy. Oceniając swoje uczucia, przeanalizujmy dokładnie, o co tak naprawdę nam w tej sytuacji chodzi. Czy jesteśmy źli z powodu działań współpracownika, czy też nasz gniew wynika z ukrytych frustracji i presji ze strony szefa, który rzucił na nasze barki zbyt wiele pracy i odpowiedzialności?</p>
+<p>Osoby inteligentne emocjonalnie są w stanie przyjrzeć się każdej sytuacji i prawidłowo zidentyfikować prawdziwe źródło swoich odczuć. Na początku może się to wydawać zadaniem prostym, ale nasze życie emocjonalne może być zarówno skomplikowane, jak i zagmatwane. Zlokalizowanie dokładnego źródła uczuć może być szczególnie trudne, gdy mamy do czynienia z silnymi emocjami, takimi jak miłość czy gniew.</p>
+</article>
+<article class="et_pb_post post-4891 post type-post status-publish format-standard has-post-thumbnail hentry category-okiem-badacza category-styl-zycia tag-emocje tag-inteligencja-emocjonalna tag-nastawienie-emocjonalne" id="post-4891">
+<a class="entry-featured-image-url" href="/inteligencja-emocjonalna-czy-kontrolowanie-emocji-to-klucz-do-sukcesu-w-zyciu/">
+<img alt="Inteligencja emocjonalna. Czy kontrolowanie emocji to klucz do sukcesu w życiu?" class="" height="675" src="/wp-content/uploads/2021/11/inteligencja-emocjonalna-o-zdolnosci-do-wyrazania-i-kontrolowania-emocji.jpg" width="1080"/> </a>
+<h2 class="entry-title"><a href="/inteligencja-emocjonalna-czy-kontrolowanie-emocji-to-klucz-do-sukcesu-w-zyciu/">Inteligencja emocjonalna. Czy kontrolowanie emocji to klucz do sukcesu w życiu?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lis 23, 2021</span> | <a href="/category/okiem-badacza/" rel="category tag">Okiem badacza</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>Inteligencja emocjonalna odnosi się do zdolności postrzegania, kontrolowania i oceniania emocji. Niektórzy badacze sugerują, że inteligencji emocjonalnej można się nauczyć i ją wzmocnić, podczas gdy inni twierdzą, że jest to cecha wrodzona. Jak jest w rzeczywistości?</strong></p>
+<h2>Inteligencja emocjonalna, czyli EQ zamiast IQ. O co w tym chodzi?</h2>
+<p>Zdolność do wyrażania i kontrolowania emocji jest niezbędna tak samo, jak zdolność do rozumienia, interpretowania i reagowania na emocje innych ludzi. Wyobraźmy sobie sytuację, w której nie potrafimy zrozumieć, kiedy nasz przyjaciel jest smutny lub kiedy współpracownik jest zwyczajnie zły. Psychologowie określają tę umiejętność mianem inteligencji emocjonalnej, a niektórzy eksperci sugerują nawet, że może być ona znacznie istotniejsza niż popularne IQ.</p>
+<p>Pojawiło się już na świecie wiele różnych testów mierzących poziom tzw. inteligencji emocjonalnej. Testy takie zazwyczaj dzielą się na dwa rodzaje: testy samoopisowe i testy zdolności. Testy typu self-report są najbardziej upowszechnione, ponieważ są zdecydowanie najłatwiejsze do przeprowadzenia i oceny. Respondenci odpowiadają na pytania lub stwierdzenia, oceniając swoje własne zachowania.</p>
+<p>Na przykład, na stwierdzenie takie jak „<em>Często czuję, że rozumiem, co czują inni</em>„, osoba badana może opisać to stwierdzenie jako nie zgadzam się, trochę się nie zgadzam, zgadzam się lub zdecydowanie się zgadzam. Testy umiejętności polegają z kolei na tym, że ludzie reagują na sytuacje, a następnie oceniają swoje umiejętności. Metody te wymagają jednak często zademonstrowania swoich umiejętności, które następnie są oceniane przez osobę trzecią.</p>
+<p>Jeśli bierzemy udział w teście inteligencji emocjonalnej przeprowadzanym przez specjalistę od zdrowia psychicznego, oto dwie miary, które mogą być użyte:</p>
+<ul>
+<li><strong>Test Inteligencji Emocjonalnej Mayera-Saloveya-Caruso (MSCEIT)</strong> oparty na umiejętnościach, który mierzy cztery gałęzie modelu EI Mayera i Saloveya. Osoby badane tą metodą wykonują zadania mające na celu ocenę ich zdolności do postrzegania, identyfikowania, rozumienia i zarządzania emocjami.</li>
+<li><strong>Inwentarz Kompetencji Emocjonalnych i Społecznych (ESCI)</strong> – oparty na starszym instrumencie znanym jako Kwestionariusz Samooceny i polega na tym, że osoby, które znają daną osobę, oceniają jej zdolności w kilku różnych kompetencjach emocjonalnych. Test ma na celu ocenę zdolności społecznych i emocjonalnych, które pomagają wyróżnić ludzi jako silnych liderów.</li>
+</ul>
+<p>Istnieje oczywiście szereg innych, o wiele bardziej nieformalnych zasobów online, z których wiele jest darmowych, aby zbadać swoją inteligencję emocjonalną.</p>
+<h2>Składowe badań inteligencji emocjonalnej</h2>
+<p>Badacze sugerują, że istnieją cztery różne poziomy inteligencji emocjonalnej, w tym percepcja emocji, zdolność rozumowania z wykorzystaniem emocji, zdolność rozumienia emocji oraz zdolność zarządzania emocjami (<span class="mntl-inline-citation mntl-dynamic-tooltip--trigger" data-id="#citation-1" data-tooltip-position-x="center" data-tooltip-position-y="bottom"><em>Salovey P, Mayer J.</em> <a data-component="link" data-ordinal="1" data-source="inlineLink" data-type="externalLink" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.385.4383&amp;rep=rep1&amp;type=pdf" rel="noopener" target="_blank">Emotional Intelligence</a>. <em>Imagination, Cognition, and Personality.</em> 1990;9(3):185-211.</span>)</p>
+<ul>
+<li><strong>Postrzeganie emocji:</strong> Pierwszym krokiem w zrozumieniu emocji jest ich dokładne postrzeganie. W wielu przypadkach może to obejmować zrozumienie sygnałów niewerbalnych, takich jak język ciała i mimika twarzy.</li>
+<li><strong>Myślenie emocjami:</strong> Kolejny krok polega na wykorzystaniu emocji do wspierania myślenia i aktywności poznawczej. Emocje pomagają ustalić priorytety, na które zwracamy uwagę i reagujemy; reagujemy emocjonalnie na rzeczy, które przyciągają naszą uwagę.</li>
+<li><strong>Zrozumienie emocji:</strong> Emocje, które odczuwamy mogą nieść ze sobą wiele różnych znaczeń. Jeśli ktoś wyraża gniewne emocje, obserwator musi zinterpretować przyczynę gniewu tej osoby oraz to, co może on oznaczać. Na przykład, jeśli nasz szef zachowuje się gniewnie, może to oznaczać, że jest niezadowolony z naszej pracy, albo że dostał mandat za przekroczenie prędkości w drodze do pracy lub że pokłócił się ze swoim partnerem.</li>
+<li><strong>Zarządzanie emocjami:</strong> Umiejętność skutecznego zarządzania emocjami jest kluczową częścią inteligencji emocjonalnej i najwyższym jej poziomem. Regulowanie emocji i odpowiednie reagowanie, jak również reagowanie na emocje innych to ważne aspekty zarządzania emocjami.</li>
+</ul>
+<p>Te cztery gałęzie modelu są uporządkowane według złożoności, z bardziej podstawowymi procesami na niższych poziomach i bardziej zaawansowanymi na wyższych. Na przykład, najniższe poziomy obejmują spostrzeganie i wyrażanie emocji, podczas gdy wyższe poziomy wymagają większego świadomego zaangażowania i obejmują regulację emocji.</p>
+<h2>Wpływ inteligencji emocjonalnej</h2>
+<p>W ostatnich latach wzrosło zainteresowanie nauczaniem i uczeniem się inteligencji społecznej i emocjonalnej. Programy społecznego i emocjonalnego uczenia się  stały się standardową częścią programu nauczania w wielu szkołach na całym świecie. Celem tych inicjatyw jest nie tylko poprawa zdrowia i samopoczucia, ale także pomoc uczniom w osiąganiu sukcesów w nauce i zapobieganie mobbingowi. Istnieje wiele przykładów na to, jak inteligencja emocjonalna może odgrywać rolę w codziennym życiu.</p>
+<blockquote><p><strong>Osoby o silnej inteligencji emocjonalnej są w stanie brać pod uwagę perspektywy, doświadczenia i emocje innych ludzi i wykorzystywać te informacje do wyjaśnienia, dlaczego ludzie zachowują się tak, a nie inaczej.</strong></p></blockquote>
+<h3>Myślenie przed reakcją</h3>
+<p>Ludzie inteligentni emocjonalnie wiedzą, że emocje mogą być potężne, ale również tymczasowe. Kiedy ma miejsce silnie naładowane emocjonalnie wydarzenie, takie jak złość na współpracownika, inteligentną emocjonalnie reakcją jest poświęcenie trochę czasu przed odpowiedzią. Dzięki temu każdy może uspokoić swoje emocje i pomyśleć bardziej racjonalnie o wszystkich czynnikach otaczających kłótnię.</p>
+<h3>Większa świadomość siebie</h3>
+<p>Ludzie inteligentni emocjonalnie są nie tylko dobrzy w myśleniu o tym, jak inni ludzie mogą się czuć, ale są również biegli w rozumieniu swoich własnych uczuć. Samoświadomość pozwala ludziom rozważyć wiele różnych czynników, które przyczyniają się do powstania w nich danychemocji.</p>
+<h3>Empatia dla innych</h3>
+<p>Dużą częścią inteligencji emocjonalnej jest zdolność do myślenia i empatii w stosunku do tego, co czują inni ludzie. Często wiąże się to z zastanowieniem się, jak zareagowalibyśmy, gdybyśmy znaleźli się w tej samej sytuacji.</p>
+<h2>Jak korzystać z potęgi emocjonalnej inteligencji?</h2>
+<p>Inteligencja emocjonalna może być wykorzystywana na wiele różnych sposobów w codziennym życiu. Niektóre różne sposoby praktykowania inteligencji emocjonalnej obejmują:</p>
+<ul>
+<li>Umiejętność przyjmowania krytyki i odpowiedzialności,</li>
+<li>Zdolność do przejścia do następnego etapu po popełnieniu błędu,</li>
+<li>Umiejętność mówienia „nie”, gdy jest to konieczne,</li>
+<li>Umiejętność dzielenia się swoimi uczuciami z innymi,</li>
+<li>Umiejętność rozwiązywania problemów w sposób, który jest korzystny dla wszystkich empatia dla innych ludzi,</li>
+<li>Doskonałe umiejętności słuchania,</li>
+<li>Wiedzieć, dlaczego robi się rzeczy, które się robi,</li>
+<li>Nie osądzanie innych.</li>
+</ul>
+<p>Inteligencja emocjonalna jest niezbędna na drodze do osiągnięcia dobrej komunikacji interpersonalnej. Niektórzy eksperci uważają, że ta umiejętność jest ważniejsza w określaniu sukcesu życiowego niż samo IQ. Na szczęście istnieją metody, które można wykorzystać, aby wzmocnić swoją własną inteligencję społeczną i emocjonalną.</p>
+<blockquote><p><strong>Zrozumienie emocji może być kluczem do lepszych relacji, lepszego samopoczucia i silniejszych umiejętności komunikacyjnych.</strong></p></blockquote>
+<h2>Jak poprawić nasze umiejętności emocjonalne?</h2>
+<p>Bycie inteligentnym emocjonalnie jest ważne, ale jakie kroki możemy podjąć, aby poprawić swoje własne umiejętności społeczne i emocjonalne? Oto kilka wskazówek.</p>
+<h3>Słuchanie</h3>
+<p>Jeśli chcemy zrozumieć, co czują inni ludzie, pierwszym krokiem jest zwrócenie uwagi. Należy poświęcić czas na słuchanie tego, co ludzie próbują nam powiedzieć, zarówno werbalnie, jak i niewerbalnie. Język ciała może nieść ze sobą wiele znaczeń. Kiedy wyczujemy, że ktoś czuje się w określony sposób, zastanówmy się nad różnymi czynnikami, które mogą przyczynić się do powstania tej emocji.</p>
+<h3>Wczuwanie się w sytuację</h3>
+<p>Odbieranie emocji jest bardzo ważne, ale musimy również umieć postawić się w sytuacji drugiej osoby, aby naprawdę zrozumieć jej punkt widzenia. Ćwiczmy empatyzowanie z innymi ludźmi. Wyobraźmy sobie, jak bowiem byśmy się czuli w sytuacji drugiego człowieka. Takie działania mogą pomóc zbudować emocjonalne zrozumienie konkretnej sytuacji, a także rozwinąć silniejsze umiejętności emocjonalne w dłuższej perspektywie.</p>
+<h3>Refleksja</h3>
+<p>Umiejętność rozumowania emocji jest ważną częścią inteligencji emocjonalnej. Zastanówmy się, jak nasze własne emocje wpływają na podejmowane przez nas decyzje i zachowania. Kiedy myślimy o tym, jak reagują inni ludzie, oceńmy rolę, jaką odgrywają ich emocje. Dlaczego ta osoba czuje się w ten sposób? Czy istnieją jakieś niewidoczne czynniki, które mogą przyczyniać się do tych uczuć? W jaki sposób nasze emocje różnią się od emocji tej osoby? W miarę zgłębiania tych pytań, może się okazać, że łatwiej jest nam zrozumieć rolę, jaką emocje odgrywają w myśleniu i zachowaniu ludzi.</p>
+<h2>Wady i pułapki</h2>
+<p>Posiadanie niższych umiejętności w zakresie inteligencji emocjonalnej może prowadzić do wielu potencjalnych pułapek, które mogą wpływać na wiele obszarów życia, w tym pracę i związki. Ludzie, którzy mają mniej rozwinięte umiejętności emocjonalne, mają tendencję do wdawania się w częstsze kłótnie, mają niższą jakość związków i słabe umiejętności radzenia sobie z ładunkiem emocjonalnym.</p>
+<p>Niski poziom inteligencji emocjonalnej może mieć wiele wad, ale posiadanie bardzo wysokiego poziomu umiejętności emocjonalnych może również wiązać się z wyzwaniami. Badania sugerują, że osoby o wysokiej inteligencji emocjonalnej mogą być w rzeczywistości mniej kreatywne i innowacyjne. Osoby o wysokiej inteligencji emocjonalnej mogą mieć trudności z przekazywaniem negatywnych informacji zwrotnych z obawy przed zranieniem uczuć innych osób. Analizy pokazały również, że wysokie EQ może być czasem wykorzystywane do celów manipulacyjnych i zwodniczych.</p>
+<h2>Czy EQ to klucz do życiowego sukcesu?</h2>
+<p>Inteligencja emocjonalna jako termin pojawiła się w naszym słowniku dopiero około 1990 roku. Mimo że jest to stosunkowo nowa kwestia, zainteresowanie ogromnie wzrosło. Już w latach trzydziestych XX wieku psycholog Edward Thorndike opisał pojęcie „i<em>nteligencji społecznej</em>” jako zdolności do dogadywania się z innymi ludźmi.</p>
+<p>W latach 40. XX wieku psycholog David Wechsler zaproponował, że różne efektywne komponenty inteligencji mogą odgrywać ważną rolę w tym, jak ludzie odnoszą sukcesy w życiu. W latach 50. XX wieku powstała szkoła myślenia znana jako psychologia humanistyczna, a myśliciele tacy jak Abraham Maslow skupili większą uwagę na różnych sposobach, w jakie ludzie mogą budować siłę emocjonalną.</p>
+<p>Innym ważnym pojęciem, które pojawiło się w rozwoju inteligencji emocjonalnej, było pojęcie inteligencji wielorakich. Koncepcja ta została wysunięta w połowie lat 70. przez Howarda Gardnera, wprowadzając pomysł, że inteligencja to coś więcej niż tylko pojedyncza, ogólna zdolność.</p>
+<p>W 1995 roku pojęcie inteligencji emocjonalnej zostało spopularyzowane po opublikowaniu książki Daniela Golemana „<em>Inteligencja emocjonalna:</em> Dlaczego może mieć większe znaczenie niż IQ?” Od tamtej pory temat inteligencji emocjonalnej cieszy się niesłabnącym zainteresowaniem opinii publicznej i stał się ważny w dziedzinach spoza psychologii, w tym w edukacji i biznesie.</p>
+</article>
+<article class="et_pb_post post-4790 post type-post status-publish format-standard has-post-thumbnail hentry category-okiem-badacza tag-analiza-emocji tag-analiza-sentymentu tag-analiza-tekstu tag-badanie-emocji tag-emocje-w-internecie" id="post-4790">
+<a class="entry-featured-image-url" href="/dlaczego-lepiej-analizowac-emocje-w-tekscie-zamiast-sentyment/">
+<img alt="Dlaczego lepiej analizować emocje w tekście zamiast sentyment?" class="" height="675" src="/wp-content/uploads/2020/05/narzedzia-sentimenti-emocje-podstawowe-kolo-emocji-plutchika.jpg" width="1080"/> </a>
+<h2 class="entry-title"><a href="/dlaczego-lepiej-analizowac-emocje-w-tekscie-zamiast-sentyment/">Dlaczego lepiej analizować emocje w tekście zamiast sentyment?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/igors/" rel="author" title="Wpisy Igor Starczak">Igor Starczak</a></span> | <span class="published">lis 6, 2021</span> | <a href="/category/okiem-badacza/" rel="category tag">Okiem badacza</a></p><p><strong>Gdy w początkach lat 2000. do działań marketingowych zaczęto wykorzystywać analizę sentymentu, przed branżą marketingu i reklamy otworzyły się szerokie horyzonty. Poznanie nastrojów konsumenckich pozwoliło na lepszą walidację działań i precyzyjniejsze targetowanie grup docelowych. Dziś, 20 lat później, otwierają się kolejne drzwi – zamiast badać tylko sentyment, można już badać emocje, a to daje jeszcze więcej korzyści. Jakich?</strong></p>
+<div class="wptb-container-legacy" data-table-id="4794">
+<table class="wptb-preview-table wptb-element-main-table_setting-4794 edit-active" data-reconstraction="1" data-table-columns="1" data-wptb-cells-width-auto-count="1" data-wptb-extra-styles="LyogRW50ZXIgeW91ciBjdXN0b20gQ1NTIHJ1bGVzIGhlcmUgKi8=" data-wptb-table-tds-sum-max-width="132" role="table" style="border: 1px solid rgb(209, 209, 209);"><tbody><tr class="wptb-row"><td class="wptb-cell" data-wptb-css-td-auto-width="true" data-x-index="0" data-y-index="0" style="border: 1px solid rgb(209, 209, 209);"><div class="wptb-text-container wptb-ph-element wptb-element-text-1"><div class="" style="position: relative;"><p class=""><strong>Z TEGO ARTYKUŁU DOWIESZ SIĘ:</strong><br/></p></div></div></td></tr><tr class="wptb-row"><td class="wptb-cell" data-wptb-css-td-auto-width="true" data-x-index="0" data-y-index="1" style="border: 1px solid rgb(209, 209, 209);"><div class="wptb-text-container wptb-ph-element wptb-element-text-2"><div class="" style="position: relative;"><p></p></div></div><div class="wptb-list-container wptb-ph-element wptb-element-list-1"><ul> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="1.">Jaka jest różnica między sentymentem a emocją?</p></div> </li> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="2.">Czym różnią się analiza sentymentu i analiza emocji?</p></div> </li> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="3.">Jak w praktyce wyglądają wyniki działania obu algorytmów?</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="4.">Analiza emocji jest skuteczna nie tylko w Content Marketingu</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="5.">Perspektywy rozwoju narzędzi do analizy emocji</p></div> </li> </ul></div></td></tr></tbody></table>
+</div>
+<h2>Sentyment a emocje – czym się różnią? Lista emocji</h2>
+<p>Na początek jednak poznaj definicje sentymentu i emocji – najważniejsze różnice pojawiają się już na tym poziomie, bo sentyment i emocje to dwa różne zjawiska.</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li aria-level="1"><b>Sentyment </b>jest stanem, w którym przeżywająca emocje osoba potrafi nazwać to, czego doświadcza, połączyć owo doświadczenie z myślami o swoim przeżyciu, a następnie podjąć świadomą decyzję wobec źródła bodźca. Sentyment jest więc sumą reakcji fizjologicznych (z ciała) i procesów poznawczych, spowodowanych doświadczeniem emocji. Jako, że jest to stan uświadomiony, to może podlegać podtrzymywaniu przez doświadczającą go osobę. Ogólnie rzecz biorąc – to szeroko pojęte nastawienie psychiczne wobec danego doświadczenia.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li aria-level="1"><b>Emocje </b>zaś to fizjologiczna i – w konsekwencji – psychiczna reakcja mózgu na bodziec zewnętrzny lub przeżycie z takim bodźcem związane. Doświadczenie połączone z reakcją ciała (działanie hormonów) powoduje krótkotrwały i nieuświadomiony stan, który prowadzi do podjęcia konkretnego działania, np. rozpoczęcia walki, ucieczki, zamrożenia się, zachwytu, wstrętu itd. Co ważniejsze – każda z emocji związana jest z innym typem reakcji, której efektem jest odmienne zachowanie.</li>
+</ul>
+<p>Jak więc widzisz, bez przeżycia emocji nie można doświadczyć stanu sentymentu. Emocje działają na poziomie najniższym, behawioralnym, sentyment zaś jest ich przetworzeniem, przemyśleniem i ustosunkowaniem się osoby przeżywającej. Emocje powodują reakcje spontaniczne, z kolei sentyment – świadome i kontrolowane. No i najistotniejsza różnica – w samym tylko pierwotnym rozumieniu emocji jest ich 8 podstawowych (wg teorii Plutchika są to radość, smutek, złość, strach, wstręt, zaskoczenie, oczekiwanie i zaufanie), a po kombinacji powstają wtórne, wyższe, prowadzące do wytworzenia się uczuć. W przypadku sentymentu będziemy jedynie mówić o sentymencie pozytywnym i negatywnym, czasami wyróżniając też neutralny.</p>
+<h2>Poznajemy emocje. Monitoring mediów vs Sentitool – porównanie możliwości narzędzi</h2>
+<p>Tak, jak różnią się oba zjawiska, tak będą się różnić narzędzia do ich badania. Narzędzia te wykorzystują zaawansowane technologie, oparte o programowanie neurolingwistyczne, machine learning i inne algorytmy AI. Obecnie na polskim rynku firm zajmujących się analizą sentymentu w treściach internetowych znajdziesz kilka znaczących, mających wręcz już renomę marek, ale w dziedzinie badania emocji – w praktyce – tylko jedną, za to pionierską – Sentimenti. Poniżej znajdziesz porównanie ogólnych możliwości narzędzi do analizy sentymentu i emocji.</p>
+<div class="wptb-container-legacy" data-table-id="4792">
+<table class="wptb-preview-table wptb-element-main-table_setting-4792 edit-active" data-reconstraction="1" data-table-columns="2" data-wptb-cells-width-auto-count="2" data-wptb-extra-styles="LyogRW50ZXIgeW91ciBjdXN0b20gQ1NTIHJ1bGVzIGhlcmUgKi8=" data-wptb-table-tds-sum-max-width="263" role="table" style="border: 1px solid rgb(209, 209, 209);"><tbody><tr class="wptb-row"><td class="wptb-cell" data-wptb-css-td-auto-width="true" data-x-index="0" data-y-index="0" style="border: 1px solid rgb(209, 209, 209);"><div class="wptb-text-container wptb-ph-element wptb-element-text-1"><div class="" style="position: relative;"><p class="" style="text-align: center;"><strong>ANALIZA SENTYMENTU</strong><br/></p></div></div></td><td class="wptb-cell" data-wptb-css-td-auto-width="true" data-x-index="1" data-y-index="0" style="border: 1px solid rgb(209, 209, 209);"><div class="wptb-text-container wptb-ph-element wptb-element-text-2"><div class="" style="position: relative;"><p style="text-align: center;"><strong>ANALIZA EMOCJI</strong></p></div></div></td></tr><tr class="wptb-row"><td class="wptb-cell" data-wptb-css-td-auto-width="true" data-x-index="0" data-y-index="1" style="border: 1px solid rgb(209, 209, 209);"><div class="wptb-text-container wptb-ph-element wptb-element-text-3"><div class="" style="position: relative;"><p></p></div></div><div class="wptb-list-container wptb-ph-element wptb-element-list-1"><ul> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="1.">zbadanie ogólnego wydźwięku wypowiedzi internautów, autorów artykułów etc.</p></div> </li> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="2.">określenie wrażenia i nastawienia użytkownika po przeczytaniu danego tekstu</p></div> </li> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="3.">łatwość przetwarzania i szacowania wyników analizy</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="4.">przydatna do oceny wzmiankowania marki w sieci, zarządzania mediami społecznościowymi i komunikacją z klientami, w tym obsługi reklamacji</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="5.">wsparcie komunikacji kryzysowej</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="6.">porównywanie nastawienia konsumentów do produktów własnych i konkurencji</p></div> </li> </ul></div></td><td class="wptb-cell" data-wptb-css-td-auto-width="true" data-x-index="1" data-y-index="1" style="border: 1px solid rgb(209, 209, 209);"><div class="wptb-text-container wptb-ph-element wptb-element-text-4"><div class="" style="position: relative;"><p></p></div></div><div class="wptb-list-container wptb-ph-element wptb-element-list-2"><ul> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="1.">zbadanie instynktownych reakcji internautów i intencji twórców</p></div> </li> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="2.">możliwość dotarcia do emocji stojących za danym sentymentem i określenia przyszłych działań osób komentujących</p></div> </li> <li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="3.">dużo większy zakres zbieranych informacji (8 emocji, analiza sentymentu i pobudzenie emocjonalne)</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="4.">możliwość pracy na bardzo dużych grupach respondentów</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="5.">ocena nastrojów konsumenckich przed i po kampanii reklamowej</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="6.">walidacja strategii marketingowych</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="7.">monitoring emocji o firmie we wzmiankach online</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="8.">prowadzenie komunikacji kryzysowej</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="9.">porównanie postrzegania marek</p></div> </li><li class="wptb-in-element"> <div class="wptb-list-item-content" style="position: relative;"><p data-list-style-type-index="10.">analiza emocji powiązanych z influencerami, youtuberami, blogerami itd. w celu trafnego wyboru ambasadora marki</p></div> </li> </ul></div></td></tr></tbody></table>
+</div>
+<p><b>Wniosek:</b> popularne (nawet w branży) stosowanie terminów <i>analiza sentymentu</i> i <i>analiza emocji</i> jest niepoprawne. Sentyment jest pojęciem zdecydowanie węższym, wskazującym w praktyce tylko wydźwięk wypowiedzi i – ewentualnie – nastrój jej autora. Tymczasem analiza emocji opisuje poziom poszczególnych emocji (otrzymujemy procentowy wynik 8 składowych, do tego rodzaj sentymentu i wartość pobudzenia emocjonalnego); mając takie dane można z wysokim prawdopodobieństwem przewidzieć reakcje i zachowania konsumenckie.</p>
+<p>Jak widzisz, jest to duża ilość danych, które są szczegółowe; ich analiza jest trudniejsza do przeprowadzenia, za to dokładniejsza i bardziej przekrojowa. Jak wskazuje Sentimenti, katalog ich algorytmu zawiera aż 30 tys. słów i fraz zebranych na grupie 22 tys. osób, zaś sam algorytm został opracowany przy współpracy z Politechniką Wrocławską i Pracownią Obrazowania Mózgu PAN.</p>
+<h2>Jak w praktyce wyglądają wyniki działania obu algorytmów?</h2>
+<p>Pora na praktykę! Przyjrzyj się poniższej analizie, której poddana została taka oto opinia:</p>
+<p><i>Nigdy więcej nie kupię nic na śmierdzącym V(…). Stwierdziłam ostatnio, że nie chce kupować tragicznych ubrań w sieciówkach, no to kupiłam tam i stan podobno idealny, bez śladu użytkowania, ale z plamą, którą widać. Babsko mi pisze, ze jak wysyłała, to nie było. </i></p>
+<p>Opinia ta jest autentyczna i wzięta bezpośrednio z portalu. Co z niej odczytasz, dokonując pomiaru sentymentu, a co emocji?</p>
+<blockquote><p><b>Wyniki:</b> złość – 70%, strach – 45%, oczekiwanie – 24%, zaskoczenie –    57%, zaufanie – 14%, smutek – 60%, wstręt – 62%, radość – 10%, sentyment pozytywny – 10%, sentyment negatywny – 70%, pobudzenie emocjonalne – 72%.</p></blockquote>
+<p>Wypowiedź jest komentarzem zawiedzionej klientki, która zamiast dokonać zakupu w jednym z popularnych butików, postanowiła sięgnąć po (jej zdaniem) lepszej jakości ubrania używane. Zakup okazał się nietrafiony, a ubranie – zaplamione, choć miało być w dobrym stanie. Kupująca jest zdecydowanie wzburzona (pobudzenie w wysokości 72%), zła (wysoki poziom – aż 70%), odczuwa też wstręt (62%) i smutek (60%) – oczekiwała wszak dobrego zakupu. Zwróć uwagę, że kobieta w ekspresji emocji ma dość wysoki poziom zaskoczenia (57%) i strachu (45%) – gdy dołożysz do tego wynik wstrętu to zrozumiesz, że jest to jej fizyczna reakcja na przeżycie oszustwa, jakiego ofiarą padła.</p>
+<p>A teraz spójrz na tę samą wypowiedź pod kątem analizy sentymentu: otrzymałeś tu dwa wyniki – negatywny (70%) i pozytywny (10%). Sentyment negatywny w komentarzu jest oczywisty nawet bez automatycznej analizy omawianej wypowiedzi – świadczą o tym zwroty <i>śmierdzący, tragiczny, plama, babsko. </i>Sformułowania <i>stan podobno idealny </i>i<i> bez śladu użytkowania </i>budują niski wynik sentymentu pozytywnego.</p>
+<p>Najważniejsze dla Ciebie informacje są jednak ukryte – zwrot <i>śmierdzący </i>odnosi się bezpośrednio do platformy zakupowej, <i>tragiczny </i>do jakości ubrań z sieciówek, zaś <i>babsko </i>– do osoby sprzedającej. Ton całości wypowiedzi w praktyce nadają epitety niezwiązane bezpośrednio z zakupionym towarem, mimo to wynik analizy sentymentu wciąż otrzymujesz negatywny.</p>
+<p><b>Wniosek:</b> Mając do dyspozycji procentowe wyniki podstawowych emocji i znając typowe reakcje fizjologiczne im odpowiadające, możesz oszacować zachowanie konsumenta w tej sytuacji. Złość utożsamiana jest z reakcją ataku (stąd komentarz na portalu), wstręt i strach – z ucieczką, a smutek – z zamrożeniem reakcji. Rozemocjonowana konsumentka prawdopodobnie przejdzie do innej platformy lub zdecyduje się na zakupy stacjonarne. Z tego portalu zapewne już nie skorzysta.</p>
+<h2>Analiza emocji jest skuteczna nie tylko w Content Marketingu</h2>
+<p>Dowiedziałeś się właśnie, jak wyglądają interpretacje wyników analizy sentymentu i analizy emocji na jednostkowym przykładzie oraz jaki zakres informacji możesz dzięki nim zyskać. Jak też pewnie zauważyłeś, analiza emocji to rozwiązanie o wiele bardziej kompletne, przekrojowe i dopasowane do potrzeb klienta. Ale czy algorytmy do badania emocji w treściach znajdą zastosowanie tylko w marketingu, piarze czy obsłudze konsumenckiej?</p>
+<p>Zdecydowanie nie. Wraz z rozwojem technologii uczenia się maszynowego (machine learning) i wdrażaniem coraz lepszych algorytmów sztucznej inteligencji możliwości analizy emocji rozszerzają się na inne branże. Emocje można już dziś badać na przykład do regularnego prognozowania kursów na rynkach giełdowych czy możliwości inwestycyjnych rynku kryptowalut.</p>
+<h2>Perspektywy rozwoju narzędzi do analizy emocji</h2>
+<p>Jeżeli powyższe informacje jeszcze nie przekonały Cię o wyższości analizy emocji nad analizą sentymentu, to zapoznaj się z perspektywami rozwoju tej pierwszej. Możliwości sztucznej inteligencji już dziś są potężne. Obecnie AI została wdrożona nie tyle do badania, co do tworzenia treści nacechowanych emocjonalnie tak, aby można było dzięki nim osiągać założone cele.</p>
+<p>Wśród tych celów znajdziemy m.in. zwiększenie konwersji z działań marketingowych, efektywniejsze pozyskiwanie leadów czy tworzenie dopasowanej do potrzeb konsumentów (sic!) obsługi klienta z uwzględnieniem potencjalnych sytuacji kryzysowych i sposobami ich uniknięcia/obejścia. Ten ostatni cel zdecydowanie poprawia User Experience i generuje większą lojalność klientów wobec marki. To z kolei prowadzi do lepszego jej wizerunku, a więc i pozycji na rynku. Tyle perspektywy rozwoju technologii. Twoja analiza sentymentu tego nie potrafi.</p>
+</article>
+<article class="et_pb_post post-4551 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy category-sentibrand tag-analiza-emocji tag-analiza-sentymentu tag-content-marketing tag-emocje tag-emocje-w-opiniach tag-emocjonalny-audyt-marki" id="post-4551">
+<a class="entry-featured-image-url" href="/emocje-zakupy-co-decyduje-o-sile-brandu/">
+<img alt="Emocje a zakupy. Co decyduje o tym, że jeden brand jest lepszy od drugiego?" class="" height="675" src="/wp-content/uploads/2021/06/emocje-zakupy-co-decyduje-o-sile-brandu.jpg" width="1080"/> </a>
+<h2 class="entry-title"><a href="/emocje-zakupy-co-decyduje-o-sile-brandu/">Emocje a zakupy. Co decyduje o tym, że jeden brand jest lepszy od drugiego?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lis 6, 2021</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Zakupy to stała część naszego życia. Każdego dnia stykamy się z ogromną liczbą mniej lub bardziej rozpoznawalnych marek i firm. Jednak tylko niektóre z nich wybieramy częściej i chętniej. Czasami dzieje się to całkowicie automatycznie. Dlaczego tak się dzieje i co decyduje o naszym wyborze? To najpewniej emocje.<br/>
+</strong></p>
+<h2><strong>Przywiązanie do marki a siła brandu. Co decyduje o naszym wyborze?<br/>
+</strong></h2>
+<p>Nie da się ukryć i jest to udowodnione, że na nasze decyzje zakupowe największy wpływ mają emocje i więź, jaka marce udało się z nami wypracować. Najnowsze badania przeprowadzone przez firmę Deloitte pt. „<em>From disparate signals </em><em>to transformative action</em>” wykazały, że emocjonalne przywiązanie do marki to czynnik decydujący podczas robienia zakupów przez grupę 80% konsumentów. Z kolei 62% z nich zadeklarowało, że z danym brandem jest w jakieś relacji.</p>
+<p>–<em> Relacja między marką a konsumentem jest szczególnie ważnym czynnikiem strategii sprzedaży, ponieważ ma bezpośredni związek z satysfakcją klienta. Przed nami jako producentami nieustannie stoi wyzwanie tworzenia coraz lepszych ofert, które będą spełniały oczekiwania konsumentów” – czytamy w raporcie.</em></p>
+<p>W jakim celu robimy zakupy? Konsumenci często robią je przede wszystkim dla poprawy nastroju. Obecnie nabycie konkretnego towaru bądź usługi wcale nie musi być już podyktowane rabatami, promocjami czy niską ceną. Kluczowe są tutaj wspomniane emocje. To one powodują, że część naszych decyzji zakupowych to decyzje mało racjonalne, podejmowane pod wypływem impulsu i chwili.</p>
+<p>Co zatem może zrobić marka, aby wygenerować emocje i stać się jeszcze bardziej przez konsumentów lubianą i rozpoznawalną? W czym tkwi sekret i moc największych brandów oraz ich komunikatów? Oprócz emocji ważne jest budowanie w odbiorcy pozytywnych skojarzeń. Warto pamiętać o dopasowaniu strategii komunikacji do grupy docelowej. Inaczej powinna wyglądać kampania reklamowa skierowana do nastolatków, a inaczej adresowana do osób w wieku 40+.</p>
+<p>Ogromną rolę w postrzeganiu marki przez konsumentów ma też identyfikacja wizualna. Żyjemy w świecie krótkich informacji, haseł i znaków. Dlatego istotne są logo, kolorystyka, symbole oraz ogólna estetyka produktów. To wszystko również tworzy wizerunek firmy w oczach kupującego i ma przełożenie na budowanie więzi pomiędzy nim a marką.</p>
+<h2><strong>Podstawa to lojalność i zaufanie do marki<br/>
+</strong></h2>
+<p>Dzisiejszy rynek obfituje w różnorodne brandy, a ciągle powstają kolejne i kolejne. Jesteśmy wręcz zalani różnego rodzaju produktami i symbolami często nie wiedząc, co to wszystko oznacza. Firmy cieszące się największą rozpoznawalnością oraz wyborem konsumentów nie spoczywają jednak na laurach i nieustannie rozwijają swoje oferty. Kluczem jest bowiem ciągła praca nad wizerunkiem, bo bez tego nie uda się zachować pozycji lidera.</p>
+<p>We wspomnianym <a href="https://www.deloittedigital.com/content/dam/delottedigital/us/documents/alliances/alliance-20210119-medallia.pdf">raporcie Deloitte</a> czytamy, że jeśli marka chce nie tylko utrzymać się na rynku, ale przede wszystkim chce się szczycić ciągłym zaufaniem, potrzeba nieustannej pracy oraz słuchania konsumentów. Oznacza to bycie na bieżąco z wszechobecnymi zmianami i nowymi trendami. Bez tego nie uda się bowiem utrzymać najwyższych standardów ani odpowiedzieć na preferencje jak największej liczby klientów.</p>
+<p>Konsument, który nawiązał z marką więź jest wówczas nie tylko cyklicznym generatorem zysku, ale i zaangażowanym odbiorcą. Budowanie długofalowych, partnerskich relacji z konsumentem to przede wszystkim odpowiedzialne i efektywne odpowiadanie na jego potrzeby. Coraz więcej firm kładzie nacisk na personalizację i uwzględnianie indywidualnych preferencji konsumentów, by dostarczać im jak najbardziej dopasowane benefity.</p>
+<p>Na wybór konkretnej marki składa się wiele czynników, ale przede wszystkim są to pozytywne emocje i skojarzenia. Do ich zbudowania potrzebny jest dialog<br/>
+z konsumentem, budząca zaufanie odpowiedź na jego potrzeby, a także zbudowanie opinii unikatowej marki, pozytywnie wyróżniającej się na tle konkurencji. Emocje możemy bez problemu poznać analizując media, w tym blogi, portale informacyjne, fora internetowe i przede wszystkim portale społecznościowe. Do tego właśnie służą <a href="/oferta/">narzędzia Sentimenti</a>.</p>
+</article>
+<article class="et_pb_post post-4798 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy category-polityka-i-spoleczenstwo tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-internecie tag-media-spolecznosciowe tag-monitoring-mediow" id="post-4798">
+<a class="entry-featured-image-url" href="/podwyzki-cen-energii-gaz-prad-2022/">
+<img alt="W górę prąd i gaz, i to niejeden raz. Jak Polacy rozmawiają o podwyżkach cen?" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2021/10/drozyzna-inflacja-podwyzki-cen-1080x628.jpg" srcset="/wp-content/uploads/2021/10/drozyzna-inflacja-podwyzki-cen-1080x628.jpg 1080w, /wp-content/uploads/2021/10/drozyzna-inflacja-podwyzki-cen-980x513.jpg 980w, /wp-content/uploads/2021/10/drozyzna-inflacja-podwyzki-cen-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/podwyzki-cen-energii-gaz-prad-2022/">W górę prąd i gaz, i to niejeden raz. Jak Polacy rozmawiają o podwyżkach cen?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">paź 8, 2021</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a>, <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a></p><p><strong>Od 1 października po raz trzeci w tym roku ma wzrosnąć cena jednostki gazu ziemnego u jego największego dostawcy w Polsce. W sumie, od początku roku cena gazu poszła o 27% w górę. Coraz wyższe rachunki wystawiają też konsumentom dostawcy prądu. Co na to rodacy? Jak odczuwają wzrost cen, jak dyskutują o tym w Internecie, jakie wreszcie wnioski z dyskusji wyciągnąć mogą sprzedawcy energii?<br/>
+</strong></p>
+<h2>Dużo złości w kontekście elektryczności</h2>
+<p>Wszyscy płacimy rachunki, wszystkich nas denerwują podwyżki opłat za media. Dlatego postanowiliśmy zbadać emocje towarzyszące innym Polakom w związku z podwyżkami cen za gaz i prąd. Przeprowadziliśmy więc <a href="/oferta/">analizę emocji</a> powiązanych z podwyżkami treści. Co nam wyszło?</p>
+<p>Na początek oczywiście wystrzeliła duża dawka negatywnych emocji, regularnie oraz skutecznie podgrzewana przez portale informacyjne przy pomocy swoich nagłówków. Kwestia podwyżek w badanym okresie niemal nie schodzi z pierwszych stron najbardziej poczytnych portali w Polsce, tematy te poruszane są przez największych wydawców nie tylko na stronie głównej, ale też i w działach skupionych na gospodarce, biznesie, finansach czy ekonomii.</p>
+<p>Miejsca te, jako, że mają dużą ilość odsłon dziennie, istotnie wpływają na odbiór podwyżek przez internautów, a to dlatego, że możliwość komentowania pod artykułami pozwala czytelnikom na “upuszczenie żółci” – mówiliśmy już o tym zjawisku w <a href="/blog/">poprzednich artykułach</a>.</p>
+<p>Kolejnym elementem podnoszącym ogólną temperaturę dyskusji są wspomniane już wyżej nagłówki, które – w imię clickbaitowej zasady – bazują nierzadko na najniższych emocjach, by wygenerować i zmaksymalizować ruch w swoich domenach. Coraz bardziej przybiera na znaczeniu trend stawiający na tzw. fake newsy – niektóre portale (przypominające w formie i przekazie papierowe tabloidy – nazwy nie podajemy celowo) poprzez swoje nagłówki i uzupełniające je treści artykułów generują maksymalne wyniki w negatywnych emocjach: np. złość 83%, strach – 100% (sic!), smutek – 100%.</p>
+<p>Taka ekstrema nie jest oczywiście prawidłowością, wskazuje jednak rosnące zainteresowanie tematyką podaną w szokujący i sensacyjny sposób. Może to być wskazówka dla osób planujących działania reklamowe, żeby wykorzystać ten trend np. do działań w typie <strong>viral marketing </strong>lub <strong>guerilla marketing, </strong>mając oczywiście na względzie wszelkie zagrożenia płynące z takich działań.</p>
+<p>Jakie wątki są ogólnie poruszane w portalach informacyjnych? Znów nie ma zaskoczenia: w portalach i w komentarzach pod artykułami podwyżki poruszane są i dyskutowane przede wszystkim w kontekście zmian klimatycznych, wysokości wpływających na końcową cenę energii opłat emisyjnych, kryzysów międzynarodowych i konfliktów militarnych mających wpływ na wielkość wydobycia paliw kopalnych i ich cenę na rynku itp.</p>
+<p>Duży podzbiór dyskusji stanowią rozmowy na temat bieżącej polityki rządu, szczególnie tej fiskalnej, ponadto wysokość płac zarządów spółek energetycznych, nietrafione i marnotrawiące zasoby finansowe inwestycje w infrastrukturę publiczną, konieczność budowy kolejnych elektrowni (atomowych), tarcza antykryzysowa etc. Rzut oka na załączone poniżej zdjęcie najczęściej podawanych kontekstów wypowiedzi i mamy w praktyce wszystko na tacy.</p>
+<div class="wp-caption alignnone" id="attachment_4800" style="width: 717px"><a href="/wp-content/uploads/2021/10/wzrost-ceny-gazu-pradu.png"><img alt="" aria-describedby="caption-attachment-4800" class="wp-image-4800 size-full" decoding="async" height="707" loading="lazy" sizes="auto, (max-width: 707px) 100vw, 707px" src="/wp-content/uploads/2021/10/wzrost-ceny-gazu-pradu.png" srcset="/wp-content/uploads/2021/10/wzrost-ceny-gazu-pradu.png 707w, /wp-content/uploads/2021/10/wzrost-ceny-gazu-pradu-512x512.png 512w, /wp-content/uploads/2021/10/wzrost-ceny-gazu-pradu-320x320.png 320w, /wp-content/uploads/2021/10/wzrost-ceny-gazu-pradu-96x96.png 96w, /wp-content/uploads/2021/10/wzrost-ceny-gazu-pradu-144x144.png 144w" width="707"/></a><p class="wp-caption-text" id="caption-attachment-4800">Rys.1 Konteksty rozmów o podwyżkach cen gazu i prądu indukujące najwyższy procent złości u dyskutujących.</p></div>
+<h2>Polacy pełni napięcia, czyli bezpośrednio o podwyżkach</h2>
+<p>Dość jednak o polityce. Przyjrzyjmy się teraz <strong>analizie emocji treści </strong>w dyskusjach Polaków, które bezpośrednio odnoszą się do działalności dostarczycieli energii. Na wstępie weźmiemy na przysłowiową tapetę konteksty rozmów. Dyskusje toczą się wokół następujących wątków:</p>
+<ul>
+<li>wzrostu cen paliw <em>per se</em> oraz przyczyn podwyżek,</li>
+<li>ceny paliw na rynkach zagranicznych i krajowych – bezpośrednio u dostawcy,</li>
+<li>stanie finansów polskich rodzin – drastyczna (występująca często fraza) podwyżka taryf pogarsza i tak trudną sytuację życiową wielu Polaków,</li>
+<li>powiązania cen paliw z cenami innych produktów na rynku,</li>
+<li>alternatywnych źródeł energii, głównie paneli fotowoltaicznych i elektrowni wiatrowych.</li>
+</ul>
+<p>Oczywiście i w tych dyskusjach pojawiają się konteksty polityczne (nie da się ich uniknąć), jednak tu obserwujemy już inny trend – w myśl zasady, że bliższa koszula ciału – odnoszący się bezpośrednio do własnych finansów. Polacy ubolewają i obawiają się, że nadchodzące podwyżki poważnie nadszarpną ich domowe budżety oraz wpłyną na ogólny wzrost cen towarów i usług. Portal Money.pl szacuje, że podwyżka cen zwiększy wydatki na prąd polskich rodzin nawet o 169 zł w skali roku. Dla zobrazowania spójrzmy na chmurę tagów z tego zakresu:</p>
+<div class="wp-caption alignnone" id="attachment_4801" style="width: 717px"><a href="/wp-content/uploads/2021/10/podwyzki-cen-gazu-pradu-drozyzna.png"><img alt="" aria-describedby="caption-attachment-4801" class="wp-image-4801 size-full" decoding="async" height="707" loading="lazy" sizes="auto, (max-width: 707px) 100vw, 707px" src="/wp-content/uploads/2021/10/podwyzki-cen-gazu-pradu-drozyzna.png" srcset="/wp-content/uploads/2021/10/podwyzki-cen-gazu-pradu-drozyzna.png 707w, /wp-content/uploads/2021/10/podwyzki-cen-gazu-pradu-drozyzna-512x512.png 512w, /wp-content/uploads/2021/10/podwyzki-cen-gazu-pradu-drozyzna-320x320.png 320w, /wp-content/uploads/2021/10/podwyzki-cen-gazu-pradu-drozyzna-96x96.png 96w, /wp-content/uploads/2021/10/podwyzki-cen-gazu-pradu-drozyzna-144x144.png 144w" width="707"/></a><p class="wp-caption-text" id="caption-attachment-4801">Rys. 2 Konteksty rozmów internautów o podwyżkach taryf mediów w szerszym kontekście, czyli z kontekstem politycznym</p></div>
+<p> </p>
+<p>Do tego – co ważne dla poszczególnych spółek – częściej pojawiają się wypowiedzi bezpośrednio punktujące oferty i taryfy dostawców. Przykład:</p>
+<p><em>Za prąd który zakupuję od Taurona płacę 50 zł miesięcznie. Rachunek zaś wynosi do zapłaty 175 zł. 125 zł to podatek, opłaty stałe, zmienne, mocowe itd !! Może by tak zrobić z chlebkiem? Na półce chlebek 5 zł. Przy kasie – chleb 5 zł, opłata półkowa 2,50, opłata zbożowa 2,50, opłata transportowa 2,50, opłata chlebowa 2,50, opłata kasjerska 2,50 i razem chlebek – 17 ,50. A i jeszcze napisy !! Prąd jest tani i Chlebek jest tani !! </em></p>
+<p>Wyniki: złość – 75%, strach – 52%, oczekiwanie – 35%, zaskoczenie – 82%, zaufanie – 9%, smutek – 67%, wstręt – 55%, radość – 10%, sentyment pozytywny – 13%, sentyment negatywny – 66%, pobudzenie emocjonalne – 77%.</p>
+<p>Poza oczywistym wątkiem politycznym (podatki) na wierzch przebijają się w cytowanej wypowiedzi złość (75%), zaskoczenie (82%) i strach (52%), emocje te spowodowane są różnicą pomiędzy tym, co w ofercie (50 zł za taryfę), a rzeczywistym rachunkiem (ukryte opłaty za moc, tranzyt itp.).</p>
+<p>Jaki mamy wniosek dla spółek energetycznych? Najlepiej byłoby w komunikacji i w ofercie przejrzyście pokazać lub przynajmniej oszacować przyszłe koszty, ze szczególnym uwzględnieniem dotychczas ukrytych opłat. Dzięki temu klienci będą się czuli właściwie i uczciwie poinformowani, a nie naciągnięci na quasi-atrakcyjną ofertę, której koszty po czasie okazują się trzykrotnie wyższe. Czy jest to w ogóle możliwe? Konkurencja w branży jest w zasadzie żadna, zatem z całą pewnością na taką transparentność będziemy musieli jeszcze długo poczekać.</p>
+<p>Z przebadanych przez <strong>Sentimenti </strong>dyskusji wynika za to wniosek dla<strong> branży OZE: </strong>w obliczu podwyżek indywidualni odbiorcy coraz częściej i chętniej dyskutują o alternatywnych źródłach energii, szczególnie elektrycznej. Pojawiają się wątki porównujące określone technologie, opłacalność rozwiązań czy komentarze odnoszące się do zalet i wad w trakcie użytkowania.</p>
+<p>Co ciekawe, rozmowy te są poparte interesującym kontekstem politycznym – internauci uważają, że zamiast inwestować w kopalnie węgla i podwyżki płac dla górników, należało inwestować w OZE, dzięki czemu podwyżki byłybu dziś o wiele niższe, z korzyścią również dla środowiska. Mamy tu więc <em>sui generis</em> odzwierciedlenie determinizmu ekonomicznego – dzięki podwyżkom i takiej, a nie innej polityce rządu (oraz kontrolowanych przez niego spółek energetycznych) wśród obywateli utwierdza się przekonanie o konieczności inwestowania w Odnawialne Źródła Energii – z korzyścią nie tylko dla własnego portfela, ale i dla natury.</p>
+<h2>Rząd i spółka: Polacy o dostawcach energii</h2>
+<p>Jak wreszcie Polacy dyskutują o samych spółkach? Jakie poruszają konteksty, jaka jest temperatura w rozmowach o poszczególnych firmach? Przeprowadziliśmy <a href="/oferta/analiza-emocji-w-tekscie/">analizę emocji wzmianek</a> również w tym zakresie, oto nasze obserwacje.</p>
+<p>Oczywiście największy ruch we wzmiankach znowu generują portale informacyjne, przede wszystkim tam wymieniane są nazwy spółek: Energa, Enea, PGE, Tauron oraz PGNiG. Wzmianki te dotyczą bieżących wydarzeń politycznych i ekonomicznych, zawierają najczęściej wypowiedzi polityków i pracowników wymienionych spółek oraz komentarz portalu, na którym zostały opublikowane. Wynik ten jest dodatkowo wsparty publikacjami tychże portali treści w mediach społecznościowych.</p>
+<p>W indywidualnych dyskusjach nazwy firm również pojawiają się przede wszystkim w kontekście rozmów o polityce – dyskusja trwa o cenach na rynku światowym, o polityce klimatycznej, podatkach, opłatach itp. Spora część nieprzychylnych komentarzy odnosi się jednak do bezpośredniej realizacji polityki rządu w działaniu spółek energetycznych – przede wszystkim do zwiększania kosztów na indywidualnych rachunkach (i tym samym drenowania kieszeni obywateli) o opłaty transferowe, magazynowe, manipulacyjne itp. Oto przykład takiego komentarza:</p>
+<p><em>Koleżanka dostała z PGE nowe rachunki na 6- miesięczny okres jesień – zima z rozliczeniem 6 – miesięcznego okresu wiosennego. Płaci miesięcznie ok. 100 zł. Wyliczyli jej 300 zł. niedopłaty. W lecie przez 2 mies. nie było jej w domu (działka wyjazdy). Czyli podwyżkę cen prądu ukryli w dopłatach. 300 zł. podzielić na 6 mies. średnio daje 50 zł. podwyżki na miesiąc czyli 50 procent podwyżki, biorąc pod uwagę że płaciła 100 zł. na miesiąc.</em></p>
+<p>Wyniki <strong>analizy emocji treści</strong>: złość – 69%, strach – 48%, oczekiwanie – 36%, zaskoczenie – 73%, zaufanie – 11%, smutek – 69%, wstręt – 43%, radość – 11%, sentyment pozytywny – 11%, sentyment negatywny – 61%, pobudzenie emocjonalne – 70%.</p>
+<p>Jak widać, nieinformowanie o bezpośredniej wielkości podwyżek nie zmienia u odbiorców negatywnych emocji powiązanych z daną marką i samą podwyżką w ogóle: w dalszym ciągu wywołuje to w przeciętnym Polaku złość, zaskoczenie, smutek oraz wstręt, których wyniki w przypadku cytowanego komentarza są w górnych rejestrach. Złość jednak jest tym większa, że informacja nie zostaje przekazana bezpośrednio, a zamaskowana w opłatach.</p>
+<p>Ukrywanie to może oddziaływać na sfrustrowanych klientów tak, że zajmą się oni poszukiwaniem innych, alternatywnych źródeł energii choćby tylko po to, by zmniejszyć wysokość rachunków przez ograniczenie samego poboru przy niezmiennie wysokiej liczbie płaconych danin. Przykład z niemałej grupy komentarzy tego typu:</p>
+<p><em>Jedyne czego się boję, to wzrostu opłat stałych. Wydałem na fotowoltaikę 16 tys, zwrócili mi 5 tys dotacji i ok. 2 tys. z podatku. Teraz rachunek za 6 miesięcy 108 zł. Tylko opłaty stałe. Za 6-7 lat inwestycja się zwróci. Podwyżkami za kWH się nie martwię. Regulują ceny energii, niby dla naszego dobra zamrozili ceny osobom prywatnym, a firmy energetyczne odbijają to sobie na przedsiębiorcach. Firmom podnoszą cenę za prąd. Ceny produkcji rosną, a więc ceny towarów, za które płacimy (…). </em></p>
+<p>Wyniki: złość – 64%, strach – 58%, oczekiwanie – 38%, zaskoczenie – 70%, zaufanie – 10%, smutek – 69%, wstręt – 40%, radość – 12%, sentyment negatywny – 53%, sentyment pozytywny – 11%, pobudzenie emocjonalne – 68%.</p>
+<p>Jak widać, konsument wykonał już inwestycję w instalację OZE, żeby móc zmniejszyć rachunki pomimo rosnących opłat stałych. Jest zaskoczony, smutny i zezłoszczony na sytuację, w której spółka wysokości utrzymuje wysokość rachunków przez podnoszenie opłat, co przekłada się także na ogólnie droższe życie.</p>
+<p>Popatrzmy na koniec na ciekawy przykład komentarza bezpośrednio odnoszącego się do sposobu obsługi klienta indywidualnego i jego doświadczeniach z pracownikami tzw. pola. Jest to jeden z tych komentarzy, które bezpośrednio pokazują negatywne doświadczenie klienta z firmą i budują w ten sposób jej niepochlebny obraz. Informują też innych o sposobie traktowania klientów przez tę firmę.</p>
+<p><em>Po tym cyrku z gazem zgłosiłem do PGNIG o sprawdzenie licznika to te cwaniaki przyjechali zdjęli licznik i zaczęli latać po domu sprawdzać czy nie ma wycieku, w domu nie było to podeszli do pieca w piwnicy i zaczęli grzebać przy piecu ruszać śrubunki, to było 21 luty. Dwa tygodnie wcześniej miałem serwisanta od pieca który dokładnie po czyszczeniu sprawdził i jak oni rozkręcili śrubunki to nie ma cudu żeby nie było wycieku, więc zadzwoniłem do tego serwisanta, był za kilka minut to te cwaniaki od razu uciekli już nie czekali na uszczelnienie po rozkręceniu tylko dali dyla pozostawiając mnie na tydzień bez licznika. Musiałem zrobić przegląd kominiarski oraz ciśnienie sieci, oczywiście musiałem zapłacić. A dziwne że przyznali mi racje Urząd Miar, jednak do tej pory nie mam korekty rachunku, złożyłem stosowną reklamację. I co ciekawe, nowy licznik jak pisałem wykazywał o dwie trzecie mniej, poprzedni kiedy grzałem węglem przez 3 tyg dokładnie zużył 106 m. Obecnie nowy licznik co grzeje jedną trzecią górnej części 100 l zużywa 1 m³ dziennie oczywiście razem z trzema kuchenkami.</em></p>
+<p>Wyniki: złość – 49%, strach – 43%, oczekiwanie – 19%, zaskoczenie – 57%, zaufanie – 7%, smutek – 43%, wstręt – 35%, radość – 3%, sentyment pozytywny – 1%, sentyment negatywny – 39%, pobudzenie emocjonalne – 42%.</p>
+<p>Powyższy komentarz opisuje perypetie klienta z wadliwym licznikiem i związaną z nimi wizytą niekompetentnych wg niego serwisantów spółki. Przez spowodowane przez pracowników szkody klient musiał ponieść dodatkowe koszty, był pozbawiony energii przez tydzień, nie otrzymał korekty rachunku pomimo stwierdzenia wadliwości licznika i jednocześnie zainstalowany przez niego nowy gazomierz wskazuje teraz dużo mniejsze zużycie tego paliwa. Emocje tego klienta są na podwyższonym poziomie – dominują złość, strach, smutek i zaskoczenie. Taka mieszanka skłania go do podzielenia się z innymi użytkownikami swoją historią i w ten sposób opisywana przez niego firma zbiera kolejną negatywną (uderzającą w wizerunek) opinię.</p>
+<h2>Podsumowanie</h2>
+<p>Co pokazała nam <strong>analiza emocji Polaków</strong> w reakcji na istotne podwyżki cen energii i paliw? Pokazała, że jest to bardzo intensywnie dyskutowany temat przez polskich internautów. Dominują oczywiście konteksty polityczne – nie da się ich uniknąć przy badaniu firm z sektora strategicznego, gdzie dominującym graczem na rynku jest państwo i nie ma ono w zasadzie konkurencji. Z krytyki działań władz przebija się jednak kontekst większego zainteresowania się klientów rozwiązaniami z sektora OZE – i – mamy wrażenie – że w tej sytuacji branża ta może stać się niechcący beneficjentem działań rządu.</p>
+</article>
+<div class="pagination clearfix">
+<div class="alignleft"><a href="/2021/page/3/">« Starsze wpisy</a></div>
+<div class="alignright"><a href="/2021/">Kolejne wpisy »</a></div>
+</div> </div>
+<div id="sidebar">
+<div class="et_pb_widget widget_text" id="text-2"> <div class="textwidget">
+</div>
+</div><div class="et_pb_widget widget_categories" id="categories-2"><h4 class="widgettitle">Kategorie</h4>
+<ul>
+<li class="cat-item cat-item-1191"><a href="/category/polityka-i-spoleczenstwo/">Polityka i społeczeństwo</a>
+</li>
+<li class="cat-item cat-item-1193"><a href="/category/styl-zycia/">Styl życia</a>
+</li>
+<li class="cat-item cat-item-1226"><a href="/category/badania-rynku/">Badania rynku</a>
+</li>
+<li class="cat-item cat-item-1121"><a href="/category/w-mediach/">W mediach</a>
+</li>
+<li class="cat-item cat-item-1149"><a href="/category/w-mediach/podcasty-pl/">Podcasty</a>
+</li>
+<li class="cat-item cat-item-1153"><a href="/category/konferencje/">Konferencje</a>
+</li>
+<li class="cat-item cat-item-582"><a href="/category/sentibrand/">SentiBrand</a>
+</li>
+<li class="cat-item cat-item-263"><a href="/category/sentistocks-pl/">SentiStocks</a>
+</li>
+<li class="cat-item cat-item-1055"><a href="/category/publikacje-naukowe/">Publikacje naukowe</a>
+</li>
+<li class="cat-item cat-item-24"><a href="/category/okiem-badacza/">Okiem badacza</a>
+</li>
+<li class="cat-item cat-item-434"><a href="/category/kategoryzacja-komentarzy/">Kategoryzacja komentarzy</a>
+</li>
+</ul>
+</div>
+<div class="et_pb_widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widgettitle">Ostatnie wpisy</h4>
+<ul>
+<li>
+<a href="/emocje-w-biotech/">Głębsze Spojrzenie na Emocje: Jak Firmy Bio-Tech Mogą Lepiej Rozumieć Odbiór Swojej Marki?</a>
+</li>
+<li>
+<a href="/jak-emocje-ksztaltuja-nasze-spojrzenie-na-wschodnich-sasiadow-analiza-mediow-spolecznosciowych-2024/">Jak emocje kształtują nasze spojrzenie na wschodnich sąsiadów? Analiza mediów społecznościowych 2024</a>
+</li>
+<li>
+<a href="/jezyk-i-emocje-w-roznorodnosci-co-pokazuja-dane/">Poznaj słowa, które budują mosty i te, które niszczą relacje społeczne – zaskakujące wyniki badań!</a>
+</li>
+<li>
+<a href="/analiza-emocji-w-debacie-prezydenckiej-harris-vs-trump-jak-sentimenti-mierzy-emocje-i-sentymenty/">Analiza emocji w debacie prezydenckiej Harris vs Trump: Jak Sentimenti mierzy emocje i sentymenty</a>
+</li>
+<li>
+<a href="/analiza-sentymentu-nie-powie-ci-prawdy/">Analiza sentymentu nie powie Ci prawdy</a>
+</li>
+</ul>
+</div> </div>
+</div>
+</div>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-5973" decoding="async" height="100" loading="lazy" src="/wp-content/uploads/2023/06/logo2.svg" title="logo2" width="100"/></span>
+</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p><strong>Sentimenti sp. z o.o.</strong><br/><span>ul. Święty Marcin 11/8</span><br/><span>61-803 Poznań, Poland</span><br/><a href="mailto:kontakt@sentimenti.pl"></a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_0_tb_footer et_pb_widget_area clearfix et_pb_widget_area_right et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_dark et_pb_sidebar_no_border">
+<div class="fwidget et_pb_widget widget_nav_menu" id="nav_menu-4"><div class="menu-menu-w-stopce-container"><ul class="menu" id="menu-menu-w-stopce"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6425" id="menu-item-6425"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6691" id="menu-item-6691"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6421" id="menu-item-6421"><a href="/kontakt/">Kontakt</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-6415" decoding="async" height="63" loading="lazy" src="/wp-content/uploads/2023/06/UE_EFRR-black.png" title="UE_EFRR-black" width="240"/></span>
+</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link et-social-facebook"><a class="icon et_pb_with_border" href="https://www.facebook.com/sentimentipl" target="_blank" title="Śledź na Facebook"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link et-social-twitter"><a class="icon et_pb_with_border" href="https://twitter.com/SENTIMENTIPL" target="_blank" title="Śledź na X"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link et-social-linkedin"><a class="icon et_pb_with_border" href="https://www.linkedin.com/company/sentimenti/" target="_blank" title="Śledź na LinkedIn"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li>
+</ul>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_1_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light et_pb_sidebar_no_border">
+<div class="et_pb_widget widget_nav_menu" id="nav_menu-7"><div class="menu-rodo-pl-container"><ul class="menu" id="menu-rodo-pl"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6418" id="menu-item-6418"><a href="/polityka-prywatnosci/" rel="privacy-policy">Polityka prywatności RODO</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Design: <a href="https://ballaun.art/" rel="noopener" style="color: white;" target="_blank">ballaun.art</a></div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: index-->
+<div class="modal-cacsp-backdrop"></div>
+<div class="modal-cacsp-position">
+<div class="modal-cacsp-box modal-cacsp-box-info">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Używamy plików cookie, aby zapewnić prawidłowe działanie naszej strony internetowej i usług. Te pliki cookie są niezbędne i są ustawiane automatycznie. Chcielibyśmy również używać analitycznych plików cookie, aby zrozumieć, w jaki sposób wchodzisz w interakcję z naszą witryną i marketingowymi plikami cookie, aby zapewnić spersonalizowane treści i reklamy.
+Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików cookie zarówno do podstawowych, jak i nieistotnych celów. Kliknij „Ustawienia”, aby wybrać typy plików cookie, które chcesz włączyć lub wyłączyć. Więcej informacji znajdziesz w naszej Polityce prywatności RODO.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-settings" href="#">
+							Ustawienia						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+<div class="modal-cacsp-box modal-cacsp-box-settings">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Wybierz, jakie pliki cookies chcesz zaakceptować. Twój wybór zostanie zachowany przez rok.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-box-settings-list">
+<ul>
+<li>
+<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+<span>Konieczne<br/>
+<span>Te pliki cookie nie są opcjonalne. Są one potrzebne do funkcjonowania strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</span>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics" href="#statistics">
+<span>Statystyka<br/>
+<span>Abyśmy mogli poprawić funkcjonalność i strukturę strony internetowej, na podstawie tego, jak strona jest używana.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="experience" href="#experience">
+<span>Doświadczenie<br/>
+<span>Aby nasza strona internetowa działała jak najlepiej podczas twojego przejścia na nią. Jeśli odrzucisz te pliki cookie, niektóre funkcje znikną ze strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="marketing" href="#marketing">
+<span>Marketing<br/>
+<span>Udostępniając swoje zainteresowania i zachowania podczas odwiedzania naszej strony, zwiększasz szansę na zobaczenie spersonalizowanych treści i ofert.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-save" href="#">
+							Zapisz						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept-all" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+</div>
+<!--googleon: index-->
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Basic:regular&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6Fc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FE.woff2) format('woff2');}</style><link href="/wp-content/plugins/wp-table-builder/dist/assets/css-values-CUgfcrP5.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/css-values-CUgfcrP5.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/common-AJeCQioW.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/css-values-CUgfcrP5.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/css-values-CUgfcrP5.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/corruption-CNCoGCtD.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/css-values-CUgfcrP5.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/css-values-CUgfcrP5.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/corruption-CNCoGCtD.js" rel="modulepreload"/><link href="/wp-content/plugins/wp-table-builder/dist/assets/renderer-Cy83njVx.js" rel="modulepreload"/><script src="/wp-content/plugins/wp-table-builder/dist/assets/frontend-common-3tZGddzR.js?v=2.2.3" type="module"></script><script src="/wp-content/plugins/wp-table-builder/dist/assets/frontend-script-B6Toa878.js?v=2.2.3" type="module"></script><link href="/wp-content/plugins/wp-table-builder/dist/frontend-style.css?ver=2.2.3" id="wptb-frontend-style-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="cookies-and-content-security-policy-cookie-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie.min.js?ver=2.41" type="text/javascript"></script>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" type="text/javascript"></script>
+<script id="jquery-js-after" type="text/javascript">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var cacsp_ajax_object = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"53e1f30221"};
+var cacspMessages = {"cacspReviewSettingsDescription":"Twoje ustawienia mog\u0105 uniemo\u017cliwi\u0107 ci obejrzenie tej tre\u015bci. Najprawdopodobniej masz wy\u0142\u0105czone Do\u015bwiadczenie.","cacspReviewSettingsButton":"Przegl\u0105daj swoje ustawienia","cacspNotAllowedDescription":"Ta tre\u015b\u0107 nie mo\u017ce by\u0107 wczytana, gdy\u017c nie jest dozwolona na witrynie.","cacspNotAllowedButton":"Skontaktuj si\u0119 z administratorem","cacspExpires":"365","cacspWpEngineCompatibilityMode":"0","cacspTimeout":"1000","cacspOptionDisableContentNotAllowedMessage":"0","cacspOptionGoogleConsentMode":"0","cacspOptionSaveConsent":"0"};
+//# sourceURL=cookies-and-content-security-policy-js-extra
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js?ver=2.41" type="text/javascript"></script>
+<script id="cookies-and-content-security-policy-error-message-js" src="/wp-content/uploads/cookies-and-content-security-policy-error-message.js?ver=2.41&amp;mod%3D20260116142405" type="text/javascript"></script>
+<script id="df-script-js" src="/wp-content/plugins/filter-for-divi/df-script.js?ver=2.0.2" type="text/javascript"></script>
+<script id="pll_cookie_script-js-after" type="text/javascript">
+/* <![CDATA[ */
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=pl; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+/* ]]> */
+</script>
+<script id="divi-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"/wp-admin/admin-ajax.php","images_uri":"/wp-content/themes/Divi/images","builder_images_uri":"/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"2b0e8fb0d2","subscription_failed":"Prosz\u0119, sprawd\u017a pola poni\u017cej, aby upewni\u0107 si\u0119, \u017ce wpisa\u0142e\u015b poprawn\u0105 informacj\u0119.","et_ab_log_nonce":"ea219785f5","fill_message":"Prosz\u0119 wype\u0142ni\u0107 nast\u0119puj\u0105ce pola:","contact_error_message":"Napraw poni\u017csze b\u0142\u0119dy:","invalid":"Nieprawid\u0142owy adres e-mail","captcha":"Captcha","prev":"Przed","previous":"Poprzednie","next":"Dalej","wrong_captcha":"Wpisa\u0142e\u015b/-a\u015b w captcha nieprawid\u0142owy numer.","wrong_checkbox":"Pole wyboru","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"4899","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#e6007a","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script id="divi-custom-script-js" src="/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="smoothscroll-js" src="/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.1" type="text/javascript"></script>
+<script id="es6-promise-js" src="/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-recaptcha-v3-js" src="https://www.google.com/recaptcha/api.js?render=6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO&amp;ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-api-spam-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO","page_action":{"action":"ludzie_inteligentni_emocjonalnie_charakterystyka"}};
+//# sourceURL=et-core-api-spam-recaptcha-js-extra
+/* ]]> */
+</script>
+<script id="et-core-api-spam-recaptcha-js" src="/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=4.27.1" type="text/javascript"></script>
+<script id="fitvids-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.1" type="text/javascript"></script>
+<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=6.9.11" type="text/javascript"></script>
+<script id="jquery-mobile-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.27.1" type="text/javascript"></script>
+<script id="magnific-popup-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.1" type="text/javascript"></script>
+<script id="easypiechart-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.27.1" type="text/javascript"></script>
+<script id="salvattore-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-common-js" src="/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.1" type="text/javascript"></script>
+<script id="ivory-search-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+//# sourceURL=ivory-search-scripts-js-extra
+/* ]]> */
+</script>
+<script id="ivory-search-scripts-js" src="/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.13" type="text/javascript"></script>
+<script id="et-builder-modules-script-motion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+//# sourceURL=et-builder-modules-script-motion-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-motion-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-builder-modules-script-sticky-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+//# sourceURL=et-builder-modules-script-sticky-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-sticky-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.27.1" type="text/javascript"></script>
+<span class="et_pb_scroll_top et-pb-icon"></span>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Sentimenti</title>
+<meta name="robots" content="noindex">
+<script>
+  // Old English URLs lived at sentimenti.com/<slug>/; they are now under /en/<slug>/.
+  (function () {
+    var p = location.pathname;
+    if (p.indexOf('/en/') !== 0) {
+      location.replace('/en' + p + location.search + location.hash);
+    } else {
+      location.replace('/');
+    }
+  })();
+</script>
+</head>
+<body>
+<p>Strona nie istnieje. <a href="/">Przejdź na stronę główną Sentimenti</a>.</p>
+</body>
+</html>

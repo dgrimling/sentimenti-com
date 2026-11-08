@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="/xmlrpc.php" rel="pingback"/>
+<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4i.woff2) format('woff2');}</style><meta content="noindex, follow" name="robots"/>
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+<title>analiza sentymentu Archives - Strona 2 z 17 - Sentimenti</title>
+<meta content="pl_PL" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Archiwa: analiza sentymentu" property="og:title"/>
+<meta content="/tag/analiza-sentymentu/" property="og:url"/>
+<meta content="Sentimenti" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@SENTIMENTIPL" name="twitter:site"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"CollectionPage","@id":"\/tag\/analiza-sentymentu\/","url":"\/tag\/analiza-sentymentu\/page\/2\/","name":"analiza sentymentu Archives - Strona 2 z 17 - Sentimenti","isPartOf":{"@id":"\/#website"},"primaryImageOfPage":{"@id":"\/tag\/analiza-sentymentu\/page\/2\/#primaryimage"},"image":{"@id":"\/tag\/analiza-sentymentu\/page\/2\/#primaryimage"},"thumbnailUrl":"\/wp-content\/uploads\/2021\/07\/employer-branding-wizerunek-pracodawca-emocje.jpg","breadcrumb":{"@id":"\/tag\/analiza-sentymentu\/page\/2\/#breadcrumb"},"inLanguage":"pl-PL"},{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/tag\/analiza-sentymentu\/page\/2\/#primaryimage","url":"\/wp-content\/uploads\/2021\/07\/employer-branding-wizerunek-pracodawca-emocje.jpg","contentUrl":"\/wp-content\/uploads\/2021\/07\/employer-branding-wizerunek-pracodawca-emocje.jpg","width":1200,"height":628},{"@type":"BreadcrumbList","@id":"\/tag\/analiza-sentymentu\/page\/2\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"\/"},{"@type":"ListItem","position":2,"name":"analiza sentymentu"}]},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Sentimenti","description":"Analiza emocji i sentymentu, sztuczna inteligencja, monitoring internetu","publisher":{"@id":"\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pl-PL"},{"@type":"Organization","@id":"\/#organization","name":"Sentimenti","url":"\/","logo":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/#\/schema\/logo\/image\/","url":"\/wp-content\/uploads\/2023\/06\/logo.svg","contentUrl":"\/wp-content\/uploads\/2023\/06\/logo.svg","width":100,"height":100,"caption":"Sentimenti"},"image":{"@id":"\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/sentimentipl","https:\/\/x.com\/SENTIMENTIPL","https:\/\/www.linkedin.com\/company\/sentimenti\/"]}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="Divi v.4.27.1" name="generator"/><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link href="/wp-includes/css/dist/block-library/style.min.css?ver=6.9.11" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote :where(cite),.wp-block-pullquote :where(footer),.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/css/dist/block-library/theme.min.css */
+</style>
+<style id="pdfemb-pdf-embedder-viewer-style-inline-css" type="text/css">
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+/*# sourceURL=/wp-content/plugins/pdf-embedder/block/build/style-index.css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link href="/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css?ver=2.41" id="cookies-and-content-security-policy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/custom-posts-order/css/custompostdisplay.css?ver=4.5" id="custompostdisplay-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/filter-for-divi/df-style.css?ver=2.0.2" id="df-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.13" id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/Divi/style-static.min.css?ver=4.27.1" id="divi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<!-- Fragment znacznika Google (gtag.js) dodany przez Site Kit -->
+<!-- Fragment Google Analytics dodany przez Site Kit -->
+<script async="" id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-5R823XK" type="text/javascript"></script>
+<script id="google_gtagjs-js-after" type="text/javascript">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["sentimenti.pl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5R823XK");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 6.9.11" name="generator"/>
+<meta content="Site Kit by Google 1.188.0" name="generator"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/><style id="cookies-and-content-security-policy-css-custom" type="text/css">.modal-cacsp-position .modal-cacsp-box > *,.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-show.modal-cacsp-box-bottom {background-color: #efefef;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {background-color: #e5e5e5;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {border-color: #ffffff;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {background-color: #eaeaea;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {border-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ff0087;}</style><link href="/wp-content/uploads/2023/06/cropped-ico-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-180x180.jpg" rel="apple-touch-icon"/>
+<meta content="/wp-content/uploads/2023/06/cropped-ico-270x270.jpg" name="msapplication-TileImage"/>
+<link href="/wp-content/et-cache/global/et-divi-customizer-global.min.css?ver=1794112530" id="et-divi-customizer-global-cached-inline-styles" rel="stylesheet"/><link href="/wp-content/et-cache/6466/et-core-unified-cpt-6466.min.css?ver=1794112538" id="et-core-unified-cpt-6466-cached-inline-styles" rel="stylesheet"/><style media="screen" type="text/css">.is-menu path.search-icon-path { fill: #848484;}body .popup-search-close:after, body .search-close:after { border-color: #848484;}body .popup-search-close:before, body .search-close:before { border-color: #848484;}</style> <style type="text/css">
+</style>
+<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+
+				}
+			</style></head>
+<body class="archive paged tag tag-analiza-sentymentu tag-22 paged-2 tag-paged-2 wp-theme-Divi et-tb-has-template et-tb-has-footer Divi et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_cover_background et_pb_gutter et_pb_gutters3 et_smooth_scroll et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-7993">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header data-height-onload="66" id="main-header">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="/">
+<img alt="Sentimenti" data-height-percentage="54" height="100" id="logo" src="/wp-content/uploads/2023/06/logo.svg" width="100"/>
+</a>
+</div>
+<div data-fixed-height="40" data-height="66" id="et-top-navigation">
+<nav id="top-menu-nav">
+<ul class="nav" id="top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8080"><a href="/oferta/">Oferta</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5710"><a href="/sentitool/">Sentitool</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6178"><a href="/api-2/">API</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6184"><a href="/kontakt/">Kontakt</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="/%F0%9F%87%BA%F0%9F%87%A6-ukraina/">🇺🇦 Ukraina</a></li>
+<li class="lang-item lang-item-7 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-5986-en"><a href="/en/tag/sentiment-analysis-en/" hreflang="en-GB" lang="en-GB"><img alt="English" height="11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" style="width: 16px; height: 11px;" width="16"/></a></li>
+</ul> </nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Zaznacz stronę</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div> </div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<div class="container">
+<div class="clearfix" id="content-area">
+<div id="left-area">
+<article class="et_pb_post post-5333 post type-post status-publish format-standard has-post-thumbnail hentry category-badania-rynku category-sentibrand tag-analiza-danych tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-internecie tag-emocje-w-opiniach tag-monitoring-mediow" id="post-5333">
+<a class="entry-featured-image-url" href="/dlaczego-analiza-sentymentu-w-opiniach-on-line-ma-znaczenie-dla-biznesu/">
+<img alt="Analiza sentymentu w opiniach on-line. Dlaczego ma znaczenie dla biznesu?" class="" fetchpriority="high" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2021/07/employer-branding-wizerunek-pracodawca-emocje-1080x628.jpg" srcset="/wp-content/uploads/2021/07/employer-branding-wizerunek-pracodawca-emocje-1080x628.jpg 1080w, /wp-content/uploads/2021/07/employer-branding-wizerunek-pracodawca-emocje-980x513.jpg 980w, /wp-content/uploads/2021/07/employer-branding-wizerunek-pracodawca-emocje-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/dlaczego-analiza-sentymentu-w-opiniach-on-line-ma-znaczenie-dla-biznesu/">Analiza sentymentu w opiniach on-line. Dlaczego ma znaczenie dla biznesu?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">wrz 18, 2022</span> | <a href="/category/badania-rynku/" rel="category tag">Badania rynku</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Analiza sentymentu w komentarzach i opiniach, od których roi się w mediach społecznościowych, pomaga odkryć to, co niezbędne dla działów marketingu i nie tylko. Pomaga w śledzeniu wydajności biznesu w oparciu o informacje o zadowoleniu klienta i o produkcie oraz w zarządzaniu reputacją marki w sieci.<br/>
+</strong></p>
+<h2>Sentyment. Czy komentarze w sieci mają znaczenie?</h2>
+<p>Sztuką jest umieć wykorzystać opinie i komentarze klientów, których w sieci jest pełno. Trudno jednak jest z całej gadaniny on-line wyodrębnić te, które są istotne. Każdego dnia odbywa się w mediach społecznościowych cała masa konwersacji o usługach, firmach i produktach.</p>
+<p>Media społecznościowe to dziś bardzo ważna przestrzeń w rozwoju firmy. Jest to jeden z najbardziej ekonomicznych sposobów prowadzenia badań rynkowych poprzez analizę opinii klientów, a do tego efektywnych czasowo. Pozwala na angażowanie się z klientami – zarówno obecnymi, jak i potencjalnymi – w wartościowy sposób.</p>
+<p>Jest to niezbędne w procesie budowania wizerunku marki i rozwiązywaniu wszelkich negatywnych lub drażliwych kwestii w możliwie szybkim czasie. Kiedy analizujemy sentyment w komentarzach z mediów społecznościowych, otrzymujemy ekspresowo wgląd w różne aspekty działalności, które wpływają ostatecznie na zyski.</p>
+<p>Obejmują one plusy i minusy produktu lub usługi, zmieniające się preferencje rynkowe, obsługę posprzedażową i wiele innych parametrów. Obecnie nawet 70% firm wykorzystuje spostrzeżenia i wiedzę płynącą z opinii w mediach społecznościowych do formułowania strategii marki, a ponad 60% uważa dane z analizy sentymentu w opiniach za niezwykle przydatne do skutecznej, bieżącej obsługi klienta i sprzedaży.</p>
+<p>Analiza sentymentu to krok do analizy doświadczeń klientów i odbywa się poprzez modele uczenia maszynowego (ML). Obejmują one sieci neuronowe, przetwarzanie języka naturalnego (NLP), kategoryzację tematyczną i wreszcie analizę sentymentu oraz emocji.</p>
+<h2>Na co pozwala wiedza płynąca z sieci?</h2>
+<p>Oto kilka najważniejszych sposobów, w jaki firmy wykorzystują analizę sentymentu na komentarzach. Obejmują one wydobywanie dogłębnych informacji o klientach i produktach, odkrywanie pojawiających się trendów rynkowych, sprzedaż czy zwiększanie udziału w rynku. To miedzy innymi:</p>
+<ul>
+<li>Monitorowanie ogólnego zadowolenia klientów;</li>
+<li>Poprawa doświadczenia klienta;</li>
+<li>Zdobywanie informacji o konsumentach w czasie rzeczywistym;</li>
+<li>Identyfikacja emocjonalnych wyzwalaczy u klientów;</li>
+<li>Usprawnianie produktów i usług;</li>
+<li>Budowanie lojalności wobec marki;</li>
+<li>Ograniczenie odpływu klientów;</li>
+<li>Szkolenie pracowników obsługi klienta;</li>
+<li>Szkolenie chatbotów;</li>
+<li>Zarządzanie reputacją marki;</li>
+<li>Monitorowanie zmian nastrojów w czasie;</li>
+<li>Ulepszanie treści marketingowych publikowanych w mediach społecznościowych;</li>
+<li>Zdobywanie wiedzę o konkurencji;</li>
+<li>Przygotowywanie się na zmiany w trendach rynkowych.</li>
+</ul>
+<p>Marka jest centralnym punktem wszystkich działań marketingowych jeśli chodzi o produkty i usługi, dlatego badanie jej wizerunku polega na zrozumieniu tego, jak postrzegana jest przez tych, którzy z tych produktów lub usług korzystają. To również sposób na poznanie opinii tych, którzy bardziej cenią sobie konkurencję.</p>
+<p>Marka to w zasadzie zjawiska psychologiczne tworzone i projektowane przez marketing w celu wpływania na preferencje i zachowania zakupowe konsumentów. To twarz firmy i zewnętrzna powłoka, którą widzi świat.</p>
+<h2>Analiza sentymentu. Zbadaj swój wizerunek!</h2>
+<p>Analiza nastrojów pomaga firmom uchwycić, co ich klienci naprawdę mówią o nich, analizując opinie, które konsumenci wykorzystują do wyrażania swoich uczuć i emocji w publikowanych opiniach. Niezależnie od tego, czy te odczucia są pozytywne, neutralne czy negatywne, w erze cyfrowej istotne jest, aby wykorzystać to w celu dostosowania swojej działalności do rynkowych trendów</p>
+<p>Opinie wyrażane przez konsumentów za pośrednictwem takich kanałów jak media społecznościowe lub ankiety są niezbędne do głębokiego zrozumienia marki, dzięki czemu firma może dowiedzieć się, gdzie powinna poprawić swoje doświadczenie klienta i na co zwrócić uwagę tworząc lub zmieniając strategię działania.</p>
+<p>Analiza sentymentu może pomóc firmie w badaniu marki poprzez:</p>
+<ul>
+<li>odkrywanie tego, co motywuje klientów i pobudza intencje zakupowe, lub też sprzyja niezadowoleniu;</li>
+<li>ocenę wpływu kampanii marketingowych i strategii kreatywnych na percepcję konsumentów;</li>
+<li>zrozumienie opinii konsumentów na temat ceny produktu, jakości, niezawodności, doświadczeń użytkownika itp.;</li>
+<li>benchmarking w stosunku do konkurencyjnych produktów, usług i marek;</li>
+<li>analizowanie i porównywanie różnych segmentów konsumenckich oraz share of voice.</li>
+</ul>
+<p>Trzy główne sposoby, w jakie konsumenci wyrażają swoje uczucia i opinie o marce? To recenzje produktów, ankiety konsumenckie i wpisy w mediach społecznościowych.</p>
+<p>Wyzwaniem dla marketerów jest zebranie, przeanalizowanie i podsumowanie tych niezliczonych ilości opinii. Należy robić to w taki sposób, aby ich wyniki były zrozumiałe i możliwe do podjęcia działań.</p>
+<p>Wykorzystując zarówno analizę sentymentu opartą na tematach, jak i uczeniu maszynowym i sztucznej inteligencji, Sentimenti może pomóc w <a href="/oferta">analizie odczuć i opinii klientów</a>.</p>
+<p>Bez znaczenia jest, czy chodzi o badania jakościowe czy ilościowe. Istotną częścią budowania marki jest zrozumienie tego, co kryje się w treściach komentarzy. Dzięki temu można uzyskać głębszy wgląd w umysły konsumentów lub przyszłych klientów, a to kolejny krok do udoskonalenia oferty.</p>
+</article>
+<article class="et_pb_post post-5261 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy category-polityka-i-spoleczenstwo tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-opiniach tag-media-spolecznosciowe tag-monitoring-mediow" id="post-5261">
+<a class="entry-featured-image-url" href="/stagflacja-co-to-znaczy-definicja-wikipedia/">
+<img alt="Stagflacja. Co to jest i jakie wzbudza emocje wśród użytkowników sieci? Sprawdzamy!" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2022/07/stagflacja-co-to-znaczy-definicja-1080x628.jpg" srcset="/wp-content/uploads/2022/07/stagflacja-co-to-znaczy-definicja-1080x628.jpg 1080w, /wp-content/uploads/2022/07/stagflacja-co-to-znaczy-definicja-980x513.jpg 980w, /wp-content/uploads/2022/07/stagflacja-co-to-znaczy-definicja-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/stagflacja-co-to-znaczy-definicja-wikipedia/">Stagflacja. Co to jest i jakie wzbudza emocje wśród użytkowników sieci? Sprawdzamy!</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lip 15, 2022</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a>, <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a></p><p><strong>Stagflacja to od jakiegoś czasu słowo odmieniane przez wszystkie przypadki. Internauci wyszukują informacji na temat tego, czym jest stagflacja i jaka jest definicja tego słowa. Aktualna sytuacja gospodarcza i ekonomiczna sprawia, że inflacja mocno się rozpędza, a nasza gospodarka zaczyna nagle hamować. Czy to niebezpieczne zjawisko wzbudza w internautach emocje? Jeśli tak, to jakie?</strong></p>
+<h2>Stagflacja. Czym grozi i czy wzbudza emocje?</h2>
+<p>Już niebawem, bo na początku 2023 roku nasz kraj ma szansę doświadczyć znacznego spadku PKB. Tego, co nadchodzi, nie spodziewa się większość Polaków. Prawda jest taka, że <a href="/blog/tag/koronawirus/">epidemia koronawirusa</a> czy wojna na Ukrainie to w porównaniu ze stagflacją i zbliżającą się być może recesją po prostu nic nie znaczące epizody. Utrata wartości polskiego pieniądza jest obecnie niczym przepowiednia, która spełnia się na naszych oczach.</p>
+<p>Czym jest stagflacja, która wywołuje w nas taki strach? Najprościej jest powiedzieć, że w czasie jej trwania obywatele mają do dyspozycji coraz mniej pieniędzy, usługi i towary w sklepach są coraz droższe, a na dodatek spada liczba miejsc pracy i rośnie bezrobocie. To zjawisko, które jest coraz częściej komentowane w internecie przez zwykłych użytkowników sieci, uderzy przede wszystkim w ludzi, którzy mają oszczędności oraz ludzi biedniejszych.</p>
+<p>Tylko od początku roku internauci wyświetlali w Wikipedii publikację dotyczącą stagflacji aż 104 630 razy, z czego najczęściej w marcu oraz w czerwcu br. Podobne zainteresowanie, a w zasadzie niemal identyczne, zauważalne jest w wyszukiwarce Google, co najlepiej obrazuje poniższy wykres.</p>
+<p><a href="/wp-content/uploads/2022/07/co-to-jest-stagflacja-co-to-znaczy-wikipedia-google-trends.jpg"><img alt="" class="aligncenter wp-image-5267 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/07/co-to-jest-stagflacja-co-to-znaczy-wikipedia-google-trends.jpg" srcset="/wp-content/uploads/2022/07/co-to-jest-stagflacja-co-to-znaczy-wikipedia-google-trends.jpg 1280w, /wp-content/uploads/2022/07/co-to-jest-stagflacja-co-to-znaczy-wikipedia-google-trends-512x288.jpg 512w, /wp-content/uploads/2022/07/co-to-jest-stagflacja-co-to-znaczy-wikipedia-google-trends-1024x576.jpg 1024w, /wp-content/uploads/2022/07/co-to-jest-stagflacja-co-to-znaczy-wikipedia-google-trends-768x432.jpg 768w" width="1280"/></a></p>
+<h2>Skutki stagflacji mogą być opłakane. Czy zapuka do nas recesja?</h2>
+<p>Co zrobić, gdy uderzy w nas stagflacja? W co inwestować w tak trudnych czasach? Odpowiedzi na te pytania nie są łatwe do znalezienia. Jako firma analizująca nastroje internautów postanowiliśmy zbadać, co w mediach społecznościowych, na forach i blogach oraz portalach informacyjnych pod artykułami piszą użytkownicy sieci. Badaniu poddano w sumie nieco ponad 35 tys. komentarzy i opinii na temat stagflacji.</p>
+<p>W ramach dyskusji na jej temat wyodrębniliśmy kilka kluczowych stwierdzeń najczęściej pojawiających się w treściach opinii i komentarzy w sieci. W lipcu zauważalny jest istotny wzrost liczby zamieszczanych treści, w których pojawia się informacja o zbliżającej się katastrofie gospodarczej. Widać to bardzo wyraźnie na poniższym zestawieniu trendów.</p>
+<p><a href="/wp-content/uploads/2022/07/stagflacja-bieda-podwyzki-cen-pradu-drozyzna.jpg"><img alt="" class="aligncenter wp-image-5272 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/07/stagflacja-bieda-podwyzki-cen-pradu-drozyzna.jpg" srcset="/wp-content/uploads/2022/07/stagflacja-bieda-podwyzki-cen-pradu-drozyzna.jpg 1280w, /wp-content/uploads/2022/07/stagflacja-bieda-podwyzki-cen-pradu-drozyzna-512x288.jpg 512w, /wp-content/uploads/2022/07/stagflacja-bieda-podwyzki-cen-pradu-drozyzna-1024x576.jpg 1024w, /wp-content/uploads/2022/07/stagflacja-bieda-podwyzki-cen-pradu-drozyzna-768x432.jpg 768w" width="1280"/></a></p>
+<p>Jeśli chodzi o emocje, do analizy wybraliśmy jedynie strach i oczekiwanie. Drugą z emocji zbadaliśmy ze względu na to, że wiąże się z nią nie tylko ekscytacja. Chodzi  też o uczucie niepokoju związanego z nadchodzącymi wydarzeniami.</p>
+<p>Emocja ta dodatkowo wyraża potencjalne rozważanie rozwiązań w zakresie radzenia sobie z tym, co nadciąga. Jak pisaliśmy w jednym z postów objaśniających znaczenie poszczególnych emocji z zestawu opracowanego przez Plutchika, głównym przesłaniem oczekiwania jest: „<em>czekam na to, co się wydarzy</em>„.</p>
+<p>W przypadku strachu mamy do czynienia z płynnym przechodzeniem od uczucia niepokoju, poprzez strach jako taki po przerażenie. Z kolei przy emocji oczekiwania istnieją trzy kolejne fazy: zainteresowanie, niecierpliwość połączona z wyczuwaniem, a na końcu wzmożona czujność.</p>
+<p><a href="/wp-content/uploads/2022/07/bieda-bezrobocie-inflacja-stagflacja-emocje.png"><img alt="" class="aligncenter wp-image-5278 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/07/bieda-bezrobocie-inflacja-stagflacja-emocje.png" srcset="/wp-content/uploads/2022/07/bieda-bezrobocie-inflacja-stagflacja-emocje.png 1280w, /wp-content/uploads/2022/07/bieda-bezrobocie-inflacja-stagflacja-emocje-512x288.png 512w, /wp-content/uploads/2022/07/bieda-bezrobocie-inflacja-stagflacja-emocje-1024x576.png 1024w, /wp-content/uploads/2022/07/bieda-bezrobocie-inflacja-stagflacja-emocje-768x432.png 768w" width="1280"/></a></p>
+<h2>Skutki stagflacji mogą być opłakane. Czy zapuka do nas recesja?</h2>
+<p>Co wynika z powyższej analizy porównawczej dla stwierdzeń występujących w dyskusji o stagflacji? Najwięcej strachu na tle pozostałych kontekstów widać przy okazji drożyzny i biedy. Na tę chwilę internauci nie wykazują strachu związanego ze stagflacją czy recesją.</p>
+<p>Pisząc o katastrofie gospodarczej (choć to sporo komentarzy w sieci w samym lipcu), nie są one nasycone tyle strachem, co dużo bardziej oczekiwaniem. Najwyższe wartości emocji związanej z oczekiwaniem na rozwój wydarzeń widać z kolei przy temacie inflacji oraz kryzysu jako takiego.</p>
+<p>Czy emocje te ulegać będą znacznym zmianom w najbliższym czasie? Póki co trudno na to pytanie odpowiedzieć. Według ekspertów najgorsze ma nadejść dopiero jesienią i dopiero bliżej tego okresu można spodziewać się większych wahań nastrojów.</p>
+<p>Ekonomiści i eksperci od gospodarki nie mają dobrych prognoz. Kosmiczna drożyzna, z jaką będziemy mieli do czynienia, może ulec złagodzeniu. Stanie się to dopiero w III kwartale 2023 roku. Polacy będą zmuszeni jakoś przetrwać ten trudny czas i liczyć na cud.</p>
+<p>Najważniejsze jest na pewno utrzymanie dobrej sytuacji na rynku pracy. To pozwoli nam przejść przez ten kryzys w miarę suchą stopą. Stagflacja w Polsce dopiero się pojawi. Zapnijmy pasy!</p>
+</article>
+<article class="et_pb_post post-5141 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy category-sentibrand tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-internecie tag-media-spolecznosciowe tag-monitoring-mediow" id="post-5141">
+<a class="entry-featured-image-url" href="/slub-od-pierwszego-wejrzenia-sezon-7/">
+<img alt="Ślub od pierwszego wejrzenia. Fala komentarzy w sieci. Emocje sięgnęły zenitu!" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-sezon-7-1080x628.jpg" srcset="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-sezon-7-1080x628.jpg 1080w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-sezon-7-980x513.jpg 980w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-sezon-7-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/slub-od-pierwszego-wejrzenia-sezon-7/">Ślub od pierwszego wejrzenia. Fala komentarzy w sieci. Emocje sięgnęły zenitu!</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">maj 24, 2022</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Siódmy sezon popularnego programu TVN pt. „<em>Ślub od pierwszego wejrzenia</em>” wywołał sporo emocji wśród internautów. Lawina komentarzy w internecie sprawiła, że i my zainteresowaliśmy się tematem. Postanowiliśmy sprawdzić, jakie nastroje i emocje kryły się w opiniach nie tylko o programie, ale o trzech parach, które zaryzykowały i wzięły ślub w ciemno.</strong></p>
+<h2>Ślub od pierwszego wejrzenia. Fala komentarzy w sieci</h2>
+<p>Emitowany w TVN siódmy sezon „<em>Ślubu od pierwszego wejrzenia</em>” już po pierwszych trzech odcinkach oglądało średnio prawie 950 tys. widzów. Program był na tyle popularny, że taka widownia dała stacji TVN w czasie emisji pierwsze miejsce jeśli chodzi o oglądalność w kategorii wiekowej 16-49 (grupa komercyjna). Nic dziwnego, że produkcja wywołuje w widzach spore emocje. Ślub biorą bowiem osoby, które nigdy wcześniej się nie znały. Tak też było podczas siódmego sezonu, który postanowiliśmy wziąć pod lupę.</p>
+<p>W procesie monitoringu internetu, a konkretnie mediów społecznościowych, jak i komentarzy i opinii zostawionych pod artykułami na portalach informacyjnych, blogach i forach, udało nam się przebadać wnikliwie to, co pisano w sieci o programie. Dowiedzieliśmy się też w błyskawicznym tempie, jakie były nastroje, emocje i co pisano o każdej z trzech par. Przypomnijmy, że w siódmej edycji byli to: Patrycja i Adam, Dorota i Piotr oraz Agnieszka i Kamil.</p>
+<p><a href="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-opinie.png"><img alt="ślub od pierwszego wejrzenia sezon 7 opinie komentarze" class="aligncenter wp-image-5142 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-opinie.png" srcset="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-opinie.png 1280w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-opinie-512x288.png 512w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-opinie-1024x576.png 1024w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-opinie-768x432.png 768w" width="1280"/></a>Pozyskanie ponad 80 tys. opinii z całego internetu pokazało nam wyraźnie 13 pików, które wskazują kolejne 13 odcinków 7 sezonu (emitowanych co tydzień). Analiza naszym narzędziem do <a href="/oferta">badania nastrojów i emocji</a> (SentiTool) ukazała nam zmienność nastrojów i nastawienia internautów do programu wraz z każdym kolejnym odcinkiem. Początkowo nastroje wokół programu generowały pozytywne podejście internautów zarówno do par, jak i poszczególnych bohaterów. Sytuacja zaczęła jednak ulegać pogorszeniu począwszy od 6 odcinka.</p>
+<p>Od połowy kwietnia nastroje znacznie się pogorszyły, choć sentyment pozytywny do samego końca programu dominował. Co ciekawe, tylko w przypadku odcinka 11 odnotowaliśmy przewagę negatywnych nastrojów. Przyczyniły się do tego wielkie trudności i konflikty pomiędzy uczestnikami. Patrycja w tym odcinku kazała wyjechać swojemu mężowi i cieszyła się z tego, że go nie będzie. Swoje zrobił też konflikt i niezrozumienie pomiędzy Piotrem i Dorotą.</p>
+<h2>Uczestnicy „Ślubu od pierwszego wejrzenia” i nastroje względem nich</h2>
+<p>Badając różnice nastrojów ze strony internautów względem poszczególnych uczestników programu udało się wykazać, że najwięcej negatywnych emocji wśród uczestników sieci wygenerowała Dorota z Piotrem. Z kolei najmniej negatywnie odbierano Agnieszkę i Kamila (ich odbierano najlepiej od początku programu, o czym więcej w dalszej części wpisu). Poniższe zestawienie obrazuje stopień natężenie sentymentu negatywnego i pozytywnego w dyskusji o uczestnikach w odniesieniu do nastrojów wygenerowanych w rozmowach o programie ogólnie.</p>
+<p><img alt="" class="aligncenter wp-image-5143 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/05/Slajd2.png" srcset="/wp-content/uploads/2022/05/Slajd2.png 1280w, /wp-content/uploads/2022/05/Slajd2-512x288.png 512w, /wp-content/uploads/2022/05/Slajd2-1024x576.png 1024w, /wp-content/uploads/2022/05/Slajd2-768x432.png 768w" width="1280"/></p>
+<p>Analiza natężenia emocji podstawowych pokazała dużo więcej. Widzimy, jak kształtowało się nastawienie internautów do każdego kolejnego odcinka siódmego sezonu „<em>Ślubu od pierwszego wejrzenia</em>„.  Przełom nastąpił po siódmym odcinku. Wówczas nastroje względem programu i uczestników odwróciły się. Rozmowy zdominowały złość, wstręt, smutek i strach. Wcześniej mieliśmy do czynienia głównie z nadmiarem radości i zaufania.</p>
+<h2>Analiza emocji w rozmowach o każdym z odcinków programu</h2>
+<p>Negatywne emocje utkwiły w widzach do końca sezonu, choć to nie finał był dla nich najbardziej szokujący. Do wydarzeń, które zapoczątkowały zmiany w nastrojach użytkowników sieci, była między innymi kłótnia Piotra z Dorotą. Poszło wówczas o wolne niedziele. – <em>Lepiej od razu weź ze mną ten rozwód</em> – powiedział wówczas uczestnik do małżonki. Jego silna reakcja emocjonalna wywołała taką samą reakcję w widzach.</p>
+<p><a href="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-emocje-final.png"><img alt="" class="aligncenter wp-image-5152 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-emocje-final.png" srcset="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-emocje-final.png 1280w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-emocje-final-512x288.png 512w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-emocje-final-1024x576.png 1024w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-emocje-final-768x432.png 768w" width="1280"/></a></p>
+<h2>Co faktycznie pisali internauci na temat uczestników?</h2>
+<p>Jeszcze ciekawiej prezentują się wyniki analizy treści opinii o uczestnikach, a raczej (tym razem) o parach. Poniżej najpopularniejsze stwierdzenia pojawiające się w treściach wpisów od lutego do maja, czyli w czasie emisji siódmego sezonu programu. Agnieszka była określana jako fajna dziewczyna, a para robiła od początku na internautach dobre wrażenie. Niektórzy nazywali pannę młodą szarą myszką. Komentowano miejsce zamieszkania oraz sprawy związane z rodziną Kamila i jego firmą.</p>
+<p><a href="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-kamil-agnieszka.png"><img alt="kamil ślub od pierwszego wejrzenia" class="aligncenter wp-image-5146 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-kamil-agnieszka.png" srcset="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-kamil-agnieszka.png 1280w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-kamil-agnieszka-512x288.png 512w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-kamil-agnieszka-1024x576.png 1024w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-kamil-agnieszka-768x432.png 768w" width="1280"/></a></p>
+<p>Dużo gorzej sytuacja przedstawiała się jeśli chodzi o Dorotę i Piotra. Szczególnie jego osoba była krytykowana najmocniej przez internautów, nie brakowało nawet bardzo ostrych stwierdzeń. Użytkownicy mediów społecznościowych nazywali go toksycznym człowiekiem, okropnym facetem, krytykowali jego zachowanie i zarzucali mu uprawianie względem Doroty szantażu emocjonalnego. Dorotę określano z kolei jako fajną małą dziewczynkę, ale też biedną dziewczynę (z powodu zachowania partnera). Ktoś użył też stwierdzenia, że Dorota była w programie niczym ofiara przemocy domowej.</p>
+<p><img alt="kamil ślub od pierwszego wejrzenia instagram" class="aligncenter wp-image-5147 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-dorota-piotr.png" srcset="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-dorota-piotr.png 1280w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-dorota-piotr-512x288.png 512w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-dorota-piotr-1024x576.png 1024w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-dorota-piotr-768x432.png 768w" width="1280"/></p>
+<p>Drugą najsilniej krytykowaną przez internautów osobą była Patrycja, partnerka Adama. O ile jego nazywano normalnym, ciepłym i czułym facetem (również najprzystojniejszym od dawna), jego żonę nazywano osobą toksyczną. Para była określana jako całkowicie niedobrana, w której panował nastrój narastających emocjonalnych problemów, które szybko dały o sobie znać. Zachowanie Patrycji było negatywnie odbierane. Dostało się również jej siostrze, która – zdaniem internautów – mogła mieć wpływ na ostateczny rozpad związku. Dla niektórych Patrycja była wręcz wampirem energetycznym. Na plus zaznaczyły się jedynie jej urocze piegi.</p>
+<p><img alt="dorota ze ślubu od pierwszego wejrzenia" class="aligncenter wp-image-5148 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-patrycja-adam.png" srcset="/wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-patrycja-adam.png 1280w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-patrycja-adam-512x288.png 512w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-patrycja-adam-1024x576.png 1024w, /wp-content/uploads/2022/05/slub-od-pierwszego-wejrzenia-patrycja-adam-768x432.png 768w" width="1280"/></p>
+<p>Przedstawione dane są wynikiem analizy 81,6 tys. ogólnodostępnych wzmianek z polskojęzycznej sieci, zamieszczonych w sumie na 43 różnych portalach. 69 tys. opinii i komentarzy z całego zbioru zamieszczono na Facebooku. Było to dominujące miejsce rozmów o programie w okresie 21 lutego – 22 maja 2022 r.</p>
+</article>
+<article class="et_pb_post post-5094 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy category-sentibrand tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-internecie tag-emocje-w-opiniach tag-monitoring-mediow" id="post-5094">
+<a class="entry-featured-image-url" href="/zdjecia-z-buczy-ukraina-drastyczne-emocje/">
+<img alt="Masakra w Buczy. Drastyczne zdjęcia z Ukrainy wzbudziły w internautach bardzo złe emocje" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2022/04/zdjecia-z-buczy-drastyczne-ukraina-1080x628.jpg" srcset="/wp-content/uploads/2022/04/zdjecia-z-buczy-drastyczne-ukraina-1080x628.jpg 1080w, /wp-content/uploads/2022/04/zdjecia-z-buczy-drastyczne-ukraina-980x513.jpg 980w, /wp-content/uploads/2022/04/zdjecia-z-buczy-drastyczne-ukraina-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/zdjecia-z-buczy-ukraina-drastyczne-emocje/">Masakra w Buczy. Drastyczne zdjęcia z Ukrainy wzbudziły w internautach bardzo złe emocje</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">kwi 4, 2022</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Początek kwietnia przyniósł bardzo złe wieści z terenów Ukrainy, do tej pory okupowanych przez Rosjan. Po tym, jak wojska Władimira Putina opuściły te rejony, naszym oczom ukazał się prawdziwy obraz zbrodni wojennych i rzezi na cywilach. Sprawdziliśmy na szybko, jak na te doniesienia zareagowali internauci i jakimi emocjami były nasycone ich reakcje i opinie.</strong></p>
+<h2>Zdjęcia z Buczy. Reakcja internautów na drastyczne zdjęcia z Ukrainy</h2>
+<p>– <em>Zdjęcia ukraińskich cywilów zabitych przez rosyjską armię w podkijowskiej Buczy muszą nas zmienić, ten wstrząs musi przejść przez Niemcy, a zwłaszcza przez rząd w Berlinie</em> – napisał redaktor naczelny dziennika „<em>Bild</em>” Johannes Boie w jednym z ostatnich wydań swojej gazety. Tragedia, jaką ujawniły ukraińskie wojska wkraczając na tereny do tej pory okupowane przez Rosjan pokazały prawdziwy obraz tego konfliktu.</p>
+<p>Gdy patrzy się na zdjęcia z Buczy, po pierwsze myślimy: masakra. Po drugie dzieje się w Europie w 2022 roku. Od początku kwietnia internauci wyrazili swoją opinię na ten temat zamieszczając w sieci ponad 57 tys. komentarzy. Postanowiliśmy sprawdzić, jaki jest zaszyty w nich ładunek emocjonalny. Analiza wykazała, że przez ostatnie 2 dni mieliśmy do czynienia z wysokim pobudzeniem emocjonalnym (powyżej progu 50% na skali 0-100).</p>
+<p>Z kolei zmiany godzina do godziny jeśli chodzi o natężenie emocji wywołanych wstrętem sięgały momentami wartości dwucyfrowych (np. 3 kwietnia w godzinach porannych odnotowaliśmy wzrost natężenia tej emocji o godz. 6 rano względem godz. 5 o +18%). W późniejszych godzinach 3 i 4 kwietnia zmiany w natężeniu tej negatywnej emocji nie były tak drastyczne, ale sięgały momentami od 3% do 9%.</p>
+<p><a href="/wp-content/uploads/2022/04/zdjecia-z-buczy-masakra-rosjanie-ukraina-zdjecia-cial-drastyczne.png"><img alt="zdjęcia z buczy drastyczne zdjęcia z ukrainy rossija 1 online" class="aligncenter wp-image-5102 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/04/zdjecia-z-buczy-masakra-rosjanie-ukraina-zdjecia-cial-drastyczne.png" srcset="/wp-content/uploads/2022/04/zdjecia-z-buczy-masakra-rosjanie-ukraina-zdjecia-cial-drastyczne.png 1280w, /wp-content/uploads/2022/04/zdjecia-z-buczy-masakra-rosjanie-ukraina-zdjecia-cial-drastyczne-512x288.png 512w, /wp-content/uploads/2022/04/zdjecia-z-buczy-masakra-rosjanie-ukraina-zdjecia-cial-drastyczne-1024x576.png 1024w, /wp-content/uploads/2022/04/zdjecia-z-buczy-masakra-rosjanie-ukraina-zdjecia-cial-drastyczne-768x432.png 768w" width="1280"/></a></p>
+<p>Od momentu ujawnienia drastycznych zdjęć z Ukrainy, emocje negatywne sięgały zenitu. Wysoki poziom wstrętu utrzymywał się przez dwie doby.</p>
+<h2>Zdjęcia z Ukrainy bez cenzury a emocje. W pamięć zapadło to, co najbardziej brutalne</h2>
+<p>Co mówi analiza kontekstowa całej dyskusji wywołującej najwięcej wstrętu? Taką emocję wzbudziło w internautach to, co na zdjęciach z Buczy najgorsze. Strzały w tył głowy, związane ręce, nawiązywanie do powtórki z Katynia, porozrzucane ciała i masowe groby. Masakra w Buczy nazywana była masowym mordem. Wystraszył nas poziom grozy jeśli chodzi o to, co widoczne było na zdjęciach z Ukrainy.</p>
+<p><a href="/wp-content/uploads/2022/04/ukraina-zdjecia-cial-masakra-w-buczy.png"><img alt="ukraina zdjęcia ciał zmasakrowane sadistic ambasador rosji oblany farba" class="aligncenter wp-image-5103 size-full" decoding="async" height="552" loading="lazy" sizes="auto, (max-width: 905px) 100vw, 905px" src="/wp-content/uploads/2022/04/ukraina-zdjecia-cial-masakra-w-buczy.png" srcset="/wp-content/uploads/2022/04/ukraina-zdjecia-cial-masakra-w-buczy.png 905w, /wp-content/uploads/2022/04/ukraina-zdjecia-cial-masakra-w-buczy-512x312.png 512w, /wp-content/uploads/2022/04/ukraina-zdjecia-cial-masakra-w-buczy-768x468.png 768w" width="905"/></a></p>
+<p>Zdaniem internautów to, co stało się na Ukrainie, pokazało prawdziwą twarz Rosji. Skala zbrodni była dla nas nie do przyjęcia. Rosjan nazwano swołoczą, armią zwyrodnialców lub dziczą. Użytkownicy w sieci apelowali o zero litości dla zbrodniarzy, a Putina nazywali zbrodniarzem wojennym.<a href="/wp-content/uploads/2022/04/Zdjecia-z-Buczy.-Reakcja-internautow-na-drastyczne-zdjecia-z-Ukrainy.png"><img alt="ambasador rosji oblany farba smolensk zdjęcia z prosektorium" class="aligncenter wp-image-5106 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/04/Zdjecia-z-Buczy.-Reakcja-internautow-na-drastyczne-zdjecia-z-Ukrainy.png" srcset="/wp-content/uploads/2022/04/Zdjecia-z-Buczy.-Reakcja-internautow-na-drastyczne-zdjecia-z-Ukrainy.png 1280w, /wp-content/uploads/2022/04/Zdjecia-z-Buczy.-Reakcja-internautow-na-drastyczne-zdjecia-z-Ukrainy-512x288.png 512w, /wp-content/uploads/2022/04/Zdjecia-z-Buczy.-Reakcja-internautow-na-drastyczne-zdjecia-z-Ukrainy-1024x576.png 1024w, /wp-content/uploads/2022/04/Zdjecia-z-Buczy.-Reakcja-internautow-na-drastyczne-zdjecia-z-Ukrainy-768x432.png 768w" width="1280"/></a>O wysokim poziomie pobudzenia emocjonalnego niech świadczą też takie określenia jak: <em>„kacapska swołocz”, „zwykły bandyta”, „tragedia ludzka”, „zbrodniczy reżim”</em> czy – z bardziej skrajnych – „<em>ruska k….</em>” i<em> „ruskie g….”</em>. Internauci nie mieli w tym temacie litości.</p>
+<p>Najwięcej negatywnych emocji było widać we wskazanym okresie na Twitterze oraz w komentarzach pod publikacjami redakcji portali informacyjnych. Mniejsze natężenie wstrętu, smutku, strachu i złości widocznie było z kolei na Facebooku i w komentarzach i opiniach na YouTube.</p>
+<p>Analizę przeprowadzono narzędziem <a href="https://burbonik.pl/oferta">Sentitool</a> do badania emocji, sentymentu i pobudzenia emocjonalnego w tekście. <a href="/oferta/prawdziwe-emocje/"><strong>DOWIEDZ SIĘ WIĘCEJ</strong></a></p>
+</article>
+<article class="et_pb_post post-5045 post type-post status-publish format-standard has-post-thumbnail hentry category-polityka-i-spoleczenstwo category-sentibrand tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-opiniach tag-emocje-w-sieci tag-media-spolecznosciowe tag-monitoring-marki tag-monitoring-mediow" id="post-5045">
+<a class="entry-featured-image-url" href="/leroy-merlin-decathlon-nestle-bojkot-rosja/">
+<img alt="Bojkot. Leroy Merlin, Decathlon, Auchan i Nestle dostały czerwoną kartkę. Która marka oberwała najmocniej od internautów?" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2022/03/leroy-merlin-decathlon-nestle-bojkot-rosja-1080x628.jpg" srcset="/wp-content/uploads/2022/03/leroy-merlin-decathlon-nestle-bojkot-rosja-1080x628.jpg 1080w, /wp-content/uploads/2022/03/leroy-merlin-decathlon-nestle-bojkot-rosja-980x513.jpg 980w, /wp-content/uploads/2022/03/leroy-merlin-decathlon-nestle-bojkot-rosja-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/leroy-merlin-decathlon-nestle-bojkot-rosja/">Bojkot. Leroy Merlin, Decathlon, Auchan i Nestle dostały czerwoną kartkę. Która marka oberwała najmocniej od internautów?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">mar 30, 2022</span> | <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Leroy Merlin pod ostrzałem. Z powodu inwazji Rosji na Ukrainę, bojkot konsumencki pokazał swoje nowe oblicze. Tym razem to coś więcej, niż suche hasła, bo okazał się dużo bardziej skuteczny. Przeanalizowaliśmy setki tysięcy opinii z całego polskojęzycznego internetu na temat wybranych firm od początku wojny (24 lutego). Choć na niechlubnej liście jest dużo więcej firm, to głównie cztery z nich oberwały od internautów najbardziej.</strong></p>
+<h2>Marki najbardziej poobijane przez internautów</h2>
+<p>Jak wynika z badań SW Research, nawet 75% badanych wskazało, że zamierza bojkotować przynajmniej jedną firmę, która nie wycofała się z Rosji na skutek inwazji. Najczęściej deklaracje bojkotu padają w kierunku marek Leroy Merlin, Auchan, Nestle i Decathlon.</p>
+<p>Więcej niż połowa (57%) respondentów wspiera opinie popierające bojkot. Konsumenci bez wątpienia zamierzają bojkotować firmy i marki, które nadal chcą działać w Rosji. Złą informacją dla firm jest ta, że taki zamiar deklarują mieszkańcy miast powyżej 500 tys. oraz osoby powyżej 35 roku życia.</p>
+<div class="wp-caption aligncenter" id="attachment_5048" style="width: 1034px"><a href="/wp-content/uploads/2022/03/227-1-bojkotowane-firmy.png"><img alt="leroy merlin auchan decathlon bojkot" aria-describedby="caption-attachment-5048" class="wp-image-5048 size-large" decoding="async" height="768" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2022/03/227-1-bojkotowane-firmy-1024x768.png" srcset="/wp-content/uploads/2022/03/227-1-bojkotowane-firmy-1024x768.png 1024w, /wp-content/uploads/2022/03/227-1-bojkotowane-firmy-512x384.png 512w, /wp-content/uploads/2022/03/227-1-bojkotowane-firmy-768x576.png 768w, /wp-content/uploads/2022/03/227-1-bojkotowane-firmy.png 1200w" width="1024"/></a><p class="wp-caption-text" id="caption-attachment-5048"><em>Fot. SW Research</em></p></div>
+<p>Co ciekawe, nawet dwie trzecie badanych oczekuje, że rodzime firmy przestaną handlować z firmami działającymi na terenie Rosji, a 62 proc. wspiera postulat, że firmy działające w Rosji powinny mieć w Polsce całkowity zakaz reklamowania się. Ponad połowa badanych twierdzi, że markom nadal prowadzącym interesy w Rosji trudno będzie odbudować zaufanie konsumentów.</p>
+<p>Z internetowym bojkotem marek czy produktów mieliśmy do czynienia już wiele razy, ale z reguły nie widać tego w danych finansowych. Często kryzys wywołuje wręcz odwrotny skutek. Wojna zmieniła jednak całkowicie oblicze konsumenckiego protestu.</p>
+<p>Polacy w tej chwili dużo bardziej wierzą w skuteczność zbiorowego bojkotu i wyrażają przekonanie, że spowoduje to zmianę decyzji firm działających nadal na rynku rosyjskim. Oczekuje tego 59 proc. badanych przez SW Research.</p>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="pl" style="text-align: center;">To jest precedens.<br/>
+Takiego bojkotu konsumenckiego jeszcze w PL nie było.</p>
+<p style="text-align: center;">Najpierw <a href="https://twitter.com/PKOBP?ref_src=twsrc%5Etfw">@PKOBP</a> udowadnia, że sieci, które pozostały aktywne w 🇷🇺, mają niższą dynamikę obrotów niż konkurencja.</p>
+<p style="text-align: center;">Teraz bojkot z Internetu przeniósł się przed sklepy. Ewenement.</p>
+<p style="text-align: center;">Bardzo dobrze.<br/>
+Do skutku. <a href="https://t.co/eWxTRfnQiV">pic.twitter.com/eWxTRfnQiV</a></p>
+<p style="text-align: center;">— Wojtek Kardys 🇺🇦🇵🇱🇪🇺 (@WojtekKardys) <a href="https://twitter.com/WojtekKardys/status/1507281716074983425?ref_src=twsrc%5Etfw">March 25, 2022</a></p>
+</blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<p>Opinie mocno się zradykalizowały. Nieco ponad połowa respondentów wprost oczekuje, że kluczowi pracownicy firm, które pozostały w Rosji, powinni sami zwolnić się z pracy. Polacy oczekują, że pracownicy tych firm w naszym kraju zaczną strajkować i będą odmawiali masowo wypełniania obowiązków.</p>
+<p>Mimo wszystko spore grono krytyków i tak prędzej czy później dokona ponownych zakupów w bojkotowanych sklepach. Sceptycyzm ten wynika mimo wszystko z przeświadczenia, że takie nastawienie nie zmieni wiele, bo Rosja i tak zarabia głównie na ropie i gazie.</p>
+<h2>Bojkot konsumencki a zjawisko warunkowego przyzwolenia</h2>
+<p>Z jednej strony mamy wyraźny bojkot konsumentów, który wyszedł już poza internet. Doszło pod siedzibami marketów i sklepów do wielu protestów i pikiet, budynek Leroy Merlin został pomazany farbą… Jednak część ludzi i tak za moment zacznie myśleć w kategoriach warunkowego przyzwolenia.</p>
+<p>Wybrana grupa, mimo sytuacji na Ukrainie, będzie w stanie mniej lubi bardziej zaakceptować dalszą działalność firmy w Rosji, jeśli firma ta będzie źródłem usług czy produktów niezbędnych do bieżącego funkcjowania. Trudno bowiem bojkotować zakup leków czy artykułów spożywczych, a w szczególności związanych z higieną osobistą.</p>
+<p>Co ciekawe, nawet połowa osób badanych przez SW Research jest w stanie przebaczyć marce dalsze robienie biznesu w Rosj, jeśli zarząd przeznaczy część zysku na pomoc uchodźcom. Warto też wspomnieć, że napływ ponad 2 mln uchodźców i tragiczne obrazy płynące z mediów spowodowały u co czwartej osoby poczucie presji otoczenia, żeby przyłączyć do bojkotu. To oznacza, że niektórzy sami by tego z własnej woli nie zrobili.</p>
+<p>Mimo wszystko bojkot stał się realnie zauważalny i bez wątpienia miał wpływ na finanse firm pozostających z biznesem w Rosji. Dowodem na to może być chociażby zestawienie pokazujące obroty sieci handlowych, opublikowane przez PKO Bank Polski. Choć transakcje kartowe, których dotyczą wykresy, związane są tylko z płatnościami klientów tego konkretnego banku, to mimo wszystko widać, że bojkot to nie tylko słowa.</p>
+<div class="wp-caption aligncenter" id="attachment_5054" style="width: 766px"><a href="/wp-content/uploads/2022/03/obroty-sieci-handlowych-pko-bank-polski-bojkot-rosja.png"><img alt="pko bank polski bojkot rosja obroty auchan" aria-describedby="caption-attachment-5054" class="wp-image-5054 size-full" decoding="async" height="265" loading="lazy" sizes="auto, (max-width: 756px) 100vw, 756px" src="/wp-content/uploads/2022/03/obroty-sieci-handlowych-pko-bank-polski-bojkot-rosja.png" srcset="/wp-content/uploads/2022/03/obroty-sieci-handlowych-pko-bank-polski-bojkot-rosja.png 756w, /wp-content/uploads/2022/03/obroty-sieci-handlowych-pko-bank-polski-bojkot-rosja-512x179.png 512w" width="756"/></a><p class="wp-caption-text" id="caption-attachment-5054">Fot. Twitter / PKO BP</p></div>
+<p>Tym razem bojkot sieci handlowych, które nie wycofały się z Rosji, to – zdaniem banku – coś więcej, niż tylko hasła w mediach społecznościowych. Dane o płatnościach kartami PKO BP pokazały, że sklepy, które zdecydowały się pozostać aktywne w Rosji mimo wojny, odnotowały niższą dynamikę obrotów niż konkurencja.</p>
+<h2>Dyskusja w sieci o markach. Nastroje internautów i siła języka</h2>
+<p>Jako firma analizująca nastroje, emocje i sentyment w treściach, przebadaliśmy w sumie ponad 216 tys. opinii na temat czterech najczęściej komentowanych w sieci marek jeśli chodzi o kontekst wojny na Ukrainie. To Leroy Merlin, Auchan, Decathlon oraz Nestle. Poniżej wykres prezentujący liczbę zamieszczonych on-line opinii od początku wojny do 29 marca.</p>
+<p><a href="/wp-content/uploads/2022/03/bojkot-leroy-merlin-auchan-nestle-decathlon-wzmianki.png"><img alt="leroy merlin w rosji" class="aligncenter wp-image-5068 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/bojkot-leroy-merlin-auchan-nestle-decathlon-wzmianki.png" srcset="/wp-content/uploads/2022/03/bojkot-leroy-merlin-auchan-nestle-decathlon-wzmianki.png 1280w, /wp-content/uploads/2022/03/bojkot-leroy-merlin-auchan-nestle-decathlon-wzmianki-512x288.png 512w, /wp-content/uploads/2022/03/bojkot-leroy-merlin-auchan-nestle-decathlon-wzmianki-1024x576.png 1024w, /wp-content/uploads/2022/03/bojkot-leroy-merlin-auchan-nestle-decathlon-wzmianki-768x432.png 768w" width="1280"/></a></p>
+<p>Leroy Merlin to marka, na temat której zamieszczono najwięcej opinii. Pierwsze doniesienia o pozostaniu z biznesem w Rosji pojawiły się po 10 marca. W przypadku Nestle kulminacja nastapiła tydzień później. Decathlon to z kolei marka często współwystępująca w treściach opinii i komentarzy z marką Auchan.</p>
+<p>Dyskusja na temat firm pojawiała się w 70-80% w mediach społecznościowych, głównie na Facebooku i Twitterze. Podium pod tym wzgledem zamknęły portale informacyjne i komentarze pod artykułami poszczególnych redakcji. Rozmowy toczyły się łącznie na ponad 320 portalach w sieci.</p>
+<p><a href="/wp-content/uploads/2022/03/bojkot-rosja-jakie-marki-social-media.png"><img alt="bojkot decathlon reserved rosja lpp opinie" class="aligncenter wp-image-5072 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/bojkot-rosja-jakie-marki-social-media.png" srcset="/wp-content/uploads/2022/03/bojkot-rosja-jakie-marki-social-media.png 1280w, /wp-content/uploads/2022/03/bojkot-rosja-jakie-marki-social-media-512x288.png 512w, /wp-content/uploads/2022/03/bojkot-rosja-jakie-marki-social-media-1024x576.png 1024w, /wp-content/uploads/2022/03/bojkot-rosja-jakie-marki-social-media-768x432.png 768w" width="1280"/></a></p>
+<h3>Leroy Merlin. Analiza nastrojów w czasie</h3>
+<p>W przypadku marki Leroy Merlin punkt zwrotny odnotowano 5 i 10 marca. Do tego czasu nastroje były zdecydowanie korzystne dla marki. Po 10 marca negatywne emocje wzięły górę i utrzymywały się do końca miesiąca. Pobudzenie emocjonalne w marcu w okolicach średniej wartości, tj. 50-55 proc.</p>
+<p><a href="/wp-content/uploads/2022/03/bojkot-leroy-merlin-sentyment.png"><img alt="leroy merlin w rosji" class="aligncenter wp-image-5069 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/bojkot-leroy-merlin-sentyment.png" srcset="/wp-content/uploads/2022/03/bojkot-leroy-merlin-sentyment.png 1280w, /wp-content/uploads/2022/03/bojkot-leroy-merlin-sentyment-512x288.png 512w, /wp-content/uploads/2022/03/bojkot-leroy-merlin-sentyment-1024x576.png 1024w, /wp-content/uploads/2022/03/bojkot-leroy-merlin-sentyment-768x432.png 768w" width="1280"/></a></p>
+<h3>Decathlon. Analiza nastrojów w czasie</h3>
+<p>W przypadku marki Decathlon punkt zwrotny odnotowano 12 marca. Do tego dnia nastroje były zdecydowanie korzystne dla marki, po czym nastapiło ponaddwukrotne ich obniżenie. Po 12 marca negatywne emocje wzięły górę i stan ten utrzymywał się do końca miesiąca.</p>
+<p>Pobudzenie emocjonalne w marcu stabilne na poziomie 45-50 proc., co świadczy o tym, że internauci używali nieco delikatniejszych określeń i stwierdzeń, niż w przypadku Leroy Merlin.</p>
+<p><a href="/wp-content/uploads/2022/03/bojkot-decathlon-sentyment.png"><img alt="bojkot auchan w polsce" class="aligncenter wp-image-5067 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/bojkot-decathlon-sentyment.png" srcset="/wp-content/uploads/2022/03/bojkot-decathlon-sentyment.png 1280w, /wp-content/uploads/2022/03/bojkot-decathlon-sentyment-512x288.png 512w, /wp-content/uploads/2022/03/bojkot-decathlon-sentyment-1024x576.png 1024w, /wp-content/uploads/2022/03/bojkot-decathlon-sentyment-768x432.png 768w" width="1280"/></a></p>
+<h3>Auchan. Analiza nastrojów w czasie</h3>
+<p>Marka Auchan nie generowała przez cały okres wysokich natężeń emocji i sentymentu. Zarówno niekorzystne i korzystne podejście do niej było na zbliżonych poziomach (inaczej niż w przypadku Decathlona i Leroy Merlin, gdzie różnice pomiędzy wartościami były bardzo duże).</p>
+<p>Punktem zwrotnym w przypadku tej marki była data 10 marca. Od tego dnia negatywne odczucia względem Auchan utrzymywały się do końca marca. Pobudzenie emocjonalne pozostało stabilne w okolicach średniej.</p>
+<p><a href="/wp-content/uploads/2022/03/bojkot-auchan-sentyment.png"><img alt="auchan bojkot" class="aligncenter wp-image-5066 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/bojkot-auchan-sentyment.png" srcset="/wp-content/uploads/2022/03/bojkot-auchan-sentyment.png 1280w, /wp-content/uploads/2022/03/bojkot-auchan-sentyment-512x288.png 512w, /wp-content/uploads/2022/03/bojkot-auchan-sentyment-1024x576.png 1024w, /wp-content/uploads/2022/03/bojkot-auchan-sentyment-768x432.png 768w" width="1280"/></a></p>
+<h3>Nestle. Analiza nastrojów w czasie</h3>
+<p>W przypadku marki Nestle nastroje w całym analizowanym okresie przeplatały się. Odnotowano również nieco mniejszą siłę używanego języka. Końcówka marca mimo wszystko niekorzystna dla wizerunku. Najgorszymi dniami dla marki były 10, 11 i 25 marca. Pobudzenie emocjonalne po stronie internautów w okolicach średniej, tj. 50 proc. na skali od 0 do 100.</p>
+<p><a href="/wp-content/uploads/2022/03/bojkot-nestle-merlin-sentyment.png"><img alt="auchan w rosji" class="aligncenter wp-image-5070 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/bojkot-nestle-merlin-sentyment.png" srcset="/wp-content/uploads/2022/03/bojkot-nestle-merlin-sentyment.png 1280w, /wp-content/uploads/2022/03/bojkot-nestle-merlin-sentyment-512x288.png 512w, /wp-content/uploads/2022/03/bojkot-nestle-merlin-sentyment-1024x576.png 1024w, /wp-content/uploads/2022/03/bojkot-nestle-merlin-sentyment-768x432.png 768w" width="1280"/></a></p>
+<p>Jeśli chodzi o zmianę nastawienia internautów, przebadaliśmy emocje względem marek zaszyte w publikowanych treściach w sieci. Największe wzrosty natężenia złości i wstrętu (średnie dane z marca w odniesieniu do sytuacji z 1 dnia wojny) odnotowano w przypadku Nestle. Tu wartości to kolejno +139% dla złości i +112 dla wstrętu.</p>
+<p><a href="/wp-content/uploads/2022/03/decathlon-leroy-merlin-auchan-bojkot-rosja-emocje.png"><img alt="decathlon pochodzenie" class="aligncenter wp-image-5076 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/decathlon-leroy-merlin-auchan-bojkot-rosja-emocje.png" srcset="/wp-content/uploads/2022/03/decathlon-leroy-merlin-auchan-bojkot-rosja-emocje.png 1280w, /wp-content/uploads/2022/03/decathlon-leroy-merlin-auchan-bojkot-rosja-emocje-512x288.png 512w, /wp-content/uploads/2022/03/decathlon-leroy-merlin-auchan-bojkot-rosja-emocje-1024x576.png 1024w, /wp-content/uploads/2022/03/decathlon-leroy-merlin-auchan-bojkot-rosja-emocje-768x432.png 768w" width="1280"/></a></p>
+<p>Choć o Leroy Merlin pisało się najwięcej, to o wiele gorzej w zestawieniu wypadł Decathlon. Tu odnotowano +56% złości i +50% wstrętu, a także największą utratę (-43%) emocji wyrażajacej zaufanie.</p>
+<p>Najmniej dostało się od internautów marce Auchan, w przypadku której również ubytek zaufania był najmniejszy z całej analizowanej czwórki. Średnia wartość utraty zaufania dla całej badanej czwórki to poziom ok. -46,3%. W tym czasie uczucie wstrętu do marek wzrosło średnio o +68,3%, a złości aż o 82%.</p>
+<p>Jeśli chodzi o konteksty dyskusji na temat poszczególnych firm, dominowała wspólna nazwa dla wszystkich pozostających w Rosji, czyli „<em>długa lista hańby</em>„. W przypadku Auchana często wypominano, że firma płaci w Polsce śmieszne podatki jednocześnie zarabiając miliardy. Marki pojawiały sie też często w kontekstach związanych z surowcami energetycznymi z Rosji. Wspominano też o prawach człowieka, które były łamane w Rosji już wcześniej, co nie przeszkodziło firmom prowadzić tam interesów.</p>
+<p><a href="/wp-content/uploads/2022/03/rosja-firmy-bojkot-lista-hanby.png"><img alt="decathlon właściciel" class="aligncenter wp-image-5078 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2022/03/rosja-firmy-bojkot-lista-hanby.png" srcset="/wp-content/uploads/2022/03/rosja-firmy-bojkot-lista-hanby.png 1280w, /wp-content/uploads/2022/03/rosja-firmy-bojkot-lista-hanby-512x288.png 512w, /wp-content/uploads/2022/03/rosja-firmy-bojkot-lista-hanby-1024x576.png 1024w, /wp-content/uploads/2022/03/rosja-firmy-bojkot-lista-hanby-768x432.png 768w" width="1280"/></a></p>
+<p>W przypadku Nestle pozostanie w Rosji nazywano obrzydliwym działaniem. W kontekście tej firmy używano zdecydowanie mocniejszego języka i silniejszych emocjonalnie stwierdzeń (np. „<em>śmierć niemowląt</em>” czy „<em>krwiożercza działalność</em>„). Z kolei Decathlon pojawiał się obok stwierdzeń typu „<em>lista wstydu</em>„, wspominano o omijaniu sklepu „<em>szerokim łukiem</em>„, szukano alternatywnych marek polskiego pochodzenia.</p>
+<h2>Moc społeczeństwa obywatelskiego. Wojna wytworzyła nową rzeczywistość dla firm, ale…</h2>
+<p>Dane Sentimenti dotyczące nastrojów w sieci potwierdzają też tezę o dużej zmianie nastawienia, w dodatku – póki co – zmianie trwałej. Z kolei jeśli chodzi o informacje płynące z badania SW Research, to poniekąd pokrywają się z tymi z sondażu wykonanego przez pracownię United Surveys na zlecenie RMF FM i „<em>Dziennika Gazety Prawnej</em>„. 46,3 proc. badanych zamierza ograniczyć zakupy w sklepach marek pozostających w Rosji, z kolei 21,3 proc. badanych nie zmieniło podejścia w tym zakresie.</p>
+<p>Choć tym razem do bojkotu mamy bardzo poważny powód, to w Polsce wielkich tradycji w tym temacie nie ma. Cuda czynią ceny. Można zakładać, że po zakończeniu wojny na Ukrainie skrajne nastroje i postawy ulegną złagodzeniu. Konflikt trwa dopiero miesiąc, sytuacja jest wciąż nowa i dynamiczna, dlatego większość społeczeństwa wyraźnie jeszcze czuje duży strach i niepokój. Emocje u ludzi jeszcze nie opadły po dwóch latach epidemii koronawirusa, a już zmuszeni byliśmy wkroczyć w kolejne dwa kryzysy – wysoką inflację i wojnę przy naszych granicach.</p>
+<p>Z czasem ludzie zaczną jednak przyzwyczajać się do nowej rzeczywistości, choć nie ulega wątpliwości, że przed markami roztoczyła się pewna aura niepewności, a bojkot nie jest – póki co – tym, co znamy sprzed 24 lutego. Emocje na pewno nie znikną z dnia na dzień, pewnie nawet nie z tygodnia na tydzień. Dla wielu konsumentów marki z tzw. „<em>listy hańby</em>” na zawsze pozostaną przyjaciółmi Putina nie tylko z tego powodu, że są bez względu na wszystko nastawione na zysk.</p>
+<p>Bez względu na końcowy wynik wojny, marki powinny uświadomić sobie, że jest to dramat, który wykreował całkiem nowy świat. Choć w strategiach działania globalnych firm często jest wpisana apolityczność, tym razem raczej nie uda się jej uniknąć. Warto pamiętać też, że koncerny często chwalą się wartościami, które niosą ich produkty i usługi.</p>
+<p>Z drugiej strony zadaniem prywatnej firmy jest zarabiać i zwiększać popyt na swoje towary. Firmy muszą więc na nowo odszukać złoty środek i znaleźć magiczny punkt, w którym uda się z powodzeniem prowadzić biznes i zarabiać pieniądze, jak i być jednoczesnie odpowiedzialnymi społecznie. Szefowie na pewno są świadomi, że obywatele mają w zwyczaju strzelać focha, a potem wracać. W końcu garnitury Hugo Bossa – firmy szyjącej mundury żołnierzom Hitlera – nadal świetnie się sprzedają.</p>
+<p><strong>Źródła danych:</strong></p>
+<p>1. Badanie emocji i nastrojów za pomocą narzędzia <a href="/oferta">SentiTool</a></p>
+<p>2. Badanie SW Research zrealizowane w dniach 21-23.03.2021 r. na reprezentatywnej próbie n=1057 Polaków w wieku 16 lat i więcej. Metoda: wywiady online, CAWI</p>
+<p>3. United Surveys (18-19.03.2022 na próbie n=1000, metodą CAWI)</p>
+<p>3. Twitter / profil PKO BP</p>
+</article>
+<div class="pagination clearfix">
+<div class="alignleft"><a href="/tag/analiza-sentymentu/page/3/">« Starsze wpisy</a></div>
+<div class="alignright"><a href="/tag/analiza-sentymentu/">Kolejne wpisy »</a></div>
+</div> </div>
+<div id="sidebar">
+<div class="et_pb_widget widget_text" id="text-2"> <div class="textwidget">
+</div>
+</div><div class="et_pb_widget widget_categories" id="categories-2"><h4 class="widgettitle">Kategorie</h4>
+<ul>
+<li class="cat-item cat-item-1191"><a href="/category/polityka-i-spoleczenstwo/">Polityka i społeczeństwo</a>
+</li>
+<li class="cat-item cat-item-1193"><a href="/category/styl-zycia/">Styl życia</a>
+</li>
+<li class="cat-item cat-item-1226"><a href="/category/badania-rynku/">Badania rynku</a>
+</li>
+<li class="cat-item cat-item-1121"><a href="/category/w-mediach/">W mediach</a>
+</li>
+<li class="cat-item cat-item-1149"><a href="/category/w-mediach/podcasty-pl/">Podcasty</a>
+</li>
+<li class="cat-item cat-item-1153"><a href="/category/konferencje/">Konferencje</a>
+</li>
+<li class="cat-item cat-item-582"><a href="/category/sentibrand/">SentiBrand</a>
+</li>
+<li class="cat-item cat-item-263"><a href="/category/sentistocks-pl/">SentiStocks</a>
+</li>
+<li class="cat-item cat-item-1055"><a href="/category/publikacje-naukowe/">Publikacje naukowe</a>
+</li>
+<li class="cat-item cat-item-24"><a href="/category/okiem-badacza/">Okiem badacza</a>
+</li>
+<li class="cat-item cat-item-434"><a href="/category/kategoryzacja-komentarzy/">Kategoryzacja komentarzy</a>
+</li>
+</ul>
+</div>
+<div class="et_pb_widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widgettitle">Ostatnie wpisy</h4>
+<ul>
+<li>
+<a href="/emocje-w-biotech/">Głębsze Spojrzenie na Emocje: Jak Firmy Bio-Tech Mogą Lepiej Rozumieć Odbiór Swojej Marki?</a>
+</li>
+<li>
+<a href="/jak-emocje-ksztaltuja-nasze-spojrzenie-na-wschodnich-sasiadow-analiza-mediow-spolecznosciowych-2024/">Jak emocje kształtują nasze spojrzenie na wschodnich sąsiadów? Analiza mediów społecznościowych 2024</a>
+</li>
+<li>
+<a href="/jezyk-i-emocje-w-roznorodnosci-co-pokazuja-dane/">Poznaj słowa, które budują mosty i te, które niszczą relacje społeczne – zaskakujące wyniki badań!</a>
+</li>
+<li>
+<a href="/analiza-emocji-w-debacie-prezydenckiej-harris-vs-trump-jak-sentimenti-mierzy-emocje-i-sentymenty/">Analiza emocji w debacie prezydenckiej Harris vs Trump: Jak Sentimenti mierzy emocje i sentymenty</a>
+</li>
+<li>
+<a href="/analiza-sentymentu-nie-powie-ci-prawdy/">Analiza sentymentu nie powie Ci prawdy</a>
+</li>
+</ul>
+</div> </div>
+</div>
+</div>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-5973" decoding="async" height="100" loading="lazy" src="/wp-content/uploads/2023/06/logo2.svg" title="logo2" width="100"/></span>
+</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p><strong>Sentimenti sp. z o.o.</strong><br/><span>ul. Święty Marcin 11/8</span><br/><span>61-803 Poznań, Poland</span><br/><a href="mailto:kontakt@sentimenti.pl"></a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_0_tb_footer et_pb_widget_area clearfix et_pb_widget_area_right et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_dark et_pb_sidebar_no_border">
+<div class="fwidget et_pb_widget widget_nav_menu" id="nav_menu-4"><div class="menu-menu-w-stopce-container"><ul class="menu" id="menu-menu-w-stopce"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6425" id="menu-item-6425"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6691" id="menu-item-6691"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6421" id="menu-item-6421"><a href="/kontakt/">Kontakt</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-6415" decoding="async" height="63" loading="lazy" src="/wp-content/uploads/2023/06/UE_EFRR-black.png" title="UE_EFRR-black" width="240"/></span>
+</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link et-social-facebook"><a class="icon et_pb_with_border" href="https://www.facebook.com/sentimentipl" target="_blank" title="Śledź na Facebook"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link et-social-twitter"><a class="icon et_pb_with_border" href="https://twitter.com/SENTIMENTIPL" target="_blank" title="Śledź na X"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link et-social-linkedin"><a class="icon et_pb_with_border" href="https://www.linkedin.com/company/sentimenti/" target="_blank" title="Śledź na LinkedIn"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li>
+</ul>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_1_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light et_pb_sidebar_no_border">
+<div class="et_pb_widget widget_nav_menu" id="nav_menu-7"><div class="menu-rodo-pl-container"><ul class="menu" id="menu-rodo-pl"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6418" id="menu-item-6418"><a href="/polityka-prywatnosci/" rel="privacy-policy">Polityka prywatności RODO</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Design: <a href="https://ballaun.art/" rel="noopener" style="color: white;" target="_blank">ballaun.art</a></div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: index-->
+<div class="modal-cacsp-backdrop"></div>
+<div class="modal-cacsp-position">
+<div class="modal-cacsp-box modal-cacsp-box-info">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Używamy plików cookie, aby zapewnić prawidłowe działanie naszej strony internetowej i usług. Te pliki cookie są niezbędne i są ustawiane automatycznie. Chcielibyśmy również używać analitycznych plików cookie, aby zrozumieć, w jaki sposób wchodzisz w interakcję z naszą witryną i marketingowymi plikami cookie, aby zapewnić spersonalizowane treści i reklamy.
+Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików cookie zarówno do podstawowych, jak i nieistotnych celów. Kliknij „Ustawienia”, aby wybrać typy plików cookie, które chcesz włączyć lub wyłączyć. Więcej informacji znajdziesz w naszej Polityce prywatności RODO.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-settings" href="#">
+							Ustawienia						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+<div class="modal-cacsp-box modal-cacsp-box-settings">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Wybierz, jakie pliki cookies chcesz zaakceptować. Twój wybór zostanie zachowany przez rok.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-box-settings-list">
+<ul>
+<li>
+<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+<span>Konieczne<br/>
+<span>Te pliki cookie nie są opcjonalne. Są one potrzebne do funkcjonowania strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</span>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics" href="#statistics">
+<span>Statystyka<br/>
+<span>Abyśmy mogli poprawić funkcjonalność i strukturę strony internetowej, na podstawie tego, jak strona jest używana.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="experience" href="#experience">
+<span>Doświadczenie<br/>
+<span>Aby nasza strona internetowa działała jak najlepiej podczas twojego przejścia na nią. Jeśli odrzucisz te pliki cookie, niektóre funkcje znikną ze strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="marketing" href="#marketing">
+<span>Marketing<br/>
+<span>Udostępniając swoje zainteresowania i zachowania podczas odwiedzania naszej strony, zwiększasz szansę na zobaczenie spersonalizowanych treści i ofert.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-save" href="#">
+							Zapisz						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept-all" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+</div>
+<!--googleon: index-->
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Basic:regular&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6Fc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FE.woff2) format('woff2');}</style><script id="cookies-and-content-security-policy-cookie-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie.min.js?ver=2.41" type="text/javascript"></script>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" type="text/javascript"></script>
+<script id="jquery-js-after" type="text/javascript">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var cacsp_ajax_object = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"53e1f30221"};
+var cacspMessages = {"cacspReviewSettingsDescription":"Twoje ustawienia mog\u0105 uniemo\u017cliwi\u0107 ci obejrzenie tej tre\u015bci. Najprawdopodobniej masz wy\u0142\u0105czone Do\u015bwiadczenie.","cacspReviewSettingsButton":"Przegl\u0105daj swoje ustawienia","cacspNotAllowedDescription":"Ta tre\u015b\u0107 nie mo\u017ce by\u0107 wczytana, gdy\u017c nie jest dozwolona na witrynie.","cacspNotAllowedButton":"Skontaktuj si\u0119 z administratorem","cacspExpires":"365","cacspWpEngineCompatibilityMode":"0","cacspTimeout":"1000","cacspOptionDisableContentNotAllowedMessage":"0","cacspOptionGoogleConsentMode":"0","cacspOptionSaveConsent":"0"};
+//# sourceURL=cookies-and-content-security-policy-js-extra
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js?ver=2.41" type="text/javascript"></script>
+<script id="cookies-and-content-security-policy-error-message-js" src="/wp-content/uploads/cookies-and-content-security-policy-error-message.js?ver=2.41&amp;mod%3D20260116142405" type="text/javascript"></script>
+<script id="df-script-js" src="/wp-content/plugins/filter-for-divi/df-script.js?ver=2.0.2" type="text/javascript"></script>
+<script id="pll_cookie_script-js-after" type="text/javascript">
+/* <![CDATA[ */
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=pl; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+/* ]]> */
+</script>
+<script id="divi-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"/wp-admin/admin-ajax.php","images_uri":"/wp-content/themes/Divi/images","builder_images_uri":"/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"2b0e8fb0d2","subscription_failed":"Prosz\u0119, sprawd\u017a pola poni\u017cej, aby upewni\u0107 si\u0119, \u017ce wpisa\u0142e\u015b poprawn\u0105 informacj\u0119.","et_ab_log_nonce":"ea219785f5","fill_message":"Prosz\u0119 wype\u0142ni\u0107 nast\u0119puj\u0105ce pola:","contact_error_message":"Napraw poni\u017csze b\u0142\u0119dy:","invalid":"Nieprawid\u0142owy adres e-mail","captcha":"Captcha","prev":"Przed","previous":"Poprzednie","next":"Dalej","wrong_captcha":"Wpisa\u0142e\u015b/-a\u015b w captcha nieprawid\u0142owy numer.","wrong_checkbox":"Pole wyboru","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"5333","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#e6007a","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script id="divi-custom-script-js" src="/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="smoothscroll-js" src="/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.1" type="text/javascript"></script>
+<script id="es6-promise-js" src="/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-recaptcha-v3-js" src="https://www.google.com/recaptcha/api.js?render=6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO&amp;ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-api-spam-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO","page_action":{"action":"dlaczego_analiza_sentymentu_w_opiniach_on_line_ma_znaczenie_dla_biznesu"}};
+//# sourceURL=et-core-api-spam-recaptcha-js-extra
+/* ]]> */
+</script>
+<script id="et-core-api-spam-recaptcha-js" src="/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=4.27.1" type="text/javascript"></script>
+<script id="fitvids-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.1" type="text/javascript"></script>
+<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=6.9.11" type="text/javascript"></script>
+<script id="jquery-mobile-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.27.1" type="text/javascript"></script>
+<script id="magnific-popup-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.1" type="text/javascript"></script>
+<script id="easypiechart-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.27.1" type="text/javascript"></script>
+<script id="salvattore-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-common-js" src="/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.1" type="text/javascript"></script>
+<script id="ivory-search-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+//# sourceURL=ivory-search-scripts-js-extra
+/* ]]> */
+</script>
+<script id="ivory-search-scripts-js" src="/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.13" type="text/javascript"></script>
+<script id="et-builder-modules-script-motion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+//# sourceURL=et-builder-modules-script-motion-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-motion-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-builder-modules-script-sticky-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+//# sourceURL=et-builder-modules-script-sticky-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-sticky-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.27.1" type="text/javascript"></script>
+<span class="et_pb_scroll_top et-pb-icon"></span>
+</body>
+</html>

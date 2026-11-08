@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="/xmlrpc.php" rel="pingback"/>
+<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4i.woff2) format('woff2');}</style><meta content="noindex, follow" name="robots"/>
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+<title>emocje w opiniach Archives - Strona 6 z 8 - Sentimenti</title>
+<meta content="pl_PL" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Archiwa: emocje w opiniach" property="og:title"/>
+<meta content="/tag/emocje-w-opiniach/" property="og:url"/>
+<meta content="Sentimenti" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@SENTIMENTIPL" name="twitter:site"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"CollectionPage","@id":"\/tag\/emocje-w-opiniach\/","url":"\/tag\/emocje-w-opiniach\/page\/6\/","name":"emocje w opiniach Archives - Strona 6 z 8 - Sentimenti","isPartOf":{"@id":"\/#website"},"primaryImageOfPage":{"@id":"\/tag\/emocje-w-opiniach\/page\/6\/#primaryimage"},"image":{"@id":"\/tag\/emocje-w-opiniach\/page\/6\/#primaryimage"},"thumbnailUrl":"\/wp-content\/uploads\/2020\/07\/public-relations-definicja-narzedzia-marketing-pr-co-to.jpg","breadcrumb":{"@id":"\/tag\/emocje-w-opiniach\/page\/6\/#breadcrumb"},"inLanguage":"pl-PL"},{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/tag\/emocje-w-opiniach\/page\/6\/#primaryimage","url":"\/wp-content\/uploads\/2020\/07\/public-relations-definicja-narzedzia-marketing-pr-co-to.jpg","contentUrl":"\/wp-content\/uploads\/2020\/07\/public-relations-definicja-narzedzia-marketing-pr-co-to.jpg","width":1200,"height":628,"caption":"public relations definicja pr co to marketing jakie różnice narzędzia public relations"},{"@type":"BreadcrumbList","@id":"\/tag\/emocje-w-opiniach\/page\/6\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"\/"},{"@type":"ListItem","position":2,"name":"emocje w opiniach"}]},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Sentimenti","description":"Analiza emocji i sentymentu, sztuczna inteligencja, monitoring internetu","publisher":{"@id":"\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pl-PL"},{"@type":"Organization","@id":"\/#organization","name":"Sentimenti","url":"\/","logo":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/#\/schema\/logo\/image\/","url":"\/wp-content\/uploads\/2023\/06\/logo.svg","contentUrl":"\/wp-content\/uploads\/2023\/06\/logo.svg","width":100,"height":100,"caption":"Sentimenti"},"image":{"@id":"\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/sentimentipl","https:\/\/x.com\/SENTIMENTIPL","https:\/\/www.linkedin.com\/company\/sentimenti\/"]}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="Divi v.4.27.1" name="generator"/><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link href="/wp-includes/css/dist/block-library/style.min.css?ver=6.9.11" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote :where(cite),.wp-block-pullquote :where(footer),.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/css/dist/block-library/theme.min.css */
+</style>
+<style id="pdfemb-pdf-embedder-viewer-style-inline-css" type="text/css">
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+/*# sourceURL=/wp-content/plugins/pdf-embedder/block/build/style-index.css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link href="/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css?ver=2.41" id="cookies-and-content-security-policy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/custom-posts-order/css/custompostdisplay.css?ver=4.5" id="custompostdisplay-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/filter-for-divi/df-style.css?ver=2.0.2" id="df-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.13" id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/Divi/style-static.min.css?ver=4.27.1" id="divi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<!-- Fragment znacznika Google (gtag.js) dodany przez Site Kit -->
+<!-- Fragment Google Analytics dodany przez Site Kit -->
+<script async="" id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-5R823XK" type="text/javascript"></script>
+<script id="google_gtagjs-js-after" type="text/javascript">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["sentimenti.pl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5R823XK");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 6.9.11" name="generator"/>
+<meta content="Site Kit by Google 1.188.0" name="generator"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/><style id="cookies-and-content-security-policy-css-custom" type="text/css">.modal-cacsp-position .modal-cacsp-box > *,.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-show.modal-cacsp-box-bottom {background-color: #efefef;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {background-color: #e5e5e5;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {border-color: #ffffff;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {background-color: #eaeaea;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {border-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ff0087;}</style><link href="/wp-content/uploads/2023/06/cropped-ico-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-180x180.jpg" rel="apple-touch-icon"/>
+<meta content="/wp-content/uploads/2023/06/cropped-ico-270x270.jpg" name="msapplication-TileImage"/>
+<link href="/wp-content/et-cache/global/et-divi-customizer-global.min.css?ver=1794112530" id="et-divi-customizer-global-cached-inline-styles" rel="stylesheet"/><link href="/wp-content/et-cache/6466/et-core-unified-cpt-6466.min.css?ver=1794112538" id="et-core-unified-cpt-6466-cached-inline-styles" rel="stylesheet"/><style media="screen" type="text/css">.is-menu path.search-icon-path { fill: #848484;}body .popup-search-close:after, body .search-close:after { border-color: #848484;}body .popup-search-close:before, body .search-close:before { border-color: #848484;}</style> <style type="text/css">
+</style>
+<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+
+				}
+			</style></head>
+<body class="archive paged tag tag-emocje-w-opiniach tag-199 paged-6 tag-paged-6 wp-theme-Divi et-tb-has-template et-tb-has-footer Divi et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_cover_background et_pb_gutter et_pb_gutters3 et_smooth_scroll et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-7993">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header data-height-onload="66" id="main-header">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="/">
+<img alt="Sentimenti" data-height-percentage="54" height="100" id="logo" src="/wp-content/uploads/2023/06/logo.svg" width="100"/>
+</a>
+</div>
+<div data-fixed-height="40" data-height="66" id="et-top-navigation">
+<nav id="top-menu-nav">
+<ul class="nav" id="top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8080"><a href="/oferta/">Oferta</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5710"><a href="/sentitool/">Sentitool</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6178"><a href="/api-2/">API</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6184"><a href="/kontakt/">Kontakt</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="/%F0%9F%87%BA%F0%9F%87%A6-ukraina/">🇺🇦 Ukraina</a></li>
+<li class="lang-item lang-item-7 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-5986-en"><a href="/en/tag/emotions-in-opinions/" hreflang="en-GB" lang="en-GB"><img alt="English" height="11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" style="width: 16px; height: 11px;" width="16"/></a></li>
+</ul> </nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Zaznacz stronę</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div> </div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<div class="container">
+<div class="clearfix" id="content-area">
+<div id="left-area">
+<article class="et_pb_post post-3312 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand tag-emocje-w-internecie tag-emocje-w-opiniach tag-emocje-w-sieci tag-emocje-w-tekscie tag-media-spolecznosciowe tag-monitoring-marki tag-monitoring-mediow tag-sentitool" id="post-3312">
+<a class="entry-featured-image-url" href="/public-relations-definicja-marketing-epidemia/">
+<img alt="Public relations i marketing oparte o emocje. Nowe narzędzia na trudne czasy" class="" fetchpriority="high" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/07/public-relations-definicja-narzedzia-marketing-pr-co-to-1080x628.jpg" srcset="/wp-content/uploads/2020/07/public-relations-definicja-narzedzia-marketing-pr-co-to-1080x628.jpg 1080w, /wp-content/uploads/2020/07/public-relations-definicja-narzedzia-marketing-pr-co-to-980x513.jpg 980w, /wp-content/uploads/2020/07/public-relations-definicja-narzedzia-marketing-pr-co-to-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/public-relations-definicja-marketing-epidemia/">Public relations i marketing oparte o emocje. Nowe narzędzia na trudne czasy</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lip 31, 2020</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Public relations to pojęcie bardzo szerokie. Okres związany z pandemią zmusił wiele firm do zmian w komunikacji. Na znaczeniu zyskują działania oparte o nietypowe i unikatowe narzędzia, które pozwolą wyprzedzić konkurencję. Do takich narzędzi należy bez wątpienia to, co oferuje Sentimenti.</strong></p>
+<p>Jako jedyni w Polsce zajmujemy się analizą emocji w oparciu o uczenie maszynowe i sztuczną inteligencję w oparciu o dane naukowe. Nasz zespół złożony jest z ludzi pracujących przez lata w branżach marketingowej i monitoringu mediów oraz naukowców. Globalny rynek public relations jeszcze w 2018 roku warty był aż 63,8 miliarda dolarów amerykańskich  i prognozuje się, że do końca 2022 roku ta wartość przekroczy 93 miliardów dolarów. Jako specjaliści w swojej branży często jesteśmy pytani, czy nasze rozwiązania rzeczywiście pomagają działom PR.</p>
+<p>Specjaliści z Exacto oszacowali, że nawet 58% badanych reprezentantów branży public relations uważa, że wkrótce nastąpi istotna redukcja zatrudnienia. Z kolei 37% twierdzi, iż spadnie popyt na usługi PR. Przed branżą PR pojawiły się nowe wyzwania, które są konsekwencją epidemii. Firmy te mogą jednak odnaleźć się i dostosować do nowej rzeczywistości wykorzystując nowe narzędzia.</p>
+<p>Zacznijmy jednak od wyjaśnienia, czym właściwie PR jest. Niech będzie to odpowiedź na liczne zapytania. Brzmią najczęściej: <em>public relations definicja, public relations co to, PR co to, narzędzia public relations czy pr co to znaczy.<br/>
+</em></p>
+<h2><strong>Public relations – nieznane oblicze. Czym PR różni się od marketingu?<br/>
+</strong></h2>
+<p>Dziś public relations często mylony jest ze znaną nam tradycyjną komunikacją kryzysową i media relations. Innym przychodzi do głowy czarny PR lub PR polityczny. Są też tacy, którzy uważają wszelkie działania public relations za bardzo kosztowne. Prawdą jest jednak, że w tej dziedzinie drzemie potężny potencjał, który na naszym rynku często jest słabo eksploatowany.</p>
+<p>Klasyczna definicja public relations to po prostu profesjonalne utrzymaniem korzystnego wizerunku przez firmę, organizację czy personę. Z kolei marketing jest ukierunkowany na promocji przekładającej się na sprzedaż (w tym są również badania rynku). Zatem marketing koncentruje się głównie na promocji i sprzedaży, natomiast public relations ukierunkowany jest na dbaniu o dobrą reputacji firmy jako całego podmiotu.</p>
+<h2><strong>Co właściwie oferuje PR, czyli o korzyściach</strong></h2>
+<p>Public relations ma cel podstawowy. To działania mające na celu utrzymanie lub poprawę wizerunku. Nie ważne, czego. Może to być firma, osoba, produkt czy też usługa. Strategia public relations jest z kolei ważnym elementem szerszego marketingowego planu i to jest integralna część działań.</p>
+<p><strong>Najważniejsze zalety prawidłowo podjętych działań PR to m.in.:</strong></p>
+<ul>
+<li><strong>budowanie korzystnego wizerunku marki,</strong></li>
+<li><strong>zwiększenie zainteresowania produktami i usługami,</strong></li>
+<li><strong>wpływ na grupy docelowe i ich opinie,</strong></li>
+<li><strong>obrona produktów lub usług przed kryzysem i czarnym PR</strong></li>
+<li><strong>poprawa ogólnego wizerunku podmiotu,</strong></li>
+<li><strong>budowanie rozpoznawalności i wiarygodności,</strong></li>
+<li><strong>generowanie potencjalnych klientów.</strong></li>
+</ul>
+<p>Podsumowując – głównym celem public relations jest utrzymanie pozytywnej reputacji marki przed nowymi i starymi klientami, partnerami, inwestorami, pracownikami. Dziś często robi się to w oparciu o monitoring mediów, który dla firmy powinien być kluczowy. To powoduje, że dział marketingu jest świadomy opinii o firmie i jej produktach. Dodatkowo wzbogacenie takich analiz o zaawansowaną analizę emocji (osiem emocji podstawowych, pobudzenie emocjonalne, sentyment). Dzięki temu można sięgnąć głębiej  w to, co myśli odbiorca.</p>
+<h2><strong>Agencje badawcze z pomoca. Narzędzia Sentimenti jako wsparcie marketingu i PR<br/>
+</strong></h2>
+<p>Jak wspomnieliśmy na początku wpisu, trudny okres epidemii wymusił zmiany w komunikowaniu się marek z otoczeniem. Branże zatrudniające ekspertów od komunikacji nie pozostają obojętna względem koronawirusa. Negatywne skutki zmian może jednak ograniczać fakt zwiększania przez firmy zapotrzebowania na usługi z zakresu wsparcia kryzysowego. Dlatego warto pamiętać, że każdy kryzys i trudny okres jest dobrą okazją na wdrażanie i planowanie zmian.</p>
+<p>Epidemia może wymusić zmiany, w tym konieczność doboru nowych narzędzi. Nie tak dawno pisaliśmy na blogu o tzw. <a href="/blog/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">wyzwalaczach emocji</a>. Wyzwalacze emocji to jeden z ciekawszych terminów znanych ze świata marketingu i public relations. Polecamy ten artykuł, który dokładnie pokazuje, jak dzięki analizie emocji można budować jeszcze lepszą komunikację z klientem dzięki zastosowaniu tzw. „<em>słów mocy</em>”.</p>
+<p>Nieco wcześniej poczyniliśmy materiał o naszych narzędziach jako metodzie na <a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">ochronę marki</a> przed kryzysem. Kryzys wizerunkowy jest dla firmy niebezpieczny. Pojawia się nagle, a w dobie Internetu punktem zapalnym może być jedna opinia w sieci. Połączenie social listening, monitoringu mediów internetowych i narzędzi Sentimenti może zbudować solidną tarczę antykryzysową.</p>
+<p>Jak już wspomnieliśmy, <a href="/blog/monitoring-marki-sentyment-emocje-wydzwiek/">monitoring wizerunku marki</a> to klucz. O tym w kontekście <a href="/oferta/">narzędzi Sentimenti</a> pisaliśmy na blogu. Nasz produkt wychodzi poza to, czego marketerzy doświadczają przez lata. Dlaczego? Dlatego, że nie jest prostą analizą wydźwięku, bada natomiast jego moc i natężenie. Sentimenti dzięki nauce i algorytmom zaszytym w sztucznej inteligencji pomaga zajrzeć głębiej w opinie.</p>
+<p>Na zakończenie polecamy też nasz tekst dotyczący wykorzystaniu naszych narzędzi w <a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">reklamie i marketingu</a>. Pokazujemy w nim, że dzięki analizie emocji narzędziami Sentimenti działania public relations i marketingowe można prowadzić skuteczniej. Dla osób chcących zobaczyć, jak w praktyce wygląda użycie naszych narzędzi, polecamy wpisy na temat produktu <a href="/blog/category/sentibrand/">Sentibrand</a>. Dodać należy, że w trudnych czasach światło w tunelu dostrzegają też pesymiści. Nawet 10% z nich jest skłonnych zgodzić się z tezą, że pandemia stwarza nowe szanse biznesowe.</p>
+</article>
+<article class="et_pb_post post-2976 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy category-polityka-i-spoleczenstwo category-sentibrand tag-analiza-danych tag-analiza-sentymentu tag-analiza-tekstu tag-emocje-w-internecie tag-emocje-w-opiniach tag-emocje-w-polityce tag-emocje-w-sieci tag-monitoring-mediow tag-polityka tag-polska-polityka" id="post-2976">
+<a class="entry-featured-image-url" href="/lukasz-szumowski-minister-zdrowia-koronawirus-afera/">
+<img alt="Łukasz Szumowski. Od bohatera do lidera spadków zaufania" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/06/sentimenti-szumowski-wizerunek-zaufanie-emocje-podstawowe-1080x628.jpg" srcset="/wp-content/uploads/2020/06/sentimenti-szumowski-wizerunek-zaufanie-emocje-podstawowe-1080x628.jpg 1080w, /wp-content/uploads/2020/06/sentimenti-szumowski-wizerunek-zaufanie-emocje-podstawowe-980x513.jpg 980w, /wp-content/uploads/2020/06/sentimenti-szumowski-wizerunek-zaufanie-emocje-podstawowe-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/lukasz-szumowski-minister-zdrowia-koronawirus-afera/">Łukasz Szumowski. Od bohatera do lidera spadków zaufania</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">cze 18, 2020</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a>, <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Łukasz Szumowski, minister zdrowia i lekarz. W pierwszych tygodniach epidemii koronawirusa postrzegany jako opanowany, spokojny i profesjonalny. Szybko zyskał poparcie Polaków przeganiając w rankingach zaufania Andrzeja Dudę. Dziś sytuacja ministra jest dużo mniej komfortowa, a jego poparcie wśród obywateli spada. Zainspirowani jedną z publikacji internatowych postanowiliśmy sprawdzić, jak zmieniał się wizerunek ministra w ostatnich miesiącach. Na warsztat wzięliśmy ponad pół miliona opinii z internetu.<br/>
+</strong></p>
+<h2>Łukasz Szumowski. Rysy na bohaterze walki z epidemią</h2>
+<p>Inspiracją do napisania tej krótkiej analizy był <a href="https://www.wykop.pl/link/5539149/lukasz-szumowski-z-wizerunkowej-gwiazdy-rzadu-staje-sie-czarna-owca/">artykuł</a> pt. „<em>Łukasz Szumowski z wizerunkowej gwiazdy rządu staje się czarną owcą</em>” autorstwa Beaty Goczał. Zamieszczono go na portalu Wirtualnemedia.pl 6 czerwca br. Postanowiliśmy sprawdzić na dużej próbie opinii pochodzących z internetu, jak zmieniał się w czasie wizerunek ministra. Czy tezy zawarte w publikacji mają pokrycie w internetowych rozmowach Polaków?</p>
+<p>Wybuch epidemii koronawirusa zmienił wiele w naszym życiu nie tylko prywatnym, ale i służbowym. Mimo wyjątkowej sytuacji czuliśmy się jednak zaopiekowani i uspokojeni dzięki postawie ministra zdrowia, który od początku stał w pierwszym szeregu na froncie walki. Polacy w tym trudnym dla siebie czasie dostali to, czego zwykle potrzebują podczas kryzysu. Z punktu widzenia public relations mieli swojego pozytywnego bohatera, którego korzystny wizerunek napędzały często wspominane w dyskusjach internautów zmęczone i spuchnięte oczy. Odbieraliśmy to jako fakt, że ktoś nie śpi, ktoś z całych sił i kosztem siebie walczy o nasze zdrowie i bezpieczeństwo. Jak się okazało, już na początku 2020 roku planowano, by Szumowski podał się do dymisji.</p>
+<p>Niestety z początkiem maja Łukasz Szumowski <a href="https://www.onet.pl/?utm_source=_viasg_fakt&amp;utm_medium=direct&amp;utm_campaign=leo_automatic&amp;srcc=ucs&amp;pid=9d2e1282-0790-5f48-8c27-a5efe59a03a2&amp;sid=f13b499b-dba8-44e4-a9ae-cb9ebb087cc8&amp;utm_v=2">odnotował spadek zaufania</a> przy jednoczesnym wzroście aż o ok 20 proc. liczby badanych, którzy mu nie ufają. Jeszcze w kwietniu osiągnął historyczny rekord społecznego zaufania (<a href="https://ibris.pl/">IBRiS</a> dla Onetu). Zaufanie do jego osoby deklarowało wówczas 51,1 proc. respondentów. To więcej, niż w przypadku prezydenta Andrzeja Dudę, co mówi samo za siebie. Krótko potem minister zdrowia z osoby, która zyskała zaufanie i wspierała Polaków, przerodził się w osobę, która zaczęła sama potrzebować medialnego i wizerunkowego wsparcia.</p>
+<p><strong>Na spadek zaufania do ministra zdrowia miało wpływ wiele czynników.. Te podstawowe to m.in.:</strong></p>
+<ul>
+<li>brak konsekwencji wypowiedzi i niespójna komunikacja, częste zmiany zdania na ten sam temat;</li>
+<li>brak rzeczywistych efektów w walce z epidemią z porównaniu z innymi krajami, wciąż rosnąca liczba zachorowań;</li>
+<li>pękająca bańka narracji dającej złudzenie perfekcyjnego przygotowania do walki z epidemią;</li>
+<li>rzekome <a href="https://wyborcza.pl/7,75398,26035016,kontrakt-wart-az-250-mln-zl-szczegoly-umowy-resort-szumowskiego.html">powiązania biznesowe</a> opisywane przez niezbyt przychylnie nastawione do osoby ministra media.</li>
+</ul>
+<h2>Minister zdrowia oczami internautów, czyli Polaków rozmowy</h2>
+<p>Jak już wiele razy wspominaliśmy na <a href="/blog">naszym blogu</a>, nasze narzędzia idealnie nadają się do badania wizerunku oraz jego zmian zachodzących w czasie. Służy do tego oparta o naukę pogłębiona analiza wykraczająca poza to, co zero-jedynkowe, czyli negatywne i pozytywne. Dlatego badamy natężenie 8 emocji podstawowych oraz sentymentu i pobudzenia emocjonalnego dające o wiele szerszy obraz.</p>
+<p>Lektura wspomnianej publikacji skłoniła nasz zespół do przebadania rekordowej liczby wzmianek na temat ministra Szumowskiego pochodzących z całej sieci (Facebook z pominięciem zamkniętym grup, Twitter, Instagram, YouTube, portale informacyjne, blogi, fora i inne źródła). Ze względu na spore ilości danych ograniczyliśmy badany materiał tylko do tych wypowiedzi, w których odnotowano nazwisko polityka. Dlatego w sumie przez nasze narzędzie przeszło ponad 509 tys. unikalnych wypowiedzi internautów z ponad 570 unikalnych portali internetowych. Badany okres: od 1 lutego do 15 czerwca 2020 r. Poniższy wykres pokazuje dynamikę dyskusji.</p>
+<h3><a href="/wp-content/uploads/2020/06/lukasz-szumowski-monitoring-internetu-wzmianki.png"><img alt="łukasz szumowski lekarz sentimenti analiz emocji i sentymentu postrzeganie ministra wizerunek szumowski afera" class="aligncenter wp-image-2979 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/06/lukasz-szumowski-monitoring-internetu-wzmianki.png" srcset="/wp-content/uploads/2020/06/lukasz-szumowski-monitoring-internetu-wzmianki.png 1280w, /wp-content/uploads/2020/06/lukasz-szumowski-monitoring-internetu-wzmianki-512x288.png 512w, /wp-content/uploads/2020/06/lukasz-szumowski-monitoring-internetu-wzmianki-768x432.png 768w, /wp-content/uploads/2020/06/lukasz-szumowski-monitoring-internetu-wzmianki-1024x576.png 1024w" width="1280"/></a><strong>Wzrost natężenia negatywnych emocji</strong></h3>
+<p>Pierwsze wnioski pokazują, że rzeczywiście z każdym kolejnym dniem wzrastało natężenie negatywnych emocji. Pokazuje to poniższy wykres natężenia emocji ZŁOŚCI w badanym materiale. Zauważalny jest też silny wzrost natężenia tej emocji we wszystkich podstawowych źródłach danych, czyli na Facebooku, na Twitterze i na portalach, blogach i forach. Wniosek kolejny jest taki, że mimo większej liczby wzmianek na temat ministra na Twitterze, w tym kanale złości było jednak najmniej. Pod względem złości wyrażanej w opiniach o Łukaszu Szumowskim dominowały portale, blogi i fora (dyskusja pod artykułami redakcyjnymi), a dopiero potem Facebook. Dane prezentujemy zaczynając od marca ze względu na to, że w lutym wzmianek było niewiele. W dodatku pierwszy przypadek koronawirusa w Polsce ujawniono 4 marca.</p>
+<p><a href="/wp-content/uploads/2020/06/lukasz-szumowski-analiza-emocji-emocje-podstawowe-zlosc.png"><img alt="łukasz szumowski analiza emocji podstawowych złość nowy minister zdrowia" class="aligncenter wp-image-2981 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/06/lukasz-szumowski-analiza-emocji-emocje-podstawowe-zlosc.png" srcset="/wp-content/uploads/2020/06/lukasz-szumowski-analiza-emocji-emocje-podstawowe-zlosc.png 1280w, /wp-content/uploads/2020/06/lukasz-szumowski-analiza-emocji-emocje-podstawowe-zlosc-512x288.png 512w, /wp-content/uploads/2020/06/lukasz-szumowski-analiza-emocji-emocje-podstawowe-zlosc-768x432.png 768w, /wp-content/uploads/2020/06/lukasz-szumowski-analiza-emocji-emocje-podstawowe-zlosc-1024x576.png 1024w" width="1280"/></a></p>
+<p>Jeśli chodzi o natężenie sentymentu, zachodzi to samo zjawisko. W całym zgromadzonym materiale poddanym analizie, a dotyczącym ministra Łukasza Szumowskiego, sentyment negatywny jest na wznoszącej. Z kolei sentyment pozytywny jest constans, czyli bez zmian. To, co rzuca się na pierwszy rzut oka to również wyraźny wpływ negatywnego sentymentu na stopień pobudzenia emocjonalnego, czyli na temperaturę dyskusji. Aby to sprawdzić i się upewnić, czy rzeczywiście tak jest, przeprowadzimy też prostą analizę zależności tych dwóch serii danych.</p>
+<p><a href="/wp-content/uploads/2020/06/lukasz-szumowski-analiza-sentymentu-pobudzenie.png"><img alt="szumowski afera analiza pobudzenia i sentymentu" class="aligncenter wp-image-2983 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/06/lukasz-szumowski-analiza-sentymentu-pobudzenie.png" srcset="/wp-content/uploads/2020/06/lukasz-szumowski-analiza-sentymentu-pobudzenie.png 1280w, /wp-content/uploads/2020/06/lukasz-szumowski-analiza-sentymentu-pobudzenie-512x288.png 512w, /wp-content/uploads/2020/06/lukasz-szumowski-analiza-sentymentu-pobudzenie-768x432.png 768w, /wp-content/uploads/2020/06/lukasz-szumowski-analiza-sentymentu-pobudzenie-1024x576.png 1024w" width="1280"/></a>Wykonaliśmy prostą analizę siły związków korelacyjnych dwóch serii danych. Zestawiliśmy natężenie pobudzenia emocjonalnego (temperatury dyskusji o ministrze) i natężenie sentymentu, co dało ciekawy wynik. Jak można wywnioskować, dyskusja nacechowana pozytywnie daje korelację na poziomie 0,3, czyli w przedziale 0,2-0,4. Mówi nam to o niskiej korelacji, czyli wpływie korzystnej dyskusji o Łukaszu Szumowskim na pobudzenie internautów. Zależność jest jednak wyraźna. W przypadku negatywnego sentymentu korelacja jest jest wysoka, a zależność par danych znaczna (w przedziale 0,6-0,8).</p>
+<p><a href="/wp-content/uploads/2020/06/minister-zdrowia-pobudzenie-sentyment-emocje-podstawowe.png"><img alt="minister zdrowia szumowski dymisja emocje podstawowe korelacja" class="aligncenter wp-image-2985 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/06/minister-zdrowia-pobudzenie-sentyment-emocje-podstawowe.png" srcset="/wp-content/uploads/2020/06/minister-zdrowia-pobudzenie-sentyment-emocje-podstawowe.png 1280w, /wp-content/uploads/2020/06/minister-zdrowia-pobudzenie-sentyment-emocje-podstawowe-512x288.png 512w, /wp-content/uploads/2020/06/minister-zdrowia-pobudzenie-sentyment-emocje-podstawowe-768x432.png 768w, /wp-content/uploads/2020/06/minister-zdrowia-pobudzenie-sentyment-emocje-podstawowe-1024x576.png 1024w" width="1280"/></a></p>
+<h2>Analiza kontekstów dyskusji</h2>
+<p>Aby jeszcze głębiej zajrzeć w dyskusje internetowe, postanowiliśmy pokazać, jakie określenia pojawiają się w rozmowach na przestrzeni analizowanego okresu. Dzięki temu widać wyraźnie, jakie zagadnienia zyskują na znaczeniu i mają bezpośredni wpływ na postrzeganie osoby ministra. Wybraliśmy kilka najpopularniejszych kontekstów i stwierdzeń na podstawie analizy treści wszystkich opinii zawierających frazy „<em>Szumowski jest</em>” oraz „<em>Szumowski to</em>„. Poniżej trendy, które pokazują, że w pierwszej szóstce tematów dominują 4 niekorzystne dla wizerunku. Najpopularniejsze z nich to te związane z kłamstwem, aferą oraz rzekomym oszustwem. Kontekstem kolejnym jest dymisja. Tu warto zaznaczyć, że o ten temat pytano respondentów w <a href="https://www.rp.pl/Rzad-PiS/200539997-Sondaz-401-proc-za-dymisja-Szumowskiego.html">sondażu SW Research</a> dla „<em>Rzeczpospolitej</em>„. Za dymisją ministra opowiedziało się 40,1 proc. pytanych.</p>
+<p>Te pozytywne odnoszące się do osoby ministra, czyli „<em>kompetentny</em>„, „<em>wiarygodny</em>” czy „<em>autorytet</em>” uplasowały się na końcu zestawień. Wyraźnie więc widać, że niekorzystne stwierdzenia przybrały na sile. W szczególności po pierwszych stu dniach badanego okresu, czyli w momencie wybuchu afery dot. maseczek i respiratorów. Przy temacie afery do negatywnych stwierdzeń dorzucić można też „<em>oszust”</em> i „<em>oszustwo</em>” oraz „<em>złodziej</em>” i bazujące na nazwisku ministra określenie „<em>szumowina</em>„. Ostatni pik dot. zaufania w czerwcu spowodowany był faktem, że Łukasz Szumowski (po rekordowym wyniku na początku kwietnia i minimalnym zwycięstwie na początku maja), <a href="https://wiadomosci.onet.pl/tylko-w-onecie/sondaz-ibris-ranking-zaufania-spadek-szumowskiego-mocny-trzaskowski/y2wn0sq">spadł na drugie miejsce</a>. Wówczas minister zanotował największy wzrost braku zaufania – 40,9 proc. w porównaniu do 31,5 proc. w maju.</p>
+<p>Kwestie dotyczące najpopularniejszego wątku, czyli „<em>kłamstwo</em>” i „<em>kłamca</em>„, były aktywne praktycznie w całym badanym okresie. Jak dowiódł Ipsos w badaniu dla OKO.press, tylko co czwarty Polak uważa, że dane o zakażeniach i śmiertelności oddają prawdziwą skalę epidemii. Stąd też często podawane dane dot. liczby zakażeń koronawirusem komentowane były jako nieprawda.</p>
+<h3><strong>Analiza dynamiki dyskusji dot. ministra zdrowia z uwzględnieniem kontekstów</strong></h3>
+<p><a href="/wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-1-1.png"><img alt="" class="aligncenter wp-image-2994 size-full" decoding="async" height="757" loading="lazy" sizes="auto, (max-width: 1502px) 100vw, 1502px" src="/wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-1-1.png" srcset="/wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-1-1.png 1502w, /wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-1-1-512x258.png 512w, /wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-1-1-768x387.png 768w, /wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-1-1-1024x516.png 1024w" width="1502"/></a><a href="/wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-2.png"><img alt="" class="aligncenter wp-image-2995 size-full" decoding="async" height="758" loading="lazy" sizes="auto, (max-width: 1502px) 100vw, 1502px" src="/wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-2.png" srcset="/wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-2.png 1502w, /wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-2-512x258.png 512w, /wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-2-768x388.png 768w, /wp-content/uploads/2020/06/szumowski-konkteksty-tematyczne-2-1024x517.png 1024w" width="1502"/></a></p>
+<p>Minister Łukasz Szumowski widoczny był na szklanym ekranie głównie jako lekarz, a potem polityk. Bardzo szybko zgromadził kapitał polityczny. Został wystawiony na pierwszą linię frontu walki z epidemią w czasie, gdy trzeba było podejmować cały szereg mało popularnych decyzji. Minister zdrowia stał się przede wszystkim ofiarą braku konsekwencji w podejmowaniu tych decyzji. Jaki jest tego namacalny efekt? Dyskusje w sieci o ministrze nie pozostawiają złudzeń, co pokazują poniższe wykresy. Przebadaliśmy średnie miesięczne natężenie emocji ZŁOŚĆ i ZAUFANIE wraz ze zmianami % miesiąc do miesiąca i do lutego 2020 r. Średnie miesięczne natężenie złości w komentarzach dotyczących Łukasza Szumowskiego wzrosło od lutego do połowy czerwca o ok. 17%. Złość narastała z każdym miesiącem w porównaniu do poprzedniego, ale dynamika zmniejszyła się po kwietniu.</p>
+<p><a href="/wp-content/uploads/2020/06/szumowski-zlosc-emocje-podstawowe-emocje-negatywne.png"><img alt="" class="aligncenter wp-image-3020 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/06/szumowski-zlosc-emocje-podstawowe-emocje-negatywne.png" srcset="/wp-content/uploads/2020/06/szumowski-zlosc-emocje-podstawowe-emocje-negatywne.png 1280w, /wp-content/uploads/2020/06/szumowski-zlosc-emocje-podstawowe-emocje-negatywne-512x288.png 512w, /wp-content/uploads/2020/06/szumowski-zlosc-emocje-podstawowe-emocje-negatywne-768x432.png 768w, /wp-content/uploads/2020/06/szumowski-zlosc-emocje-podstawowe-emocje-negatywne-1024x576.png 1024w" width="1280"/></a>Częste zmiany zdania, brak efektów w walce z wirusem, wciąż rosnąca liczba zachorowań. Dopiero potem brak jednoznacznego wyjaśnienia zarzutów stawianych przez media. To wszystko spowodowało, że Łukasz Szumowski długo nie nacieszył się pozycją lidera zaufania. Warto przy okazji wspomnieć o pozytywnych opiniach z sieci. O ministrze pisano, że jest <em>„przedłużeniem czynów Jezusa troszcząc się o nasze życie”, „najlepszym co nam się mogło przytrafić”, „darem niebios” </em>i<em> „ikoną walki z koronawirusem”.</em>  Zgodnie z doniesieniami medialnymi Szumowski wakacje może mieć tuż przed sobą, ponieważ rozważa odejście z rządu.</p>
+<h2>Emocje podstawowe. Narzędzia Sentimenti</h2>
+<p>Narzędzia <a href="/o-nas/">Sentimenti</a> idealnie sprawdzają się w analizie 8 emocji podstawowych, ale też sentymentu pozytywnego, negatywnego. Dodatkowym atutem narzędzia jest możliwość zbadania stopnia emocjonalnego pobudzenia. Dotyczy to dowolnych tekstów – od transkrypcji rozmów, po social listening aż po czaty z klientami czy teksty dziennikarskie. Narzędzia świetnie radzą sobie <a href="/blog/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">wspomagając codzienną pracę działu PR</a> w zakresie opracowywania komunikatów public relations dopasowanych do konkretnych celów.</p>
+<p><strong>DOWIEDZ SIĘ WIĘCEJ:</strong></p>
+<ul>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">Emocje w reklamie: wykorzystanie Sentimenti w sektorze reklamy i marketingu</a></li>
+<li><a href="/blog/emotywne-pozycjonowanie-reklam/">Emotywne pozycjonowanie reklam</a></li>
+<li><a href="/blog/z-dobrych-badan-biora-sie-dobre-narzedzia-do-analizy-emocji/">Sentimenti. Z dobrych badań biorą się dobre narzędzia do analizy emocji</a></li>
+<li><a href="/blog/emocje-podstawowe-rodzaje-zachowanie-nauka/">Emocje podstawowe i ich wpływ na ludzkie zachowanie</a></li>
+</ul>
+</article>
+<article class="et_pb_post post-1553 post type-post status-publish format-standard has-post-thumbnail hentry category-polityka-i-spoleczenstwo tag-analiza-sentymentu tag-emocje-w-internecie tag-emocje-w-opiniach tag-popularnosc-produktu tag-tvp tag-zniewolona" id="post-1553">
+<a class="entry-featured-image-url" href="/popularnosc-to-kwestia-emocji/">
+<img alt="Popularność to kwestia emocji? Przykład serialu „Zniewolona”" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2019/09/zniewolona-emocje-ile-odcinkow-serial-tvp-vod-1080x628.jpg" srcset="/wp-content/uploads/2019/09/zniewolona-emocje-ile-odcinkow-serial-tvp-vod-1080x628.jpg 1080w, /wp-content/uploads/2019/09/zniewolona-emocje-ile-odcinkow-serial-tvp-vod-980x513.jpg 980w, /wp-content/uploads/2019/09/zniewolona-emocje-ile-odcinkow-serial-tvp-vod-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/popularnosc-to-kwestia-emocji/">Popularność to kwestia emocji? Przykład serialu „Zniewolona”</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">wrz 26, 2019</span> | <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a></p><p><strong>Popularność to kwestia emocji? Wszystko na to wskazuje. Siłę przekazu możemy zmierzyć przede wszystkim tym, jakie emocje wywołuje. <em>Zniewolona </em>zrobiła na polskich telewidzach wrażenie porówn</strong><strong>ywalne z uwielbieniem dla <em>Niewolnicy Izaury</em>. Sprawdziliśmy, jak zmieniały się emocje wyrażane przez nich w sieci przy okazji kolejnych sezonów i odcinków.</strong></p>
+<p>“<em>Serial kostiumowy, który został przedstawiony podczas festiwalu w Cannes</em>” – tak TVP zaczyna opis <em>Zniewolonej</em> na <a href="https://vod.tvp.pl/website/zniewolona,43343785">stronie VOD</a>. Rosyjskojęzyczna ukraińska produkcja okazała się wielkim hitem. Podczas emisji pierwszego sezonu pisano o nim średnio 348 razy dziennie, drugi komentowany był trzykrotnie częściej (ok. 962 wzmianek dziennie w sierpniu 2019). <em>Super, piękny, dobry, ciekawy</em> – to przymiotniki pojawiające się najczęściej we wzmiankach o pierwszym sezonie serialu. Przy okazji drugiego dołącza do nich <em>wspaniały</em>.</p>
+<h2><strong>Popularność a emocje – pierwszy sezon</strong></h2>
+<p>Serial wystartował w polskiej telewizji 1 lipca. Początkowo nie pisano o nim zbyt dużo, a opinie wypowiadających się były często negatywne. <strong>Zmianę dostrzegamy dopiero po mniej więcej tygodniu lub po pierwszym weekendzie</strong>, kiedy można było zafundować sobie dłuższy relaks przed ekranem – stopniowo rośnie liczba publikowanych w sieci wypowiedzi, a ich wydźwięk jest przychylny.</p>
+<p><img alt="zniewolona serial ile odcinków tvp vod zniewolona" class="aligncenter wp-image-1556 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/09/zniewolona-sezon1-analiza-sentymentu-1024x576.png" srcset="/wp-content/uploads/2019/09/zniewolona-sezon1-analiza-sentymentu-1024x576.png 1024w, /wp-content/uploads/2019/09/zniewolona-sezon1-analiza-sentymentu-512x288.png 512w, /wp-content/uploads/2019/09/zniewolona-sezon1-analiza-sentymentu-768x432.png 768w, /wp-content/uploads/2019/09/zniewolona-sezon1-analiza-sentymentu.png 1920w" width="1024"/></p>
+<p>Jeśli przyjrzymy się dokładniej emocjom wyrażanym przez polskojęzycznych internautów na temat pierwszego sezonu <em>Zniewolonej</em> zobaczymy, że nie ulegały one większym zmianom po pierwszym tygodniu, kiedy serial dopiero zyskiwał na popularności. W okolicach 18 lipca można dostrzec największe natężenie <em>radości</em> i <em>zaufania</em>, za to po 26 najsilniejszą emocją zaczyna być <em>zaskoczenie</em>, nieco rosną także <em>złość</em> i <em>smutek</em>.</p>
+<p><img alt="Zniewolona odcinki ile odcinków ma serial zniewolona" class="aligncenter wp-image-1555 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/09/zniewolona-sezon1-analiza-emocji-1024x576.png" srcset="/wp-content/uploads/2019/09/zniewolona-sezon1-analiza-emocji-1024x576.png 1024w, /wp-content/uploads/2019/09/zniewolona-sezon1-analiza-emocji-512x288.png 512w, /wp-content/uploads/2019/09/zniewolona-sezon1-analiza-emocji-768x432.png 768w, /wp-content/uploads/2019/09/zniewolona-sezon1-analiza-emocji.png 1920w" width="1024"/></p>
+<h2><strong>Zniewolona serial – sezon drugi<br/>
+</strong></h2>
+<p>Drugi sezon <em>Zniewolonej</em> miał premierę 3 sierpnia, a opinia szerokiej publiczności na jego temat była jednoznaczna: jak wskazywały słowa <em>wspaniały, piękny, dobry</em>, przeważał pozytywny sentyment. Jedynie po 23 sierpnia możemy zauważyć tendencję wzrostową w natężeniu negatywnego sentymentu. Z kolei pobudzenie, bardzo ogólnie rozumiana energia wzmianek, nie ulegała żadnym wahaniom. Wyniki analizy sentymentu wzmianek o publikowanych w czasie wyświetlania drugiego sezonu właściwie nie różnią się od tych uzyskanych po 8 lipca. To wtedy ustalił się ton wypowiedzi o <em>Zniewolonej</em>.</p>
+<p><img alt="tvp vod zniewolona" class="aligncenter wp-image-1558 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/09/zniewolona-sezon2-analiza-sentymentu-1024x576.png" srcset="/wp-content/uploads/2019/09/zniewolona-sezon2-analiza-sentymentu-1024x576.png 1024w, /wp-content/uploads/2019/09/zniewolona-sezon2-analiza-sentymentu-512x288.png 512w, /wp-content/uploads/2019/09/zniewolona-sezon2-analiza-sentymentu-768x432.png 768w, /wp-content/uploads/2019/09/zniewolona-sezon2-analiza-sentymentu.png 1920w" width="1024"/></p>
+<p>Bardzo podobne wyniki widzimy także w analizie emocji. Odczucia wyrażane przez internautów nie zmieniają się znacząco aż do 24 sierpnia, kiedy ponownie zauważamy skok <em>zaskoczenia, złości</em> i <em>smutku</em> oraz spadek <em>radości</em>.</p>
+<p><img alt="ile jest odcinków zniewolonej tvp" class="aligncenter wp-image-1557 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/09/zniewolona-sezon2-analiza-emocji-1024x576.png" srcset="/wp-content/uploads/2019/09/zniewolona-sezon2-analiza-emocji-1024x576.png 1024w, /wp-content/uploads/2019/09/zniewolona-sezon2-analiza-emocji-512x288.png 512w, /wp-content/uploads/2019/09/zniewolona-sezon2-analiza-emocji-768x432.png 768w, /wp-content/uploads/2019/09/zniewolona-sezon2-analiza-emocji.png 1920w" width="1024"/></p>
+<h2><strong>Trzymać widza zadowolonego, ale w napięciu</strong></h2>
+<p>Uzyskane przez nas wyniki można podsumować jednym zdaniem: <strong>reakcje internautów odzwierciedlają <em>storytelling</em> scenarzystów <em>Zniewolonej</em></strong>. Im bliżej finału sezonu, tym większe napięcie. Widzowie zaczynają się irytować na bohaterów, dziwić obrotem spraw, smucić losami ulubieńców. Nagłe zwroty akcji (przyjmowane z <em>zaskoczeniem</em>) mogą zmniejszać zadowolenie miłośników serialu, ale niewątpliwie skłonią ich do jak najszybszego włączenia telewizora lub VOD, kiedy tylko pojawi się kolejny odcinek.</p>
+<p>Pisząc o serialu, filmie czy innym dziele kultury internauci nie tylko wyrażają swoje opinie, ale także referują treść oglądanych produkcji. Wspominaliśmy o tym przy okazji naszych analiz <a href="/blog/jak-piszemy-o-wybitnym-ale-smutnym-serialu-przypadek-czarnobyla/">Czarnobyla</a> i <a href="/blog/emocje-w-recenzjach-kleru-smarzowskiego/">Kleru</a>. We wzmiankach o <em>Zniewolonej</em> oznacza to, że na przykład wyrażana przez widzów <em>złość</em> może dotyczyć zarówno bohaterów uwielbianej produkcji jak i opinii, że serial się popsuł. W tym przypadku porównanie zmian emocji w trakcie przybywania dostępnych odcinków pozwala nam jednak zaryzykować stwierdzenie, że <strong>mamy do czynienia ze zmianami ściśle kontrolowanymi przez twórców</strong> dzięki zwrotom akcji strategicznie umieszczanym w kolejnych odcinkach.</p>
+<h2><strong>Jak sprawdzić, czy nasz przekaz działa i przekłada się na popularność?<br/>
+</strong></h2>
+<p><strong>Serial, film i reklama mają ze sobą coś wspólnego – mają wywołać emocje, a potem reakcję.</strong> O ile twórcom może chodzić o różne odczucia, reakcja sprowadza się bardzo często do kupna. W przypadku horroru o strach, komedii o radość, a reklamy banku o zaufanie. Możemy to mierzyć monitorując kolejne etapy lejka zakupowego… Ale skąd mamy wiedzieć, co spowodowało brak konwersji pomiędzy obejrzeniem reklamy a przyciskiem “kup”? Popsuł się przekaz, czy nie zadziałały źle zaimplementowane linki?</p>
+<p><strong>Siłę przekazu możemy zmierzyć przede wszystkim tym, jakie emocje wywołuje i czy przekłada się na popularność.</strong> Jeśli nikt nie pisze o naszym produkcie, wiemy, że nie będzie łatwo o zakup. <strong>A gdy w końcu zobaczymy rosnącą liczbę wzmianek, czas zapytać, jakie emocje wyrażają.</strong> Nasz horror jest śmieszny, czy straszny? A serial – trzyma w napięciu, czy widzowie są raczej zadowoleni, ale nic ich nie motywuje do dalszego oglądania?</p>
+<p>Analiza emocji przydaje się też wówczas, gdy mamy pod ręką twarde wyniki. W przypadku <em>Zniewolonej</em> mówiące o rosnącej oglądalności. <strong>Przyjrzenie się emocjom pozwala zrozumieć, co sprawia, że sprzedaż czy liczba wyświetleń się zmienia</strong>. Odpowie nam przede wszystkim na pytanie, czy sprawia to marketing szeptany czy może eksperckie działanie naszych scenarzystów.</p>
+<h3><a href="/oferta/emotywne-pozycjonowanie-reklam/"><strong>DOWIEDZ SIĘ WIĘCEJ O SENTIBRAND</strong></a></h3>
+<p><strong>Zobacz także:</strong></p>
+<ul>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">Emocje w słowach: wykorzystanie Sentimenti w sektorze reklamy i marketingu</a></li>
+<li><a href="/blog/emotywne-pozycjonowanie-reklam/">Emotywne pozycjonowanie reklam</a></li>
+<li><a href="/blog/sanah-i-jej-krolowa-dram-objawienie-muzyczne-2020-roku-pod-lupa-sentimenti/">Sanah i Królowa dram. Teksty piosenek jako konglomerat uczuć i emocji</a></li>
+<li><a href="/blog/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">Analiza emocji narzędziem wsparcia w inwestycjach finansowych</a></li>
+<li><a href="/blog/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">Wyzwalacze emocji. Sentimenti jako wsparcie działań public relations</a></li>
+</ul>
+</article>
+<article class="et_pb_post post-1538 post type-post status-publish format-standard has-post-thumbnail hentry category-styl-zycia tag-analiza-sentymentu tag-apple-event tag-emocje-w-internecie tag-emocje-w-opiniach tag-emocjonalny-audyt-marki tag-iphone-11 tag-marketing tag-monitoring-emocji" id="post-1538">
+<a class="entry-featured-image-url" href="/imocje-czyli-apple-event-w-emocjach/">
+<img alt="iMocje, czyli Apple Event w emocjach" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2019/09/Slajd5-1080x675.png" srcset="/wp-content/uploads/2019/09/Slajd5-980x551.png 980w, /wp-content/uploads/2019/09/Slajd5-480x270.png 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/imocje-czyli-apple-event-w-emocjach/">iMocje, czyli Apple Event w emocjach</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">wrz 12, 2019</span> | <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>Apple Event za nami. 12 lat i jeden dzień po pierwszej premierze iPhone Apple zaprezentował poprawione wersje telefonów, zegarków i iPadów oraz nowe serwisy gier i telewizji w sieci. Miliard sprzedanych iPhonów i tyleż pobrań aplikacji z App Store czyni ten telefon obiektem pożądania milionów na całym świecie. Sprawdziliśmy, jak na Apple Event, który odbył się 10 września (w godzinach 19:00-21:00 czasu polskiego) zareagowali polskojęzyczni Internauci.</strong></p>
+<p>Kto dziś pamięta telefony z klapką czy plastikową klawiaturą i malutkim ekranem? Miały wiele zalet: były tanie, a bateria trzymała tydzień. Dziś oczekiwania są ogromne: smartfon mamy ze sobą prawie non stop, trzaskamy selfie gdzie się da i przewijamy fejsa stojąc w kolejce lub korku. Ale niekoniecznie na iPhonie, bo od kilku lat iPhone ma konkurencję: Samsung, Huawei czy Xiaomi oferują równie zaawansowane modele, czasem tańsze i oparte na androidzie. Czym mógł iPhone zaskoczyć tym razem?</p>
+<h2>Apple Event. O czym pisano w sieci?</h2>
+<p>Może zaskoczył aparatem? Trzy obiektywy szpecą, ale w wersji iPhone pro dają możliwości kamery filmowej. Być może jest to ukłon w stronę youtubowych filmowców i internetowych influencerów. Zaprezentowano też nowy tryb zdjęć: SLOFIE, czyli <em>slow motion selfie</em>. Jak widać w wynikach naszej analizy najczęstszych sformułowań (chmura poniżej), nowe słówko jeszcze nie poszło w sieć.</p>
+<p><a href="/wp-content/uploads/2019/09/Slajd5.png"><img alt="Najczęstsze frazy we wzmiankach o Apple Event" class="aligncenter wp-image-1543 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw" src="/wp-content/uploads/2019/09/Slajd5-1024x576.png" srcset="/wp-content/uploads/2019/09/Slajd5-980x551.png 980w, /wp-content/uploads/2019/09/Slajd5-480x270.png 480w" width="1024"/></a></p>
+<p>Wobec tego może jaśniejszym ekranem i szybszym procesorem? <strong>Chmura słów wskazuje na zainteresowanie jakością baterii, czasem pracy sprzętu, trybem nocnym i samym systemem operacyjnym</strong>. Faktycznie, o tych udoskonaleniach polskojęzyczni internauci wspominali często, stwierdzenie na <i><span style="font-weight: 400;">lepszy aparat </span></i><span style="font-weight: 400;">pojawiało się w ich wypowiedziach rzadziej. Jeśli chodzi o inne funkcje, <strong>echem w sieci odbiło się na przykład to, że na razie iPhone nie będzie miał czytnika linii papilarnych</strong>, mimo że konkurencyjne marki wprowadziły go już jakiś czas temu.</span></p>
+<p>Polskojęzyczni fani Apple <strong>zwrócili także uwagę na wprowadzenie Apple TV+</strong> jako konkurenta NETFLIXa i HBO, ale już nie Apple Arcade – rodzinną platformę gamingową.</p>
+<p>O iPhone 11 wiedzieliśmy jeszcze przed premierą najwięcej ze wszystkich dotychczasowych modeli, łącznie z tym, że trzy godziny przed samym Eventem wyciekły informacje o jego cenach. Jedyna naprawdę nowa informacja zaprezentowana na jego temat podczas konferencji dotyczyła funkcji ekranu <i>always on</i>. Jak widać z naszej chmury słów, pisano o niej (<i>włączony ekran</i>), jednak niezbyt często – <strong>większą sensacją okazało się wprowadzenie trybu nocnego</strong>.</p>
+<h2>Emocje wokół Apple Event</h2>
+<p><a href="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzinami.png"><img alt="Emocje wokół Apple Event" class="aligncenter wp-image-1540 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzinami-1024x576.png" srcset="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzinami-1024x576.png 1024w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzinami-512x288.png 512w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzinami-768x432.png 768w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzinami.png 1200w" width="1024"/></a></p>
+<p><strong>Najwięcej wzmianek dotyczących konferencji Apple pojawiło się w jej trakcie i bezpośrednio po zakończeniu</strong>. W godzinach 19-20 polskiego czasu (wydarzenie odbyło się o 10:00 czasu Cupertino w Kaliforni, USA). Wtedy przeważały te o pozytywnym wydźwięku, jednak około 21 zaczęło się to zmieniać. Co ciekawe, 11 września w nocy i rano pojawiło się niewiele wypowiedzi o wydarzeniu – za to <strong>procent negatywnych znacznie wzrósł</strong>. Z kolei poziom pobudzenia wzmianek, proporcja tych wyrażających silne emocje nie ulegała większym wahaniom<strong>. Nigdy też nie przekroczyła 32%, co świadczy o umiarkowanym entuzjazmie piszących</strong>.</p>
+<p><a href="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzina-po-godzinie.png"><img alt="Emocje wokół Apple Event, porównanie godzina po godzinie" class="aligncenter wp-image-1541 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzina-po-godzinie-1024x576.png" srcset="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzina-po-godzinie-1024x576.png 1024w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzina-po-godzinie-512x288.png 512w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzina-po-godzinie-768x432.png 768w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-godzina-po-godzinie.png 1200w" width="1024"/></a></p>
+<p>Przyjrzyjmy się wynikom godzina po godzinie, skupiając się na różnicy pomiędzy liczbą uprzednio i publikowanych wzmianek. Zauważymy, że <strong>o 19 wzrosła nie tylko liczba wypowiedzi w ogóle, ale także udział tych pozytywnych.</strong> Jak wspomnieliśmy wcześniej, po 21 widzimy zmianę nastrojów polskich internautów, a w nocy i rano wzrost liczby negatywnych wypowiedzi.</p>
+<h2>Reakcje w trakcie konferencji</h2>
+<p>Analizując wzmianki minuta po minucie (słupki ilustrują procent wypowiedzi pozytywnych, negatywnych lub silnie nacechowanych emocjonalnie) możemy dostrzec zmiany wynikające z prezentacji kolejnych urządzeń i usług.</p>
+<p><a href="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-w-trakcie-konferencji.png"><img alt="Emocje w trakcie Apple Event" class="aligncenter wp-image-1542 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-w-trakcie-konferencji-1024x576.png" srcset="/wp-content/uploads/2019/09/apple-event-analiza-sentymentu-w-trakcie-konferencji-1024x576.png 1024w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-w-trakcie-konferencji-512x288.png 512w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-w-trakcie-konferencji-768x432.png 768w, /wp-content/uploads/2019/09/apple-event-analiza-sentymentu-w-trakcie-konferencji.png 1200w" width="1024"/></a></p>
+<p>Pierwszy wyraźny wzrost entuzjazmu zauważamy około 19:07. Wówczas Apple Event dopiero się rozkręcało, prezentowano usługę Apple Arcade. O nowym iPadzie zaczęto mówić o 19:20 – notujemy tu przede wszystkim wzrost liczby wzmianek w sieci. Kolejny (19:28) wiąże się z prezentacją Apple Watcha piątej generacji. IPhone 11 został zaprezentowany o 19:49 – znowu notujemy wzrost liczby wzmianek. Około 20:09 zaczęto mówić o IPhonie 11 Pro. Tym razem nie dostrzegamy skoku pozytywnych reakcji, wręcz przeciwnie, około 20.16 pojawia się znaczny wzrost liczby negatywnych. Co więcej, <strong>po 20:30 dostrzegamy zmianę ogólnego wydźwięku dyskusji w sieci</strong> (patrz linie trendu). Wypowiedzi o negatywnym sentymencie zaczynają stopniowo przeważać nad pozytywnymi. Ten trend utrzymuje się także po zakończeniu konferencji.</p>
+<h2>Wnioski</h2>
+<p>Jak widać, zainteresowanie nowymi sprzętami i serwisami Apple w Polsce nie słabnie. Pewnie nie wszystkich jednak stać na zmianę telefonu lub zegarka. Polscy internauci intensywnie komentowali Apple Event, dyskusje w sieci trwały jeszcze kilka godzin. Jednocześnie <strong>wydźwięk wzmianek publikowanych w trakcie wydarzenia szybko zmienił się z raczej pozytywnego na negatywny</strong>. Wyniki przeprowadzonej przez nas analizy emocji oddają ten trend dużo lepiej niż chmura słów (pokazująca głównie zainteresowanie sprzętem i jego funkcjonalnościami).</p>
+<p>Analiza sentymentu i emocji Sentimenti pozwala nam <strong>monitorować na bieżąco internetowe dyskusje toczone w języku polskim</strong>. Możemy pokazać, <strong>jak emocje zmieniają się z minuty na minutę w reakcji na prezentację konkretnego produktu</strong>, jego funkcji lub ceny. Z kolei możliwość prześledzenia zmienności i trendów wydźwięku opinii publikowanych w sieci w dłuższej perspektywie czasowej pozwala nam stwierdzić, <strong>jak trwałe nastroje wywołały w konsumentach</strong> wydarzenie, promocja czy prezentacja produktu.</p>
+</article>
+<article class="et_pb_post post-1059 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand category-styl-zycia tag-emocje tag-emocje-w-internecie tag-emocje-w-opiniach tag-emocje-w-tekscie tag-film tag-monitoring-mediow tag-oskary tag-rozrywka tag-sentitool" id="post-1059">
+<a class="entry-featured-image-url" href="/oskarowe-dyskusje-i-emocje/">
+<img alt="Oskarowe dyskusje i emocje" class="" height="675" src="/wp-content/uploads/2019/02/IMG_20190228_105645_215.jpg" width="1080"/> </a>
+<h2 class="entry-title"><a href="/oskarowe-dyskusje-i-emocje/">Oskarowe dyskusje i emocje</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/agnieszka-czoska/" rel="author" title="Wpisy Agnieszka Czoska">Agnieszka Czoska</a></span> | <span class="published">lut 28, 2019</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p>Ostatni tydzień, przynajmniej w świecie filmu, to rozmowy o nagrodach Amerykańskiej Akademii Sztuki i Wiedzy Filmowej. Typowano zwycięzców i przegranych, argumentowano, kto i dlaczego jest najlepszy, polecano filmy. Plotkowano także o samej Akademii oraz o tym, jak właściwie przebiegnie gala, która w tym roku po raz pierwszy nie miała prowadzącego.</p>
+<p><img alt="" class="aligncenter wp-image-1061 size-full" decoding="async" height="371" loading="lazy" src="/wp-content/uploads/2019/02/wzmianek.png" width="480"/></p>
+<p>Analiza liczby wzmianek w sieci pokazuje, że prawdziwa dyskusja rozgorzała dopiero na chwilę przed rozdaniem Oskarów. Zaczęliśmy rozmawiać na poważnie 24 lutego, niedługo przed nocną transmisją z gali i w jej trakcie. Najwięcej wypowiedzi pojawiło się kolejnego dnia, gdy poznaliśmy nagodzonych. Obecnie wciąż dyskutujemy, ale liczba wzmianek spada.</p>
+<h2>Emocje wobec nagród Akademii</h2>
+<p>Pozytywne emocje powoli narastały, żeby 24 lutego zacząć… opadać. Gala Oskarów nie ekscytuje nas sama w sobie, ważne są filmy i twórcy, a lista laureatów właściwie co roku budzi zastrzeżenia. Wydaje się jednak, że 26 lutego powoli zaczynamy się cieszyć…</p>
+<p><img alt="" class="size-full wp-image-1062 aligncenter" decoding="async" height="371" loading="lazy" src="/wp-content/uploads/2019/02/emocji.png" width="480"/></p>
+<p>Spójrzmy na okazywane we wzmiankach o Oskarach emocje z nieco innej perspektywy. Porównajmy każdy kolejny dzień z 21 lutego, w którym (wnioskując po liczbie wpisów) zaczęły się rozmowy i rozważania o nagrodach. Do 24 lutego zmienia się niewiele, chociaż <em>smutek </em>utrzymuje się na wyższym niż poprzednio poziomie. Prawdziwe emocje wybuchają 25 lutego, kiedy od rana okazywaliśmy <em>smutek</em> i <em>złość</em>, a jednocześnie znacznie mniej <em>radości </em>i <em>zaufania </em>niż poprzednio. Osoby krytykujące wybory Akademii były bardziej liczne lub aktywne w sieci. 26 lutego, kiedy ciągle toczą się dyskusje, do głosu doszła nie tylko <em>radość</em>, ale także <em>wstręt</em>. Zmniejszyła się także częstość okazywania oczekiwania, czego spodziewalibyśmy się po ogłoszeniu wyników. W analizowanym czasie nie zmienia się z kolei <em>zaskoczenie</em>, co pokazuje, że lista laureatów Oskarów nie ucieszyła nas, ale spodziewaliśmy się takich werdyktów.</p>
+<p><img alt="" class="aligncenter wp-image-1060 size-full" decoding="async" height="371" loading="lazy" src="/wp-content/uploads/2019/02/roznice_emocji.png" width="480"/></p>
+<p>Często słyszymy, że nagrody Amerykańskiej Akademii Filmowej straciły na znaczeniu, przynajmniej poza USA. Wyniki analizy emocji pokazują, że rozmowy o nich charakteryzują się nieco niższym udziałem <em>radości </em>niż te o kosmetykach (około 40%), a porównywalnym z wzmiankami o zwierzakach. Są wobec tego podobne do innych tematów związanych z rozrywką. Co więcej, ogłoszenie wyników nie wiązało się w tym roku ze wzrostem pozytywnych emocji, wywołało przyrost tych negatywnych – choć niewielki. Najwyraźniej w okolicach oskarowej gali zmieniało się natężenie dyskusji rozumiane jako liczba wzmianek – same emocje nie wrzały.</p>
+</article>
+<div class="pagination clearfix">
+<div class="alignleft"><a href="/tag/emocje-w-opiniach/page/7/">« Starsze wpisy</a></div>
+<div class="alignright"><a href="/tag/emocje-w-opiniach/page/5/">Kolejne wpisy »</a></div>
+</div> </div>
+<div id="sidebar">
+<div class="et_pb_widget widget_text" id="text-2"> <div class="textwidget">
+</div>
+</div><div class="et_pb_widget widget_categories" id="categories-2"><h4 class="widgettitle">Kategorie</h4>
+<ul>
+<li class="cat-item cat-item-1191"><a href="/category/polityka-i-spoleczenstwo/">Polityka i społeczeństwo</a>
+</li>
+<li class="cat-item cat-item-1193"><a href="/category/styl-zycia/">Styl życia</a>
+</li>
+<li class="cat-item cat-item-1226"><a href="/category/badania-rynku/">Badania rynku</a>
+</li>
+<li class="cat-item cat-item-1121"><a href="/category/w-mediach/">W mediach</a>
+</li>
+<li class="cat-item cat-item-1149"><a href="/category/w-mediach/podcasty-pl/">Podcasty</a>
+</li>
+<li class="cat-item cat-item-1153"><a href="/category/konferencje/">Konferencje</a>
+</li>
+<li class="cat-item cat-item-582"><a href="/category/sentibrand/">SentiBrand</a>
+</li>
+<li class="cat-item cat-item-263"><a href="/category/sentistocks-pl/">SentiStocks</a>
+</li>
+<li class="cat-item cat-item-1055"><a href="/category/publikacje-naukowe/">Publikacje naukowe</a>
+</li>
+<li class="cat-item cat-item-24"><a href="/category/okiem-badacza/">Okiem badacza</a>
+</li>
+<li class="cat-item cat-item-434"><a href="/category/kategoryzacja-komentarzy/">Kategoryzacja komentarzy</a>
+</li>
+</ul>
+</div>
+<div class="et_pb_widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widgettitle">Ostatnie wpisy</h4>
+<ul>
+<li>
+<a href="/emocje-w-biotech/">Głębsze Spojrzenie na Emocje: Jak Firmy Bio-Tech Mogą Lepiej Rozumieć Odbiór Swojej Marki?</a>
+</li>
+<li>
+<a href="/jak-emocje-ksztaltuja-nasze-spojrzenie-na-wschodnich-sasiadow-analiza-mediow-spolecznosciowych-2024/">Jak emocje kształtują nasze spojrzenie na wschodnich sąsiadów? Analiza mediów społecznościowych 2024</a>
+</li>
+<li>
+<a href="/jezyk-i-emocje-w-roznorodnosci-co-pokazuja-dane/">Poznaj słowa, które budują mosty i te, które niszczą relacje społeczne – zaskakujące wyniki badań!</a>
+</li>
+<li>
+<a href="/analiza-emocji-w-debacie-prezydenckiej-harris-vs-trump-jak-sentimenti-mierzy-emocje-i-sentymenty/">Analiza emocji w debacie prezydenckiej Harris vs Trump: Jak Sentimenti mierzy emocje i sentymenty</a>
+</li>
+<li>
+<a href="/analiza-sentymentu-nie-powie-ci-prawdy/">Analiza sentymentu nie powie Ci prawdy</a>
+</li>
+</ul>
+</div> </div>
+</div>
+</div>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-5973" decoding="async" height="100" loading="lazy" src="/wp-content/uploads/2023/06/logo2.svg" title="logo2" width="100"/></span>
+</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p><strong>Sentimenti sp. z o.o.</strong><br/><span>ul. Święty Marcin 11/8</span><br/><span>61-803 Poznań, Poland</span><br/><a href="mailto:kontakt@sentimenti.pl"></a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_0_tb_footer et_pb_widget_area clearfix et_pb_widget_area_right et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_dark et_pb_sidebar_no_border">
+<div class="fwidget et_pb_widget widget_nav_menu" id="nav_menu-4"><div class="menu-menu-w-stopce-container"><ul class="menu" id="menu-menu-w-stopce"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6425" id="menu-item-6425"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6691" id="menu-item-6691"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6421" id="menu-item-6421"><a href="/kontakt/">Kontakt</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-6415" decoding="async" height="63" loading="lazy" src="/wp-content/uploads/2023/06/UE_EFRR-black.png" title="UE_EFRR-black" width="240"/></span>
+</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link et-social-facebook"><a class="icon et_pb_with_border" href="https://www.facebook.com/sentimentipl" target="_blank" title="Śledź na Facebook"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link et-social-twitter"><a class="icon et_pb_with_border" href="https://twitter.com/SENTIMENTIPL" target="_blank" title="Śledź na X"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link et-social-linkedin"><a class="icon et_pb_with_border" href="https://www.linkedin.com/company/sentimenti/" target="_blank" title="Śledź na LinkedIn"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li>
+</ul>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_1_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light et_pb_sidebar_no_border">
+<div class="et_pb_widget widget_nav_menu" id="nav_menu-7"><div class="menu-rodo-pl-container"><ul class="menu" id="menu-rodo-pl"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6418" id="menu-item-6418"><a href="/polityka-prywatnosci/" rel="privacy-policy">Polityka prywatności RODO</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Design: <a href="https://ballaun.art/" rel="noopener" style="color: white;" target="_blank">ballaun.art</a></div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: index-->
+<div class="modal-cacsp-backdrop"></div>
+<div class="modal-cacsp-position">
+<div class="modal-cacsp-box modal-cacsp-box-info">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Używamy plików cookie, aby zapewnić prawidłowe działanie naszej strony internetowej i usług. Te pliki cookie są niezbędne i są ustawiane automatycznie. Chcielibyśmy również używać analitycznych plików cookie, aby zrozumieć, w jaki sposób wchodzisz w interakcję z naszą witryną i marketingowymi plikami cookie, aby zapewnić spersonalizowane treści i reklamy.
+Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików cookie zarówno do podstawowych, jak i nieistotnych celów. Kliknij „Ustawienia”, aby wybrać typy plików cookie, które chcesz włączyć lub wyłączyć. Więcej informacji znajdziesz w naszej Polityce prywatności RODO.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-settings" href="#">
+							Ustawienia						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+<div class="modal-cacsp-box modal-cacsp-box-settings">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Wybierz, jakie pliki cookies chcesz zaakceptować. Twój wybór zostanie zachowany przez rok.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-box-settings-list">
+<ul>
+<li>
+<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+<span>Konieczne<br/>
+<span>Te pliki cookie nie są opcjonalne. Są one potrzebne do funkcjonowania strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</span>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics" href="#statistics">
+<span>Statystyka<br/>
+<span>Abyśmy mogli poprawić funkcjonalność i strukturę strony internetowej, na podstawie tego, jak strona jest używana.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="experience" href="#experience">
+<span>Doświadczenie<br/>
+<span>Aby nasza strona internetowa działała jak najlepiej podczas twojego przejścia na nią. Jeśli odrzucisz te pliki cookie, niektóre funkcje znikną ze strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="marketing" href="#marketing">
+<span>Marketing<br/>
+<span>Udostępniając swoje zainteresowania i zachowania podczas odwiedzania naszej strony, zwiększasz szansę na zobaczenie spersonalizowanych treści i ofert.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-save" href="#">
+							Zapisz						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept-all" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+</div>
+<!--googleon: index-->
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Basic:regular&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6Fc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FE.woff2) format('woff2');}</style><script id="cookies-and-content-security-policy-cookie-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie.min.js?ver=2.41" type="text/javascript"></script>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" type="text/javascript"></script>
+<script id="jquery-js-after" type="text/javascript">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var cacsp_ajax_object = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"53e1f30221"};
+var cacspMessages = {"cacspReviewSettingsDescription":"Twoje ustawienia mog\u0105 uniemo\u017cliwi\u0107 ci obejrzenie tej tre\u015bci. Najprawdopodobniej masz wy\u0142\u0105czone Do\u015bwiadczenie.","cacspReviewSettingsButton":"Przegl\u0105daj swoje ustawienia","cacspNotAllowedDescription":"Ta tre\u015b\u0107 nie mo\u017ce by\u0107 wczytana, gdy\u017c nie jest dozwolona na witrynie.","cacspNotAllowedButton":"Skontaktuj si\u0119 z administratorem","cacspExpires":"365","cacspWpEngineCompatibilityMode":"0","cacspTimeout":"1000","cacspOptionDisableContentNotAllowedMessage":"0","cacspOptionGoogleConsentMode":"0","cacspOptionSaveConsent":"0"};
+//# sourceURL=cookies-and-content-security-policy-js-extra
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js?ver=2.41" type="text/javascript"></script>
+<script id="cookies-and-content-security-policy-error-message-js" src="/wp-content/uploads/cookies-and-content-security-policy-error-message.js?ver=2.41&amp;mod%3D20260116142405" type="text/javascript"></script>
+<script id="df-script-js" src="/wp-content/plugins/filter-for-divi/df-script.js?ver=2.0.2" type="text/javascript"></script>
+<script id="pll_cookie_script-js-after" type="text/javascript">
+/* <![CDATA[ */
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=pl; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+/* ]]> */
+</script>
+<script id="divi-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"/wp-admin/admin-ajax.php","images_uri":"/wp-content/themes/Divi/images","builder_images_uri":"/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"2b0e8fb0d2","subscription_failed":"Prosz\u0119, sprawd\u017a pola poni\u017cej, aby upewni\u0107 si\u0119, \u017ce wpisa\u0142e\u015b poprawn\u0105 informacj\u0119.","et_ab_log_nonce":"ea219785f5","fill_message":"Prosz\u0119 wype\u0142ni\u0107 nast\u0119puj\u0105ce pola:","contact_error_message":"Napraw poni\u017csze b\u0142\u0119dy:","invalid":"Nieprawid\u0142owy adres e-mail","captcha":"Captcha","prev":"Przed","previous":"Poprzednie","next":"Dalej","wrong_captcha":"Wpisa\u0142e\u015b/-a\u015b w captcha nieprawid\u0142owy numer.","wrong_checkbox":"Pole wyboru","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"3312","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#e6007a","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script id="divi-custom-script-js" src="/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="smoothscroll-js" src="/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.1" type="text/javascript"></script>
+<script id="es6-promise-js" src="/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-recaptcha-v3-js" src="https://www.google.com/recaptcha/api.js?render=6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO&amp;ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-api-spam-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO","page_action":{"action":"public_relations_definicja_marketing_epidemia"}};
+//# sourceURL=et-core-api-spam-recaptcha-js-extra
+/* ]]> */
+</script>
+<script id="et-core-api-spam-recaptcha-js" src="/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=4.27.1" type="text/javascript"></script>
+<script id="fitvids-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.1" type="text/javascript"></script>
+<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=6.9.11" type="text/javascript"></script>
+<script id="jquery-mobile-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.27.1" type="text/javascript"></script>
+<script id="magnific-popup-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.1" type="text/javascript"></script>
+<script id="easypiechart-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.27.1" type="text/javascript"></script>
+<script id="salvattore-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-common-js" src="/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.1" type="text/javascript"></script>
+<script id="ivory-search-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+//# sourceURL=ivory-search-scripts-js-extra
+/* ]]> */
+</script>
+<script id="ivory-search-scripts-js" src="/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.13" type="text/javascript"></script>
+<script id="et-builder-modules-script-motion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+//# sourceURL=et-builder-modules-script-motion-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-motion-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-builder-modules-script-sticky-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+//# sourceURL=et-builder-modules-script-sticky-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-sticky-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.27.1" type="text/javascript"></script>
+<span class="et_pb_scroll_top et-pb-icon"></span>
+</body>
+</html>

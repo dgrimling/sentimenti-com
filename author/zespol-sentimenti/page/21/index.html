@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="/xmlrpc.php" rel="pingback"/>
+<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4i.woff2) format('woff2');}</style><meta content="noindex, follow" name="robots"/>
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+<title>Sentimenti Team, Author at Sentimenti - Strona 21 z 32</title>
+<meta content="pl_PL" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="profile" property="og:type"/>
+<meta content="Sentimenti Team" property="og:title"/>
+<meta content="/author/zespol-sentimenti/" property="og:url"/>
+<meta content="Sentimenti" property="og:site_name"/>
+<meta content="/wp-content/litespeed/avatar/25999543a6846f821cb154aaabab051c.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@SENTIMENTIPL" name="twitter:site"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"ProfilePage","@id":"\/author\/zespol-sentimenti\/","url":"\/author\/zespol-sentimenti\/page\/21\/","name":"Sentimenti Team, Author at Sentimenti - Strona 21 z 32","isPartOf":{"@id":"\/#website"},"primaryImageOfPage":{"@id":"\/author\/zespol-sentimenti\/page\/21\/#primaryimage"},"image":{"@id":"\/author\/zespol-sentimenti\/page\/21\/#primaryimage"},"thumbnailUrl":"\/wp-content\/uploads\/2020\/06\/emocje-w-sieci-matura-wesele-trends-wyciek.jpg","breadcrumb":{"@id":"\/author\/zespol-sentimenti\/page\/21\/#breadcrumb"},"inLanguage":"pl-PL","potentialAction":[{"@type":"ReadAction","target":["\/author\/zespol-sentimenti\/page\/21\/"]}]},{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/author\/zespol-sentimenti\/page\/21\/#primaryimage","url":"\/wp-content\/uploads\/2020\/06\/emocje-w-sieci-matura-wesele-trends-wyciek.jpg","contentUrl":"\/wp-content\/uploads\/2020\/06\/emocje-w-sieci-matura-wesele-trends-wyciek.jpg","width":1200,"height":628,"caption":"emocje w sieci matura 2020 google trends"},{"@type":"BreadcrumbList","@id":"\/author\/zespol-sentimenti\/page\/21\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"\/"},{"@type":"ListItem","position":2,"name":"Archiwa dla Sentimenti Team"}]},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Sentimenti","description":"Analiza emocji i sentymentu, sztuczna inteligencja, monitoring internetu","publisher":{"@id":"\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pl-PL"},{"@type":"Organization","@id":"\/#organization","name":"Sentimenti","url":"\/","logo":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/#\/schema\/logo\/image\/","url":"\/wp-content\/uploads\/2023\/06\/logo.svg","contentUrl":"\/wp-content\/uploads\/2023\/06\/logo.svg","width":100,"height":100,"caption":"Sentimenti"},"image":{"@id":"\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/sentimentipl","https:\/\/x.com\/SENTIMENTIPL","https:\/\/www.linkedin.com\/company\/sentimenti\/"]},{"@type":"Person","@id":"\/#\/schema\/person\/be59c40712f1ead34e314f09ca420525","name":"Sentimenti Team","image":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"https:\/\/secure.gravatar.com\/avatar\/75e5074bcbe3db6f08243927dccaebabadd73a0b100c1943ba1a55581ac8027a?s=96&d=blank&r=g","url":"https:\/\/secure.gravatar.com\/avatar\/75e5074bcbe3db6f08243927dccaebabadd73a0b100c1943ba1a55581ac8027a?s=96&d=blank&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/75e5074bcbe3db6f08243927dccaebabadd73a0b100c1943ba1a55581ac8027a?s=96&d=blank&r=g","caption":"Sentimenti Team"},"description":"Ten artykuł jest wynikiem pracy zbiorowej różnych członków zespołu Sentimenti.","sameAs":["https:\/\/www.facebook.com\/Sentimenti-1488912957904331","https:\/\/x.com\/SENTIMENTIPL"],"mainEntityOfPage":{"@id":"\/author\/zespol-sentimenti\/"}}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="Divi v.4.27.1" name="generator"/><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link href="/wp-includes/css/dist/block-library/style.min.css?ver=6.9.11" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote :where(cite),.wp-block-pullquote :where(footer),.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/css/dist/block-library/theme.min.css */
+</style>
+<style id="pdfemb-pdf-embedder-viewer-style-inline-css" type="text/css">
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+/*# sourceURL=/wp-content/plugins/pdf-embedder/block/build/style-index.css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link href="/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css?ver=2.41" id="cookies-and-content-security-policy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/custom-posts-order/css/custompostdisplay.css?ver=4.5" id="custompostdisplay-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/filter-for-divi/df-style.css?ver=2.0.2" id="df-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.13" id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/Divi/style-static.min.css?ver=4.27.1" id="divi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<!-- Fragment znacznika Google (gtag.js) dodany przez Site Kit -->
+<!-- Fragment Google Analytics dodany przez Site Kit -->
+<script async="" id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-5R823XK" type="text/javascript"></script>
+<script id="google_gtagjs-js-after" type="text/javascript">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["sentimenti.pl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5R823XK");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 6.9.11" name="generator"/>
+<meta content="Site Kit by Google 1.188.0" name="generator"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/><style id="cookies-and-content-security-policy-css-custom" type="text/css">.modal-cacsp-position .modal-cacsp-box > *,.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-show.modal-cacsp-box-bottom {background-color: #efefef;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {background-color: #e5e5e5;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {border-color: #ffffff;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {background-color: #eaeaea;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {border-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ff0087;}</style><link href="/wp-content/uploads/2023/06/cropped-ico-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-180x180.jpg" rel="apple-touch-icon"/>
+<meta content="/wp-content/uploads/2023/06/cropped-ico-270x270.jpg" name="msapplication-TileImage"/>
+<link href="/wp-content/et-cache/global/et-divi-customizer-global.min.css?ver=1794112530" id="et-divi-customizer-global-cached-inline-styles" rel="stylesheet"/><link href="/wp-content/et-cache/6466/et-core-unified-cpt-6466.min.css?ver=1794112538" id="et-core-unified-cpt-6466-cached-inline-styles" rel="stylesheet"/><style media="screen" type="text/css">.is-menu path.search-icon-path { fill: #848484;}body .popup-search-close:after, body .search-close:after { border-color: #848484;}body .popup-search-close:before, body .search-close:before { border-color: #848484;}</style> <style type="text/css">
+</style>
+<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+
+				}
+			</style></head>
+<body class="archive paged author author-zespol-sentimenti author-6 paged-21 author-paged-21 wp-theme-Divi et-tb-has-template et-tb-has-footer Divi et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_cover_background et_pb_gutter et_pb_gutters3 et_smooth_scroll et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-7993">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header data-height-onload="66" id="main-header">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="/">
+<img alt="Sentimenti" data-height-percentage="54" height="100" id="logo" src="/wp-content/uploads/2023/06/logo.svg" width="100"/>
+</a>
+</div>
+<div data-fixed-height="40" data-height="66" id="et-top-navigation">
+<nav id="top-menu-nav">
+<ul class="nav" id="top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8080"><a href="/oferta/">Oferta</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5710"><a href="/sentitool/">Sentitool</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6178"><a href="/api-2/">API</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6184"><a href="/kontakt/">Kontakt</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="/%F0%9F%87%BA%F0%9F%87%A6-ukraina/">🇺🇦 Ukraina</a></li>
+<li class="lang-item lang-item-7 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-5986-en"><a href="/en/author/zespol-sentimenti/" hreflang="en-GB" lang="en-GB"><img alt="English" height="11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" style="width: 16px; height: 11px;" width="16"/></a></li>
+</ul> </nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Zaznacz stronę</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div> </div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<div class="container">
+<div class="clearfix" id="content-area">
+<div id="left-area">
+<article class="et_pb_post post-2854 post type-post status-publish format-standard has-post-thumbnail hentry category-okiem-badacza category-polityka-i-spoleczenstwo category-styl-zycia tag-analiza-emocji tag-emocje-w-internecie tag-emocje-w-mediach tag-emocje-w-sieci tag-media tag-twitter" id="post-2854">
+<a class="entry-featured-image-url" href="/matura-2020-google-trends-wyciek-rozprawka-wesele-elementy-fantastyczne/">
+<img alt="Matura 2020. Jak Google Trends zdradziło podlaskich maturzystów?" class="" fetchpriority="high" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/06/emocje-w-sieci-matura-wesele-trends-wyciek-1080x628.jpg" srcset="/wp-content/uploads/2020/06/emocje-w-sieci-matura-wesele-trends-wyciek-1080x628.jpg 1080w, /wp-content/uploads/2020/06/emocje-w-sieci-matura-wesele-trends-wyciek-980x513.jpg 980w, /wp-content/uploads/2020/06/emocje-w-sieci-matura-wesele-trends-wyciek-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/matura-2020-google-trends-wyciek-rozprawka-wesele-elementy-fantastyczne/">Matura 2020. Jak Google Trends zdradziło podlaskich maturzystów?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">cze 10, 2020</span> | <a href="/category/okiem-badacza/" rel="category tag">Okiem badacza</a>, <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>Matura 2020 to temat gorący w ostatnich dniach. Mieliśmy zamiar przeanalizować – jak przystało na <a href="/oferta">Sentimenti</a> – dyskusję w sieci na ten temat pod kątem emocji i pobudzenia emocjonalnego. Nie sądziliśmy jednak, że rzeczywistość sama napisze scenariusz i podsunie temat dużo ciekawszy. To historia o tym, jak wiele cyfrowych śladów zostawiamy w sieci i jak darmowe i ogólnodostępne narzędzie Google zdradziło podlaskich maturzystów.<br/>
+</strong></p>
+<h2>„Bądź gotów, nim wstanie słońce”</h2>
+<p>Nie, nie byliśmy pierwsi. Podejrzenia co do ewentualnego wycieku tematu rozprawki pojawiło się na Wykopie krótko przed południem 8 czerwca. Zbierając dane do naszej analizy emocji wokół matur postanowiliśmy zgłębić temat. Dlatego też zamieściliśmy spostrzeżenia na naszym kanale na Twitterze „<a href="https://emocjewsieci.pl/"><em>Emocje w sieci</em></a>„, bo w końcu po to ten profil powstał. Nie sądziliśmy, że w tym momencie ruszy lawina zainteresowania nie tylko internautów, ale i mediów. Nasze wpisy na ten temat cytowane były nie tylko przez czołowe portale internetowe, ale też stacje radiowe i telewizyjne. Ostatecznie trafiliśmy do głównych wydań Faktów TVN i <a href="https://www.polsatnews.pl/wideo-program/20200609-wydarzenia-1850_6771766/">„<em>Wydarzeń</em>” w Polsat News</a>, gdzie CEO Sentimenti odniósł się do sprawy.</p>
+<p><img alt="matura 2020 wyciek wesele rozprawka" class="aligncenter wp-image-2858 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/06/matura-2020-wyciek-podlaskie-01.png" srcset="/wp-content/uploads/2020/06/matura-2020-wyciek-podlaskie-01.png 1280w, /wp-content/uploads/2020/06/matura-2020-wyciek-podlaskie-01-512x288.png 512w, /wp-content/uploads/2020/06/matura-2020-wyciek-podlaskie-01-768x432.png 768w, /wp-content/uploads/2020/06/matura-2020-wyciek-podlaskie-01-1024x576.png 1024w" width="1280"/></p>
+<h2>Twitter trends. Maturzyści przewidują przyszłość</h2>
+<p>O co właściwie chodzi? O przewidywanie przyszłości. Wiadomo, że to prawdziwe wyzwanie, ale dla maturzystów z Podlasia nie ma rzeczy niemożliwych. Analiza zapytań kierowanych do tej najpopularniejszej wyszukiwarki z tego regionu pokazała ogromne zainteresowanie ”<em>Weselem”</em> w poniedziałek już po 6 rano. Co w tym dziwnego? To, że maturzyści swoje telefony powinni dostać po oddaniu prac, czyli przed południem. Oni jednak już wiedzieli, czego dotyczyć będzie rozprawka na ponad 2 godziny przed tym, jak usiedli do ławek. To oczywiście wciąż przypuszczenie, a nie stwierdzenie faktu.</p>
+<p>To, co przed analizą tych wykresów trzeba znać, to metodologia zbierania danych przez Google. Skala od 0 do 100 nie oznacza liczby wyszukań, a jest jedynie znormalizowaną skalą popularności wyszukań. Wszystko po to, aby było można łatwiej porównywać ze sobą tematy. W ten sposób wyszukiwarka Google przyjmuje wartość 100 dla najwyższego poziomu zainteresowania i popularności tematu w wybranym okresie i na danym obszarze.</p>
+<p><img alt="matura 2020 rozprawka wesele elementy fantastyczne twitter trends" class="aligncenter wp-image-2861 size-full" decoding="async" height="616" loading="lazy" sizes="auto, (max-width: 1154px) 100vw, 1154px" src="/wp-content/uploads/2020/06/elementy-fantastyczne-w-weselu-matura-2020-rozprawka.jpg" srcset="/wp-content/uploads/2020/06/elementy-fantastyczne-w-weselu-matura-2020-rozprawka.jpg 1154w, /wp-content/uploads/2020/06/elementy-fantastyczne-w-weselu-matura-2020-rozprawka-512x273.jpg 512w, /wp-content/uploads/2020/06/elementy-fantastyczne-w-weselu-matura-2020-rozprawka-768x410.jpg 768w, /wp-content/uploads/2020/06/elementy-fantastyczne-w-weselu-matura-2020-rozprawka-1024x547.jpg 1024w" width="1154"/></p>
+<p><img alt="matura podlaskie wyciek google trends" class="aligncenter wp-image-2864 size-full" decoding="async" height="337" loading="lazy" sizes="auto, (max-width: 1132px) 100vw, 1132px" src="/wp-content/uploads/2020/06/matura-2020-wyciek-google-trends-podlaskie.jpg" srcset="/wp-content/uploads/2020/06/matura-2020-wyciek-google-trends-podlaskie.jpg 1132w, /wp-content/uploads/2020/06/matura-2020-wyciek-google-trends-podlaskie-512x152.jpg 512w, /wp-content/uploads/2020/06/matura-2020-wyciek-google-trends-podlaskie-768x229.jpg 768w, /wp-content/uploads/2020/06/matura-2020-wyciek-google-trends-podlaskie-1024x305.jpg 1024w" width="1132"/></p>
+<p>W Google Trends widoczny jest nagły wzrost zainteresowania frazą „<em>wesele elementy fantastyczne</em>”. Co jednak ciekawsze, również na długo przed rozpoczęciem matur w Google szukano obszernego fragmentu polecenia, czyli jego dokładną treść. W tej sytuacji wiadomo już, że musiało dojść do wycieku arkuszy. Pytanie tylko, kiedy to nastąpiło i kto tego dokonał. Powagi sytuacji dodaje też fakt, że między godz. 7 a 9 rano odnotowano też pojedyncze wyszukiwania frazy „<em>Anna Kamieńska</em>„. Wiersz „Daremne” był w tym roku tekstem, z którego zinterpretowaniem zmierzyli się maturzyści…</p>
+<p>Jeśli chodzi o dokładniejsze dane dotyczące godziny pierwszych wyszukań konkretnych fraz: „<em>Elementy fantastyczne</em>” – ok. 6:24, „<em>Elementy fantastyczne w weselu</em>” – ok. 6:32, „<em>Wesele fantastyka</em>” – ok. 6:48 i „<em>Anna Kamieńska</em>” – ok. 7:04.</p>
+<p><img alt="elementy fantastyczne wesele" class="aligncenter wp-image-2860 size-full" decoding="async" height="616" loading="lazy" sizes="auto, (max-width: 1155px) 100vw, 1155px" src="/wp-content/uploads/2020/06/matura-2020-wyciek-wesele-jak-elementy-fantastyczne.jpg" srcset="/wp-content/uploads/2020/06/matura-2020-wyciek-wesele-jak-elementy-fantastyczne.jpg 1155w, /wp-content/uploads/2020/06/matura-2020-wyciek-wesele-jak-elementy-fantastyczne-512x273.jpg 512w, /wp-content/uploads/2020/06/matura-2020-wyciek-wesele-jak-elementy-fantastyczne-768x410.jpg 768w, /wp-content/uploads/2020/06/matura-2020-wyciek-wesele-jak-elementy-fantastyczne-1024x546.jpg 1024w" width="1155"/></p>
+<h2>Gerwazy, czyli wpadka nr 2</h2>
+<p>Idąc dalej poleceniami z arkusza na uwagę zasługuje też wyszukanie dot. jednego z bohaterów „Pana Tadeusza” – Gerwazego. Tego fragmentu dotyczyło jedno z zadań, a konkretnie zadanie 7.  Pierwsze zapytania o początek cytatu z dzieła odnotowano ok. godz. 7:30.</p>
+<p><img alt="matura gerwazy wyciek google trends emocje w sieci" class="aligncenter wp-image-2893 size-full" decoding="async" height="530" loading="lazy" sizes="auto, (max-width: 1143px) 100vw, 1143px" src="/wp-content/uploads/2020/06/matura-2020-wnet-gerwazy-polski-wyciek.png" srcset="/wp-content/uploads/2020/06/matura-2020-wnet-gerwazy-polski-wyciek.png 1143w, /wp-content/uploads/2020/06/matura-2020-wnet-gerwazy-polski-wyciek-512x237.png 512w, /wp-content/uploads/2020/06/matura-2020-wnet-gerwazy-polski-wyciek-768x356.png 768w, /wp-content/uploads/2020/06/matura-2020-wnet-gerwazy-polski-wyciek-1024x475.png 1024w" width="1143"/></p>
+<p><img alt="matura wyciek emocje w sieci" class="aligncenter wp-image-2894 size-full" decoding="async" height="1220" loading="lazy" sizes="auto, (max-width: 915px) 100vw, 915px" src="/wp-content/uploads/2020/06/matura-gerwazy-emocje-w-sieci.jpg" srcset="/wp-content/uploads/2020/06/matura-gerwazy-emocje-w-sieci.jpg 915w, /wp-content/uploads/2020/06/matura-gerwazy-emocje-w-sieci-384x512.jpg 384w, /wp-content/uploads/2020/06/matura-gerwazy-emocje-w-sieci-768x1024.jpg 768w" width="915"/></p>
+<p>Temat ten wygenerował dyskusję w sieci licząca niespełna 20 tys. wzmianek w okresie 8-10 czerwca (do momentu publikacji tego posta). Poniższa chmura stwierdzeń i kontekstów pokazuje, o czym dyskutowano najczęściej i które konteksty wzbudzały największe natężenie złości w autorach.</p>
+<p><img alt="wesele sentimenti emocje w sieci" class="aligncenter wp-image-2915 size-full" decoding="async" height="804" loading="lazy" sizes="auto, (max-width: 1881px) 100vw, 1881px" src="/wp-content/uploads/2020/06/matura-social-listening-wyciek.png" srcset="/wp-content/uploads/2020/06/matura-social-listening-wyciek.png 1881w, /wp-content/uploads/2020/06/matura-social-listening-wyciek-512x219.png 512w, /wp-content/uploads/2020/06/matura-social-listening-wyciek-768x328.png 768w, /wp-content/uploads/2020/06/matura-social-listening-wyciek-1024x438.png 1024w" width="1881"/></p>
+<h2>Matura 2020, czyli „a tu pospolitość skrzeczy”</h2>
+<p>Wycieki arkuszy egzaminacyjnych to zjawisko, z którym mieliśmy już do czynienia wiele razy. W 2009 roku doszło do przecieku w jednym z warszawskich gimnazjów dzień przed egzaminem. Testy wyciekły z udziałem  woźnej. Z kolei w 2018 roku doszło do wycieku zadań z języka polskiego na egzaminie gimnazjalnym. Temat wypracowania pojawił się wówczas na Twitterze 20 minut przed oficjalnym rozpoczęciem testów. Rzeczywistość skrzeczy…</p>
+<p>Centralna Komisja Egzaminacyjna po – między innymi – naszych doniesieniach na Twitterze zdecydowała się złożyć zawiadomienie na policję w sprawie możliwego przecieku. Całą sprawę uwiarygadnia nie tylko to, co widzimy w Google Trends. Sieć zalały zrzuty ekranu z komunikatorów i grup zamkniętych na Facebooku, gdzie bez problemu można było zauważyć zdjęcia wszystkich arkuszy czy też rozwiązanych zadań. Wszystko oczywiście pod warunkiem, że są one prawdziwe.</p>
+<p>Jaki będzie efekt i czy zaprezentowane dane z ogólnodostępnego narzędzia przyczynią się do ujawnienia źródła wycieku? Historia pokazuje, że tego typu sprawy często kończą się umorzeniem ze względu na brak możliwości ustalenia sprawcy. Na koniec ciekawostka – najprawdopodobniej doszło również do wycieku zadań z matematyki.</p>
+<p><img alt="emocje w sieci sentimenti matura 2020 wyciek matematyka" class="aligncenter wp-image-2870 size-full" decoding="async" height="656" loading="lazy" sizes="auto, (max-width: 1159px) 100vw, 1159px" src="/wp-content/uploads/2020/06/EaFvw4cX0AkRVCw.jpg" srcset="/wp-content/uploads/2020/06/EaFvw4cX0AkRVCw.jpg 1159w, /wp-content/uploads/2020/06/EaFvw4cX0AkRVCw-512x290.jpg 512w, /wp-content/uploads/2020/06/EaFvw4cX0AkRVCw-768x435.jpg 768w, /wp-content/uploads/2020/06/EaFvw4cX0AkRVCw-1024x580.jpg 1024w" width="1159"/></p>
+<p><img alt="matura matematyka odpowiedzi" class="aligncenter wp-image-2871 size-full" decoding="async" height="1732" loading="lazy" sizes="auto, (max-width: 1241px) 100vw, 1241px" src="/wp-content/uploads/2020/06/matura-matematyka-wyciek-zadan.jpg" srcset="/wp-content/uploads/2020/06/matura-matematyka-wyciek-zadan.jpg 1241w, /wp-content/uploads/2020/06/matura-matematyka-wyciek-zadan-367x512.jpg 367w, /wp-content/uploads/2020/06/matura-matematyka-wyciek-zadan-768x1072.jpg 768w, /wp-content/uploads/2020/06/matura-matematyka-wyciek-zadan-734x1024.jpg 734w" width="1241"/></p>
+<h2></h2>
+<h2>Wybrane publikacje, w których wspomniano „Emocje w sieci”</h2>
+<p><a href="https://wiadomosci.onet.pl/kraj/matura-2020-czy-wyciekly-tematy-egzaminu-z-jezyka-polskiego/j8d3lbh"><img alt="" class="alignnone wp-image-2856" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 178px) 100vw, 178px" src="/wp-content/uploads/2020/06/onet-512x173.png" srcset="/wp-content/uploads/2020/06/onet-512x173.png 512w, /wp-content/uploads/2020/06/onet.png 576w" width="178"/></a>    <a href="https://www.tokfm.pl/Tokfm/7,103085,26013498,matura-2020-wyciekly-tematy-egzaminu-z-jezyka-polskiego-wyszukiwanie.html"><img alt="" class="alignnone wp-image-2863" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 60px) 100vw, 60px" src="/wp-content/uploads/2020/06/tok-fm-320x320.png" srcset="/wp-content/uploads/2020/06/tok-fm-320x320.png 320w, /wp-content/uploads/2020/06/tok-fm-96x96.png 96w, /wp-content/uploads/2020/06/tok-fm-144x144.png 144w, /wp-content/uploads/2020/06/tok-fm-512x512.png 512w" width="60"/></a>   <a href="https://www.rmf24.pl/fakty/polska/news-matura-2020-czy-doszlo-do-kolejnego-przecieku-w-sieci-mialy-,nId,4544904"><img alt="" class="alignnone wp-image-2920" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 90px) 100vw, 90px" src="/wp-content/uploads/2020/06/rmf-fm-512x341.png" srcset="/wp-content/uploads/2020/06/rmf-fm-512x341.png 512w, /wp-content/uploads/2020/06/rmf-fm-768x511.png 768w, /wp-content/uploads/2020/06/rmf-fm-1024x682.png 1024w, /wp-content/uploads/2020/06/rmf-fm.png 1200w" width="90"/></a>   <a href="https://www.polsatnews.pl/wiadomosc/2020-06-08/czy-doszlo-do-przecieku-podczas-matur-nagly-wzrost-wyszukiwan-dot-wesela-z-jednego-regionu/"><img alt="" class="alignnone wp-image-2852" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 59px) 100vw, 59px" src="/wp-content/uploads/2020/06/Polsat_News.png" srcset="/wp-content/uploads/2020/06/Polsat_News.png 222w, /wp-content/uploads/2020/06/Polsat_News-96x96.png 96w, /wp-content/uploads/2020/06/Polsat_News-144x144.png 144w" width="59"/></a>    <a href="https://dziendobry.tvn.pl/a/matura-2020-z-polskiego-cke-zglasza-sprawe-wycieku-pytan-na-policje"><img alt="" class="alignnone wp-image-2872" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 63px) 100vw, 63px" src="/wp-content/uploads/2020/06/tvn24-512x492.png" srcset="/wp-content/uploads/2020/06/tvn24-512x492.png 512w, /wp-content/uploads/2020/06/tvn24-768x739.png 768w, /wp-content/uploads/2020/06/tvn24-1024x985.png 1024w, /wp-content/uploads/2020/06/tvn24.png 1200w" width="63"/></a>   <a href="https://www.wprost.pl/kraj/10333208/wyciek-na-maturze-z-matematyki-nie-jestesmy-w-stanie-stwierdzic-czy-to-nie-zarty.html"><img alt="" class="alignnone wp-image-2880" decoding="async" height="61" loading="lazy" src="/wp-content/uploads/2020/06/wprostpl-512x384.jpeg" width="81"/></a>  <a href="https://www.fakt.pl/wydarzenia/polska/bialystok/matura-2020-jezyk-polski-temat-z-wesela-wyszukiwany-przed-egzaminem-doszlo-do/zkdtbvk"><img alt="" class="alignnone wp-image-2887" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 107px) 100vw, 107px" src="/wp-content/uploads/2020/06/fakt-512x288.jpg" srcset="/wp-content/uploads/2020/06/fakt-512x288.jpg 512w, /wp-content/uploads/2020/06/fakt-768x432.jpg 768w, /wp-content/uploads/2020/06/fakt.jpg 850w" width="107"/></a> <a href="https://wiadomosci.gazeta.pl/wiadomosci/7,114883,26012968,wyciek-tematow-na-maturze-z-polskiego-dwie-godziny-przed-poszukiwano.html"><img alt="" class="alignnone wp-image-2891" decoding="async" height="60" loading="lazy" src="/wp-content/uploads/2020/06/wyborcza-512x248.jpg" width="123"/></a>   <a href="https://www.tvp.info/48437061/cke-sklada-zawiadomienie-w-sprawie-mozliwego-przecieku-podczas-matur"><img alt="" class="alignnone wp-image-2878" decoding="async" height="60" loading="lazy" src="/wp-content/uploads/2020/06/tvpinfo.png" width="278"/></a>   <img alt="" class="alignnone wp-image-2884" decoding="async" height="60" loading="lazy" src="/wp-content/uploads/2020/06/polityka-512x228.jpg" width="135"/>   <a href="https://www.bankier.pl/wiadomosc/Wyciek-tematow-maturalnych-w-sieci-Minister-Nie-bedzie-uniewaznienia-egzaminu-7901236.html"><img alt="" class="alignnone wp-image-2922" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 277px) 100vw, 277px" src="/wp-content/uploads/2020/06/Bankierpl-512x111.png" srcset="/wp-content/uploads/2020/06/Bankierpl-512x111.png 512w, /wp-content/uploads/2020/06/Bankierpl.png 655w" width="277"/></a>    <a href="https://www.se.pl/wiadomosci/polityka/matura-z-jezyka-polskiego-bedzie-uniewazniona-minister-edukacji-ostrzega-uczniow-aa-g1kk-QGt2-Qq3b.html"><img alt="" class="alignnone wp-image-2876" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 130px) 100vw, 130px" src="/wp-content/uploads/2020/06/superexpress-512x236.png" srcset="/wp-content/uploads/2020/06/superexpress-512x236.png 512w, /wp-content/uploads/2020/06/superexpress.png 655w" width="130"/></a></p>
+<p>Informacja w Wydarzeniach Polsat</p>
+<p><iframe allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/c5TIvns8H6E?start=2" width="560"></iframe></p>
+<p>„Emocje w sieci” na kanale Spider’s Web TV</p>
+<p><iframe allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/9LKof-Cmg9Q" width="560"></iframe></p>
+</article>
+<article class="et_pb_post post-2829 post type-post status-publish format-standard has-post-thumbnail hentry category-okiem-badacza tag-analiza-emocji tag-analiza-sentymentu tag-badania tag-emocje tag-emocje-w-internecie tag-emocje-w-tekscie tag-nastawienie-emocjonalne" id="post-2829">
+<a class="entry-featured-image-url" href="/emocje-podstawowe-rodzaje-zachowanie-nauka/">
+<img alt="Emocje podstawowe i ich wpływ na ludzkie zachowanie" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/06/emocje-podstawowe-plutchik-kolo-emocji-ekman-teorie-rodzaje-1080x628.jpg" srcset="/wp-content/uploads/2020/06/emocje-podstawowe-plutchik-kolo-emocji-ekman-teorie-rodzaje-1080x628.jpg 1080w, /wp-content/uploads/2020/06/emocje-podstawowe-plutchik-kolo-emocji-ekman-teorie-rodzaje-980x513.jpg 980w, /wp-content/uploads/2020/06/emocje-podstawowe-plutchik-kolo-emocji-ekman-teorie-rodzaje-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/emocje-podstawowe-rodzaje-zachowanie-nauka/">Emocje podstawowe i ich wpływ na ludzkie zachowanie</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">cze 3, 2020</span> | <a href="/category/okiem-badacza/" rel="category tag">Okiem badacza</a></p><p><strong>Emocje podstawowe towarzyszą nam każdego dnia. To z reguły bardzo krótkie zjawisko wpływa na nasze zachowania i jest reakcją na warunki panujące w otoczeniu. Istnieje wiele różnych rodzajów emocji, które mają wpływ na to, jak żyjemy i jak wchodzimy w interakcję. Wybory, których dokonujemy, działania, które podejmujemy i nasze postrzeganie – na to wszystko wpływają emocje.</strong></p>
+<h1><strong>Emocje podstawowe – czym właściwie są? Rodzaje emocji psychologia<br/>
+</strong></h1>
+<p>W Sentimenti <a href="/oferta">budowane w oparciu o naukę narzędzia</a> służą do badania ośmiu emocji podstawowych (model Plutchika). Jednak w latach 70. psycholog Paul Ekman zidentyfikował sześć podstawowych emocji, które według niego były najpowszechniej spotykane we wszystkich kulturach.</p>
+<p>Emocje, które zidentyfikował, to radość, smutek, wstręt, strach, zaskoczenie i złość. Później rozszerzył swoją listę podstawowych emocji o takie rzeczy jak duma, wstyd, zażenowanie czy  podniecenie. Psychologowie w późniejszych latach starali się zidentyfikować różne rodzaje emocji, których ludzie doświadczają. Pojawiło się kilka różnych teorii i prób ich kategoryzacji. Psycholog Robert Plutchik zaproponował z kolei <a href="/blog/dlaczego-mierzymy-az-8-emocji-podstawowych/">„<em>koło emocji</em> <em>Plutchika</em>„</a>.</p>
+<p>Emocje jego zdaniem mogą być łączone w różne uczucia, podobnie jak kolory mogą być mieszane w celu stworzenia innych odcieni.  Emocje bardziej złożone, czasem mieszane, są miksem tych bardziej podstawowych. Na przykład, podstawowe emocje, takie jak radość i zaufanie, mogą być łączone w celu stworzenia uczucia miłości. Badania przeprowadzone w 2017 roku sugerują, że istnieje znacznie więcej podstawowych emocji niż wcześniej sądzono. W badaniu opublikowanym w „<em><a href="https://www.pnas.org/">Proceedings of National Academy of Sciences</a></em>” naukowcy zidentyfikowali aż 27 różnych kategorii emocji.</p>
+<h1><strong>Jakie są emocje? Przykłady i rodzaje emocji podstawowych. Emotikony i nazwy emocji<br/>
+</strong></h1>
+<p>Przyjrzyjmy się bliżej niektórym podstawowym typom emocji i zbadajmy wpływ, jaki mają one na ludzkie zachowanie. Jakie są emocje? Czy istnieją dobre emocje? Jakie wyróżniamy pozytywne słowa? Emocje negatywne i pozytywne – przykłady:</p>
+<p><img alt="emocje podstawowe rodzaje emocje pozytywne negatywne hejt koło emocji plutchika po polsku nazwy emocji emocje przykłady" class="aligncenter wp-image-2831 size-full" decoding="async" height="878" loading="lazy" sizes="auto, (max-width: 1495px) 100vw, 1495px" src="/wp-content/uploads/2020/06/emocje-podstawowe-rodzaje-sentimenti-teorie-pozytywne-negatywne.jpg" srcset="/wp-content/uploads/2020/06/emocje-podstawowe-rodzaje-sentimenti-teorie-pozytywne-negatywne.jpg 1495w, /wp-content/uploads/2020/06/emocje-podstawowe-rodzaje-sentimenti-teorie-pozytywne-negatywne-512x301.jpg 512w, /wp-content/uploads/2020/06/emocje-podstawowe-rodzaje-sentimenti-teorie-pozytywne-negatywne-768x451.jpg 768w, /wp-content/uploads/2020/06/emocje-podstawowe-rodzaje-sentimenti-teorie-pozytywne-negatywne-1024x601.jpg 1024w" width="1495"/></p>
+<h3><strong>RADOŚĆ</strong></h3>
+<p>Ze wszystkich różnych rodzajów emocji, radość jest tym, do którego ludzie dążą najbardziej. Radość jest często definiowana jako przyjemny stan emocjonalny, który charakteryzuje się uczuciem zadowolenia, radości, satysfakcji i dobrego samopoczucia. Ten rodzaj emocji jest czasami wyrażany poprzez:</p>
+<ul>
+<li><strong>Wyraz twarzy:</strong> uśmiechanie się</li>
+<li><strong>Język ciała:</strong> swobodna postawa</li>
+<li><strong>Ton głosu:</strong> przyjemny sposób mówienia</li>
+</ul>
+<p>O ile radość jest uważana za jedną z podstawowych ludzkich emocji, o tyle na to, co naszym zdaniem będzie je tworzyć, duży wpływ ma kultura. Osiągnięcie pewnych rzeczy, takich jak kupno domu lub posiadanie dobrze płatnej pracy, będzie wprost skutkowało radością. To, co faktycznie przyczynia się do wzrostu radości jest jednak często znacznie bardziej złożone i bardziej zindywidualizowane. Ludzie od dawna wierzą, że radość i zdrowie są ze sobą powiązane, a badania potwierdzają, że radość może odgrywać rolę zarówno w zdrowiu fizycznym, jak i psychicznym.</p>
+<p>Radość wiąże się z różnymi rezultatami, w tym zwiększoną długowiecznością i zwiększoną satysfakcją małżeńską. Na przykład stres, niepokój, depresja i samotność były związane z takimi czynnikami, jak obniżona odporność, zwiększony stan zapalny i zmniejszona średnia długość życia.</p>
+<h3><strong>SMUTEK</strong></h3>
+<p>Smutek jest kolejnym rodzajem emocji często definiowanym jako przemijający stan emocjonalny charakteryzujący się uczuciem rozczarowania, żalu, beznadziejności, bezinteresowności i stłumionego nastroju. Podobnie jak inne emocje jest czymś, czego wszyscy ludzie doświadczają od czasu do czasu. W niektórych przypadkach ludzie mogą doświadczać długotrwałych i ciężkich okresów smutku, które mogą przekształcić się w depresję. Smutek może być wyrażony na wiele sposobów, w tym płacz, stłumiony nastrój, letarg i wyciszenie, wycofanie się.</p>
+<p>Rodzaj i nasilenie smutku może się różnić w zależności od pierwotnej przyczyny, a sposób, w jaki ludzie radzą sobie z takimi uczuciami, również może się różnić. Smutek może często prowadzić do zaangażowania się w mechanizmy radzenia sobie z nim, takie jak unikanie innych ludzi, samoleczenie i natłok negatywnych myśli. Takie zachowania mogą w rzeczywistości nasilać uczucie smutku i wydłużać czas trwania emocji.</p>
+<h3><strong>STRACH</strong></h3>
+<p>Strach jest potężną emocją, która może również odgrywać ważną rolę w przetrwaniu. Kiedy stoimy przed jakimś niebezpieczeństwem i doświadczamy strachu, przechodzimy przez coś, co nazywamy walką lub reakcją na ucieczkę. Nasze mięśnie stają się napięte, tętno i oddech wzrasta, a umysł staje się bardziej czujny, skłaniając ciało do ucieczki od niebezpieczeństwa lub pozostania i podjęcia walki. Ta odpowiedź pomaga zapewnić, że jesteśmy przygotowani do skutecznego radzenia sobie z zagrożeniami w swoim otoczeniu. Ekspresja tego typu emocji może obejmować:</p>
+<ul>
+<li><strong>Wyraz twarzy:</strong> poszerzenie oczu i cofnięcie języka lub podbródka</li>
+<li><strong>Język ciała:</strong> próba ukrycia się lub lęk przed zagrożeniem</li>
+<li><strong>Reakcje fizjologiczne:</strong> szybki oddech i intensywniejsze bicie serca</li>
+</ul>
+<p>Oczywiście nie każdy doświadcza strachu w taki sam sposób. Niektórzy ludzie mogą być bardziej wrażliwi na strach i pewne sytuacje mogą być bardziej skłonne do wywołania tej emocji. Strach jest emocjonalną reakcją na bezpośrednie zagrożenie. Podobnej reakcji możemy doświadczyć względem przewidywanego zagrożenia lub nawet naszych myśli o tym. To jest to, co zazwyczaj uważamy za lęk. Lęk wiąże się z przewidywanym strachem przed sytuacjami.  Z drugiej strony, niektórzy ludzie rzeczywiście szukają sytuacji wywołujących strach. Ekstremalne sporty i inne dreszcze mogą wywoływać strach, ale niektórym ludziom wydaje się, że rozwijają się, a nawet cieszą takimi uczuciami.</p>
+<p>Powtarzające się narażenie na sytuację wywołującą lęk może prowadzić do zaznajomienia się i aklimatyzacji, co może zmniejszyć uczucie strachu i lęku lub też na te emocje uodpornić. Jest to idea terapii ekspozycji, w której ludzie są stopniowo narażeni na coś, co ich przeraża, ale w sposób kontrolowany i bezpieczny. Ostatecznie uczucie strachu zaczyna się zmniejszać.</p>
+<h3><strong>WSTRĘT</strong></h3>
+<p>Wstręt to kolejna z sześciu podstawowych, oryginalnych emocji opisanych przez Ekmana. Może się objawiać na kilka sposobów, w tym:</p>
+<ul>
+<li><strong>Język ciała:</strong> odwracanie się od źródła wstrętu</li>
+<li><strong>Reakcje fizyczne:</strong> wymioty</li>
+<li><strong>Wyraz twarzy:</strong> zmarszczenie nosa i podkręcenie górnej wargi</li>
+</ul>
+<p>To poczucie może wynikać z wielu czynników, w tym z nieprzyjemnego smaku, wzroku lub zapachu. Naukowcy uważają, że ta emocja powstała w wyniku reakcji na żywność. Zła higiena, infekcje, krew, gnicie i śmierć również mogą wywołać reakcję odrazy. Może to być sposób organizmu na uniknięcie rzeczy, które mogą przenosić choroby zakaźne. Ludzie mogą również doświadczać moralnego obrzydzenia, kiedy obserwują innych, którzy angażują się w zachowania, które uważają za obrzydliwe, niemoralne lub złe.</p>
+<h3><strong>ZŁOŚĆ</strong></h3>
+<p>Złość jest szczególnie silną emocją charakteryzującą się uczuciem wrogości, wzburzenia, frustracji i antagonizmu wobec innych. Podobnie jak strach, złość może odgrywać rolę w walce lub w reakcji na ucieczkę. Kiedy zagrożenie generuje uczucie złości, możemy być skłonni do automatycznego odparcia niebezpieczeństwa i ochrony siebie. Złość jest często przejawem:</p>
+<ul>
+<li><strong>Wyraz twarzy:</strong> marszczenie się</li>
+<li><strong>Język ciała:</strong> zajęcie silnego stanowiska lub odwrócenie się</li>
+<li><strong>Tonacja głosu:</strong> podniesiony głos, krzyk</li>
+<li><strong>Reakcje fizjologiczne:</strong> pocenie się lub zaczerwienienie skóry</li>
+<li><strong>Zachowania agresywne:</strong> uderzanie, kopanie lub rzucanie przedmiotami</li>
+</ul>
+<p>Podczas gdy złość jest postrzegana jako negatywna emocja, czasami może być emocją pozytywną. Może być czynnikiem inspirującym i motywującym do działania i szukania rozwiązania niepokojących sytuacji. Złość z reguły jest jednak problemem, gdy staje się nadmierna lub wyrażona zostaje w sposób, który jest niezdrowy, niebezpieczny lub szkodliwy dla innych. Niekontrolowana złość może szybko przerodzić się w agresję, znęcanie się lub wprost przemoc.</p>
+<p>Ten rodzaj emocji może mieć zarówno psychiczne, jak i fizyczne konsekwencje. Niekontrolowana złość może utrudniać podejmowanie racjonalnych decyzji, a nawet mieć wpływ na zdrowie fizyczne. Z medycznego punktu widzenia związana jest z chorobami wieńcowymi i cukrzycą. Jest ona również związana z zachowaniami, które stanowią zagrożenie dla zdrowia, takimi jak agresywna jazda samochodem, spożywanie alkoholu i palenie tytoniu.</p>
+<h3><strong>ZASKOCZENIE</strong></h3>
+<p>Zaskoczenie to kolejna z sześciu podstawowych typów ludzkich emocji pierwotnie opisanych przez Ekmana. Jest zazwyczaj dość krótka i charakteryzuje się fizjologiczną reakcją na coś nieoczekiwanego i niespodziewanego. Ten typ emocji może być zarówno pozytywny, jak i negatywny lub neutralny. Nieprzyjemna niespodzianka może dotyczyć kogoś wyskakującego zza drzewa i przerażającego nas, gdy spacerujemy nocą.</p>
+<p>Przykładem przyjemnego zaskoczenia może być sytuacja, kiedy przybywamy do domu, gdzie bez naszej wiedzy najbliżsi i przyjaciele zebrali się, aby świętować nasze urodziny. Emocja ta często charakteryzuje się:</p>
+<ul>
+<li><strong>Mimika twarzy:</strong> podniesienie brwi, poszerzenie oczu i otwarcie ust</li>
+<li><strong>Reakcje fizyczne:</strong> odskok do tyłu, podskok</li>
+<li><strong>Reakcje werbalne:</strong> krzyk, sapanie</li>
+</ul>
+<p>Zaskoczenie jest kolejnym rodzajem emocji, która potrafi wywołać nagłą reakcję. Ludzie mogą doświadczyć nagłego skoku adrenaliny, który pomaga przygotować ciało do walki lub ucieczki. Badania wykazały, że ludzie mają tendencję do nieproporcjonalnego zauważania zaskakujących zdarzeń. Dlatego właśnie zaskakujące i niezwykłe wydarzenia usłyszane w wiadomościach mają tendencję do zaznaczania się w pamięci bardziej niż inne.</p>
+<h1><strong>Jak opisać emocje? Podział i klasyfikacja<br/>
+</strong></h1>
+<p>Sześć podstawowych emocji opisanych przez Ekmana to tylko część w gąszczu wielu różnych typów emocji, których ludzie są w stanie doświadczyć. Teoria Ekmana sugeruje, że podstawowe emocje są uniwersalne w różnych kulturach na całym świecie. Jednakże inne teorie i nowe badania nadal odkrywają wiele różnych typów emocji i sposób ich klasyfikacji. Ekman w ramach swoich prac naukowych dodał kilka innych emocji do swojej listy, ale zasugerował, że w przeciwieństwie do jego pierwotnych sześciu, nie wszystkie z nich można przypisać określonej mimice twarzy. Niektóre z emocji, które później zidentyfikował, zawierały m.in. pogardę, zawstydzenie, zakłopotanie, podniecenie, poczucie winy, dumę czy satysfakcję.</p>
+<p>Podobnie jak w przypadku wielu pojęć w psychologii, nie wszyscy teoretycy są zgodni co do tego, jak klasyfikować emocje lub jakie są podstawowe emocje. Podczas gdy teoria Ekmana jest jedną z najbardziej znanych, inni teoretycy zaproponowali swoje własne wyobrażenia na temat tego, jakie emocje składają się na rdzeń ludzkiego doświadczenia zewnętrznego świata.</p>
+<p>Niektórzy badacze sugerowali, że istnieją tylko dwie lub trzy podstawowe emocje. Inni sugerowali, że emocje istnieją w jakiejś hierarchii. Podstawowe emocje, takie jak miłość, radość, zaskoczenie, złość i smutek dzieli się na emocje wtórne. Miłość, na przykład, składa się z drugorzędnych emocji, takich jak uczucie i tęsknota. Drugorzędne emocje dzielą się wtedy jeszcze bardziej podzielone na tzw. emocje trzeciorzędne. Emocje wtórne uczucia obejmują emocje trzeciorzędne, takie jak sympatia, troska, współczucie i czułość. Nowsze badania sugerują, że istnieje co najmniej 27 różnych emocji, z których wszystkie silnie się ze sobą wiążą. Innymi słowy, emocje nie są stanami, które występują w izolacji. Zamiast tego powstają gradienty emocji i te różne uczucia są głęboko ze sobą powiązane.</p>
+<h1><strong>Wnioski końcowe</strong></h1>
+<p>Emocje odgrywają kluczową rolę w tym, jak żyjemy. Od wpływu na to, jak angażujemy się w nasze codzienne życie, po wpływ na decyzje, które podejmujemy. Rozumiejąc niektóre z typów emocji, można uzyskać głębsze zrozumienie sposobu ich wyrażania i wpływu na nasze zachowanie. Ważne jest jednak, aby pamiętać, że żadna emocja nie jest samotną wyspą. Wiele emocji, których doświadczamy jest zróżnicowanych i złożonych. Współistniejąc i wpływając na siebie, tworzące bogatą i zróżnicowaną tkankę naszego życia emocjonalnego.</p>
+<p>Narzędzia <a href="/o-nas/">Sentimenti</a> idealnie sprawdzają się w analizie 8 emocji podstawowych, ale też sentymentu pozytywnego, negatywnego. Dodatkowym atutem narzędzia jest możliwość zbadania stopnia emocjonalnego pobudzenia. Dotyczy to dowolnych tekstów – od transkrypcji rozmów, po social listening aż po czaty z klientami czy teksty dziennikarskie. Narzędzia świetnie radzą sobie <a href="/blog/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">wspomagając codzienną pracę działu PR</a> w zakresie opracowywania komunikatów public relations dopasowanych do konkretnych celów.</p>
+<p><strong>DOWIEDZ SIĘ WIĘCEJ:</strong></p>
+<ul>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">Emocje w reklamie: wykorzystanie Sentimenti w sektorze reklamy i marketingu</a></li>
+<li><a href="/blog/emotywne-pozycjonowanie-reklam/">Emotywne pozycjonowanie reklam</a></li>
+</ul>
+<p>Emocje podstawowe i natężenie emocji to także idealne rozwiązanie do przewidywania kursów walut, kryptowalut czy spółek giełdowych. Nasze narzędzia pozwalają na automatyczną analizę sentymentu i emocji w tekstach. Postanowiliśmy więc sprawdzić przydatność naszych narzędzi dla sektora finansowego i wypróbować je w różnych sytuacjach.</p>
+<p><strong>DOWIEDZ SIĘ WIĘCEJ:<br/>
+</strong></p>
+<ul>
+<li><a href="/blog/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">Analiza emocji narzędziem wsparcia w inwestycjach finansowych</a></li>
+<li><a href="/blog/sentyment-inwestorski-na-rynku-kryptowalut-a-moze-lepiej-emocje/">Emocje na rynku kryptowalut i sentyment inwestorski. Może lepiej emocje?</a></li>
+<li><a href="/blog/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">Analiza emocji narzędziem wsparcia w inwestycjach finansowych</a></li>
+<li><a href="/blog/analiza-emocji-w-fintech-raport-o-polskich-spolkach-gieldowych/">Emocje na giełdzie i co z tego wynika dla inwestorów</a></li>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">Emocje w reklamie: wykorzystanie Sentimenti w sektorze reklamy i marketingu</a></li>
+<li>
+</li></ul>
+</article>
+<article class="et_pb_post post-2797 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand tag-analiza-tekstu tag-emocje tag-emocje-w-tekscie tag-monitoring-emocji tag-public-relations tag-reklama" id="post-2797">
+<a class="entry-featured-image-url" href="/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">
+<img alt="Wyzwalacze emocji. Sentimenti jako wsparcie działań public relations" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/05/sentimenti-wyzwalacze-emocji-slowa-mocy-public-relations-1080x628.jpg" srcset="/wp-content/uploads/2020/05/sentimenti-wyzwalacze-emocji-slowa-mocy-public-relations-1080x628.jpg 1080w, /wp-content/uploads/2020/05/sentimenti-wyzwalacze-emocji-slowa-mocy-public-relations-980x513.jpg 980w, /wp-content/uploads/2020/05/sentimenti-wyzwalacze-emocji-slowa-mocy-public-relations-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">Wyzwalacze emocji. Sentimenti jako wsparcie działań public relations</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">maj 28, 2020</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Wyzwalacze emocji to ciekawy termin ze świata marketingu i public relations. Wiemy już, że emocje są silniejsze niż rozum. To właśnie z nich zrodziły się tzw. słowa mocy. Czym są, co nauka mówi o ich skuteczności i jak można ich użyć, aby cieszyć się sukcesem w komunikacji z klientem?<br/>
+</strong></p>
+<h2>Wyzwalacze emocji. Słowa w służbie sprzedaży</h2>
+<p>Emocjonalne słowa odgrywają rolę wyzwalaczy, które potrafią wzbudzić ciekawość i pobudzają konwersje. Narzędzia Sentimenti do analizy emocji mogą być więc doskonałym wsparciem w codziennej pracy PR-owca. Życie ludzkie jest wypełnione emocjami. Emocje są z kolei tym, co powoduje, że kupujemy (lub nie) dany produkt lub usługę. Czy możemy zatem wykorzystać emocje, aby skłonić do zakupu, kliknięcia, podzielenia się lub przeczytania treści?</p>
+<p>Odpowiedź brzmi „TAK”, ale pierwszą rzeczą, którą potencjalny klient musi zrobić, to otworzyć e-mail z naszą wiadomością. Aby przykuć uwagę odbiorcy, możemy albo liczyć na cud, albo użyć tzw. wyzwalaczy emocji i zwiększyć swoje szanse. Wyzwalacze emocji to nic innego, jak lista emotywnych słów pobudzających u odbiorcy określone emocje. Te oczywiście muszą być dobrane odpowiednio do tonu przekazywanego komunikatu.</p>
+<p>Słowa wyzwalające (nazywane również słowami mocy) to słowa lub wyrażenia bardziej niż inne zabarwione emocjonalnie. Używane są w komunikatach do wywoływania określonej, zamierzonej reakcji psychologicznej u czytelników (e-maila sprzedażowego, wypowiedzi na czatach w relacji firma-klient, komunikaty prasowe). Chodzi przede wszystkim o większe zaangażowanie wyobraźni u odbiorcy. W Sentimenti <a href="/oferta/">analizujemy emocje</a>, a tym samym – emocje adresata komunikatu. Wiemy, jakie odczucia wyzwolą u końcowego odbiorcy jeszcze zanim się z nią zapozna… Interesujące?</p>
+<h2>Słowa mocy odzwierciedlają odcienie ludzkich emocji. Nazwy emocji podstawowych</h2>
+<p><img alt="koło emocji plutchika emocje podstawowe public relations sentimenti" class="transparent aligncenter" decoding="async" height="576" loading="lazy" src="/wp-content/uploads/2019/06/co-znacza-emocje-podstawowe-Plutchika-1024x576.png" width="1024"/></p>
+<p>Słowa mocy odwołują się do wszystkich rodzajów i odcieni ludzkich emocji. W e-mail marketingu, słowa kluczowe są wykorzystywane do nakłonienia osoby do otwarcia wiadomości, przeczytania jej, kliknięcia w odnośnik i wykonania żądanej akcji. Może to być zakup, udostępnienie lub subskrypcja oferowanego przez nadawcę produktu.</p>
+<p>Pierwszym i najtrudniejszym zadaniem jest zatem odpowiednie pisanie komunikatów, a przez to zwrócenie uwagi czytelników i wzbudzenie ich ciekawości poprzez emocjonalne, intrygujące teksty. Do bieżącej kontroli jakości treści, które tworzymy w celu wysłania do potencjalnych klientów, <a href="/#sentitool">mogą służyć narzędzia Sentimenti</a>. Dzięki temu marketer na bieżąco może badać natężenie emocji w tworzonym komunikacie w celu emotywnego dopasowania go do odbiorcy.</p>
+<h2>Za wyzwalaczami emocji stoi nauka</h2>
+<p>My, ludzie, lubimy uważać siebie samych za logiczne stworzenia. Codziennie musimy podejmować tysiące prostych i skomplikowanych decyzji i staramy się stosować racjonalne myślenie, aby dokonać najlepszego wyboru.</p>
+<p>„<em>Nie da się podjąć decyzji bez uwzględnienia emocji</em>” – stwierdził kiedyś <a href="https://pl.wikipedia.org/wiki/Ant%C3%B3nio_Dam%C3%A1sio">Antonio Damasio</a>, profesor psychologii, filozofii i neurologii na Uniwersytecie Południowej Kalifornii. Istotnie, w 1994 roku przeprowadził swoje badania, które pozwoliły postawić tezę, że „<em>emocje i leżące u ich podstaw maszyny neuronowe uczestniczą w podejmowaniu decyzji…</em>”</p>
+<p>Silne emocje zmuszają ludzi do dzielenia się treściami z innymi. Złość i niepokój skłaniają ludzi do dzielenia się, ponieważ są to emocje wysokoenergetyczne. Rozpalają ogień, aktywizują ludzi i skłaniają ich do działania.</p>
+<h2>Emocjonalne mechanizmy stojące za wyzwalaczami emocji</h2>
+<p>Aby nie być gołosłownym, przeanalizujmy kilka przykładów słów wyzwalających i ich wpływu na ludzką świadomość i podświadomość. To dobra okazja do przekonanie siebie, że istnieją logiczne powiązania pomagające przyciągnąć ludzką uwagę i skłaniające czytelników do podjęcia aktywności.</p>
+<h3><strong>DARMOWE</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2812" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-darmowe-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-darmowe-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-darmowe.jpg 768w" width="512"/></p>
+<p>Gdy oferujemy coś darmowego, może to być najbardziej efektywne ze wszystkich słów wyzwalających. Każdy chce dostać coś za darmo, uzyskać więcej korzyści, a także zaoszczędzić czas, pieniądze i wysiłek. Ludzie kochają rzeczy, które dostają za nic.</p>
+<p>Umieszczenie tego słowa w nagłówku komunikatu sprawi, że stanie się on godny uwagi i atrakcyjny, pobudzając otwieranie i klikanie. Jedyną wadą tego słowa jest, że jest ono dziś mocno nadużywane (ryzyko przekierowania komunikatu do folderu SPAM przez filtry antyspamowe).</p>
+<h3></h3>
+<h3><strong>NOWE</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2811" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-nowe-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-nowe-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-nowe.jpg 768w" width="512"/></p>
+<p>Ludzie zawsze szukają nowości. Coś w naszej naturze skłania nas do poszukiwania zupełnie nowych, najnowszych i najbardziej wyjątkowych dóbr na rynku. Warto eksperymentować z tym słowem w kampaniach marketingowych. Czytelnicy zatrzymają się na dłużej i zwrócą uwagę na nasz przekaz.</p>
+<h3></h3>
+<h3><strong>SPRAWDZONE</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2813" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-sprawdzone-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-sprawdzone-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-sprawdzone.jpg 768w" width="512"/></p>
+<p>Jeśli coś jest oparte na dowodach, może mieć okazję działać skutecznie, jeżeli budujemy wizerunek firmy jako firmy wiarygodnej. W nagłówku komunikatu lub w wezwaniu do działania, termin „sprawdzone” oznacza potwierdzenie skuteczności.</p>
+<h3></h3>
+<h3><strong>ŁATWE</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2815" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-latwe-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-latwe-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-latwe.jpg 768w" width="512"/></p>
+<p>Ludzie mogą poświęcić dużą część swojego życia i pracy, aby coś osiągnąć, ale kto nie preferuje prostych rozwiązań? Zawsze wybieramy łatwą drogę. Użycie słowa „łatwe” lub jego odmian jak np. „najłatwiejsze” może znacznie poprawić zaangażowanie.</p>
+<h3></h3>
+<h3><strong>SEKRETNE</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2816" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-sekret-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-sekret-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-sekret.jpg 768w" width="512"/></p>
+<p>Ludzie kochają sekrety z powodu wrodzonej ciekawości. Tajemnice mogą oznaczać zysk, ekskluzywność, intrygę lub inne cenne informacje w zależności od kontekstu. Oczywiście, nasze treści muszą zaspokajać pragnienie wiedzy czytelnika. Innymi słowy, jeśli promujemy jakąś tajemnicę, lepiej ją dostarczcie…</p>
+<h3></h3>
+<h3><strong>DLATEGO</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2826" decoding="async" height="128" loading="lazy" src="/wp-content/uploads/2020/05/emocje-dlatego-1-512x128.jpg" width="512"/></p>
+<p>Jest to słowo z prawdziwą mocą. Ma silne i pozytywne skojarzenia. Implikuje ono rozwiązanie lub wyjaśnienie problemu i zawsze woła do czytelników, którzy starają się znaleźć odpowiedź na trudne pytanie spowodowane ich wątpliwościami. „Zgarnij więc 40% zniżkę… DLATEGO, że jesteś tego warty!”</p>
+<h3></h3>
+<h3><strong>TERAZ</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2819" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-teraz-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-teraz-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-teraz.jpg 768w" width="512"/></p>
+<p>Słowo „teraz” wymaga natychmiastowej reakcji. Dzięki niemu potencjalni klienci dowiedzą się, że dzielisz się czymś, co tu i teraz ma znaczenie. Poza tym, jest to łatwy i skuteczny sposób na zwiększenie konwersji w przypadku ofert ograniczonych czasowo.</p>
+<h3></h3>
+<h3><strong>WSZYSCY</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2820" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-wszyscy-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-wszyscy-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-wszyscy.jpg 768w" width="512"/></p>
+<p>Podobnie jak większość stworzeń, ludzie są istotami stadnymi. Jednak zazwyczaj nie lubią być pierwszymi, którzy coś robią, ponieważ nie wiedzą, czy jest to dobre, czy złe. Mówiąc wprost, większość ludzi nie lubi czuć się jak przedmiot eksperymentu. Są bardziej skłonni do czerpania zysków z czegoś, jeśli wiedzą, że inni ludzie robili to wiele razy przed nimi. Właśnie dlatego społeczny dowód słuszności jest tak przekonujący. Pomysł, że wszyscy ludzie coś robią, może poprawić konwersje.</p>
+<h3></h3>
+<h3><strong>CHCIEĆ</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2821" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-chciec-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-chciec-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-chciec.jpg 768w" width="512"/></p>
+<p>Co jednoczy całą ludzkość? Jedną z odpowiedzi jest to, że wszyscy czegoś pragniemy. Może to być bogactwo, prestiż, wiedza, towary, usługi lub związek.  Warto więc stosować słowo „chcę”, aby zachęcić czytelników do określenia, czego naprawdę chcą. Przykład? Potencjalni czytelnicy mogą nie zdawać sobie sprawy, że chcą wiedzieć, jak czytać więcej stron każdego dnia lub nauczyć się grać na gitarze. Daj im jakąś sugestię.</p>
+<h3></h3>
+<h3><strong>WYGRYWAĆ</strong></h3>
+<p><img alt="" class="alignnone size-medium wp-image-2822" decoding="async" height="128" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" src="/wp-content/uploads/2020/05/emocje-wygrywac-512x128.jpg" srcset="/wp-content/uploads/2020/05/emocje-wygrywac-512x128.jpg 512w, /wp-content/uploads/2020/05/emocje-wygrywac.jpg 768w" width="512"/></p>
+<p>Kto nie lubi wygrywać? Ten wyzwalacz emocjonalny jest porównywalny do słowa „DARMOWE”, ale w dodatku oznacza niedobór.  Łatwo jest coś mieć, jeśli da się to za darmo. Aby wygrać, trzeba być jednak faworytem. To skuteczny sposób, aby skłonić ludzi do otwarcia Twojego maila i interakcji z marką.</p>
+<h2>Wyzwalacze emocji i Sentibrand dla public relations</h2>
+<p>Lista słów wyzwalających (tzw. wyzwalacze emocji) nigdy nie będzie kompletna, ponieważ niektóre słowa zyskują na popularności, a inne przestają być używane. Niektóre są nadużywane, że zaczynają uruchamiać filtry antyspamowe. Warto jednak zachować dla siebie listę emocjonalnych słów – wyzwalaczy emocji, które można zastosować w bieżącej pracy, aby przyciągnąć ciekawość odbiorców.</p>
+<p>Narzędzia Sentimenti są gotowe, by wspomagać codzienną pracę marketera i PR-owca. Pomagają ocenić, czy i jakie emocje niosą komunikaty PR i wysyłane klientom treści. Wiedza ta pozwala na bieżąco dopasowywać słowa, by działania przyniosły pożądany efekt. Warto więc <a href="/#sentitool">mierzyć zawartość emocji w tekście</a> oraz analizować ich natężenie, by przekonać się, czy dostarczamy potencjalnemu odbiorcy odpowiednie emocje.</p>
+<p>Po to właśnie powstała usługa <a href="/oferta/emotywne-pozycjonowanie-reklam/">Sentibrand</a>. To nie tylko lepsze pozycjonowanie reklam, ale też bieżąca analiza treści wysyłanych komunikatów. Dostarczamy wiedzę o tym, jakie emocje znajdują się w komunikatach PR i o jakim natężeniu. Ostatecznie ma to wpływ na to, jak komunikat zostanie odebrany przez odbiorcę. To unikalne w Polsce podejście do sprzedaży i cenna wiedza o tym, czy praca pijarowca osiągnie rezultat pod kątem zaangażowania emocjonalnego czytelnika.</p>
+<h3><a href="/oferta/emotywne-pozycjonowanie-reklam/"><strong>DOWIEDZ SIĘ WIĘCEJ O SENTIBRAND</strong></a></h3>
+<p><strong>Zobacz także:</strong></p>
+<ul>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">Emocje w słowach: wykorzystanie Sentimenti w sektorze reklamy i marketingu</a></li>
+<li><a href="/blog/emotywne-pozycjonowanie-reklam/">Emotywne pozycjonowanie reklam</a></li>
+<li><a href="/blog/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">Analiza emocji narzędziem wsparcia w inwestycjach finansowych</a></li>
+</ul>
+</article>
+<article class="et_pb_post post-2745 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy category-sentibrand tag-analiza-danych tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-internecie tag-kryzys-wizerunkowy" id="post-2745">
+<a class="entry-featured-image-url" href="/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">
+<img alt="Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji" class="" height="675" src="/wp-content/uploads/2020/05/zarzadzanie-kryzysem-wizerunek-marki-w-internecie-alerty-sentimenti.jpg" width="1080"/> </a>
+<h2 class="entry-title"><a href="/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">maj 18, 2020</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Zarządzanie kryzysowe to trudne zagadnienie. Emocje podstawowe mogą służyć jako narzędzie wczesnego ostrzegania przed kryzysem marki. Jak wiadomo kryzys wizerunkowy jest dla wizerunku niebezpieczny. Dlaczego? Ponieważ pojawia się nagle, a w dobie Internetu punktem zapalnym może być dosłownie wszystko.</strong></p>
+<h2>Zarządzanie kryzysowe – emocje podstawowe jako element wczesnego ostrzegania</h2>
+<p>Jak wynika z badania PwC <a href="https://www.pwc.pl/pl/publikacje/2019/badanie-pwc-global-crisis-survey-2019.html">Global Crisis Survey 2019</a>, ostatnich 5 latach nawet 70% polskich firm musiała zmierzyć się z co najmniej jedną kryzysową sytuacją. 54% polskich firm nie posiada nawet zespołu odpowiedzialnego za zarządzanie kryzysowe. Kryzysowe sytuacje potrafią doprowadzić w skrajnym przypadku wprost do upadku biznesu. Istnieje wiele sposobów na to, by zapanować nad kryzysem i uniknąć strat zarówno finansowych, jak i wizerunkowych. Oczekiwania klientów nieustannie rosną wraz z rozwojem produktów i usług. W internecie wypowiedzi na temat produktów i usług pojawiają się w momencie dotknięcia przycisku PUBLIKUJ, czyli natychmiast. To rodzi wiele zagrożeń, bo na temat firm napisać można wszystko.</p>
+<p><a href="/blog/narzedzia-sentimenti-emocje-podstawowe-sentyment-pobudzenie/">Analiza emocji podstawowych, sentymentu czy pobudzenia</a> może stanowić stały element strategii antykryzysowej, która polega na minimalizowaniu szkód. Stały monitoring marki i alertów na podstawie badania natężenia negatywnych emocji bez wątpienia pomoże uniknąć niespodziewanych sytuacji, które mogą zagrozić rentowności biznesu.</p>
+<h2>Kryzys – nie pytaj, czy nastąpi, tylko kiedy</h2>
+<p>Kryzys wizerunkowy ma to do siebie, że nie da się go uniknąć. Takie sytuacje prędzej czy później dotkną każde przedsiębiorstwo bez względu na to, w jakiej działa branży. Kluczowe jest jednak to, że kryzysy przychodzą zazwyczaj niespodziewanie. Nikt dziś nie da gwarancji i 100% pewności, że kryzys nie nastąpi.  Jest jednak dobra wiadomość. Istnieją na rynku narzędzia i możliwości oparte o badania naukowe, sztuczną inteligencję i machine learning, które pomagają firmom monitorować wizerunek.</p>
+<p>Dzięki <a href="/blog/z-dobrych-badan-biora-sie-dobre-narzedzia-do-analizy-emocji/">narzędziom Sentimenti</a> firma ma szansę analizować alerty, by przygotować się na nadejście najgorszego, czyli powstrzymanie rozprzestrzeniania się kryzysu i uniknięcia jego konsekwencji.</p>
+<h2>Zasady zarządzania kryzysowego. Alerty jako system wczesnego ostrzegania przed kryzysem</h2>
+<p>Dla marki ochrona reputacji to klucz do istnienia na rynku. Najlepsze, co można zrobić, to trzymanie ręki na pulsie i zapobieganie. Monitorowanie treści pojawiających się w dyskusjach tysięcy internautów każdego dnia to metoda, która pozwala uniknąć ewentualnych zjawisk zapalnych. Analiza natężenia, a nie tylko występowania negatywnych emocji wyskakujących powyżej dopuszczalnego poziomu, jest jednym z najbardziej efektywnych sposobów. Pokazuje nie tylko, czy wokół marki zaczyna dziać się coś złego, ale też to, czy mamy do czynienia z jednorazowym wybuchem negatywnego sentymentu. Bardzo pomocna może być też średnia krocząca.</p>
+<p><img alt="zarządzanie kryzysowe emocje analiza sentimenti alerty monitoring mediów emocje rodzaje przykłady" class="aligncenter wp-image-2747 size-full" decoding="async" height="1440" loading="lazy" sizes="auto, (max-width: 2559px) 100vw, 2559px" src="/wp-content/uploads/2020/05/zarzadzanie-kryzysowe-monitoring-emocji-sentyment-alerty.png" srcset="/wp-content/uploads/2020/05/zarzadzanie-kryzysowe-monitoring-emocji-sentyment-alerty.png 2559w, /wp-content/uploads/2020/05/zarzadzanie-kryzysowe-monitoring-emocji-sentyment-alerty-512x288.png 512w, /wp-content/uploads/2020/05/zarzadzanie-kryzysowe-monitoring-emocji-sentyment-alerty-768x432.png 768w, /wp-content/uploads/2020/05/zarzadzanie-kryzysowe-monitoring-emocji-sentyment-alerty-1024x576.png 1024w" width="2559"/></p>
+<p>Algorytmy większości narzędzi dostępnych na rynku przypisują nacechowanie emocjonalne zaledwie trójstopniowo. To doskonale znane marketerom i działom PR wypowiedzi tzw. negatywne, pozytywne i neutralne. Narzędzia Sentimenti dzięki zaawansowanym i długotrwałym badaniom naukowym nad językiem wykraczają dużo dalej poza ten wymiar, oferując analizę natężenia emocji negatywnych i pozytywnych, a nie tylko ich występowania.</p>
+<p>Do tego analiza 8 emocji podstawowych (<a href="https://pl.wikipedia.org/wiki/Teoria_emocji_Plutchika">koło emocji</a>) oraz pobudzenia (temperatury dyskusji). W oparciu o taką metodę analizy tworzymy antykryzysowe alerty. To momenty, które nacechowane są znacznie większym natężeniem emocji negatywnych (np. strachu czy złości). Od krytycznego przyjęcia kampanii marketingowej, wpadek w zakresie obsługi klienta, zemsty byłego pracownika… Istnieje cała lista potencjalnych zagrożeń wizerunkowych. Bez względu na przyczyny kryzysu, zarządzanie kryzysowe to dziś konieczność.</p>
+<p><strong>Taki sposób analizowania pozwala więc w skrócie na:</strong></p>
+<ul>
+<li>badanie nie tylko występowania sentymentu, ale też jego <strong>siły i natężenia</strong>;</li>
+<li>analizowanie dyskusji w sieci oparte o <strong>natężenie emocji negatywnych</strong> (ZŁOŚĆ, WSTRĘT, SMUTEK);</li>
+<li>uzyskanie alertów, gdy natężenie negatywnego sentymentu lub emocji <strong>przekroczy dopuszczalne normy</strong>.</li>
+</ul>
+<h2>Zarządzanie kryzysem w social media. Monitoring wizerunku marki w internecie to konieczność</h2>
+<p>Warto postawić na uzupełnienie firmowej strategii o analizę emocji, która pozwoli na bieżąco monitorować, co dzieje się wokół marki w sieci, ale też szybko reagować. Warto zwrócić uwagę na przykład poniżej. Negatywny sentyment otaczający wzmianki o pewnej dużej firmie (spółce skarbu państwa) okazał się wykrytym odpowiednio wcześnie kryzysem wizerunkowym. Widać też wyraźnie, że wzrost natężenia sentymentu negatywnego okazał się stały.</p>
+<p>Monitoring emocji pozwala nie tylko <a href="/blog/analiza-wydzwieku-emocjonalnego-analiza-tekstu-sentimenti/">lepiej komunikować</a>. Potrafi też łatwo wykrywać kryzysy wizerunkowe, ale także ostrzegać, gdy nastąpi nagromadzenie się negatywnych emocji sąsiadujące z nazwą marki. Przykład ukazuje, że taki efekt może być trwały, czasem potrafi przesłaniać pojawienie się prawdziwej <a href="/blog/co-mozemy-powiedziec-o-mowie-nienawisci/">fali hejtu</a>. W takich wypadkach należy już wejść głębiej w treść dyskusji. Dlatego właśnie ważne jest, aby analizę sentymentu okazjonalnie uzupełniać zaawansowaną analizą treści rozmów.</p>
+<p>Dlaczego warto zainteresować się takimi usługami? Wszystkie polskie firmy biorące udział w badaniu PwC, o którym mowa na początku publikacji, spodziewają się, że doświadczą kryzysu w ciągu następnych 5 lat…</p>
+<p><strong>Zobacz także:</strong></p>
+<ul>
+<li><a href="/blog/jak-przelozyc-facebookowe-emocje-na-nps-analiza-inpostu-i-poczty-polskiej/">Net Promoter Score w dyskusjach na Facebooku. Analiza InPostu i Poczty Polskiej</a></li>
+<li><a href="/blog/emocje-wokol-znanych-marek-modowych/">Emocje wokół popularnych marek modowych</a></li>
+<li><a href="/blog/analiza-sentymentu-w-monitoringu-mediow-raport-sentimenti/">Analiza sentymentu w monitoringu mediów – raport Sentimenti</a></li>
+<li><a href="/blog/jezyk-emocji-w-polskich-portalach-informacyjnych/">Język emocji w polskich portalach informacyjnych</a></li>
+<li><a href="/blog/jak-banki-komunikuja-sie-z-klientami-na-facebooku/">Komunikacja z klientem na Facebooku. Jak robią to banki?</a></li>
+</ul>
+</article>
+<article class="et_pb_post post-2716 post type-post status-publish format-standard has-post-thumbnail hentry category-polityka-i-spoleczenstwo category-sentibrand tag-analiza-tekstu tag-emocje-w-internecie tag-monitoring-mediow tag-portale-informacyjne" id="post-2716">
+<a class="entry-featured-image-url" href="/internetowe-portale-informacyjne-raport-za-kwiecien/">
+<img alt="Internetowe portale informacyjne – Raport za kwiecień" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/03/portale-informacyjne-raport-emocje-sentimenti-1080x628.jpg" srcset="/wp-content/uploads/2020/03/portale-informacyjne-raport-emocje-sentimenti-1080x628.jpg 1080w, /wp-content/uploads/2020/03/portale-informacyjne-raport-emocje-sentimenti-980x513.jpg 980w, /wp-content/uploads/2020/03/portale-informacyjne-raport-emocje-sentimenti-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/internetowe-portale-informacyjne-raport-za-kwiecien/">Internetowe portale informacyjne – Raport za kwiecień</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">maj 15, 2020</span> | <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Portale informacyjne – analiz narzędziami Sentimenti ciąg dalszy. Od lutego prowadzony jest monitoring emocji zawartych w tytułach wiodących portali informacyjnych.</strong></p>
+<h2>Portale informacyjne – kategorie</h2>
+<p>Na potrzeby analizy zestawiono portale w trzech kategoriach:</p>
+<ul>
+<li>ogólne portale informacyjne (wp.pl, interia.pl, onet.pl, gazeta.pl, wpolityce.pl),</li>
+<li>telewizyjne portale informacyjne (tvn24, polsatnews.pl, tvp.info),</li>
+<li>prasowe portale informacyjne (se.pl, fakt.pl, wyborcza.pl, polityka.pl, newsweek.pl.).</li>
+</ul>
+<h2>Indeks emocji podstawowych (EPI)</h2>
+<p>Jako jeden z parametrów porównawczych przyjęto Indeks emocji podstawowych (EPI). Wartość dodatnia EPI wskazuje na pobudzenie o zabarwieniu pozytywnym, wartość ujemna na pobudzenie o zabarwieniu negatywnym oddziałującym na czytelnika – więcej na ten temat można znaleźć w naszych innych tekstach – <strong><a href="/blog/emocje-na-informacyjnych-portalach-internetowych-raport-za-marzec-2020/">Emocje na informacyjnych portalach internetowych.</a></strong></p>
+<p><img alt="portale infromacyjne onet interia newsweek tvn24 polsat tvp wyborcza" class="aligncenter wp-image-2725 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien.png" srcset="/wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien.png 1280w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-512x288.png 512w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-768x432.png 768w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-1024x576.png 1024w" width="1280"/></p>
+<p>Na przestrzeni trzech miesięcy wykrystalizowała się grupa portali, „na stałe” posługujących się w tytułach emocjami odbieranymi jako emocje pozytywne. Do tej grupy należą portale onet.pl, se.pl, gazeta.pl i <a href="https://interia.pl/">interia.pl</a>, dlatego też tym portalom udało się w największym zakresie wzbudzać u swoich czytelników pobudzenie o zabarwieniu pozytywnym.</p>
+<h2>Zaufanie jako emocja wpływająca na wartość Indeksu EPI</h2>
+<p>Poziom natężenia emocji zaufania ma znaczny wpływ na kształtowanie się wartości Indeksu emocji podstawowych. Przyjąć można, że dla każdego wydawcy celem nadrzędnym winno być wzbudzanie u czytelnika zaufania do publikowanych tekstów. Jednak analiza pokazuje, że nie wszyscy wydawcy badanych portali informacyjnych są w stanie wzbudzać w takim samym wysokim stopniu natężenie tej emocji.</p>
+<p><img alt="portale infromacyjne onet interia newsweek tvn24 polsat tvp wyborcza zaufanie" class="aligncenter wp-image-2727 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie.png" srcset="/wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie.png 1280w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-512x288.png 512w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-768x432.png 768w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-1024x576.png 1024w" width="1280"/></p>
+<p>Przede wszystkim na tle analizowanych portali najkorzystniej w tym zakresie wypadły: se.pl, gazeta.pl, onet.pl i interia.pl. To one w publikowanych tytułach najsilniej oddziaływały natężeniem zaufania. W efekcie był to jeden z czynników, dzięki któremu Indeks emocji podstawowych EPI w tych portalach przyjmował najwyższe wartości.</p>
+<h2>Natężenie zaufania w poszczególnych miesiącach</h2>
+<p><img alt="" class="aligncenter wp-image-2728 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-miesiace.png" srcset="/wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-miesiace.png 1280w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-miesiace-512x288.png 512w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-miesiace-768x432.png 768w, /wp-content/uploads/2020/05/portale-informacyjne-luty-kwiecien-zaufanie-miesiace-1024x576.png 1024w" width="1280"/></p>
+<p>Tutaj z kolei widać, nie tylko poziom natężenia emocji zaufania w tytułach portali, ale też trend kształtujący się na przestrzeni trzech miesięcy.</p>
+<p><strong>Powyższe dane to tylko część analizy, dlatego więcej szczegółowych informacji można uzyskać z naszego miesięcznego raportu za kwiecień:</strong></p>
+<p class="ss-static-note">Napisz do nas: <a href="mailto:kontakt@sentimenti.pl">kontakt@sentimenti.pl</a></p> <!-- .wpforms-container -->
+<p> </p>
+<p><strong>Zobacz także:</strong></p>
+<ul>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/emocje-wokol-znanych-marek-modowych/">Emocje wokół popularnych marek modowych</a></li>
+<li><a href="/blog/analiza-sentymentu-w-monitoringu-mediow-raport-sentimenti/">Analiza sentymentu w monitoringu mediów – raport Sentimenti</a></li>
+<li><a href="/blog/jezyk-emocji-w-polskich-portalach-informacyjnych/">Język emocji w polskich portalach informacyjnych</a></li>
+<li><a href="/blog/jak-banki-komunikuja-sie-z-klientami-na-facebooku/">Komunikacja z klientem na Facebooku. Jak robią to banki?</a></li>
+</ul>
+</article>
+<div class="pagination clearfix">
+<div class="alignleft"><a href="/author/zespol-sentimenti/page/22/">« Starsze wpisy</a></div>
+<div class="alignright"><a href="/author/zespol-sentimenti/page/20/">Kolejne wpisy »</a></div>
+</div> </div>
+<div id="sidebar">
+<div class="et_pb_widget widget_text" id="text-2"> <div class="textwidget">
+</div>
+</div><div class="et_pb_widget widget_categories" id="categories-2"><h4 class="widgettitle">Kategorie</h4>
+<ul>
+<li class="cat-item cat-item-1191"><a href="/category/polityka-i-spoleczenstwo/">Polityka i społeczeństwo</a>
+</li>
+<li class="cat-item cat-item-1193"><a href="/category/styl-zycia/">Styl życia</a>
+</li>
+<li class="cat-item cat-item-1226"><a href="/category/badania-rynku/">Badania rynku</a>
+</li>
+<li class="cat-item cat-item-1121"><a href="/category/w-mediach/">W mediach</a>
+</li>
+<li class="cat-item cat-item-1149"><a href="/category/w-mediach/podcasty-pl/">Podcasty</a>
+</li>
+<li class="cat-item cat-item-1153"><a href="/category/konferencje/">Konferencje</a>
+</li>
+<li class="cat-item cat-item-582"><a href="/category/sentibrand/">SentiBrand</a>
+</li>
+<li class="cat-item cat-item-263"><a href="/category/sentistocks-pl/">SentiStocks</a>
+</li>
+<li class="cat-item cat-item-1055"><a href="/category/publikacje-naukowe/">Publikacje naukowe</a>
+</li>
+<li class="cat-item cat-item-24"><a href="/category/okiem-badacza/">Okiem badacza</a>
+</li>
+<li class="cat-item cat-item-434"><a href="/category/kategoryzacja-komentarzy/">Kategoryzacja komentarzy</a>
+</li>
+</ul>
+</div>
+<div class="et_pb_widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widgettitle">Ostatnie wpisy</h4>
+<ul>
+<li>
+<a href="/emocje-w-biotech/">Głębsze Spojrzenie na Emocje: Jak Firmy Bio-Tech Mogą Lepiej Rozumieć Odbiór Swojej Marki?</a>
+</li>
+<li>
+<a href="/jak-emocje-ksztaltuja-nasze-spojrzenie-na-wschodnich-sasiadow-analiza-mediow-spolecznosciowych-2024/">Jak emocje kształtują nasze spojrzenie na wschodnich sąsiadów? Analiza mediów społecznościowych 2024</a>
+</li>
+<li>
+<a href="/jezyk-i-emocje-w-roznorodnosci-co-pokazuja-dane/">Poznaj słowa, które budują mosty i te, które niszczą relacje społeczne – zaskakujące wyniki badań!</a>
+</li>
+<li>
+<a href="/analiza-emocji-w-debacie-prezydenckiej-harris-vs-trump-jak-sentimenti-mierzy-emocje-i-sentymenty/">Analiza emocji w debacie prezydenckiej Harris vs Trump: Jak Sentimenti mierzy emocje i sentymenty</a>
+</li>
+<li>
+<a href="/analiza-sentymentu-nie-powie-ci-prawdy/">Analiza sentymentu nie powie Ci prawdy</a>
+</li>
+</ul>
+</div> </div>
+</div>
+</div>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-5973" decoding="async" height="100" loading="lazy" src="/wp-content/uploads/2023/06/logo2.svg" title="logo2" width="100"/></span>
+</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p><strong>Sentimenti sp. z o.o.</strong><br/><span>ul. Święty Marcin 11/8</span><br/><span>61-803 Poznań, Poland</span><br/><a href="mailto:kontakt@sentimenti.pl"></a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_0_tb_footer et_pb_widget_area clearfix et_pb_widget_area_right et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_dark et_pb_sidebar_no_border">
+<div class="fwidget et_pb_widget widget_nav_menu" id="nav_menu-4"><div class="menu-menu-w-stopce-container"><ul class="menu" id="menu-menu-w-stopce"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6425" id="menu-item-6425"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6691" id="menu-item-6691"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6421" id="menu-item-6421"><a href="/kontakt/">Kontakt</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-6415" decoding="async" height="63" loading="lazy" src="/wp-content/uploads/2023/06/UE_EFRR-black.png" title="UE_EFRR-black" width="240"/></span>
+</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link et-social-facebook"><a class="icon et_pb_with_border" href="https://www.facebook.com/sentimentipl" target="_blank" title="Śledź na Facebook"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link et-social-twitter"><a class="icon et_pb_with_border" href="https://twitter.com/SENTIMENTIPL" target="_blank" title="Śledź na X"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link et-social-linkedin"><a class="icon et_pb_with_border" href="https://www.linkedin.com/company/sentimenti/" target="_blank" title="Śledź na LinkedIn"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li>
+</ul>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_1_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light et_pb_sidebar_no_border">
+<div class="et_pb_widget widget_nav_menu" id="nav_menu-7"><div class="menu-rodo-pl-container"><ul class="menu" id="menu-rodo-pl"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6418" id="menu-item-6418"><a href="/polityka-prywatnosci/" rel="privacy-policy">Polityka prywatności RODO</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Design: <a href="https://ballaun.art/" rel="noopener" style="color: white;" target="_blank">ballaun.art</a></div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: index-->
+<div class="modal-cacsp-backdrop"></div>
+<div class="modal-cacsp-position">
+<div class="modal-cacsp-box modal-cacsp-box-info">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Używamy plików cookie, aby zapewnić prawidłowe działanie naszej strony internetowej i usług. Te pliki cookie są niezbędne i są ustawiane automatycznie. Chcielibyśmy również używać analitycznych plików cookie, aby zrozumieć, w jaki sposób wchodzisz w interakcję z naszą witryną i marketingowymi plikami cookie, aby zapewnić spersonalizowane treści i reklamy.
+Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików cookie zarówno do podstawowych, jak i nieistotnych celów. Kliknij „Ustawienia”, aby wybrać typy plików cookie, które chcesz włączyć lub wyłączyć. Więcej informacji znajdziesz w naszej Polityce prywatności RODO.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-settings" href="#">
+							Ustawienia						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+<div class="modal-cacsp-box modal-cacsp-box-settings">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Wybierz, jakie pliki cookies chcesz zaakceptować. Twój wybór zostanie zachowany przez rok.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-box-settings-list">
+<ul>
+<li>
+<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+<span>Konieczne<br/>
+<span>Te pliki cookie nie są opcjonalne. Są one potrzebne do funkcjonowania strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</span>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics" href="#statistics">
+<span>Statystyka<br/>
+<span>Abyśmy mogli poprawić funkcjonalność i strukturę strony internetowej, na podstawie tego, jak strona jest używana.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="experience" href="#experience">
+<span>Doświadczenie<br/>
+<span>Aby nasza strona internetowa działała jak najlepiej podczas twojego przejścia na nią. Jeśli odrzucisz te pliki cookie, niektóre funkcje znikną ze strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="marketing" href="#marketing">
+<span>Marketing<br/>
+<span>Udostępniając swoje zainteresowania i zachowania podczas odwiedzania naszej strony, zwiększasz szansę na zobaczenie spersonalizowanych treści i ofert.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-save" href="#">
+							Zapisz						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept-all" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+</div>
+<!--googleon: index-->
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Basic:regular&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6Fc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FE.woff2) format('woff2');}</style><link href="/wp-content/plugins/wpforms/assets/css/frontend/modern/wpforms-full.min.css?ver=1.9.0.4" id="wpforms-modern-full-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/wpforms/assets/pro/css/frontend/modern/wpforms-full.min.css?ver=1.9.0.4" id="wpforms-pro-modern-full-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="cookies-and-content-security-policy-cookie-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie.min.js?ver=2.41" type="text/javascript"></script>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" type="text/javascript"></script>
+<script id="jquery-js-after" type="text/javascript">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var cacsp_ajax_object = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"53e1f30221"};
+var cacspMessages = {"cacspReviewSettingsDescription":"Twoje ustawienia mog\u0105 uniemo\u017cliwi\u0107 ci obejrzenie tej tre\u015bci. Najprawdopodobniej masz wy\u0142\u0105czone Do\u015bwiadczenie.","cacspReviewSettingsButton":"Przegl\u0105daj swoje ustawienia","cacspNotAllowedDescription":"Ta tre\u015b\u0107 nie mo\u017ce by\u0107 wczytana, gdy\u017c nie jest dozwolona na witrynie.","cacspNotAllowedButton":"Skontaktuj si\u0119 z administratorem","cacspExpires":"365","cacspWpEngineCompatibilityMode":"0","cacspTimeout":"1000","cacspOptionDisableContentNotAllowedMessage":"0","cacspOptionGoogleConsentMode":"0","cacspOptionSaveConsent":"0"};
+//# sourceURL=cookies-and-content-security-policy-js-extra
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js?ver=2.41" type="text/javascript"></script>
+<script id="cookies-and-content-security-policy-error-message-js" src="/wp-content/uploads/cookies-and-content-security-policy-error-message.js?ver=2.41&amp;mod%3D20260116142405" type="text/javascript"></script>
+<script id="df-script-js" src="/wp-content/plugins/filter-for-divi/df-script.js?ver=2.0.2" type="text/javascript"></script>
+<script id="pll_cookie_script-js-after" type="text/javascript">
+/* <![CDATA[ */
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=pl; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+/* ]]> */
+</script>
+<script id="divi-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"/wp-admin/admin-ajax.php","images_uri":"/wp-content/themes/Divi/images","builder_images_uri":"/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"2b0e8fb0d2","subscription_failed":"Prosz\u0119, sprawd\u017a pola poni\u017cej, aby upewni\u0107 si\u0119, \u017ce wpisa\u0142e\u015b poprawn\u0105 informacj\u0119.","et_ab_log_nonce":"ea219785f5","fill_message":"Prosz\u0119 wype\u0142ni\u0107 nast\u0119puj\u0105ce pola:","contact_error_message":"Napraw poni\u017csze b\u0142\u0119dy:","invalid":"Nieprawid\u0142owy adres e-mail","captcha":"Captcha","prev":"Przed","previous":"Poprzednie","next":"Dalej","wrong_captcha":"Wpisa\u0142e\u015b/-a\u015b w captcha nieprawid\u0142owy numer.","wrong_checkbox":"Pole wyboru","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"2854","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#e6007a","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script id="divi-custom-script-js" src="/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="smoothscroll-js" src="/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.1" type="text/javascript"></script>
+<script id="es6-promise-js" src="/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-recaptcha-v3-js" src="https://www.google.com/recaptcha/api.js?render=6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO&amp;ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-api-spam-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO","page_action":{"action":"matura_2020_google_trends_wyciek_rozprawka_wesele_elementy_fantastyczne"}};
+//# sourceURL=et-core-api-spam-recaptcha-js-extra
+/* ]]> */
+</script>
+<script id="et-core-api-spam-recaptcha-js" src="/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=4.27.1" type="text/javascript"></script>
+<script id="fitvids-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.1" type="text/javascript"></script>
+<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=6.9.11" type="text/javascript"></script>
+<script id="jquery-mobile-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.27.1" type="text/javascript"></script>
+<script id="magnific-popup-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.1" type="text/javascript"></script>
+<script id="easypiechart-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.27.1" type="text/javascript"></script>
+<script id="salvattore-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-common-js" src="/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.1" type="text/javascript"></script>
+<script id="ivory-search-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+//# sourceURL=ivory-search-scripts-js-extra
+/* ]]> */
+</script>
+<script id="ivory-search-scripts-js" src="/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.13" type="text/javascript"></script>
+<script id="et-builder-modules-script-motion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+//# sourceURL=et-builder-modules-script-motion-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-motion-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-builder-modules-script-sticky-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+//# sourceURL=et-builder-modules-script-sticky-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-sticky-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.27.1" type="text/javascript"></script>
+<script id="wpforms-validation-js" src="/wp-content/plugins/wpforms/assets/lib/jquery.validate.min.js?ver=1.20.1" type="text/javascript"></script>
+<script id="wpforms-mailcheck-js" src="/wp-content/plugins/wpforms/assets/lib/mailcheck.min.js?ver=1.1.2" type="text/javascript"></script>
+<script id="wpforms-punycode-js" src="/wp-content/plugins/wpforms/assets/lib/punycode.min.js?ver=1.0.0" type="text/javascript"></script>
+<script id="wpforms-generic-utils-js" src="/wp-content/plugins/wpforms/assets/js/share/utils.min.js?ver=1.9.0.4" type="text/javascript"></script>
+<script id="wpforms-js" src="/wp-content/plugins/wpforms/assets/js/frontend/wpforms.min.js?ver=1.9.0.4" type="text/javascript"></script>
+<script id="wpforms-modern-js" src="/wp-content/plugins/wpforms/assets/js/frontend/wpforms-modern.min.js?ver=1.9.0.4" type="text/javascript"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpforms_settings = {"val_required":"To pole jest obowi\u0105zkowe","val_email":"Wpisz prosz\u0119 poprawny adres email.","val_email_suggestion":"Did you mean {suggestion}?","val_email_suggestion_title":"Kliknij, aby zaakceptowa\u0107 t\u0119 sugesti\u0119.","val_email_restricted":"Ten adres e-mail jest niedozwolony.","val_number":"Wpisz prosz\u0119 poprawny numer.","val_number_positive":"Wpisz prawid\u0142ow\u0105 liczb\u0119 dodatni\u0105.","val_minimum_price":"Wpisana kwota jest mniejsza ni\u017c wymagane minimum.","val_confirm":"Warto\u015bci p\u00f3l nie pasuj\u0105.","val_checklimit":"You have exceeded the number of allowed selections: {#}.","val_limit_characters":"{count} z maksymalnej liczby {limit} znak\u00f3w.","val_limit_words":"{count} z maksymalnej liczby {limit} s\u0142\u00f3w.","val_recaptcha_fail_msg":"Google reCAPTCHA verification failed, please try again later.","val_turnstile_fail_msg":"Weryfikacja Cloudflare Turnstile nie powiod\u0142a si\u0119. Spr\u00f3buj ponownie p\u00f3\u017aniej.","val_inputmask_incomplete":"Uzupe\u0142nij pole w wymaganym formacie.","uuid_cookie":"1","locale":"pl","country":"","country_list_label":"Lista kraj\u00f3w","wpforms_plugin_url":"\/wp-content\/plugins\/wpforms\/","gdpr":"1","ajaxurl":"\/wp-admin\/admin-ajax.php","mailcheck_enabled":"1","mailcheck_domains":[],"mailcheck_toplevel_domains":["dev"],"is_ssl":"1","currency_code":"PLN","currency_thousands":".","currency_decimals":"2","currency_decimal":",","currency_symbol":"z\u0142","currency_symbol_pos":"left","val_requiredpayment":"Wymagana jest p\u0142atno\u015b\u0107.","val_creditcard":"Prosz\u0119 wpisa\u0107 prawid\u0142owy numer karty kredytowej.","css_vars":["field-border-radius","field-border-style","field-border-size","field-background-color","field-border-color","field-text-color","field-menu-color","label-color","label-sublabel-color","label-error-color","button-border-radius","button-border-style","button-border-size","button-background-color","button-border-color","button-text-color","page-break-color","background-image","background-position","background-repeat","background-size","background-width","background-height","background-color","background-url","container-padding","container-border-style","container-border-width","container-border-color","container-border-radius","field-size-input-height","field-size-input-spacing","field-size-font-size","field-size-line-height","field-size-padding-h","field-size-checkbox-size","field-size-sublabel-spacing","field-size-icon-size","label-size-font-size","label-size-line-height","label-size-sublabel-font-size","label-size-sublabel-line-height","button-size-font-size","button-size-height","button-size-padding-h","button-size-margin-top","container-shadow-size-box-shadow"],"val_post_max_size":"Ca\u0142kowity rozmiar wybranych plik\u00f3w {totalSize} Mb przekracza dozwolony limit {maxSize} Mb.","val_time12h":"Prosz\u0119 wpisa\u0107 czas w formacie 12-godzinnym AM\/PM (np. 8:45).","val_time24h":"Prosz\u0119 wpisa\u0107 czas w formacie 24-godzinnym (np. 22:45).","val_time_limit":"Please enter time between {minTime} and {maxTime}.","val_url":"Wpisz prosz\u0119 poprawny adres www.","val_fileextension":"Typ pliku nie jest dozwolony.","val_filesize":"Plik przekracza maksymalny dopuszczalny rozmiar. Plik nie zosta\u0142 za\u0142adowany.","post_max_size":"2147483648","isModernMarkupEnabled":"1","formErrorMessagePrefix":"Komunikat o b\u0142\u0119dzie formularza","errorMessagePrefix":"Error message","submitBtnDisabled":"Podczas przesy\u0142ania formularza przycisk Prze\u015blij jest wy\u0142\u0105czony.","error_updating_token":"B\u0142\u0105d aktualizowania tokenu. Je\u015bli problem nie ust\u0105pi, spr\u00f3buj ponownie lub skontaktuj si\u0119 z pomoc\u0105 techniczn\u0105.","network_error":"B\u0142\u0105d sieci lub serwer jest nieosi\u0105galny. Sprawd\u017a po\u0142\u0105czenie lub spr\u00f3buj ponownie p\u00f3\u017aniej.","token_cache_lifetime":"86400","hn_data":[],"val_password_strength":"A stronger password is required. Consider using upper and lower case letters, numbers, and symbols.","val_phone":"Prosz\u0119 wpisa\u0107 poprawny numer telefonu.","indicatorStepsPattern":"Step {current} of {total}","entry_preview_iframe_styles":["\/wp-includes\/js\/tinymce\/skins\/lightgray\/content.min.css?ver=6.9.11","\/wp-includes\/css\/dashicons.min.css?ver=6.9.11","\/wp-includes\/js\/tinymce\/skins\/wordpress\/wp-content.css?ver=6.9.11","\/wp-content\/plugins\/wpforms\/assets\/pro\/css\/fields\/richtext\/editor-content.min.css"]}
+/* ]]> */
+</script>
+<span class="et_pb_scroll_top et-pb-icon"></span>
+</body>
+</html>

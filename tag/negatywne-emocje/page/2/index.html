@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="/xmlrpc.php" rel="pingback"/>
+<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4i.woff2) format('woff2');}</style><meta content="noindex, follow" name="robots"/>
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+<title>negatywne emocje Archives - Strona 2 z 2 - Sentimenti</title>
+<meta content="pl_PL" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Archiwa: negatywne emocje" property="og:title"/>
+<meta content="/tag/negatywne-emocje/" property="og:url"/>
+<meta content="Sentimenti" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@SENTIMENTIPL" name="twitter:site"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"CollectionPage","@id":"\/tag\/negatywne-emocje\/","url":"\/tag\/negatywne-emocje\/page\/2\/","name":"negatywne emocje Archives - Strona 2 z 2 - Sentimenti","isPartOf":{"@id":"\/#website"},"primaryImageOfPage":{"@id":"\/tag\/negatywne-emocje\/page\/2\/#primaryimage"},"image":{"@id":"\/tag\/negatywne-emocje\/page\/2\/#primaryimage"},"thumbnailUrl":"\/wp-content\/uploads\/2019\/09\/cyberprzemoc-mowa-nienawisci-hejt-w-sieci.jpg","breadcrumb":{"@id":"\/tag\/negatywne-emocje\/page\/2\/#breadcrumb"},"inLanguage":"pl-PL"},{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/tag\/negatywne-emocje\/page\/2\/#primaryimage","url":"\/wp-content\/uploads\/2019\/09\/cyberprzemoc-mowa-nienawisci-hejt-w-sieci.jpg","contentUrl":"\/wp-content\/uploads\/2019\/09\/cyberprzemoc-mowa-nienawisci-hejt-w-sieci.jpg","width":1200,"height":628,"caption":"cyberprzemoc hejt w sieci mowa nienawiści online"},{"@type":"BreadcrumbList","@id":"\/tag\/negatywne-emocje\/page\/2\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"\/"},{"@type":"ListItem","position":2,"name":"negatywne emocje"}]},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Sentimenti","description":"Analiza emocji i sentymentu, sztuczna inteligencja, monitoring internetu","publisher":{"@id":"\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pl-PL"},{"@type":"Organization","@id":"\/#organization","name":"Sentimenti","url":"\/","logo":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/#\/schema\/logo\/image\/","url":"\/wp-content\/uploads\/2023\/06\/logo.svg","contentUrl":"\/wp-content\/uploads\/2023\/06\/logo.svg","width":100,"height":100,"caption":"Sentimenti"},"image":{"@id":"\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/sentimentipl","https:\/\/x.com\/SENTIMENTIPL","https:\/\/www.linkedin.com\/company\/sentimenti\/"]}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="Divi v.4.27.1" name="generator"/><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link href="/wp-includes/css/dist/block-library/style.min.css?ver=6.9.11" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote :where(cite),.wp-block-pullquote :where(footer),.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/css/dist/block-library/theme.min.css */
+</style>
+<style id="pdfemb-pdf-embedder-viewer-style-inline-css" type="text/css">
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+/*# sourceURL=/wp-content/plugins/pdf-embedder/block/build/style-index.css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link href="/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css?ver=2.41" id="cookies-and-content-security-policy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/custom-posts-order/css/custompostdisplay.css?ver=4.5" id="custompostdisplay-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/filter-for-divi/df-style.css?ver=2.0.2" id="df-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.13" id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/Divi/style-static.min.css?ver=4.27.1" id="divi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<!-- Fragment znacznika Google (gtag.js) dodany przez Site Kit -->
+<!-- Fragment Google Analytics dodany przez Site Kit -->
+<script async="" id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-5R823XK" type="text/javascript"></script>
+<script id="google_gtagjs-js-after" type="text/javascript">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["sentimenti.pl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5R823XK");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 6.9.11" name="generator"/>
+<meta content="Site Kit by Google 1.188.0" name="generator"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/><style id="cookies-and-content-security-policy-css-custom" type="text/css">.modal-cacsp-position .modal-cacsp-box > *,.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-show.modal-cacsp-box-bottom {background-color: #efefef;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {background-color: #e5e5e5;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {border-color: #ffffff;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {background-color: #eaeaea;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {border-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ff0087;}</style><link href="/wp-content/uploads/2023/06/cropped-ico-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-180x180.jpg" rel="apple-touch-icon"/>
+<meta content="/wp-content/uploads/2023/06/cropped-ico-270x270.jpg" name="msapplication-TileImage"/>
+<link href="/wp-content/et-cache/global/et-divi-customizer-global.min.css?ver=1794112530" id="et-divi-customizer-global-cached-inline-styles" rel="stylesheet"/><link href="/wp-content/et-cache/6466/et-core-unified-cpt-6466.min.css?ver=1794112538" id="et-core-unified-cpt-6466-cached-inline-styles" rel="stylesheet"/><style media="screen" type="text/css">.is-menu path.search-icon-path { fill: #848484;}body .popup-search-close:after, body .search-close:after { border-color: #848484;}body .popup-search-close:before, body .search-close:before { border-color: #848484;}</style> <style type="text/css">
+</style>
+<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+
+				}
+			</style></head>
+<body class="archive paged tag tag-negatywne-emocje tag-165 paged-2 tag-paged-2 wp-theme-Divi et-tb-has-template et-tb-has-footer Divi et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_cover_background et_pb_gutter et_pb_gutters3 et_smooth_scroll et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-7993">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header data-height-onload="66" id="main-header">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="/">
+<img alt="Sentimenti" data-height-percentage="54" height="100" id="logo" src="/wp-content/uploads/2023/06/logo.svg" width="100"/>
+</a>
+</div>
+<div data-fixed-height="40" data-height="66" id="et-top-navigation">
+<nav id="top-menu-nav">
+<ul class="nav" id="top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8080"><a href="/oferta/">Oferta</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5710"><a href="/sentitool/">Sentitool</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6178"><a href="/api-2/">API</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6184"><a href="/kontakt/">Kontakt</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="/%F0%9F%87%BA%F0%9F%87%A6-ukraina/">🇺🇦 Ukraina</a></li>
+<li class="lang-item lang-item-7 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-5986-en"><a href="/en/tag/negative-emotions/" hreflang="en-GB" lang="en-GB"><img alt="English" height="11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" style="width: 16px; height: 11px;" width="16"/></a></li>
+</ul> </nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Zaznacz stronę</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div> </div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<div class="container">
+<div class="clearfix" id="content-area">
+<div id="left-area">
+<article class="et_pb_post post-1548 post type-post status-publish format-standard has-post-thumbnail hentry category-polityka-i-spoleczenstwo category-sentibrand tag-analiza-sentymentu tag-cyberbulling tag-cyberprzemoc tag-emocje tag-emocje-w-internecie tag-emocjonalny-audyt-marki tag-mowa-nienawisci tag-negatywne-emocje" id="post-1548">
+<a class="entry-featured-image-url" href="/cyberprzemoc-i-negatywne-emocje/">
+<img alt="Cyberprzemoc i negatywne emocje" class="" fetchpriority="high" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2019/09/cyberprzemoc-mowa-nienawisci-hejt-w-sieci-1080x628.jpg" srcset="/wp-content/uploads/2019/09/cyberprzemoc-mowa-nienawisci-hejt-w-sieci-1080x628.jpg 1080w, /wp-content/uploads/2019/09/cyberprzemoc-mowa-nienawisci-hejt-w-sieci-980x513.jpg 980w, /wp-content/uploads/2019/09/cyberprzemoc-mowa-nienawisci-hejt-w-sieci-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/cyberprzemoc-i-negatywne-emocje/">Cyberprzemoc i negatywne emocje</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">wrz 19, 2019</span> | <a href="/category/polityka-i-spoleczenstwo/" rel="category tag">Polityka i społeczeństwo</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Kiedy w ubiegłym roku akademickim opowiadałam moim studentom i studentkom o Sentimenti, jeden z nich zapytał: „<em>A jakie jest możliwe najbardziej nieetyczne zastosowanie Sentimenti?</em>„. Pytanie to zaskoczyło mnie, ale też skłoniło do myślenia.</strong></p>
+<h2>Cyberprzemoc i emocje. A co z mową nienawiści?</h2>
+<p>Zmartwienie studenta jest całkiem zrozumiałe – technologie automatycznej analizy danych zawsze mogą zostać wykorzystane do niecnych celów. Dlatego zastosowanie wielkich zbiorów danych („<em>big data</em>„) przedostało się do opinii publicznej dzięki skandalowi związanemu z firmą Cambridge Analytica i innymi przykładami wątpliwych moralnie działań na danych użytkowników.</p>
+<p>W tym artykule chciałabym zaproponować myślenie odwrotne: do jakich pozytywnych działań może zostać wykorzystane Sentimenti? W jaki sposób możemy uczynić świat lepszym dzięki automatycznej analizie emocji? Do tej pory mówiliśmy o Sentimenti w kontekście czterech głównych zastosowań:</p>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>Analiza i sugestie w zakresie <a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">emotywnego pozycjonowania reklam</a></li>
+<li>Monitoring, analiza i kategoryzacja <a href="/blog/niezadowoleni-lub-usatysfakcjonowani-klienci-na-facebooku-poczta-polska-i-inpost/">wpisów klientów w mediach społecznościowych</a> i na forach</li>
+<li>Monitoring wybranych przez zleceniodawcę <a href="/blog/moda-na-facebooku-jak-marki-odziezowe-komunikuja-sie-z-klientami/">aspektów jego działania</a> (marki, kluczowych klientów, odbioru jakości działania zleceniodawcy)</li>
+<li>Sentistock jako <a href="/blog/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">wsparcie w procesach inwestycyjnych</a>, zarządczych w przedsiębiorstwach (w korelacji do kursów giełdowych lub do uzyskiwanych parametrów ekonomicznych)</li>
+</ol>
+</li>
+</ol>
+<p>Możliwe jest jednak wiele innych aplikacji Sentimenti, a niektóre z nich mogą uczynić życie ludzi znacznie lepszym. Pisaliśmy już na blogu o tym, jak rozpoznawanie emocji w Sentimenti <a href="/blog/co-mozemy-powiedziec-o-mowie-nienawisci/">pomaga wykrywać mowę nienawiści</a>.</p>
+<h2>Analiza emocji pomaga wykrywać niebezpieczne zjawiska</h2>
+<p>Nasze badania wpisują się w światowe trendy stosowania rozpoznawania emocji w tekście do wykrywania niebezpiecznych zjawisk w internecie. Podczas ostatniej konferencji “<em>ACL Symposium On Applied Computing</em>” grupa badaczy zaprezentowała w artykule “<em>Overwhelmed by Negative Emotions? Maybe You Are Being Cyber-bullied!</em>” ciekawe wyniki analizy tekstu pokazujące, jak automatyczne wykrywanie emocji może pomóc w rozpoznawaniu cyberprzemocy.</p>
+<p>Cyberprzemoc (<a href="/blog/mowa-nienawisci-emocje-sentyment-hejt/">cyberbullying</a>) autorzy definiują jako agresywny i celowy atak na ofiarę, która nie ma środków obrony. Dlatego atak ten powtarza się w czasie a agresorzy wykorzystują do niego cyfrowe formy kontaktu.</p>
+<p>Autorzy przygotowali zbiór tysiąca komentarzy z Instagrama, które ręcznie oznaczyli wartościami emocji, sentymentu oraz występowania cyberprzemocy. To pozwoliło im to zaobserwować, że złość i negatywny sentyment silnie korelują z cyberprzemocą, dlatego badacze zbudowali automatyczny klasyfikator wyłapujący z wiadomości te, które prawdopodobnie są cyberprzemocą.</p>
+<p><img alt="Złość pojawia się znacząco częściej w postach zawierających cyberprzemoc" class="aligncenter wp-image-1551 size-full" decoding="async" height="358" loading="lazy" sizes="auto, (max-width: 530px) 100vw, 530px" src="/wp-content/uploads/2019/09/cyberbulling-wyniki-badania.png" srcset="/wp-content/uploads/2019/09/cyberbulling-wyniki-badania.png 530w, /wp-content/uploads/2019/09/cyberbulling-wyniki-badania-512x346.png 512w" width="530"/></p>
+<p>Złość pojawia się znacząco częściej w postach zawierających cyberprzemoc (Tabela przedrukowana z cytowanego artykułu).</p>
+<p>Wyniki badaczy są bardzo wstępne, a trafność klasyfikatora nie jest jeszcze wysoka. Badanie to pokazuje jednak bardzo obiecujący kierunek, dlatego też analiza emocji może uchronić wiele osób przed staniem się ofiarami cyberprzemocy.</p>
+<p> </p>
+<p><strong>Cytowane badanie:</strong></p>
+<p>Pinar Arslan, Michele Corazza, Elena Cabrio, Serena Villata. <a href="https://hal.archives-ouvertes.fr/hal-02020829/document"><em>Overwhelmed by Negative Emotions? Maybe You Are Being Cyber-bullied!</em> </a>SAC 2019 – The 34th ACM/SIGAPP Symposium On Applied Computing, Apr 2019, Limassol, Cyprus.</p>
+<p style="text-align: center;">Autorką posta jest Barbara Konat, kierowniczka badawcza Sentimenti.</p>
+</article>
+<article class="et_pb_post post-1493 post type-post status-publish format-standard has-post-thumbnail hentry category-kategoryzacja-komentarzy tag-analiza-sentymentu tag-cyberbulling tag-cyberprzemoc tag-emocje tag-emocje-w-internecie tag-monitoring-emocji tag-mowa-nienawisci tag-negatywne-emocje" id="post-1493">
+<a class="entry-featured-image-url" href="/mowa-nienawisci-emocje-sentyment-hejt/">
+<img alt="Mowa nienawiści. Co jako językoznawcy możemy o niej powiedzieć?" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2019/08/mowa-nienawisci-przyczyny-hejt-w-sieci-wizerunek-1080x628.jpg" srcset="/wp-content/uploads/2019/08/mowa-nienawisci-przyczyny-hejt-w-sieci-wizerunek-1080x628.jpg 1080w, /wp-content/uploads/2019/08/mowa-nienawisci-przyczyny-hejt-w-sieci-wizerunek-980x513.jpg 980w, /wp-content/uploads/2019/08/mowa-nienawisci-przyczyny-hejt-w-sieci-wizerunek-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/mowa-nienawisci-emocje-sentyment-hejt/">Mowa nienawiści. Co jako językoznawcy możemy o niej powiedzieć?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">sie 22, 2019</span> | <a href="/category/kategoryzacja-komentarzy/" rel="category tag">Kategoryzacja komentarzy</a></p><p><b>Detekcja mowy nienawiści (</b><b><i>hate speech</i></b><b>) jest bardzo trudnym zadaniem w każdym języku.  Analiza emocji Sentimenti może pokazać, jak bardzo wydźwięk emocjonalny cyberbullingu różni się od zwykłych negatywnych wypowiedzi.</b></p>
+<h2><span style="font-weight: 400;">Mowa nienawiści według Rady Europy<br/>
+</span></h2>
+<blockquote><p><span style="font-weight: 400;">“wszystkie formy ekspresji, które rozpowszechniają, podżegają, wspierają lub usprawiedliwiają nienawiść rasową, religijną, ksenofobię, antysemityzm lub inne formy nienawiści wynikające z nietolerancji, łącznie z nietolerancją wyrażoną za pomocą agresywnego nacjonalizmu i etnocentryzmu, dyskryminacją i wrogością wobec przedstawicieli mniejszości, imigrantów i osób obcego pochodzenia”.</span></p></blockquote>
+<p><span style="font-weight: 400;">Jak widać, negatywne emocje jeszcze nie oznaczają mowy nienawiści – wypowiedzi mające jej znamiona są agresywne, nawołują do przemocy lub ją usprawiedliwiają. </span></p>
+<p><span style="font-weight: 400;">To nasze pierwsze podejście do tego tematu, postanowiliśmy więc zacząć od dobrych danych – zbioru wzmianek poklasyfikowanych przez ekspertów. Szczęśliwie dla nas, </span><a href="http://poleval.pl/"><span style="font-weight: 400;">w tegorocznym wyzwaniu Poleval</span></a><span style="font-weight: 400;"> jedno z zadań dotyczyło właśnie detekcji mowy nienawiści. Objęło ono 10041 wzmianek, w tym 851 (jedyne 8%) uznanych za cyberbulling. <strong>W tym wpisie nie zajmiemy się wykrywaniem mowy nienawiści, raczej przyjrzymy różnicom w wydźwięku tak oznaczonych wzmianek na tle innych, mniej ofensywnych.</strong></span></p>
+<p><span style="font-weight: 400;">Przy okazji pokażemy model emocji obejmujący z jednej strony klasycznie rozumiany sentyment, z drugiej </span><b>miarę pobudzenia emocjonalnego określającą, czy dana wzmianka wyraża silne emocje</b><span style="font-weight: 400;">. Miara ta dookreśla wydźwięk tekstu, <strong>dzięki czemu możemy odróżnić, na przykład, silnie negatywnie nacechowane wypowiedzi od negatywnych, ale umiarkowanych w swoim wyrazie.</strong></span></p>
+<h2><span style="font-weight: 400;">Cyberbulling? Chodzi o emocje</span></h2>
+<p><span style="font-weight: 400;">Zastosowanie analizy emocji powinno dać bardzo dobre wyniki w zadaniu odróżniania mowy nienawiści od innych wypowiedzi, pozytywnych lub negatywnych. W końcu nie każde silne zdenerwowanie jest nawoływaniem do przemocy czy wykluczania. Wspomniana wcześniej miara pobudzenia może okazać się w tym zadaniu bardzo przydatna. Wypowiedzi mające znamiona cyberbullingu to w końcu ekstremalne przypadki słownego manifestowania złości i wstrętu. Pisze o tym między innymi </span><a href="https://charaktery.eu/artykul/utrwalacze-nienawisci"><span style="font-weight: 400;">cytowana przez nas wcześniej Maria Jarymowicz</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Analizując mowę nienawiści zastosowaliśmy nasz algorytm BiLSTM do klasyfikacji wzmianek. </span><b>Wskazuje on, czy dany tekst ma pozytywny lub negatywny sentyment oraz czy natężenie emocji jest w nim silne czy słabe</b><span style="font-weight: 400;">. Traktujemy te trzy zmienne jako spójny model emocji. </span></p>
+<p><img alt="Cyberbulling mowa nienawiści hejt" class="aligncenter wp-image-1497 size-large" decoding="async" height="346" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/08/mowa-nienawisci-pobudzenie-1024x346.png" srcset="/wp-content/uploads/2019/08/mowa-nienawisci-pobudzenie-1024x346.png 1024w, /wp-content/uploads/2019/08/mowa-nienawisci-pobudzenie-512x173.png 512w, /wp-content/uploads/2019/08/mowa-nienawisci-pobudzenie-768x259.png 768w, /wp-content/uploads/2019/08/mowa-nienawisci-pobudzenie.png 1920w" width="1024"/></p>
+<p><span style="font-weight: 400;"><strong>Dwa analizowane przez nas zbiory komunikatów – zwykłe wypowiedzi i mowa nienawiści – różnią się istotnie (Chi=17,73; p&lt;0,001) udziałem wzmianek o pozytywnym i negatywnym wydźwięku oraz procentem wzmianek o wysokim pobudzeniu emocjonalnym (wykresy poniżej i powyżej)</strong>. Mowa nienawiści obejmuje więcej wzmianek silnie emocjonalnych i negatywnych, a mniej pozytywnych. Oznacza to, że <strong>negatywna wypowiedź o wysokim pobudzeniu z dużym prawdopodobieństwem może zostać zaklasyfikowana jako cyberbulling.</strong></span></p>
+<p><img alt="mowa nienawiści i hejt w sieci" class="aligncenter wp-image-1496 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/08/mowa-nienawisci-sentyment-1024x576.png" srcset="/wp-content/uploads/2019/08/mowa-nienawisci-sentyment-1024x576.png 1024w, /wp-content/uploads/2019/08/mowa-nienawisci-sentyment-512x288.png 512w, /wp-content/uploads/2019/08/mowa-nienawisci-sentyment-768x432.png 768w, /wp-content/uploads/2019/08/mowa-nienawisci-sentyment.png 1920w" width="1024"/></p>
+<h2><span style="font-weight: 400;">Wykrywanie mowy nienawiści</span></h2>
+<p><span style="font-weight: 400;">Analiza sentymentu pokazała różnice pomiędzy dwoma zbiorami wzmianek: zwykłymi i nienawistnymi. <strong>To pierwszy krok w kierunku wykrywania mowy nienawiści.</strong> Narzędzie dedykowane do wykrywania cyberbullingu musi brać pod uwagę także to, że czasami ostateczny wydźwięk wypowiedzi jest bardzo zależny od kontekstu – ale także od tego, kto się wypowiada (wskazują na to na przykład </span><a href="https://www.aclweb.org/anthology/N16-2013"><span style="font-weight: 400;">Waseem i Hovy</span></a><span style="font-weight: 400;">). Co gorsza, mowa nienawiści może ukrywać się także pod płaszczykiem obiektywizmu i formalnego języka.</span></p>
+<p><span style="font-weight: 400;">Pomiar emocji lub klasyfikowanie wzmianek pod względem pobudzenia może wspomóc pracę administratorów mediów społecznościowych czy forów. Zwłaszcza jeśli będzie stosowana w towarzystwie innych filtrów, w tym wyłapujących przekleństwa i słowa uważane za obraźliwe oraz historię wypowiedzi danego użytkownika. <strong>Taka analiza emocji dostrojona dodatkowo do dziedziny czy konkretnej tematyki może stać się sprawnym narzędziem wykrywania cyberbullingu.</strong></span></p>
+<h2><span style="font-weight: 400;">Dodatek: analiza emocji</span></h2>
+<p><span style="font-weight: 400;">Wyniki analizy emocji nie są tak jednoznaczne jak analizy sentymentu, ale uzupełniają nasze rozumienie cyberbullingu. </span><strong><i>Wstręt </i>i <i>złość</i> to emocje pojawiające się w definicjach mowy nienawiści. Z kolei nasze wyniki wskazują także na istotność <i>strachu </i>oraz <i>smutku</i> w detekcji tego zjawiska.</strong></p>
+<p><img alt="monitoring mediów mowa nienawiści i hejt" class="aligncenter wp-image-1495 size-large" decoding="async" height="576" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" src="/wp-content/uploads/2019/08/mowa-nienawisci-emocje-1024x576.png" srcset="/wp-content/uploads/2019/08/mowa-nienawisci-emocje-1024x576.png 1024w, /wp-content/uploads/2019/08/mowa-nienawisci-emocje-512x288.png 512w, /wp-content/uploads/2019/08/mowa-nienawisci-emocje-768x432.png 768w, /wp-content/uploads/2019/08/mowa-nienawisci-emocje.png 1920w" width="1024"/></p>
+</article>
+<article class="et_pb_post post-1281 post type-post status-publish format-standard has-post-thumbnail hentry category-sentistocks-pl tag-analiza-tekstu tag-emocje-w-tekscie tag-fintech tag-kurs-akcji tag-monitoring-mediow tag-negatywne-emocje" id="post-1281">
+<a class="entry-featured-image-url" href="/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">
+<img alt="Analiza emocji narzędziem wsparcia w inwestycjach finansowych" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 1080px, 100vw" src="/wp-content/uploads/2018/12/knf_mini.jpg" srcset="/wp-content/uploads/2018/12/knf_mini.jpg 1080w, /wp-content/uploads/2018/12/knf_mini-480x281.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">Analiza emocji narzędziem wsparcia w inwestycjach finansowych</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lip 4, 2019</span> | <a href="/category/sentistocks-pl/" rel="category tag">SentiStocks</a></p><p><strong>Analiza emocji to fakt. W projekcie Sentimenti stworzyliśmy narzędzia oparte o badania językoznawcze i uczenie maszynowe. To rozwiązania służące do analizy emocji oraz monitorowania ich zmian w różnego typu publikacjach: od postów w social mediach po poważne, naukowe artykuły. Narzędzia te znajdują szereg praktycznych zastosowań: można przy ich pomocy analizować treści płynące od klientów przez fanpejdże, komunikatory i chatboty, prowadzić komunikację PR (również zapobiegać kryzysom), a nawet tworzyć i lokować bardziej trafne treści reklamowe i marketingowe. Ale narzędzia te można wykorzystywać też w sektorze finansowym. Zobaczcie, jak.</strong></p>
+<h2>Kurs na giełdę: wiadomo jaki!</h2>
+<p>W Sentimenti postanowiliśmy sprawdzić przydatność naszych <strong>narzędzi dla sektora finansowego</strong> i wypróbować je w różnych sytuacjach. Zaczęliśmy od próby przewidywania kursów akcji na podstawie emocji zawartych w artykułach, komentarzach oraz w wypowiedziach na forach czy w portalach społecznościowych. Analiza uwzględniająca wyznaczenie natężenia <strong>8 emocji z teorii Plutchika</strong>, pozwoliła na wskazanie pewnych wzorców zachowań inwestorów i powiązanie ich z kursami giełdowymi danych spółek.</p>
+<p>Po przeanalizowaniu kursów wybranych przez nas 37 notowanych na GPW spółek, różnego typu wzmianek na ich temat i skorelowaniu całości danych nasze <strong>narzędzie SentiStock</strong> <a href="/blog/analiza-emocji-w-fintech-raport-o-polskich-spolkach-gieldowych/">wyznaczyło poprawnie zmiany kursów akcji wspomnianych spółek aż w 87%</a> przypadków; badanie to znalazło później potwierdzenie w rzeczywistości! Okazało się, że <strong>prognozowanie trendów kursów po analizie emocji w treści</strong> jest możliwe. Jak konkretnie? W Sentimenti możemy się tą wiedzą podzielić na Wasze potrzeby.</p>
+<h2>Kryzys marki na horyzoncie? Dowiecie się prędzej dzięki analizie emocji</h2>
+<p>O ile opisaną powyżej analizę można potraktować jako próbę przewidzenia przyszłości, o tyle Sentimenti stosowało już swoje <strong>narzędzia do analizy danych świadczących o nadchodzącym kryzysie ekonomicznym w firmie</strong>. Pod lupę wzięliśmy na przykład <a href="/blog/analiza-natezenia-emocji-jako-narzedzie-wczesnego-ostrzegania-w-firmie/">emocje związane z akcjami ORBIS S.A.</a> pokazując, że pogłębiona analiza emocjonalności reakcji akcjonariuszy na pozornie neutralne wzmianki o kondycji spółki w prasie i mediach społecznościowych mogła<strong> zapobiec kryzysowi</strong>, a przynajmniej zwiastować jego nadejście.</p>
+<p>Sprawdziliśmy ogólnodostępne sprawozdania finansowe ORBIS-u i zebraliśmy publikacje różnego typu oraz zmierzyliśmy wydźwięk reakcji na nie z okresu poprzedzającego kryzys sprzedażowy akcji w III kwartale 2018 r. Nasze wyniki wskazały istotny wzrost odczuć o konotacji ujemnej – smutku, złości i wstrętu. Rosnący kierunek ich natężenia znalazł potwierdzenie w skokowym spadku akcji, sugerując konkretne decyzje zakupowe czy kierunek zachowania akcjonariuszy.</p>
+<p>Taka analiza, w połączeniu ze szczegółowymi danymi dostępnymi władzom firm jest <strong>dobrym narzędziem ostrzegawczym przed nadchodzącym kryzysem</strong>. Oczywiście, są to przykłady badania na danych z zaistniałego wcześniej, a nie z toczącego się na bieżąco kryzysu. Udowadniają one jednak sprawność SentiToola i jego przydatność do <strong>diagnozy sytuacji kryzysowych w firmach</strong> i spółkach giełdowych.</p>
+<h2>Kryzys wizerunkowy może uderzyć w całą branżę</h2>
+<p>Dużo emocji w opinii publicznej wywołał <a href="/blog/czy-emocje-wokol-knf-wplywaja-na-indeks-wig-banki/">kryzys związany z aferą wokół Komisji Nadzoru Finansowego</a>. Postanowiliśmy więc sprawdzić, czy i jak przełożył się on na<strong> zmiany w indeksach bankowych</strong>. Analizowaliśmy wzmianki z mediów i social mediów, komentarze, fora itp. podczas najważniejszych momentów kryzysu. Doniesienia medialne co do poszczególnych etapów afery znalazły odbicie w komentarzach o negatywnym wydźwięku, a więc i w nastrojach inwestorskich. Potwierdzeniem tego były niskie kursy zamknięcia indeksu WIG-Banki dla sektora w kluczowych dniach. A jednak w ogólnym rozliczeniu stabilność notowanych na giełdzie banków wygrała.</p>
+<p>Sektor jak dotąd był odporny na takie zawirowania. Jak długo to potrwa w obliczu, gdy przepisy kształtują się dla niego niekorzystnie? Żeby móc zapobiegać kryzysom wizerunkowym w sektorze finansowym (i nie tylko), warto analizować przekaz płynący z opinii publicznej. Może się bowiem okazać, że ukryty w wypowiedziach akcjonariuszy i potencjalnych kupców sentyment ostrzeże przed zbliżającym się kryzysem. Taki monitoring to także cenne narzędzie inwestorskie!</p>
+<h2>Analiza emocji. Gdzie jeszcze narzędzia Sentimenti?</h2>
+<p><strong>Potencjał narzędzi stworzonych przez Sentimenti wciąż rośnie</strong>, bo projekt znajduje się ciągle w fazie rozbudowy i rozwoju. Istotną z punktu widzenia usługobiorcy cechą tych narzędzi jest możliwość wyznaczenia aż <a href="/blog/dlaczego-mierzymy-az-8-emocji-podstawowych/">8 emocji ze skali Plutchika</a>. Pozwalają one poznać nieco lepiej i zrozumieć emocjonalność inwestorów (szczególnie tych mniejszych), co przekłada się później na ich decyzje zakupowe. Ale inwestorzy ci nie ograniczają się wyłącznie do tradycyjnej giełdy. Coraz chętniej sięgają po transakcje na giełdach kryptowalut, narzędzia Sentimenti mogą więc i tu znaleźć zastosowanie.</p>
+</article>
+<article class="et_pb_post post-880 post type-post status-publish format-standard has-post-thumbnail hentry category-okiem-badacza tag-badania tag-emocje-w-reklamie tag-le-doux tag-negatywne-emocje tag-neuronauka" id="post-880">
+<a class="entry-featured-image-url" href="/emocje-oznaczaja-uwage/">
+<img alt="Emocje oznaczają uwagę" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 1080px, 100vw" src="/wp-content/uploads/2018/12/ohme_mini.jpg" srcset="/wp-content/uploads/2018/12/ohme_mini.jpg 1080w, /wp-content/uploads/2018/12/ohme_mini-480x281.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/emocje-oznaczaja-uwage/">Emocje oznaczają uwagę</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/agnieszka-czoska/" rel="author" title="Wpisy Agnieszka Czoska">Agnieszka Czoska</a></span> | <span class="published">gru 5, 2018</span> | <a href="/category/okiem-badacza/" rel="category tag">Okiem badacza</a></p><p>W SENTIMENTI zajmujemy się badaniem emocji zawartych w tekstach, ale to nie znaczy, że interesują nas tylko wtedy, gdy da się je ubrać w słowa. To bardzo stare ewolucyjnie procesy dziejące się w naszych mózgach, czy raczej ciałach, w odpowiedzi na różne bodźce. Bez odczuwania nie ma emocji, nawet jeśli wedle wszelkiego prawdopodobieństwa zawrzemy je w naszym artykule, reklamie, mailu.</p>
+<p>Jak twierdzi Joseph Le Doux, jeden z najważniejszych badaczy emocji, powstały jako mechanizm szybkiej reakcji na zagrożenie. Wychodząc od tej diagnozy można stwierdzić: negatywne emocje są nam niezbędne, ale pozytywne to tylko dodatek? Zupełnie nie, przecież tymi drugimi psychologia zajmowała się od zarania nazywając je układem nagrody. Nagroda, odczucie przyjemności, jest tak silne, że może uzależniać. Zbierając te dwa wątki razem widzimy nie tylko, jak istotne są oba krańce spektrum emocji, ale także, że w odczuciach ważnia jest powodowana nimi chęć ucieczki lub zbliżenia się do czegoś, pozostania w obszarze jego oddziaływania.</p>
+<p>Emocje to także mechanizm sterowania naszą uwagą. Lubimy patrzeć na obiekty wywołujące w nas <em>radość </em>lub <em>zachwyt</em>, czyli pozytywne odczucia skłaniają nas do utrzymywania na nich wzroku (słuchu lub innych zmysłów). Reakcja ucieczki także jest spowodowana zauważeniem czegoś, na przykład węża na naszej ścieżce. Z tym, że świadomie dostrzegamy go dobrą chwilę po tym, kiedy się już wystraszyliśmy i cofnęliśmy. Uwaga niekoniecznie jest świadoma, nasz umysł załatwia niektóre sprawy automatycznie, co nie znaczy, że nie mają one potem wpływu na nasze funkcjonowanie.</p>
+<p>Czy pozytywne, przyjemne widoki także mogą wpływnąć na nasze zachowanie niezauważone? Mniej więcej to pytanie stawiał sobie modny do niedawna neuromarketing, dziedzina wyrastająca z psychologii eksperymentalnej. Badania w tej dziedzinie prowadzą między innymi Rafał Ohme czy Dawid Wiener.</p>
+<p>Ohme przeprowadził badanie (we współpracy z Michałem Matukinem i Tomaszem Szczurko) nad szalenie popularnym spotem reklamowym telewizora Sony Bravia. Film, opisywany powszechnie jako “kolorowe piłeczki” (lub <em>ball bounce</em>) zdobył uznanie profesjonalistów i zwykłych widzów – podobały się zdjęcia, muzyka… Jednak jak pokazało badanie Ohmego i innych bez jednej sceny, małego szczegółu często zupełnie niepamiętanego przez odbiorców i w zasadzie ignorowanego przez reklamożerców, jego efekt byłby znacznie mniejszy. Otóż usunięcie sceny z żabą wyskakującą z rynny (naprawdę tam jest!) sprawało, że efekt reklamy stawał się skromniejszy – pamiętano mniej zalet nowego ekranu, entuzjazm się zmniejszał.</p>
+<p>Neuronaukowcy wytłumaczyli “efekt żaby” tym, że ta króciutka scena wywoływała wyraźny (wychwytywany przez EEG) wzrost pozytywnych emocji, co w efekcie poprawiało pamiętanie informacji podawanych tuż po niej. W terminach psychologii poznawczej mówimy tu o primingu emocjonalnym – pozytywnie nacechowany bodziec pożycza swój wydźwięk neutralnym treścią, które mu towarzyszą. Co ciekawe, sami twórcy “piłeczek” nie zdawali sobie sprawy z potęgi żaby. Po prostu im się spodobała.</p>
+<p>W innym badaniu Ohme i jego zespół analizowali także minimalną różnicę sprawiającą, że potencjalne klientki zapamiętywały dużo więcej informacji z reklamy kosmetyku (jednej z wielu oglądanych w czasie jednej sesji). Występująca w niej aktorka dotykała swojej twarzy lub nie. Pierwsza wersja wywoływała więcej emocji, ale co ciekawe, negatywnych. Być może zadziałał tu efekt odwrócenia znaku emocji, o którym pisaliśmy wcześniej, bo uczestniczki tego badania po zobaczeniu źle odebranego gestu chętniej brały kosmetyk do wypróbowania.</p>
+<p>Obecność emocji, nawet niezauważanych świadomie, wywołuje lepszy odbiór reklamy, poprawia zapamiętanie informacji o produkcie, zwiększa na niego chęć. W filmie wystarczy jedna scena, w tekście być może jedno słowo.  Artyści tworzący reklamę mają pełne prawo nie wiedzieć, czym tak naprawdę zadziałali na ludzi, ale obowiązkiem specjalistów od marketingu, monitoringu marki, sprzedaży jest sprawdzić to i zrozumieć. Przecież skrócenie spotu o jedną scenę może zniweczyć jego efekt – o ile to ta wywołująca emocje. A wystarczy odrobina uczucia, najlepiej w sąsiedztwie kluczowej dla nas informacji, żeby lepiej nastroić potencjalnego klienta.</p>
+</article>
+<article class="et_pb_post post-818 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand tag-emocje-w-reklamie tag-emocje-w-tekscie tag-narzekanie tag-negatywne-emocje tag-poland-come-and-complain tag-reklama" id="post-818">
+<a class="entry-featured-image-url" href="/czy-mozna-reklamowac-narzekaniem/">
+<img alt="Czy można reklamować narzekaniem?" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 1080px, 100vw" src="/wp-content/uploads/2018/11/negatywne.jpg" srcset="/wp-content/uploads/2018/11/negatywne.jpg 1080w, /wp-content/uploads/2018/11/negatywne-480x281.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/czy-mozna-reklamowac-narzekaniem/">Czy można reklamować narzekaniem?</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/agnieszka-czoska/" rel="author" title="Wpisy Agnieszka Czoska">Agnieszka Czoska</a></span> | <span class="published">lis 15, 2018</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p>Profesor Bogdan Wojciszke powiedział w wywiadzie-rzece <a href="https://sklep.smakslowa.pl/homo-nie-calkiem-sapiens-bogdan-wojciszke-i-marcin-rotkiewicz.html">„Homo nie całkiem Sapiens”</a>: „odwoływanie się do negatywnej wizji świata to odwoływanie się do polskości. Mówienie o sukcesach brzmi bardzo nie po naszemu”. W tym samym rozdziale mówi także, że wspólne narzekanie jest uznawane przez nas za objaw głębokiej więzi między rozmówcami oraz… że pozytywną wizje świata odbieramy jako naiwność. Jak wyzyskuje to marketing?</p>
+<p>Negatywne wrażenia są szybciej przetwarzane przez nasz umysł, łatwiej zauważamy zagrażające czy obrzydliwe bodźce, lepiej je także zapamiętujemy. Wiemy to z badań Wojciszke, ale także wielu innych z klasykiem teorii emocji LeDoux na czele (możecie zajrzeć do podręczników psychologii emocji, albo od razu „Mózgu emocjonalnego”). Dużo ważniejsze dla naszego przetrwania jest to, żebyśmy szybko reagowali na zło i go unikali, niż byśmy zauważali dobro. Co więcej, lepiej także pamiętamy przykrości i traumy niż radości. Oznacza to, że negatywny komunikat działa silniej niż pozytywny. I to wydaje się istotne dla reklamy.</p>
+<p>Jak pisze prof. Wojciszke: my, Polacy, uważamy się za najbardziej narzekających na całym świecie. Kiedy mówi się o kulturze narzekania, konieczności dzielenia się smutnymi sprawami, żeby nawiązać bliższy kontakt z innymi, wręcz nakazowi marudzenia w dyskursie społecznym, nie tylko my, ale wiele innych narodów (oprócz amerykańskiego) odnajduje siebie w tych wynikach. „Dobrze sobie razem ponarzekać” wydaje się być uniwersalnym stwierdzeniem (poza USA). Jednak wspólne marudzenie niekoniecznie poprawia nastrój, a co gorsza, negatywne skojarzenia mogą przenieść się na osobę, z którą rozmawiamy.</p>
+<p>Czy skuteczne kampanie reklamowe da się zbudować na smutku, krytyce, bólu? Większość spotów promujących leki wychodzi od takich emocji (bohatera bolą plecy, nie może pracować, źle się czuje), ale opowiadana w nich historia musi kończyć się happy endem pokazującym skuteczność lekarstwa. Krótko mówiąc, to nie o negatywne emocje chodzi w tych kampaniach. Ale znaleźliśmy dwa ciekawe przykłady bazujące na rozczarowaniu, złości, frustracji.</p>
+<p>W 2014 roku mieliśmy w Polsce zupełnie nietypową promocję kraju – „Poland, come and complain”. Reklamowała nasz kraj pokazując, jak jego obywatele narzekają na swoją historię, sport, infrastrukturę. Bohater lub bohaterka spotu narzekała, a jednocześnie głos z offu opowiadał brytyjskim angielskim o polskich osiągnięciach (noblach dla Skłodowskiej, sukcesach w sportach zimowych, sławie Lema). Każdy film kończył się negatywnym stwierdzeniem, więc odbiegał od standardowych minifabuł kojarzących się z lekami przeciwbólowymi czy opisywanych przez nas przy okazji analizy reklam. W „Come and complain” nie było oczywistego przechodzenia z negatywnych emocji w te pozytywne. Spotom towarzyszyła kampania w mediach społecznościowych (memy i infografiki), która ewidentnie odsłaniała prawdziwą intencję twórców – była bardzo zabawna. Spoty i memy obśmiewały białe niedźwiedzie na ulicach miast, fatalny klimat naszego kraju, skomplikowane stosunki społeczne czy gościnność spod hasła „nie jesz już, bo ci nie smakuje””(lub „ze mną się nie napijesz”!?).</p>
+<p>Jak pisze Agnieszka Zakościelna <a href="http://yadda.icm.edu.pl/yadda/element/bwmeta1.element.desklight-2e665e23-4c8c-4b91-b0e5-ea7c73e58959">w artykule o „Come and complain”</a> ta kampania najlepiej zadziałała na samych Polaków – co oczywiste, to my najłatwiej wyłapywaliśmy, jakie stereotypy są odwracane ogonem w tej kampanii. Reagując na nią entuzjastycznie, udostępniając w mediach społecznościowych, stawaliśmy się jej ambasadorami i promowaliśmy kraj. Dotyczyło to zwłaszcza osób mieszkających za granicą.</p>
+<p align="center"><iframe allowfullscreen="allowfullscreen" frameborder="0" src="https://www.youtube.com/embed/I0onBRVV_cU" style="width: 560px; height: 315px !important;"></iframe></p>
+<p>Mamy za sobą także inną kampanię opartą na negatywnych emocjach – ta odbiła się w Polsce dużo głośniejszym echem. Chodzi o mocno sarkastyczne spoty PiS (spójrzcie na nasz tekst o sarkazmie), odwołujące się do hasła „Polska w ruinie”. Faktycznie, przyniosła zamierzony skutek, a dodatkowo utrwaliła obraz tej partii jako antysystemowej (mimo wieloletniej obecności w strukturach państwa). Ta reklama zagrała na frustracjach i wygrała.</p>
+<p>Jak pisze <a href="https://rebus.us.edu.pl/bitstream/20.500.12128/609/6/Olszanecka-Marmola_Reklama_negatywna_i_wizerunkowa_w_odbiorze_polskiego_elektoratu.pdf">Agata Olszanecka</a> „telewizyjne reklamy polityczne wzbudzające silne emocje negatywne nie cieszą się sympatią widzów, ale treści, które są w nich przekazywane, są lepiej zapamiętywane niż te z reklam zawierających treści neutralne i pozytywne”. Reklamy takie są skuteczne (a nie demobilizujące), o ile wyostrzają różnice między różnymi kandydatami. Wyniki jej badań kwestionariuszowych wykazują też, że obywatele dostrzegają nieetyczność takich przekazów i woleliby merytoryczne kampanie… A jednak wiemy, że „Polska w ruinie” zaktywizowała elektorat PiS.</p>
+<p>Postawienie na negatywne emocje nie zawsze zwiększa sprzedaż. „Faktowi” się udaje, ale już zbyt dramatyczna reklama przesłania warstwą emocjonalną treść, a przede wszystkim markę i produkt w niej promowane. Co prawda łatwiej zauważamy, a potem pamiętamy, złe rzeczy – ale dotyczy to raczej samych uczuć i wywołujących je treści, a nie towarzyszących im przedmiotów. Przerywanie wiadomości reklamami nie przyczyni się do sprzedaży produktów, ale za to lepiej zapamiętamy bardziej dramatyczne newsy, nawet jeśli nie chcemy otrzymywać takich treści.</p>
+<p>Dlaczego czasami negatywny marketing działa? W literaturze na temat emocji można znaleźć dwa uzasadnienia. Pierwsze daje nam tzw. <em>dwuczynnikowa teoria emocji</em>, według której do zdefiniowania każdego odczucia wystarczą dwa wymiary: polaryzacji (pozytywny-negatywny) i siły. O ile trudno jest zmienić siłę emocji (zmienić umiarkowaną sympatię w miłość), o tyle bardzo łatwo przekuć ujemną w dodatnią – dlatego historia zna wiele przypadków zakochania się w osobie, której się na początku nie cierpiało. Całkiem ciekawie pisze o tym Rafał Ohme w <a href="http://emosapiens.pl/">„Emo Sapiens”</a>. Dla nas ważne jest to, że wzbudzając nawet negatywne, ale przecież emocje, wobec Polski narzekaniem łatwo było je wywołać pozytywne nastawienie do naszego kraju, zwłaszcza dodając nieco humoru.</p>
+<p>Jakie jest drugie wytłumaczenie? Emocje można podzielić na aktywizujące i uspokajające. <em>Radość </em>mówi nam, że nic nie musimy robić, bo jest nam dobrze. <em>Wstręt </em>– że powinniśmy uciekać, więc nakłania do działania. Ale naprawdę z fotela podrywa nas <em>złość</em>, którą łatwo wywołać za pomocą innych negatywnych odczuć: wspomnianego <em>wstrętu, strachu</em>, a nawet ambiwalentnego <em>zaskoczenia</em>. Jak pisze prof. Wojciszke, jest to banalnie proste, skoro „jeśli wzbudzi się w ludziach uczucie wstrętu, na przykład za pomocą paskudnego zapachu, to ich oceny moralne cudzego postępowania stają się bardziej surowe”. Obrzydzając wyborcom kontrkandydata wywołujemy negatywne skojarzenia z nim, a prawem kontrastu (i dwuwymiarowości) możemy postawić siebie w lepszym świetle.</p>
+<p>Reklama polega na tworzeniu i utrwalaniu skojarzeń z promowanym produktem – zwykle pozytywnych, ale jak pokazaliśmy wyżej, czasem przydają się nam negatywne – o ile da się sprytnie odwrócić ich znak, albo wywołać dzięki nim chęć do działania. A najlepiej oba naraz. Grunt to wywołać emocje wobec promowanego obiektu a nie “obok” niego – bo wówczas odbiorca zapamięta jedynie to, co wzbudziło w nim uczucia.</p>
+</article>
+<div class="pagination clearfix">
+<div class="alignleft"></div>
+<div class="alignright"><a href="/tag/negatywne-emocje/">Kolejne wpisy »</a></div>
+</div> </div>
+<div id="sidebar">
+<div class="et_pb_widget widget_text" id="text-2"> <div class="textwidget">
+</div>
+</div><div class="et_pb_widget widget_categories" id="categories-2"><h4 class="widgettitle">Kategorie</h4>
+<ul>
+<li class="cat-item cat-item-1191"><a href="/category/polityka-i-spoleczenstwo/">Polityka i społeczeństwo</a>
+</li>
+<li class="cat-item cat-item-1193"><a href="/category/styl-zycia/">Styl życia</a>
+</li>
+<li class="cat-item cat-item-1226"><a href="/category/badania-rynku/">Badania rynku</a>
+</li>
+<li class="cat-item cat-item-1121"><a href="/category/w-mediach/">W mediach</a>
+</li>
+<li class="cat-item cat-item-1149"><a href="/category/w-mediach/podcasty-pl/">Podcasty</a>
+</li>
+<li class="cat-item cat-item-1153"><a href="/category/konferencje/">Konferencje</a>
+</li>
+<li class="cat-item cat-item-582"><a href="/category/sentibrand/">SentiBrand</a>
+</li>
+<li class="cat-item cat-item-263"><a href="/category/sentistocks-pl/">SentiStocks</a>
+</li>
+<li class="cat-item cat-item-1055"><a href="/category/publikacje-naukowe/">Publikacje naukowe</a>
+</li>
+<li class="cat-item cat-item-24"><a href="/category/okiem-badacza/">Okiem badacza</a>
+</li>
+<li class="cat-item cat-item-434"><a href="/category/kategoryzacja-komentarzy/">Kategoryzacja komentarzy</a>
+</li>
+</ul>
+</div>
+<div class="et_pb_widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widgettitle">Ostatnie wpisy</h4>
+<ul>
+<li>
+<a href="/emocje-w-biotech/">Głębsze Spojrzenie na Emocje: Jak Firmy Bio-Tech Mogą Lepiej Rozumieć Odbiór Swojej Marki?</a>
+</li>
+<li>
+<a href="/jak-emocje-ksztaltuja-nasze-spojrzenie-na-wschodnich-sasiadow-analiza-mediow-spolecznosciowych-2024/">Jak emocje kształtują nasze spojrzenie na wschodnich sąsiadów? Analiza mediów społecznościowych 2024</a>
+</li>
+<li>
+<a href="/jezyk-i-emocje-w-roznorodnosci-co-pokazuja-dane/">Poznaj słowa, które budują mosty i te, które niszczą relacje społeczne – zaskakujące wyniki badań!</a>
+</li>
+<li>
+<a href="/analiza-emocji-w-debacie-prezydenckiej-harris-vs-trump-jak-sentimenti-mierzy-emocje-i-sentymenty/">Analiza emocji w debacie prezydenckiej Harris vs Trump: Jak Sentimenti mierzy emocje i sentymenty</a>
+</li>
+<li>
+<a href="/analiza-sentymentu-nie-powie-ci-prawdy/">Analiza sentymentu nie powie Ci prawdy</a>
+</li>
+</ul>
+</div> </div>
+</div>
+</div>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-5973" decoding="async" height="100" loading="lazy" src="/wp-content/uploads/2023/06/logo2.svg" title="logo2" width="100"/></span>
+</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p><strong>Sentimenti sp. z o.o.</strong><br/><span>ul. Święty Marcin 11/8</span><br/><span>61-803 Poznań, Poland</span><br/><a href="mailto:kontakt@sentimenti.pl"></a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_0_tb_footer et_pb_widget_area clearfix et_pb_widget_area_right et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_dark et_pb_sidebar_no_border">
+<div class="fwidget et_pb_widget widget_nav_menu" id="nav_menu-4"><div class="menu-menu-w-stopce-container"><ul class="menu" id="menu-menu-w-stopce"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6425" id="menu-item-6425"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6691" id="menu-item-6691"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6421" id="menu-item-6421"><a href="/kontakt/">Kontakt</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-6415" decoding="async" height="63" loading="lazy" src="/wp-content/uploads/2023/06/UE_EFRR-black.png" title="UE_EFRR-black" width="240"/></span>
+</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link et-social-facebook"><a class="icon et_pb_with_border" href="https://www.facebook.com/sentimentipl" target="_blank" title="Śledź na Facebook"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link et-social-twitter"><a class="icon et_pb_with_border" href="https://twitter.com/SENTIMENTIPL" target="_blank" title="Śledź na X"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link et-social-linkedin"><a class="icon et_pb_with_border" href="https://www.linkedin.com/company/sentimenti/" target="_blank" title="Śledź na LinkedIn"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li>
+</ul>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_1_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light et_pb_sidebar_no_border">
+<div class="et_pb_widget widget_nav_menu" id="nav_menu-7"><div class="menu-rodo-pl-container"><ul class="menu" id="menu-rodo-pl"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6418" id="menu-item-6418"><a href="/polityka-prywatnosci/" rel="privacy-policy">Polityka prywatności RODO</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Design: <a href="https://ballaun.art/" rel="noopener" style="color: white;" target="_blank">ballaun.art</a></div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: index-->
+<div class="modal-cacsp-backdrop"></div>
+<div class="modal-cacsp-position">
+<div class="modal-cacsp-box modal-cacsp-box-info">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Używamy plików cookie, aby zapewnić prawidłowe działanie naszej strony internetowej i usług. Te pliki cookie są niezbędne i są ustawiane automatycznie. Chcielibyśmy również używać analitycznych plików cookie, aby zrozumieć, w jaki sposób wchodzisz w interakcję z naszą witryną i marketingowymi plikami cookie, aby zapewnić spersonalizowane treści i reklamy.
+Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików cookie zarówno do podstawowych, jak i nieistotnych celów. Kliknij „Ustawienia”, aby wybrać typy plików cookie, które chcesz włączyć lub wyłączyć. Więcej informacji znajdziesz w naszej Polityce prywatności RODO.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-settings" href="#">
+							Ustawienia						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+<div class="modal-cacsp-box modal-cacsp-box-settings">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Wybierz, jakie pliki cookies chcesz zaakceptować. Twój wybór zostanie zachowany przez rok.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-box-settings-list">
+<ul>
+<li>
+<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+<span>Konieczne<br/>
+<span>Te pliki cookie nie są opcjonalne. Są one potrzebne do funkcjonowania strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</span>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics" href="#statistics">
+<span>Statystyka<br/>
+<span>Abyśmy mogli poprawić funkcjonalność i strukturę strony internetowej, na podstawie tego, jak strona jest używana.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="experience" href="#experience">
+<span>Doświadczenie<br/>
+<span>Aby nasza strona internetowa działała jak najlepiej podczas twojego przejścia na nią. Jeśli odrzucisz te pliki cookie, niektóre funkcje znikną ze strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="marketing" href="#marketing">
+<span>Marketing<br/>
+<span>Udostępniając swoje zainteresowania i zachowania podczas odwiedzania naszej strony, zwiększasz szansę na zobaczenie spersonalizowanych treści i ofert.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-save" href="#">
+							Zapisz						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept-all" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+</div>
+<!--googleon: index-->
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Basic:regular&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6Fc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FE.woff2) format('woff2');}</style><script id="cookies-and-content-security-policy-cookie-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie.min.js?ver=2.41" type="text/javascript"></script>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" type="text/javascript"></script>
+<script id="jquery-js-after" type="text/javascript">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var cacsp_ajax_object = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"53e1f30221"};
+var cacspMessages = {"cacspReviewSettingsDescription":"Twoje ustawienia mog\u0105 uniemo\u017cliwi\u0107 ci obejrzenie tej tre\u015bci. Najprawdopodobniej masz wy\u0142\u0105czone Do\u015bwiadczenie.","cacspReviewSettingsButton":"Przegl\u0105daj swoje ustawienia","cacspNotAllowedDescription":"Ta tre\u015b\u0107 nie mo\u017ce by\u0107 wczytana, gdy\u017c nie jest dozwolona na witrynie.","cacspNotAllowedButton":"Skontaktuj si\u0119 z administratorem","cacspExpires":"365","cacspWpEngineCompatibilityMode":"0","cacspTimeout":"1000","cacspOptionDisableContentNotAllowedMessage":"0","cacspOptionGoogleConsentMode":"0","cacspOptionSaveConsent":"0"};
+//# sourceURL=cookies-and-content-security-policy-js-extra
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js?ver=2.41" type="text/javascript"></script>
+<script id="cookies-and-content-security-policy-error-message-js" src="/wp-content/uploads/cookies-and-content-security-policy-error-message.js?ver=2.41&amp;mod%3D20260116142405" type="text/javascript"></script>
+<script id="df-script-js" src="/wp-content/plugins/filter-for-divi/df-script.js?ver=2.0.2" type="text/javascript"></script>
+<script id="pll_cookie_script-js-after" type="text/javascript">
+/* <![CDATA[ */
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=pl; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+/* ]]> */
+</script>
+<script id="divi-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"/wp-admin/admin-ajax.php","images_uri":"/wp-content/themes/Divi/images","builder_images_uri":"/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"2b0e8fb0d2","subscription_failed":"Prosz\u0119, sprawd\u017a pola poni\u017cej, aby upewni\u0107 si\u0119, \u017ce wpisa\u0142e\u015b poprawn\u0105 informacj\u0119.","et_ab_log_nonce":"ea219785f5","fill_message":"Prosz\u0119 wype\u0142ni\u0107 nast\u0119puj\u0105ce pola:","contact_error_message":"Napraw poni\u017csze b\u0142\u0119dy:","invalid":"Nieprawid\u0142owy adres e-mail","captcha":"Captcha","prev":"Przed","previous":"Poprzednie","next":"Dalej","wrong_captcha":"Wpisa\u0142e\u015b/-a\u015b w captcha nieprawid\u0142owy numer.","wrong_checkbox":"Pole wyboru","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"1548","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#e6007a","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script id="divi-custom-script-js" src="/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="smoothscroll-js" src="/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.1" type="text/javascript"></script>
+<script id="es6-promise-js" src="/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-recaptcha-v3-js" src="https://www.google.com/recaptcha/api.js?render=6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO&amp;ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-api-spam-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO","page_action":{"action":"cyberprzemoc_i_negatywne_emocje"}};
+//# sourceURL=et-core-api-spam-recaptcha-js-extra
+/* ]]> */
+</script>
+<script id="et-core-api-spam-recaptcha-js" src="/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=4.27.1" type="text/javascript"></script>
+<script id="fitvids-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.1" type="text/javascript"></script>
+<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=6.9.11" type="text/javascript"></script>
+<script id="jquery-mobile-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.27.1" type="text/javascript"></script>
+<script id="magnific-popup-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.1" type="text/javascript"></script>
+<script id="easypiechart-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.27.1" type="text/javascript"></script>
+<script id="salvattore-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-common-js" src="/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.1" type="text/javascript"></script>
+<script id="ivory-search-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+//# sourceURL=ivory-search-scripts-js-extra
+/* ]]> */
+</script>
+<script id="ivory-search-scripts-js" src="/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.13" type="text/javascript"></script>
+<script id="et-builder-modules-script-motion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+//# sourceURL=et-builder-modules-script-motion-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-motion-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-builder-modules-script-sticky-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+//# sourceURL=et-builder-modules-script-sticky-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-sticky-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.27.1" type="text/javascript"></script>
+<span class="et_pb_scroll_top et-pb-icon"></span>
+</body>
+</html>

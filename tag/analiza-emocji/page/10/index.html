@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="/xmlrpc.php" rel="pingback"/>
+<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin,latin-ext,vietnamese&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4i.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4i.woff2) format('woff2');}</style><meta content="noindex, follow" name="robots"/>
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v28.6) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+<title>analiza emocji Archives - Strona 10 z 14 - Sentimenti</title>
+<meta content="pl_PL" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Archiwa: analiza emocji" property="og:title"/>
+<meta content="/tag/analiza-emocji/" property="og:url"/>
+<meta content="Sentimenti" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@SENTIMENTIPL" name="twitter:site"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"CollectionPage","@id":"\/tag\/analiza-emocji\/","url":"\/tag\/analiza-emocji\/page\/10\/","name":"analiza emocji Archives - Strona 10 z 14 - Sentimenti","isPartOf":{"@id":"\/#website"},"primaryImageOfPage":{"@id":"\/tag\/analiza-emocji\/page\/10\/#primaryimage"},"image":{"@id":"\/tag\/analiza-emocji\/page\/10\/#primaryimage"},"thumbnailUrl":"\/wp-content\/uploads\/2020\/10\/sentimenti-apple-iphone-12-mini-emocje-podstawowe-sentyment2-1.jpg","breadcrumb":{"@id":"\/tag\/analiza-emocji\/page\/10\/#breadcrumb"},"inLanguage":"pl-PL"},{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/tag\/analiza-emocji\/page\/10\/#primaryimage","url":"\/wp-content\/uploads\/2020\/10\/sentimenti-apple-iphone-12-mini-emocje-podstawowe-sentyment2-1.jpg","contentUrl":"\/wp-content\/uploads\/2020\/10\/sentimenti-apple-iphone-12-mini-emocje-podstawowe-sentyment2-1.jpg","width":1200,"height":628,"caption":"sentimenti apple iphone bateria 12 iphone12 mini retina emocje apple event co nowego cena"},{"@type":"BreadcrumbList","@id":"\/tag\/analiza-emocji\/page\/10\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"\/"},{"@type":"ListItem","position":2,"name":"analiza emocji"}]},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Sentimenti","description":"Analiza emocji i sentymentu, sztuczna inteligencja, monitoring internetu","publisher":{"@id":"\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pl-PL"},{"@type":"Organization","@id":"\/#organization","name":"Sentimenti","url":"\/","logo":{"@type":"ImageObject","inLanguage":"pl-PL","@id":"\/#\/schema\/logo\/image\/","url":"\/wp-content\/uploads\/2023\/06\/logo.svg","contentUrl":"\/wp-content\/uploads\/2023\/06\/logo.svg","width":100,"height":100,"caption":"Sentimenti"},"image":{"@id":"\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/sentimentipl","https:\/\/x.com\/SENTIMENTIPL","https:\/\/www.linkedin.com\/company\/sentimenti\/"]}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="Divi v.4.27.1" name="generator"/><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link href="/wp-includes/css/dist/block-library/style.min.css?ver=6.9.11" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote :where(cite),.wp-block-pullquote :where(footer),.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/css/dist/block-library/theme.min.css */
+</style>
+<style id="pdfemb-pdf-embedder-viewer-style-inline-css" type="text/css">
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+/*# sourceURL=/wp-content/plugins/pdf-embedder/block/build/style-index.css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link href="/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css?ver=2.41" id="cookies-and-content-security-policy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/custom-posts-order/css/custompostdisplay.css?ver=4.5" id="custompostdisplay-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/filter-for-divi/df-style.css?ver=2.0.2" id="df-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.13" id="ivory-search-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/Divi/style-static.min.css?ver=4.27.1" id="divi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<!-- Fragment znacznika Google (gtag.js) dodany przez Site Kit -->
+<!-- Fragment Google Analytics dodany przez Site Kit -->
+<script async="" id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-5R823XK" type="text/javascript"></script>
+<script id="google_gtagjs-js-after" type="text/javascript">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["sentimenti.pl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5R823XK");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 6.9.11" name="generator"/>
+<meta content="Site Kit by Google 1.188.0" name="generator"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/><style id="cookies-and-content-security-policy-css-custom" type="text/css">.modal-cacsp-position .modal-cacsp-box > *,.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-show.modal-cacsp-box-bottom {background-color: #efefef;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {background-color: #e5e5e5;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-settings {border-color: #ffffff;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {background-color: #eaeaea;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-save {border-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ff0087;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ff0087;}</style><link href="/wp-content/uploads/2023/06/cropped-ico-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="/wp-content/uploads/2023/06/cropped-ico-180x180.jpg" rel="apple-touch-icon"/>
+<meta content="/wp-content/uploads/2023/06/cropped-ico-270x270.jpg" name="msapplication-TileImage"/>
+<link href="/wp-content/et-cache/global/et-divi-customizer-global.min.css?ver=1794112530" id="et-divi-customizer-global-cached-inline-styles" rel="stylesheet"/><link href="/wp-content/et-cache/6466/et-core-unified-cpt-6466.min.css?ver=1794112538" id="et-core-unified-cpt-6466-cached-inline-styles" rel="stylesheet"/><style media="screen" type="text/css">.is-menu path.search-icon-path { fill: #848484;}body .popup-search-close:after, body .search-close:after { border-color: #848484;}body .popup-search-close:before, body .search-close:before { border-color: #848484;}</style> <style type="text/css">
+</style>
+<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+
+				}
+			</style></head>
+<body class="archive paged tag tag-analiza-emocji tag-384 paged-10 tag-paged-10 wp-theme-Divi et-tb-has-template et-tb-has-footer Divi et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_cover_background et_pb_gutter et_pb_gutters3 et_smooth_scroll et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-7993">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header data-height-onload="66" id="main-header">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="/">
+<img alt="Sentimenti" data-height-percentage="54" height="100" id="logo" src="/wp-content/uploads/2023/06/logo.svg" width="100"/>
+</a>
+</div>
+<div data-fixed-height="40" data-height="66" id="et-top-navigation">
+<nav id="top-menu-nav">
+<ul class="nav" id="top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8080"><a href="/oferta/">Oferta</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5710"><a href="/sentitool/">Sentitool</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6178"><a href="/api-2/">API</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6184"><a href="/kontakt/">Kontakt</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="/%F0%9F%87%BA%F0%9F%87%A6-ukraina/">🇺🇦 Ukraina</a></li>
+<li class="lang-item lang-item-7 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-5986-en"><a href="/en/tag/emotion-analysis/" hreflang="en-GB" lang="en-GB"><img alt="English" height="11" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" style="width: 16px; height: 11px;" width="16"/></a></li>
+</ul> </nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Zaznacz stronę</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div> </div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<div class="container">
+<div class="clearfix" id="content-area">
+<div id="left-area">
+<article class="et_pb_post post-3586 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand category-styl-zycia tag-analiza-emocji tag-apple-event tag-emocje-w-internecie tag-emocje-w-opiniach tag-monitoring-mediow" id="post-3586">
+<a class="entry-featured-image-url" href="/iphone-12-ladowarka-sluchawki-zlosc-smutek-twitter-eng/">
+<img alt="iPhone 12 ogołocony! Brak ładowarki i słuchawek wzbudził złość wśród internautów" class="" fetchpriority="high" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/10/sentimenti-apple-iphone-12-mini-emocje-podstawowe-sentyment2-1-1080x628.jpg" srcset="/wp-content/uploads/2020/10/sentimenti-apple-iphone-12-mini-emocje-podstawowe-sentyment2-1-1080x628.jpg 1080w, /wp-content/uploads/2020/10/sentimenti-apple-iphone-12-mini-emocje-podstawowe-sentyment2-1-980x513.jpg 980w, /wp-content/uploads/2020/10/sentimenti-apple-iphone-12-mini-emocje-podstawowe-sentyment2-1-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/iphone-12-ladowarka-sluchawki-zlosc-smutek-twitter-eng/">iPhone 12 ogołocony! Brak ładowarki i słuchawek wzbudził złość wśród internautów</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">paź 14, 2020</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>iPhone 12 został zaprezentowany na konferencji w Cupertino 13 października. Zobaczyliśmy cztery nowe wersje smartfona. To iPhone 12 Mini, iPhone 12, iPhone 12 Pro i iPhone 12 Pro Max. Implementacja technologii 5G po raz pierwszy i inne technologiczne nowinki przysłonięte zostały jednak czymś innym. To rezygnacja firmy z słuchawek i ładowarek dołączanych do zestawu. Zbadaliśmy emocje wokół tego krótkiego wydarzenia.</strong></p>
+<h2>iPhone 12 bez akcesoriów. Koniec ładowarek i słuchawek w zestawie</h2>
+<p>Jak długo większość z nas żyje, telefony komórkowe zawsze kupowaliśmy z ładowarką oraz słuchawkami w zestawie. Coś się jednak zmieniło, bowiem Apple postanowiło nas od tego odzwyczaić. Dlaczego? Zdaniem firmy w dzisiejszych czasach nie ma to sensu, albowiem w sklepach mamy wyjątkowo szeroki wybór akcesoriów do telefonu. Apple ze swoim iPhone’em 12 chce zmienić status quo.</p>
+<p>Tak, to prawda. Od teraz w zestawie nie zobaczymy już ładowarki i słuchawek. Jedyne, na co możemy liczyć, to przewód z przejściówką z USB typu C na Lightning. Dodatkowo mamy do czynienia z ogromnymi różnicami w cenie nowego iPhone 12 w Polsce oraz w USA. Powód nie jest do końca znany. Może jednak stać nas na droższe telefony?</p>
+<p>W Polsce ceny w stosunku do modelu 11 nie zostały podniesione, ale trzeba pamiętać o wspomnianym braku akcesoriów.  Jedyna zaleta? Na wysypiska śmieci zacznie trafiać mniej elektrośmieci, a akcesoria do smartfona kupią tylko te osoby, które rzeczywiście mają zamiar z tego korzystać.</p>
+<h2>5G, ceny i brak ładowarki. O tym dyskutowano najintensywniej</h2>
+<p>Wydarzenie w Cupertino nie trwało długo. Postanowiliśmy przeanalizować emocje w anglojęzycznej dyskusji na Twitterze. Pod uwagę wzięliśmy hashtag #iphone12 i zakres godzinowy od 19:00 do 20:59 naszego czasu. To wtedy dyskusja była najbardziej intensywna. Przebadaliśmy w sumie prawie 12 tys. unikalnych tweetów (bez retweetów, które potrafią czasami zaburzyć analizę).</p>
+<p>Szybka analiza kontekstów na tle całej dyskusji o smartfonie pokazuje, że brak ładowarek i słuchawek oraz ceny wzbudziły najwięcej zainteresowania. Piki na wykresie mówią wszystko. Co ciekawe, przez całą konferencję na niemal jednolitym poziomie utrzymywała się dynamika wpisów dotyczących polityki Apple wobec tego, co dzieje się na Białorusi. Mieliśmy tu dodatkowo do czynienia z hashtagiem #AppleCensorsBelarus. Dane przedstawiamy z dokładnością co do minuty.</p>
+<p><a href="/wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-ceny.png"><img alt="iphone12 bateria iphone 12 cupertino cena brak ładowarki brak słuchawek" class="aligncenter wp-image-3592 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-ceny.png" srcset="/wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-ceny.png 1280w, /wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-ceny-512x288.png 512w, /wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-ceny-1024x576.png 1024w, /wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-ceny-768x432.png 768w" width="1280"/></a></p>
+<p>Jak widać, pierwsza część konferencji to głównie temat 5G. To pierwszy smartfon tej firmy, który wyróżnia się zastosowaniem tej technologii. Po niemal 20 minut dyskutowana o tym przyszła pora na informację o rezygnacji ze słuchawek i ładowarek w zestawach. Ten temat wygenerował największy jednorazowy pik. Dyskutowano o tym jeszcze przez kolejną godzinę, ale już dużo mniej intensywnie.</p>
+<p>Te same dane, które mamy powyżej, pokazujemy też w formie wykresu strumieniowego, aby pokazać „<em>przepychanie się</em>” wątków tematycznych w trakcie dyskusji. W tym wypadku szerokość całego wykresu pokazuje sumę tweetów, a poszczególnych kolorów udział kontekstu w dyskusji.</p>
+<p><a href="/wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-cena.png"><img alt="iphone12 bateria słuchawki brak" class="aligncenter wp-image-3597 size-full" decoding="async" height="628" loading="lazy" sizes="auto, (max-width: 1522px) 100vw, 1522px" src="/wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-cena.png" srcset="/wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-cena.png 1522w, /wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-cena-512x211.png 512w, /wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-cena-1024x423.png 1024w, /wp-content/uploads/2020/10/iphone-12-bialorus-brak-ladowarki-sluchawek-cena-768x317.png 768w" width="1522"/></a></p>
+<p>Co ciekawe, ładowarki wygenerowały tu dwa razy większe natężenie wzmianek niż słuchawki. Chwilę potem padły informacje o cenie. Od godziny 19:50 możemy mówić o stabilizacji dyskusji. Liczba wzmianek spadła, a wątkami dominującymi były już tylko ceny, sytuacja na linii Apple – Białoruś oraz słuchawki.</p>
+<h2>iPhone 12 bateria. Co z emocjami?</h2>
+<p>Pod lupę wzięliśmy dwie skrajne emocje – złość i radość. Badane nie tylko występowaniem, ale przede wszystkim natężeniem w dyskusji, mówią nam znacznie więcej o nastrojach internautów. Złość była dominującą emocją w trakcie całego wydarzenia. Wzrosty natężenia radości widzimy głównie przy temacie 5G. Spore piki, jeśli chodzi o złość, generowane były przez tematy cen iPhone 12 oraz rezygnacją z akcesoriów. Podsumowując – z minuty na minutę było coraz gorzej, jeśli chodzi o sentyment.</p>
+<p><a href="/wp-content/uploads/2020/10/iphone-12-brak-ladowarki-sluchawek-ceny-konferencja-apple-event.png"><img alt="iphone 12 premiera emocje cupertino apple event ceny ładowarka słuchawki" class="aligncenter wp-image-3595 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/10/iphone-12-brak-ladowarki-sluchawek-ceny-konferencja-apple-event.png" srcset="/wp-content/uploads/2020/10/iphone-12-brak-ladowarki-sluchawek-ceny-konferencja-apple-event.png 1280w, /wp-content/uploads/2020/10/iphone-12-brak-ladowarki-sluchawek-ceny-konferencja-apple-event-512x288.png 512w, /wp-content/uploads/2020/10/iphone-12-brak-ladowarki-sluchawek-ceny-konferencja-apple-event-1024x576.png 1024w, /wp-content/uploads/2020/10/iphone-12-brak-ladowarki-sluchawek-ceny-konferencja-apple-event-768x432.png 768w" width="1280"/></a></p>
+<p>Jeśli chodzi o trendy emocji, w badanym okresie i z biegiem dyskusji następował regularny spadek natężenia radości i wzrost natężenia złości. Na koniec okresu, który badaliśmy, czyli na godz. 20:59, emocje te dzieliła wartość natężenia na poziomie 10 punktów procentowych.</p>
+<p>Jeśli sprawdzimy natężenie całego spektrum 8 emocji (teoria Plutchika) w podziale na konteksty dyskusji i dodatkowo w stosunku do średniej dla wszystkich wzmianek, widzimy wyraźnie, że w przypadku ładowarek / baterii oraz słuchawek natężenie negatywnych emocji jest najwyższe. Mamy w przypadku tych dwóch kontekstów również nieco więcej poczucia zaskoczenia.</p>
+<p><a href="/wp-content/uploads/2020/10/iphone-12-emocje-podstawowe-emocji-plutchik-korelacja-1.png"><img alt="apple event iphone12" class="aligncenter wp-image-3604 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/10/iphone-12-emocje-podstawowe-emocji-plutchik-korelacja-1.png" srcset="/wp-content/uploads/2020/10/iphone-12-emocje-podstawowe-emocji-plutchik-korelacja-1.png 1280w, /wp-content/uploads/2020/10/iphone-12-emocje-podstawowe-emocji-plutchik-korelacja-1-512x288.png 512w, /wp-content/uploads/2020/10/iphone-12-emocje-podstawowe-emocji-plutchik-korelacja-1-1024x576.png 1024w, /wp-content/uploads/2020/10/iphone-12-emocje-podstawowe-emocji-plutchik-korelacja-1-768x432.png 768w" width="1280"/></a></p>
+<p>Jeśli chodzi o ceny, były głównie źródłem złości i zaskoczenia. Tu także odnotowano spory spadek oczekiwania. Emocje pozytywne jak i negatywne najsilniej odstawały od średniej w przypadku wzmianek politycznych, czyli dotyczących Apple w kontekście Białorusi. 5G, choć samo w sobie przyjęte raczej pozytywnie, na tle całej dyskusji o wydarzeniu nie było źródłem wielkich emocji (na minusie zarówno negatywne, jak i pozytywne nastroje).</p>
+<h3>Tweet o największym natężeniu złości</h3>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en"><a href="https://twitter.com/hashtag/apple?src=hash&amp;ref_src=twsrc%5Etfw">#apple</a> <a href="https://twitter.com/hashtag/AppleEvent?src=hash&amp;ref_src=twsrc%5Etfw">#AppleEvent</a> <a href="https://twitter.com/hashtag/iPhone12?src=hash&amp;ref_src=twsrc%5Etfw">#iPhone12</a></p>
+<p>Me – Who can justify upgrading their iPhone every year just for a thinner model and a tiny battery upgrade<br/>
+My cousin – omg this new phones sick<br/>
+My friend – can’t wait to upgrade<br/>
+Me – its pratically the same as your 11 you dumb fucks <a href="https://t.co/56J3B8Ber4">pic.twitter.com/56J3B8Ber4</a></p>
+<p>— DavyTheScotsman (@PunkDavy) <a href="https://twitter.com/PunkDavy/status/1316070912551251969?ref_src=twsrc%5Etfw">October 13, 2020</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<h3>Tweet o największym natężeniu smutku</h3>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">Live pic of <a href="https://twitter.com/hashtag/apple?src=hash&amp;ref_src=twsrc%5Etfw">#apple</a> idiots, already saving up their 800+ euros for a freakin phone. <a href="https://twitter.com/hashtag/iPhone12?src=hash&amp;ref_src=twsrc%5Etfw">#iPhone12</a> <a href="https://twitter.com/hashtag/AppleEvent?src=hash&amp;ref_src=twsrc%5Etfw">#AppleEvent</a> <a href="https://twitter.com/hashtag/AppleKeynote?src=hash&amp;ref_src=twsrc%5Etfw">#AppleKeynote</a> <a href="https://t.co/vHKtcGVDJo">pic.twitter.com/vHKtcGVDJo</a></p>
+<p>— Rosinen 🤢 (Resifreak) (@Resi_freak) <a href="https://twitter.com/Resi_freak/status/1316086450807545857?ref_src=twsrc%5Etfw">October 13, 2020</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<h3>Tweet o największym natężeniu radości</h3>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en"><a href="https://twitter.com/hashtag/iPhone12?src=hash&amp;ref_src=twsrc%5Etfw">#iPhone12</a> has my heart…brilliant design👌🏻</p>
+<p>— vbaire (@vbaire_) <a href="https://twitter.com/vbaire_/status/1316081956996743168?ref_src=twsrc%5Etfw">October 13, 2020</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<h3>Tweet o największym natężeniu wstrętu</h3>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en"><a href="https://twitter.com/hashtag/iPhone12?src=hash&amp;ref_src=twsrc%5Etfw">#iPhone12</a> is crap, nothing new, just marketing bs. <a href="https://twitter.com/hashtag/AppleEvent?src=hash&amp;ref_src=twsrc%5Etfw">#AppleEvent</a> <a href="https://twitter.com/hashtag/AppleCensorsBelarus?src=hash&amp;ref_src=twsrc%5Etfw">#AppleCensorsBelarus</a></p>
+<p>— Alexey P (@palexey) <a href="https://twitter.com/palexey/status/1316070260563415043?ref_src=twsrc%5Etfw">October 13, 2020</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<h3>Tweet o największym natężeniu oczekiwania</h3>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">Finding it hard to get enthused about 5G. Have been using it for over a year and a half now. <a href="https://twitter.com/hashtag/iphone12?src=hash&amp;ref_src=twsrc%5Etfw">#iphone12</a></p>
+<p>— Jenneth Orantia (@jennethorantia) <a href="https://twitter.com/jennethorantia/status/1316065958448885762?ref_src=twsrc%5Etfw">October 13, 2020</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<h3>Tweet o największym natężeniu strachu</h3>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">Imagine stopping people from knowing the names of those who kill, torture and rape us in Belarus couldn’t be me, right <a href="https://twitter.com/Apple?ref_src=twsrc%5Etfw">@Apple</a> ? Instead of buying <a href="https://twitter.com/hashtag/iPhone12?src=hash&amp;ref_src=twsrc%5Etfw">#iPhone12</a> learn about <a href="https://twitter.com/hashtag/AppleCensorsBelarus?src=hash&amp;ref_src=twsrc%5Etfw">#AppleCensorsBelarus</a></p>
+<p>— ruzzki (@Russ_kki) <a href="https://twitter.com/Russ_kki/status/1316072443539124224?ref_src=twsrc%5Etfw">October 13, 2020</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<h3>Tweet o najwyższym stopniu pobudzenia emocjonalnego</h3>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">Best phone ever, holy shit 😍😍❤️❤️ <a href="https://twitter.com/hashtag/iPhone12?src=hash&amp;ref_src=twsrc%5Etfw">#iPhone12</a> <a href="https://twitter.com/hashtag/AppleEvent?src=hash&amp;ref_src=twsrc%5Etfw">#AppleEvent</a></p>
+<p>— Chris Thompson (@F1Chris1965) <a href="https://twitter.com/F1Chris1965/status/1316066947700797440?ref_src=twsrc%5Etfw">October 13, 2020</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+</article>
+<article class="et_pb_post post-3477 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand category-styl-zycia tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-internecie tag-emocje-w-opiniach tag-monitoring-mediow" id="post-3477">
+<a class="entry-featured-image-url" href="/doritos-cheetos-lays-crunchips-czipsy-na-facebooku/">
+<img alt="Doritos, Cheetos, Lays, Crunchips. Czipsy na Facebooku, czyli emocje na słono" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/09/doritos-cheetos-lays-crunchips-czipsy-na-facebooku-1080x628.jpg" srcset="/wp-content/uploads/2020/09/doritos-cheetos-lays-crunchips-czipsy-na-facebooku-1080x628.jpg 1080w, /wp-content/uploads/2020/09/doritos-cheetos-lays-crunchips-czipsy-na-facebooku-980x513.jpg 980w, /wp-content/uploads/2020/09/doritos-cheetos-lays-crunchips-czipsy-na-facebooku-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/doritos-cheetos-lays-crunchips-czipsy-na-facebooku/">Doritos, Cheetos, Lays, Crunchips. Czipsy na Facebooku, czyli emocje na słono</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">wrz 24, 2020</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>Doritos, czy Cheetos? Przysnacki czy Lays? Czipsy na Facebooku, czyli emocje na słono. Tym razem w ramach cyklicznych badań firmowych profili w tym kanale social media, postanowiliśmy na tapetę wziąć oficjalne strony pięciu popularnych marek słonych przekąsek. W przypadku jednej marki mówimy bardziej o chrupkach, ale profil jest na tyle popularny, że warto wziąć go pod uwagę i porównać z konkurencją. W skrócie:<br/>
+</strong></p>
+<ul>
+<li><strong>Profile Lays i Crunchips konsekwentnie tracą fanów na Facebooku (odpowiednio -1175 i -327 w okresie styczeń-sierpień 2020);<br/>
+</strong></li>
+<li><strong>Lays mimo strat w fanach w tym kanale komunikacji cechuje największa popularność postów (liczona sumą interakcji);</strong></li>
+<li><strong>Profil </strong><strong>Doritos po niesmaku wywołanym olejem palmowym w 2018 r. (różnica w składzie w Polsce w porównaniu z innymi krajami) od kwietnia właściwie nieaktywny (brak postów do końca sierpnia i tylko 1 we wrześniu). Mimo reklamowego sloganu „Wjeżdżamy na grubo”;<br/>
+</strong></li>
+<li><strong>Marka Przysnacki miała w analizowanym okresie najwyższe natężenie negatywnego sentymentu w komentarzach internautów, a Cheetos najwyższe jeśli chodzi o pozytywny.</strong></li>
+<li><strong>Najczęściej pojawiające się negatywne konteksty w dyskusjach o wszystkich pięciu markach to powietrze w paczkach, nierówna jakość i problemy z dostępnością produktu.</strong></li>
+</ul>
+<h2>Czipsy na Facebooku. Popularność profili</h2>
+<p>Czipsy i chrupki do najzdrowszych przekąsek nie należą. Mają jednak swoje grono koneserów. Profile badanych przez nas pięciu marek nie są może bardzo popularne, ale w dyskusjach pod postami nie brakuje emocji. Kluczem przy doborze profili do badań była przede wszystkim popularność profili czipsowych marek na Facebooku. Przebadaliśmy więc pięć z nich: Doritos, Lays, Cheetos, Crunchips i Przysnacki.</p>
+<p>Za tym wyborem stał jeszcze jeden aspekt. Pierwsza z marek zmagała się od momentu wejścia na nasz rynek pod koniec 2018 r. z kryzysem. Był on związany ze składem przysmaku, który różnił się od oryginału. Druga i trzecia z wymienionych marek to przekąski bardzo popularne w sieci. Nie można tego powiedzieć o marce Crunchips, która szeroko komentowana w badanym okresie (styczeń-sierpień 2020 r.) nie była. Ostatni producent, tj. Przysnacki, kojarzy się na pierwszy rzut oka z Polską. Nie jest to jednak nasza marka, ponieważ właścicielem jest niemiecki Intersnack. Czy zobaczyliśmy zróżnicowane wyniki analiz emocji i sentymentu w opiniach internautów?</p>
+<p>Biorąc pod uwagę liczbę opinii na Facebooku w badanym okresie, najwięcej odnosiło się do marki Lays (ponad 4 tys. komentarzy). Na drugim miejscu Doritos – marka, która za sprawą wizerunkowego kryzysu w 2018 i 2019 r. była komentowana w tym roku częściej niż lider zestawienia, ale tylko w pierwszych miesiącach. Od kwietnia do sierpnia wpisów wokół tej marki jak na lekarstwo, profil jest – w porównaniu do reszty – martwy. Chrupki Cheetos intensywnie komentowano w pierwszej połowie roku, z kolei Crunchips jedynie w okresie kwiecień-maj (za sprawą „<em>Koncertu dla bohaterów”</em> w player.pl). Ostatnia w zestawieniu marka Przysnacki opiniowana była najrzadziej (znaleźliśmy zaledwie nieco ponad 200 komentarzy).</p>
+<p>Szczegółowy rozkład aktywności internautów wokół czipsów na Facebooku pokazuje poniższy wykres. Dane obejmują nie tylko opinie na profilach badanych marek, ale też poza nimi w tym social media.</p>
+<p><a href="/wp-content/uploads/2020/09/doritos-cheetos-lays-chipsy-chrupki-facebook.png"><img alt="doritos cheetos frito lay lays fromage stix przysnacki czipsy na facebooku" class="aligncenter wp-image-3478 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/09/doritos-cheetos-lays-chipsy-chrupki-facebook.png" srcset="/wp-content/uploads/2020/09/doritos-cheetos-lays-chipsy-chrupki-facebook.png 1280w, /wp-content/uploads/2020/09/doritos-cheetos-lays-chipsy-chrupki-facebook-512x288.png 512w, /wp-content/uploads/2020/09/doritos-cheetos-lays-chipsy-chrupki-facebook-1024x576.png 1024w, /wp-content/uploads/2020/09/doritos-cheetos-lays-chipsy-chrupki-facebook-768x432.png 768w" width="1280"/></a></p>
+<h2>Aktywność marek i aktywność internautów – porównanie</h2>
+<p>Biorąc pod uwagę liczbę opinii na Facebooku w badanym okresie, najwięcej odnosiło się do marki Lays (ponad 4 tys. komentarzy). Na drugim miejscu Doritos. Marka, która po I kwartale, gdy była komentowana częściej od Lays, praktycznie zaprzestała aktywności. Od kwietnia do sierpnia wpisów wokół tej marki jak na lekarstwo. Chrupki Cheetos intensywnie komentowano w pierwszej połowie roku, z kolei Crunchips jedynie w okresie kwiecień-maj. Ostatnia w zestawieniu marka Przysnacki opiniowana była najrzadziej (znaleźliśmy zaledwie nieco ponad 200 komentarzy).</p>
+<p>Poniższe zestawienie poglądowo ukazuje, jak wyglądała w poszczególnych miesiącach 2020 r. aktywność internautów na tle aktywności marek w obrębie stron na Facebooku. Zwracamy od razu uwagę na niemal całkowity zanik aktywności marki i konsumentów na fanpage’u Doritosów. Jeszcze w roku 2019 profil był prowadzony, obecnie nic się tam ciekawego nie dzieje.</p>
+<p><a href="/wp-content/uploads/2020/09/doritos-cheetos-przysnacki-chipsy-chrupki-olej-palmowy.png"><img alt="doritos doritosy facebook profile cheetos crunchips przysnacki lays frito lay" class="aligncenter wp-image-3483 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/09/doritos-cheetos-przysnacki-chipsy-chrupki-olej-palmowy.png" srcset="/wp-content/uploads/2020/09/doritos-cheetos-przysnacki-chipsy-chrupki-olej-palmowy.png 1280w, /wp-content/uploads/2020/09/doritos-cheetos-przysnacki-chipsy-chrupki-olej-palmowy-512x288.png 512w, /wp-content/uploads/2020/09/doritos-cheetos-przysnacki-chipsy-chrupki-olej-palmowy-1024x576.png 1024w, /wp-content/uploads/2020/09/doritos-cheetos-przysnacki-chipsy-chrupki-olej-palmowy-768x432.png 768w" width="1280"/></a></p>
+<p>Na pochwałę zasługują w tym kontekście też marki Przysnacki, Lays i Cheetos. Aktywnie wchodziły w analizowanych miesiącach w interakcję i odpowiadały na opinie konsumentów.</p>
+<h2>Emocje słone, czy słodkie? Jaki sentyment?</h2>
+<p>Jeśli chodzi o natężenie sentymentu, markę Przysnacki cechuje najwyższy poziom tego negatywnego. Oczywiście nie mówimy tu o wielkiej krytyce. W skali od 0 do 100% w przypadku tego profilu mamy do czynienia z poziomem 15%. Najmniejsze natężenie negatywnego sentymentu widzimy z kolei przy marce Cheetos. To jednocześnie ponadprzeciętny poziom natężenia pozytywnego sentymentu opinii (tylko w przypadku tej marki mamy tu poziom powyżej 50%).</p>
+<p>Wszystkie analizowane marki pod względem natężenia pozytywnego sentymentu nie odbiegają od siebie. Są to poziomy różniące się zaledwie kilkoma punktami procentowymi. Przekaz jest więc zdecydowanie pozytywny dla wszystkich profili.</p>
+<p><a href="/wp-content/uploads/2020/09/doritos-olej-palmowy-sentyment-facebook-cena-jakosc.png"><img alt="doritos skład doritosy doritos polska czipsy na facebooku stix frito lay przekąski" class="aligncenter wp-image-3493 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/09/doritos-olej-palmowy-sentyment-facebook-cena-jakosc.png" srcset="/wp-content/uploads/2020/09/doritos-olej-palmowy-sentyment-facebook-cena-jakosc.png 1280w, /wp-content/uploads/2020/09/doritos-olej-palmowy-sentyment-facebook-cena-jakosc-512x288.png 512w, /wp-content/uploads/2020/09/doritos-olej-palmowy-sentyment-facebook-cena-jakosc-1024x576.png 1024w, /wp-content/uploads/2020/09/doritos-olej-palmowy-sentyment-facebook-cena-jakosc-768x432.png 768w" width="1280"/></a></p>
+<p>Ciekawiej prezentuje się rozłożenie sentymentu na czynniki. Patrząc głębiej na cztery z ośmiu emocji podstawowych, jakie badamy <a href="https://sentimenti,pl/oferta">narzędziami Sentimenti</a>, widać dopiero różnice pomiędzy słonymi markami. Każdą z marek pod kątem złości, radości, oczekiwania i emocji zaufania zbadaliśmy względem średnich wartości tych emocji dla czterech pozostałych. Czyli mówiąc krótko – dana marka na tle pozostałych czterech. Jakie wnioski?</p>
+<p><a href="/wp-content/uploads/2020/09/doritos-cheetos-przysnacki-lays-emocje-facebook-chipsy.png"><img alt="doritos polska wszystkie smaki emocje podstawowe lays pl" class="aligncenter wp-image-3494 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/09/doritos-cheetos-przysnacki-lays-emocje-facebook-chipsy.png" srcset="/wp-content/uploads/2020/09/doritos-cheetos-przysnacki-lays-emocje-facebook-chipsy.png 1280w, /wp-content/uploads/2020/09/doritos-cheetos-przysnacki-lays-emocje-facebook-chipsy-512x288.png 512w, /wp-content/uploads/2020/09/doritos-cheetos-przysnacki-lays-emocje-facebook-chipsy-1024x576.png 1024w, /wp-content/uploads/2020/09/doritos-cheetos-przysnacki-lays-emocje-facebook-chipsy-768x432.png 768w" width="1280"/></a></p>
+<p>Najlepiej na tle konkurencji wypada Crunchips, potem Cheetos, a następnie Doritos. To, co cechuje Lays czy Przysnacki, to średnio 13-15 pkt. proc. niższe stężenie radości i zaufania. Najbardziej pozytywnie wyróżnia się tu tylko i wyłącznie Crunchips. Nie tylko sporą różnicą na plus, jeśli chodzi o emocje pozytywne. Również o wiele niższym poziomem złości, tj. o 36% niższe stężenie tej skrajnej negatywnej emocji w stosunku do konkurencji.</p>
+<h2>Krytyka internautów, czyli co marki robią źle?</h2>
+<p>Poniższe zestawienie to najczęściej pojawiające się w opiniach negatywnych konteksty.<em><br/>
+</em></p>
+<h3>Doritos</h3>
+<p><em>Traktowanie Polski jako kraju gorszego, gdzie można sprzedawać gorszej jakości produkt, który nie przypomina niczym odpowiedników w innych krajach, najgorszy tego typu produkt na rynku PL, Doritosy nazywane wprost „syfem”, irytujące reklamy na YouTube, problem ze smakiem produktu, dużo powietrza, mało produktu. Główna krytyka to jakość i smak oraz nadal kwestie składników i tłuszczu.<br/>
+</em></p>
+<h3>Cheetos</h3>
+<p><em>Główny, powtarzający się zarzut to paczki nazywane poduszką powietrzną (dużo powietrza, mało produktu, duża paczka w połowie pusta, różnice w gramaturze produktu). Poza tym kwestia smaku („ocet z cukrem”), wątpliwości internautów co do organizowanego konkursu, „złodzieje danych osobowych”.<br/>
+</em></p>
+<h3>Crunchips</h3>
+<p><em>Usuwanie nieprzychylnych komentarzy, „dramat z jakością”, różnice w jakości czipsów, rozbieżności w przekazie PR (promowanie wysiłku fizycznego, samodyscypliny, rozwijania wiedzy) i jednocześnie zachęcanie do kupowania niezdrowego produktu, duże kawałki zbrylonych przypraw w paczkach.<br/>
+</em></p>
+<h3>Lay’s</h3>
+<p><em>Maxxy, które kaleczą buzię, brak pełnej oferty w sklepach, wysoka cena za niewielką ilość produktu, produkt połamany, nierówna jakość produktu, słaba jakość nowych smaków, brak starych smaków lubianych przez klientów, szkodliwość dla zdrowia, tłuszcz.<br/>
+</em></p>
+<h3>Przysnacki</h3>
+<p><em>Zbyt duża ilość powietrza w paczkach, wpadki jakościowe (dziwne znaleziska w paczkach, w tym zbrylone przyprawy), przesolenie produktu produkt zbyt twardy, problemy z gramaturą paczek, słaba dostępność w sklepach.</em></p>
+</article>
+<article class="et_pb_post post-3454 post type-post status-publish format-standard has-post-thumbnail hentry category-okiem-badacza category-sentibrand category-styl-zycia tag-analiza-emocji tag-analiza-sentymentu tag-analiza-tekstu tag-emocje-w-tekscie" id="post-3454">
+<a class="entry-featured-image-url" href="/janina-bak-statystycznie-rzecz-biorac-ksiazka-blog/">
+<img alt="Janina Bąk – „Statystycznie rzecz biorąc”, czyli panga biznesu pod lupą" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/09/janina-bak-statystyczne-rzecz-biorac-1080x628.jpg" srcset="/wp-content/uploads/2020/09/janina-bak-statystyczne-rzecz-biorac-1080x628.jpg 1080w, /wp-content/uploads/2020/09/janina-bak-statystyczne-rzecz-biorac-980x513.jpg 980w, /wp-content/uploads/2020/09/janina-bak-statystyczne-rzecz-biorac-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/janina-bak-statystycznie-rzecz-biorac-ksiazka-blog/">Janina Bąk – „Statystycznie rzecz biorąc”, czyli panga biznesu pod lupą</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">wrz 21, 2020</span> | <a href="/category/okiem-badacza/" rel="category tag">Okiem badacza</a>, <a href="/category/sentibrand/" rel="category tag">SentiBrand</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><b>Janina Bąk na statystyce zna się jak mało kto. Jednak dzięki posiadaniu sporej dawki talentu literackiego i niezwykłej osobowości potrafi podzielić się wiedzą w wyjątkowy sposób. Czasami chciałoby się powiedzieć: jest tak wiele pytań i tak mało odpowiedzi. I wtedy wchodzi Ona – cała na biało – i wszystko staje się jasne!<br/>
+</b></p>
+<h2>Janina Bąk statystycznie rzecz biorąc</h2>
+<p>Nie jesteśmy statystycznymi Polakami – czytamy. Przeczytaliśmy zatem <a href="https://www.statystycznie.com/">książkę</a> “<em>Statystycznie rzecz biorąc, czyli ile trzeba zjeść czekolady, żeby dostać Nobla?</em>”. Wszyscy. W tym nasza Pani Mądralińska, <a href="/zespol/katarzyna-maszyna">Katarzyna – Maszyna</a>, sztuczna inteligencja do pomiaru prawdziwych emocji.  Wdrożenie jej do działania trwało niestety dłużej, niż sam proces analizy. Tak ze 3 lata wytężonej pracy tęgich głów, w ramach projektu <a href="/oferta">Sentimenti</a>. Kaśka przeczytała całą książkę, akapit po akapicie, a zajęło jej to jakieś pół minuty…</p>
+<p>No i zobaczcie, jaka to dobra książka (wykres 1) – w wynikach analizy emocji niepodzielnie króluje zaskoczenie. Niewiele mniejsze jest poczucie oczekiwania, co zagwarantuje szanownym czytelniczkom i czytelnikom równie wyraziste wrażenia w trakcie lektury!  A wszystkie pozostałe 6 emocji na stabilnym, równym poziomie. Czyli co, statystyka może być zaskakująca i budować napięcie, niemal jak w thrillerze? Z taką autorką – z całą pewnością! Janina – jak sama o sobie pisze – to prawdziwa panga biznesu i komendant komedii.</p>
+<p>Janina Bąk to w ogóle postać nietuzinkowa i rozpoznawalna, o trzeźwym, acz mocno kpiarskim spojrzeniu na życie. By nieco więcej się o Niej dowiedzieć, wystarczy spojrzeć na blog <a href="https://janinadaily.com/">https://janinadaily.com/</a>. Tymczasem w świecie automatycznej inteligencji już sama fraza „Janina Bąk” (wykres 2) wzbudza niemal wyłącznie pozytywne emocje. Ileż w tym zapytaniu oczekiwania, ileż zaufania, a ile radości! Dobra, ten ciutek wstrętu to chyba przez konotację z bąkowatymi, ale bierzemy to na karb, że maszyna nie wie, iż w języku polskim nie tłumaczymy nazwisk. Za to sentyment?! Absolutnie pozytywny! Śmiech wywołują tu nawet tytuły rozdziałów. Przy takim więc nagromadzeniu humoru nie może być inaczej.</p>
+<h2>Poczytaj mi Janino! Książka pełna emocji</h2>
+<p>Książka bez wątpienia wzbudzi wiele radości u tych, którzy nie lubią liczb. Dzięki całej serii świetnych ciekawostek czytelnik przekona się, że statystyka przydaje się do wszystkiego i nie jest taka zła. Samo „<em>Statystycznie rzecz biorąc…</em>” to w zawartych emocjach praktycznie to samo, co w przypadku poprzedniego zapytania. Wstręt? No cóż, statystyka – ludzie miewają różne skojarzenia.</p>
+<p><a href="/wp-content/uploads/2020/09/janina-bak-statystycznie-ksiazka-blog-emocje.png"><img alt="janina bąk statystycznie książka emocje blog tedx" class="aligncenter wp-image-3462 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/09/janina-bak-statystycznie-ksiazka-blog-emocje.png" srcset="/wp-content/uploads/2020/09/janina-bak-statystycznie-ksiazka-blog-emocje.png 1280w, /wp-content/uploads/2020/09/janina-bak-statystycznie-ksiazka-blog-emocje-512x288.png 512w, /wp-content/uploads/2020/09/janina-bak-statystycznie-ksiazka-blog-emocje-1024x576.png 1024w, /wp-content/uploads/2020/09/janina-bak-statystycznie-ksiazka-blog-emocje-768x432.png 768w" width="1280"/></a></p>
+<p>Jeden z poruszanych w książce problemów szczególnie zaintrygował, w sensie Katarzynę – Maszynę, nie nas. A mianowicie „<em>czy po seksie będziemy opanierowani w banknotach niczym krokiet w bułce</em>”. Odpowiedzi na to pytanie nie będziemy raczej zdradzać, ale warto zapoznać się, jak akcja tego wątku się rozwija. Co tam się dzieje! Jakie (emocjonalne) zwroty akcji! To po prostu trzeba przeczytać.</p>
+<p><a href="/wp-content/uploads/2020/09/janina-bak-ksiazka-analiza-rozdzialu.png"><img alt="" class="aligncenter wp-image-3457 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/09/janina-bak-ksiazka-analiza-rozdzialu.png" srcset="/wp-content/uploads/2020/09/janina-bak-ksiazka-analiza-rozdzialu.png 1280w, /wp-content/uploads/2020/09/janina-bak-ksiazka-analiza-rozdzialu-512x288.png 512w, /wp-content/uploads/2020/09/janina-bak-ksiazka-analiza-rozdzialu-1024x576.png 1024w, /wp-content/uploads/2020/09/janina-bak-ksiazka-analiza-rozdzialu-768x432.png 768w" width="1280"/></a></p>
+<p>Z każdym kolejnym rozdziałem widać, że autorka ma swój unikalny styl i klimat, których się trzyma. Wszystko z przymrużeniem oka! Lektura przyprawiła nas wielokrotnie o ból brzucha. Spokojnie! To ze śmiechu. Czy czujecie te same emocje? Jeśli nie, to sięgnijcie po książkę Janiny Bąk, a poczujecie je. Być może nawet mocniej. A jeśli ktoś nie lubi czytać lub boi się tych 300 stron… uspokajamy! Lektura pochłania i czyta się ją migiem. Statystycznie rzecz biorąc. 😊</p>
+</article>
+<article class="et_pb_post post-3327 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand tag-analiza-emocji tag-analiza-sentymentu tag-analiza-tekstu tag-emocje-w-polityce tag-politycy tag-polityka" id="post-3327">
+<a class="entry-featured-image-url" href="/zaprzysiezenie-duda-inauguracja-2020-oredzie-sejm/">
+<img alt="Zaprzysiężenie Andrzeja Dudy. Emocje i potencjał pobudzeniowy orędzia politycznego" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/08/inauguracja-duda-2020-oredzie-zgromadzenie-narodowe-1080x628.jpg" srcset="/wp-content/uploads/2020/08/inauguracja-duda-2020-oredzie-zgromadzenie-narodowe-1080x628.jpg 1080w, /wp-content/uploads/2020/08/inauguracja-duda-2020-oredzie-zgromadzenie-narodowe-980x513.jpg 980w, /wp-content/uploads/2020/08/inauguracja-duda-2020-oredzie-zgromadzenie-narodowe-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/zaprzysiezenie-duda-inauguracja-2020-oredzie-sejm/">Zaprzysiężenie Andrzeja Dudy. Emocje i potencjał pobudzeniowy orędzia politycznego</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">sie 10, 2020</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a></p><p><strong>Zaprzysiężenie Andrzeja Dudy już za nami, prezydent rozpoczął tym samym drugą, ostatnią już kadencję w roli głowy państwa. Z tym faktem wiąże się wygłoszenie przemówienia, które określa ramy programowe polityka. Postanowiliśmy sprawdzić, jakie emocje zawarte były w orędziu wygłoszonym w Sejmie przez Zgromadzeniem Narodowym.</strong></p>
+<h2><strong>Zaprzysiężenie prezydenta Andrzeja Dudy. Inauguracja kadencji<br/>
+</strong></h2>
+<p><a href="https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/art,1137,oredzie-prezydenta-przed-zgromadzeniem-narodowym.html">Pełną treść orędzia</a> pobraliśmy z oficjalnej strony internetowej Kancelarii Prezydenta. Głowa państwa wygłosiła je 6 sierpnia w Sejmie. Analiza emocji przemówienia Andrzeja Dudy w Sejmie pokazała, że w jego treści dominują te pozytywne związane z radością, zaufaniem i, co ciekawe, oczekiwaniem. Zanim jednak przejdziemy do samych emocji, zobaczmy, jakie główne wątki programowe nakreślił Andrzej Duda. Skupiliśmy się tu na stwierdzeniach liczących 3 słowa i więcej.</p>
+<p>Jak widać głowa państwa skupiała się głownie na rozwoju. Była mowa przede wszystkim o inwestycjach strategicznych – w więzi euroatlantyckie, zdrowie, wojsko i infrastrukturę. Zaznaczyło się też utrzymanie programów społecznych, co było najczęściej podkreślanym tematem przez Andrzeja Dudę w całej kampanii prezydenckiej.</p>
+<p><img alt="koalicja polskich spraw zielona energia przekop mierzei wiślanej centralny port komunikacyjny służba zdrowia fundusz inwestycji lokalnych" class="aligncenter wp-image-3328 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-program.png" srcset="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-program.png 1280w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-program-512x288.png 512w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-program-1024x576.png 1024w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-program-768x432.png 768w" width="1280"/></p>
+<h2><strong>Orędzie prezydenta 2020. Sentyment i pobudzenie<br/>
+</strong></h2>
+<p>Patrząc na sentyment treści, widać, że całe przemówienie niosło ze sobą zdecydowanie pozytywny przekaz. Było też mimo wszystko stonowane i spokojne, o czym świadczy natężenie pobudzenia emocjonalnego (intensywności przeżywania emocji) poniżej progu 50% w skali 0-100. Prezydent zdecydował się zatem opowiedzieć pozytywną historię w sposób spokojny. Wykres pokazuje analizę wspomnianych wskaźników w podziale treści na poszczególne akapity. Najwyższą wartość pobudzenia emocjonalnego widzimy w tzw. puencie, czyli na zakończenie przemowy. Jest to jedyny moment, gdy przeżywanie emocji plasuje się powyżej średniej.</p>
+<p><img alt="portale informacyjne rodzaje emocji duda zgromadzenie narodowe sentimenti google trends" class="aligncenter wp-image-3329 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/08/oredzie-andrzej-duda-inauguracja-emocje-pozytywne-negatywne.png" srcset="/wp-content/uploads/2020/08/oredzie-andrzej-duda-inauguracja-emocje-pozytywne-negatywne.png 1280w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-inauguracja-emocje-pozytywne-negatywne-512x288.png 512w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-inauguracja-emocje-pozytywne-negatywne-1024x576.png 1024w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-inauguracja-emocje-pozytywne-negatywne-768x432.png 768w" width="1280"/></p>
+<p>W momencie tym prezydent mówił o godności. „<em>Polska to kraj wspaniałych ludzi. Gościnny, otwarty, piękny. Ze wspaniałą historią, z której jesteśmy dumni. Tej prawdy o Polsce i Polakach będziemy zdecydowanie bronić. To nasz obowiązek. To obowiązek Prezydenta Rzeczypospolitej!</em>” – mówi fragment wykazujący największy stopień pobudzenia.</p>
+<p>Akapity niosące jakiekolwiek emocje negatywne (których jak na lekarstwo), dotyczyły głównie liczby głosujących w 2020 r. w porównaniu do 2015 r. Prezydent wskazywał, że w poprzednich latach z frekwencją było znacznie gorzej.</p>
+<p>Innym niosącym niekorzystne emocje (głównie strach), był kryzys gospodarczy, który wymusza na władzy szybkie i odważne decyzje. Akapit mówiący o potrzebie inwestycji niósł ze sobą jednak nie tylko podwyższone natężenie strachu, ale też oczekiwania. Prezydent twierdził bowiem, że „<em>musimy wrócić na ścieżkę dynamicznego rozwoju na jakiej byliśmy przed pandemią. To jest dzisiaj wyzwanie dziejowe.</em>”</p>
+<h2><strong>Orędzie i emocje w nim zawarte. Akapity z negatywnymi emocjami<br/>
+</strong></h2>
+<p>Warto spojrzeć tylko na te akapity, które zawierały jakikolwiek negatywne stwierdzenia. Co jeszcze z mniej korzystnych kontekstów widzimy w treści? To emocja strachu pojawiająca się w kontekście samych wyborów. „<em>To były trudne wybory. Takich nigdy jeszcze w Polsce nie było: pandemia, ograniczenia, zawieszenie kampanii, zmiana kandydatów, przesunięcie terminu…</em>” – mówił Andrzej Duda.</p>
+<p><img alt="zgromadzenie narodowe zaprzysiężenie dudy 2020 skuter wodny emocje rodzaje" class="aligncenter wp-image-3331 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-emocje-negatywne.png" srcset="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-emocje-negatywne.png 1280w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-emocje-negatywne-512x288.png 512w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-emocje-negatywne-1024x576.png 1024w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-inauguracja-emocje-negatywne-768x432.png 768w" width="1280"/></p>
+<p>To, co rzuca się w oczy, to fakt, że akapit poruszający jakikolwiek niekorzystny temat każdorazowo tonowany był zdaniami wzbudzającymi oczekiwanie i nadzieje. Emocje te zatem w różnym natężeniu, ale współwystępują. Podsumowując, negatywne aspekty w przemówieniu dotyczyły: kryzysu gospodarczego spowodowanego koronawirusem oraz wyborów, które odbyły się w trudnym czasie oraz bezrobocie, które było przekleństwem ostatnich lat.</p>
+<h2><strong>Zaprzysiężenie Dudy. Treść orędzia w 2020 w porównaniu do 2015<br/>
+</strong></h2>
+<p>Choć natężeniem emocji na pierwszy rzut oka orędzia z 2020 i 2015 wydawało się nam być podobne, widoczne są pewne różnice. Analiza narzędziami Sentimenti wykazała, że w porównaniu z inauguracyjnym przemówieniem prezydenta w 2015 r., w 2020 r. było w treści więcej strachu i smutku. Andrzej Duda zaczynał jednak swoją drugą kadencję w nieco innych okolicznościach. Wspomniane wcześniej wątki dotyczące epidemii, kryzysu i trudności w przeprowadzeniu wyborów zaznaczyły się w emocjach. Smutku i strachu było więc ok. 10% więcej niż w 2015 r. Najmniejsze różnice widoczne były jedynie przy emocji związanej z oczekiwaniem.</p>
+<p><img alt="emocje podstawowe zgromadzenie narodowe andrzej duda 2015 2020 inauguracja analiza sentymentu" class="aligncenter wp-image-3334 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2020-2015.png" srcset="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2020-2015.png 1280w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2020-2015-512x288.png 512w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2020-2015-1024x576.png 1024w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2020-2015-768x432.png 768w" width="1280"/></p>
+<p>Choć natężeniem emocji na pierwszy rzut oka orędzia z 2020 i 2015 wydawało się nam być podobne, widoczne są pewne różnice. Analiza narzędziami Sentimenti wykazała, że w porównaniu z inauguracyjnym przemówieniem prezydenta w 2015 r., w 2020 r. było w treści więcej strachu i smutku. Andrzej Duda zaczynał jednak swoją drugą kadencję w nieco innych okolicznościach. Wspomniane wcześniej wątki dotyczące epidemii, kryzysu i trudności w przeprowadzeniu wyborów zaznaczyły się w emocjach. Smutku i strachu było więc ok. 10% więcej niż w 2015 r. Najmniejsze różnice widoczne były jedynie przy emocji związanej z oczekiwaniem.</p>
+<p>Poniżej analiza głównych wątków programowych z 2015 r. Było to przemówienie bardziej ogólne, bo zaczynało kadencję nowego prezydenta. Skupiało się głównie na skierowaniu uwagi na powiaty, podniesieniu jakości życia, gwarancji spokoju i szansach. To wszystko wzbudzało emocje oczekiwania i zaufania. W roku 2020 r. były to już jednak konkretniejsze plany i zamierzenia – głównie wielkie projekty inwestycyjne. Nie budzi zdziwienia też, ze oba przemówienia prezydenta – choć wygłoszone w odstępach 5 lat – mają wspólny mianownik. To duży ładunek emocjonalny – ładunek zaufania i oczekiwania.</p>
+<p><img alt="duda polska powiatowa służba zdrowia jakość życia wiek emerytalny rada rozwoju dobro narodu polskie szkolnictwo" class="aligncenter wp-image-3336 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2015-program.png" srcset="/wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2015-program.png 1280w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2015-program-512x288.png 512w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2015-program-1024x576.png 1024w, /wp-content/uploads/2020/08/oredzie-andrzej-duda-zgromadzenie-narodowe-2015-program-768x432.png 768w" width="1280"/></p>
+<h2><strong>Analiza emocji podstawowych pomocna przy pisaniu przemówień<br/>
+</strong></h2>
+<p>Wygłaszanie przemówień budzi emocje nie tylko w osobie, która je wygłasza. Przemówienie jest bowiem skierowane do odbiorcy i liczą się emocje, jakie niesie treść. Narzędzia Sentimenti mogą zatem stanowić wielką pomoc w procesie pisania atrakcyjnych treści do wygłaszania przed publiką. Bieżąca analiza i zmiana treści pozwalające na dopasowywanie treści przemówienia do emocji, jakie chcemy wywołać, to potężne narzędzie w rękach nie tylko polityka.</p>
+<p>Pisząc przemówienie nie należy abstrahować od roli emocji w tym procesie. <a href="/blog/tag/emocje-w-tekscie/">Emocje</a> sprzyjają bowiem zarówno gromadzeniu informacji przez odbiorcę. W tym przypadku analizowaliśmy treść orędzia polityka (z reguły wzbudzają oni emocje negatywne). Na tym przykładzie możemy udowodnić, że emocje mają w tej sferze duże znaczenie. Ostatnie lata przyniosły swoisty boom na emocje. Stały się one ważną częścią różnych sfer życia, ale przede wszystkim właśnie komunikacji medialnej.</p>
+<p>Dzięki naszym narzędziom osoba pisząca treść przemówienia może na bieżąco kontrolować, jakie emocje niesie ta treść. Autor ma zatem możliwość kontrolowania potencjału pobudzeniowego swojego przekazu. Tu przy okazji odsyłamy do naszego wpisu na temat <a href="/blog/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">wyzwalaczy emocji</a>.</p>
+<h3><a href="/oferta/emotywne-pozycjonowanie-reklam/"><strong>DOWIEDZ SIĘ WIĘCEJ O SENTIBRAND</strong></a></h3>
+<p><strong>Zobacz także:</strong></p>
+<ul>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe i monitorowanie wizerunku marki? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/niezadowoleni-lub-usatysfakcjonowani-klienci-na-facebooku-poczta-polska-i-inpost/">Niezadowoleni lub usatysfakcjonowani klienci na Facebooku; Poczta Polska i InPost</a></li>
+<li><a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">Emocje w słowach: wykorzystanie Sentimenti w sektorze reklamy i marketingu</a></li>
+<li><a href="/blog/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">Analiza emocji narzędziem wsparcia w inwestycjach finansowych</a></li>
+<li><a href="/blog/pandora-facebook-charms-przesylki-zwroty-negatywne-opinie/">Pandora pod ostrzałem na Facebooku. Burza o przesyłki i zwroty</a></li>
+</ul>
+</article>
+<article class="et_pb_post post-3262 post type-post status-publish format-standard has-post-thumbnail hentry category-sentibrand category-styl-zycia tag-analiza-danych tag-analiza-emocji tag-analiza-sentymentu tag-emocje-w-internecie tag-emocjonalny-audyt-marki tag-media-spolecznosciowe tag-sentibrand" id="post-3262">
+<a class="entry-featured-image-url" href="/lato-z-zenkiem-martyniuk-zenek-media-markt-sentimenti/">
+<img alt="Lato z Zenkiem. Kampania Media Markt wyszła śpiewająco, ale tylko w spotach" class="" height="675" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" src="/wp-content/uploads/2020/07/lato-z-zenkiem-martyniuk-akcent-emocje-media-markt-sentimenti-1080x628.jpg" srcset="/wp-content/uploads/2020/07/lato-z-zenkiem-martyniuk-akcent-emocje-media-markt-sentimenti-1080x628.jpg 1080w, /wp-content/uploads/2020/07/lato-z-zenkiem-martyniuk-akcent-emocje-media-markt-sentimenti-980x513.jpg 980w, /wp-content/uploads/2020/07/lato-z-zenkiem-martyniuk-akcent-emocje-media-markt-sentimenti-480x251.jpg 480w" width="1080"/> </a>
+<h2 class="entry-title"><a href="/lato-z-zenkiem-martyniuk-zenek-media-markt-sentimenti/">Lato z Zenkiem. Kampania Media Markt wyszła śpiewająco, ale tylko w spotach</a></h2>
+<p class="post-meta"> utworzone przez <span class="author vcard"><a href="/author/zespol-sentimenti/" rel="author" title="Wpisy Sentimenti Team">Sentimenti Team</a></span> | <span class="published">lip 27, 2020</span> | <a href="/category/sentibrand/" rel="category tag">SentiBrand</a>, <a href="/category/styl-zycia/" rel="category tag">Styl życia</a></p><p><strong>Lato z Zenkiem to nowa kampania reklamowa sieci sklepów Media Markt. Głównym bohaterem został Zenon Martyniuk – niekwestionowany król disco polo i osoba, której piosenki na pamięć zna większość (również ci, co go nienawidzą). Czy wykorzystanie tej rozpoznawalności opłaci się marce Media Markt? Z naszych analiz wynika, że kampania wzbudziła wśród internautów skrajne emocje z przewagą negatywnych.<br/>
+</strong></p>
+<h2><strong>Lato z Zenkiem. Media Markt i Zenek Martyniuk w nowej kampanii</strong></h2>
+<p>Kampania z Zenkiem Martyniukiem w roli głównej wystartowała z początkiem lipca. Są to krótkie spoty reklamowe promujące różne oferty, np. „<em>Z ekipą 70% taniej</em>”. Pierwsza odsłona promocji trwała do 15 lipca. Akcja jest tak intensywna, że z trudem szukać osoby, która nie widziała / słyszała reklamowego spotu z Zenkiem choćby jeden raz.</p>
+<p><em>– Na współpracę z panem Zenkiem Martyniukiem zdecydowaliśmy się z wielu powodów. Istotna była dla nas nie tylko rozpoznawalność i ogólna sympatia, jaką cieszy się gwiazdor, ale także jego autentyczność i naturalność na scenie oraz poza nią. Jesteśmy przekonani, że pozytywna energia naszej gwiazdy zachęci do wizyty w naszych sklepach wszystkich tych, którym w duszy gra muzyka. Ta muzyka w wakacyjne dni grać może na najbardziej nowoczesnym sprzęcie w bardzo przystępnych cenach – </em>informuje nas dział marketingu sieci Media Markt. Poniżej jedna z kreacji.</p>
+<p><strong>LATO Z ZENKIEM – Z EKIPĄ DO 70% TANIEJ – ZOBACZ REKLAMĘ</strong></p>
+<p><iframe allowfullscreen="allowfullscreen" frameborder="0" height="100%" src="https://www.youtube.com/embed/YycwBd7Xiqs" width="100%">&lt;span style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" data-mce-type="bookmark" class="mce_SELRES_start"&gt;﻿&lt;/span&gt;&lt;span style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" data-mce-type="bookmark" class="mce_SELRES_start"&gt;﻿&lt;/span&gt;</iframe></p>
+<p>Aby zbadać, jakie emocje wzbudziła w internautach nowa kampania, postanowiliśmy do <a href="/oferta">narzędzi Sentimenti</a> wrzucić dyskusję na ten temat z całego lipca. Wypowiedzi nie było zbyt wiele (niespełna 3,3 tys. opinii stricte dotyczących tematu, czyli wokalista + reklamowana marka). Taka liczba wzmianek wystarczy jednak do zmierzenia natężenia emocji. Poniżej efekt w podziale na 5 podstawowych grup miejsc dyskusji. Pod lupę wzięliśmy standardowo zarówno social media, jak i portale informacyjne.</p>
+<p>Odnośnie metodologii – zbadane wypowiedzi pochodzą z monitoringu publicznych wypowiedzi z dwóch dostępnych na rynku popularnych narzędzi (aby zwiększyć szczelność pozyskanego do analizy materiału). Warto przy tej okazji zaznaczyć, że badane opinie – biorąc pod uwagę ogromne zasięgi tego typu kampanii – nie są reprezentatywne. Z kolei ich autorzy stanowią jedynie niewielką część docelowej grupy.</p>
+<h2><strong>Jakie są emocje? Analiza mediów i nacechowanie wypowiedzi<br/>
+</strong></h2>
+<p>Wynikiem analizy będą emocje podstawowe – w tym wypadku wybraliśmy trzy z ośmiu. Większe natężenie radości odnotowaliśmy jedynie w przypadku kanału YouTube i dyskusji pod filmami. Najgorzej sprawa się ma na Twitterze, gdzie średnie natężenie radości dla całego badanego okresu (1-25 lipca 2020 r.) wyniosła zaledwie 16%. To na Twitterze najbardziej też krytykowano nową kampanię Media Markt. Przy większości badanych źródeł mamy sporą dawkę emocji zaskoczenia w przedziałach między 44-46% (w skali od 0 do 100).</p>
+<p><a href="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-sentimenti.png"><img alt="media markt lato z zenkiem emocje w sieci sentimenti big data martyniuk piosenki" class="aligncenter wp-image-3264 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-sentimenti.png" srcset="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-sentimenti.png 1280w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-sentimenti-512x288.png 512w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-sentimenti-1024x576.png 1024w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-sentimenti-768x432.png 768w" width="1280"/></a></p>
+<p>Aby bardziej zrozumieć, co w badanym okresie zaszło, warto zerknąć na wyniki badania naszymi narzędziami do analizy sentymentu. Od początku kampanii „<em>Lato z Zenkiem</em>” cały czas spada natężenie emocji pozytywnych, rośnie za to natężenie tych niekorzystnych. W okresie 1-25 lipca natężenie średnie sentymentu negatywnego wzrosło tu o ponad 60%! Trend jest zatem wyraźnie zarysowany (wykres prezentuje dane średnie dla okresów pięciodniowych).</p>
+<p><a href="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-sentimenti-negatywne.png"><img alt="sentimenti media markt zenek martyniuk akcent social listening monitoring mediów martyniuk wiek" class="aligncenter wp-image-3265 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-sentimenti-negatywne.png" srcset="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-sentimenti-negatywne.png 1280w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-sentimenti-negatywne-512x288.png 512w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-sentimenti-negatywne-1024x576.png 1024w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-sentimenti-negatywne-768x432.png 768w" width="1280"/></a></p>
+<p>Nie inaczej jest, jeśli spojrzymy na dokładniejszy wykres trendu sentymentu negatywnego i pozytywnego. Warto jednak zauważyć, że poziom nasycenia emocjami nie jest bardzo wysoki (nie przekracza bariery 50%). Jest to więc krytyka, ale w większości przypadków umiarkowana, zależna stricte od doboru słownictwa. Wykres danych dziennych również zarysowuje wzrostowy trend dla emocji negatywnych. Jak widać, śpiewająco nie jest… I tu na marginesie warto wspomnieć, że w efekcie kampanii negatywne opinie pojawiły się również na portalu pracowniczym GoWork.pl.</p>
+<p><a href="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-negatywne.png"><img alt="lato z zenkiem media markt emocje krytyka żenada disco polo sentimenti roztańczony narodowy monitoring mediów narzędzia" class="aligncenter wp-image-3263 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-negatywne.png" srcset="/wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-negatywne.png 1280w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-negatywne-512x288.png 512w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-negatywne-1024x576.png 1024w, /wp-content/uploads/2020/07/media-markt-zenek-lato-z-zenkiem-emocje-negatywne-768x432.png 768w" width="1280"/></a></p>
+<h2><strong>Reakcje i analiza kontekstów dyskusji w sieci – emocje w reklamie<br/>
+</strong></h2>
+<p>Na koniec w ramach ciekawostki warto pokazać, jak wyglądały w badanym okresie reakcje w social media. Sprawdziliśmy więc występowanie TOP 50 emoji (reakcji) w dyskusji na temat Zenka Martyniuka i Media Markt. Wygląda na to, że większości przekaz reklamowy nie przypadł do gustu…<a href="/wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-reakcje-social-media.png"><img alt="zenek martyniuk media markt sentimenti emoji reakcje monitoring social media akcent koncerty" class="aligncenter wp-image-3269 size-full" decoding="async" height="1080" loading="lazy" sizes="auto, (max-width: 1920px) 100vw, 1920px" src="/wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-reakcje-social-media.png" srcset="/wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-reakcje-social-media.png 1920w, /wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-reakcje-social-media-512x288.png 512w, /wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-reakcje-social-media-1024x576.png 1024w, /wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-reakcje-social-media-768x432.png 768w, /wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-reakcje-social-media-1536x864.png 1536w" width="1920"/></a></p>
+<p>Bez wątpienia warto docenić uwagę marki Media Markt. Postawiła na znanego, ale kontrowersyjnego muzyka. Firma bez wątpienia jednak potrafi bardzo skutecznie docierać zaskakując brakiem sztampy w swoich kreacjach. Nie mamy jednak jako analitycy przekonania, że wszystko poszło zgodnie z planem (choć można było się tego spodziewać). Poniżej efekt analizy kontekstów dyskusji o wysokim natężeniu emocji ZŁOŚĆ. Dotyczy to całego zgromadzonego i poddanego badaniu materiału.</p>
+<p>Większość negatywnych stwierdzeń dotyczy bezpośrednio muzyka i reklamy (beznadziejna, prostacka, durna, bez gustu, prymitywna, kretyńska, antyreklama). Jeśli chodzi o Zenka, internauci pisali o nim: kartonowy, prymitywny, żałosna kreatura, wykoślawiony, pisowski, tandetny, wybraniec prezesa, król badziewia oraz wiele innych. Pojawiła się również kilkanaście opinii mówiącej wprost o bojkocie marki i omijaniu jej szerokim łukiem.</p>
+<p><a href="/wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-dyskusja-w-sieci-kontekst.png"><img alt="zenek martyniuk koncerty wesele syna" class="aligncenter wp-image-3272 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-dyskusja-w-sieci-kontekst.png" srcset="/wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-dyskusja-w-sieci-kontekst.png 1280w, /wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-dyskusja-w-sieci-kontekst-512x288.png 512w, /wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-dyskusja-w-sieci-kontekst-1024x576.png 1024w, /wp-content/uploads/2020/07/zenek-martyniuk-lato-z-zenkiem-dyskusja-w-sieci-kontekst-768x432.png 768w" width="1280"/></a></p>
+<p>Żeby nie było, że całość odebrana została tylko negatywnie, spójrzmy również na to, co wzbudzało w internautach radość. Jak widać wiele tego nie mamy, a część kontekstów mimo wszystko była ironiczna. Czy ten case to kryzys? Na pewno nie. Bez wątpienia sieć sklepów przyciągnie wielu nowych klientów i prawdopodobnie nie zrazi tych, którzy dokonali już zakupu w przeszłości. Jeśli założeniem kampanii było to, by było głośno i by o marce mówiono, to ten cel bez wątpienia został zrealizowany.</p>
+<p><a href="/wp-content/uploads/2020/07/media-markt-radosc-lato-zenek-martyniuk-sentimenti.png"><img alt="media markt radość sentimenti analiza emocji plutchika koło emocji zona zenka martyniuka analiza mediów" class="aligncenter wp-image-3277 size-full" decoding="async" height="720" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="/wp-content/uploads/2020/07/media-markt-radosc-lato-zenek-martyniuk-sentimenti.png" srcset="/wp-content/uploads/2020/07/media-markt-radosc-lato-zenek-martyniuk-sentimenti.png 1280w, /wp-content/uploads/2020/07/media-markt-radosc-lato-zenek-martyniuk-sentimenti-512x288.png 512w, /wp-content/uploads/2020/07/media-markt-radosc-lato-zenek-martyniuk-sentimenti-1024x576.png 1024w, /wp-content/uploads/2020/07/media-markt-radosc-lato-zenek-martyniuk-sentimenti-768x432.png 768w" width="1280"/></a></p>
+<p>Analiza została przeprowadzona w oparciu o ofertę produktową SENTIBRAND. To kompleksowy monitoring mediów i monitoring marki wzbogacony o analizę nastrojów, emocji i sentymentu z użyciem sztucznej inteligencji i machine learning (z ang. uczenie maszynowe). To zaawansowana i oparta o naukę analiza sentymentu i emocji podstawowych, która stanowi idealne dopełnienie dla usług takich jak monitoring mediów społecznościowych, monitoring internetu czy marki w sieci.</p>
+<h3><a href="/oferta/emotywne-pozycjonowanie-reklam/"><strong>DOWIEDZ SIĘ WIĘCEJ O SENTIBRAND</strong></a></h3>
+<p><strong>Zobacz także:</strong></p>
+<ul>
+<li><a href="/blog/zarzadzanie-kryzysowe-kolo-emocji-strategia-emocje-negatywne/">Zarządzanie kryzysowe i monitorowanie wizerunku marki? Najlepiej za pomocą analizy emocji</a></li>
+<li><a href="/blog/niezadowoleni-lub-usatysfakcjonowani-klienci-na-facebooku-poczta-polska-i-inpost/">Niezadowoleni lub usatysfakcjonowani klienci na Facebooku; Poczta Polska i InPost</a></li>
+<li><a href="/blog/emocje-w-slowach-wykorzystanie-sentimenti-w-sektorze-reklamy-i-marketingu/">Emocje w słowach: wykorzystanie Sentimenti w sektorze reklamy i marketingu</a></li>
+<li><a href="/blog/analiza-emocji-narzedziem-wsparcia-w-inwestycjach-finansowych/">Analiza emocji narzędziem wsparcia w inwestycjach finansowych</a></li>
+<li><a href="/blog/wyzwalacze-emocji-sentimenti-slowa-mocy-public-relations/">Wyzwalacze emocji. Sentimenti jako wsparcie działań public relations</a></li>
+<li><a href="/blog/pandora-facebook-charms-przesylki-zwroty-negatywne-opinie/">Pandora pod ostrzałem na Facebooku. Burza o przesyłki i zwroty</a></li>
+</ul>
+</article>
+<div class="pagination clearfix">
+<div class="alignleft"><a href="/tag/analiza-emocji/page/11/">« Starsze wpisy</a></div>
+<div class="alignright"><a href="/tag/analiza-emocji/page/9/">Kolejne wpisy »</a></div>
+</div> </div>
+<div id="sidebar">
+<div class="et_pb_widget widget_text" id="text-2"> <div class="textwidget">
+</div>
+</div><div class="et_pb_widget widget_categories" id="categories-2"><h4 class="widgettitle">Kategorie</h4>
+<ul>
+<li class="cat-item cat-item-1191"><a href="/category/polityka-i-spoleczenstwo/">Polityka i społeczeństwo</a>
+</li>
+<li class="cat-item cat-item-1193"><a href="/category/styl-zycia/">Styl życia</a>
+</li>
+<li class="cat-item cat-item-1226"><a href="/category/badania-rynku/">Badania rynku</a>
+</li>
+<li class="cat-item cat-item-1121"><a href="/category/w-mediach/">W mediach</a>
+</li>
+<li class="cat-item cat-item-1149"><a href="/category/w-mediach/podcasty-pl/">Podcasty</a>
+</li>
+<li class="cat-item cat-item-1153"><a href="/category/konferencje/">Konferencje</a>
+</li>
+<li class="cat-item cat-item-582"><a href="/category/sentibrand/">SentiBrand</a>
+</li>
+<li class="cat-item cat-item-263"><a href="/category/sentistocks-pl/">SentiStocks</a>
+</li>
+<li class="cat-item cat-item-1055"><a href="/category/publikacje-naukowe/">Publikacje naukowe</a>
+</li>
+<li class="cat-item cat-item-24"><a href="/category/okiem-badacza/">Okiem badacza</a>
+</li>
+<li class="cat-item cat-item-434"><a href="/category/kategoryzacja-komentarzy/">Kategoryzacja komentarzy</a>
+</li>
+</ul>
+</div>
+<div class="et_pb_widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widgettitle">Ostatnie wpisy</h4>
+<ul>
+<li>
+<a href="/emocje-w-biotech/">Głębsze Spojrzenie na Emocje: Jak Firmy Bio-Tech Mogą Lepiej Rozumieć Odbiór Swojej Marki?</a>
+</li>
+<li>
+<a href="/jak-emocje-ksztaltuja-nasze-spojrzenie-na-wschodnich-sasiadow-analiza-mediow-spolecznosciowych-2024/">Jak emocje kształtują nasze spojrzenie na wschodnich sąsiadów? Analiza mediów społecznościowych 2024</a>
+</li>
+<li>
+<a href="/jezyk-i-emocje-w-roznorodnosci-co-pokazuja-dane/">Poznaj słowa, które budują mosty i te, które niszczą relacje społeczne – zaskakujące wyniki badań!</a>
+</li>
+<li>
+<a href="/analiza-emocji-w-debacie-prezydenckiej-harris-vs-trump-jak-sentimenti-mierzy-emocje-i-sentymenty/">Analiza emocji w debacie prezydenckiej Harris vs Trump: Jak Sentimenti mierzy emocje i sentymenty</a>
+</li>
+<li>
+<a href="/analiza-sentymentu-nie-powie-ci-prawdy/">Analiza sentymentu nie powie Ci prawdy</a>
+</li>
+</ul>
+</div> </div>
+</div>
+</div>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-5973" decoding="async" height="100" loading="lazy" src="/wp-content/uploads/2023/06/logo2.svg" title="logo2" width="100"/></span>
+</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p><strong>Sentimenti sp. z o.o.</strong><br/><span>ul. Święty Marcin 11/8</span><br/><span>61-803 Poznań, Poland</span><br/><a href="mailto:kontakt@sentimenti.pl"></a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_0_tb_footer et_pb_widget_area clearfix et_pb_widget_area_right et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_dark et_pb_sidebar_no_border">
+<div class="fwidget et_pb_widget widget_nav_menu" id="nav_menu-4"><div class="menu-menu-w-stopce-container"><ul class="menu" id="menu-menu-w-stopce"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6425" id="menu-item-6425"><a href="/o-nas/">O nas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6691" id="menu-item-6691"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6421" id="menu-item-6421"><a href="/kontakt/">Kontakt</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-6415" decoding="async" height="63" loading="lazy" src="/wp-content/uploads/2023/06/UE_EFRR-black.png" title="UE_EFRR-black" width="240"/></span>
+</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link et-social-facebook"><a class="icon et_pb_with_border" href="https://www.facebook.com/sentimentipl" target="_blank" title="Śledź na Facebook"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link et-social-twitter"><a class="icon et_pb_with_border" href="https://twitter.com/SENTIMENTIPL" target="_blank" title="Śledź na X"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li><li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link et-social-linkedin"><a class="icon et_pb_with_border" href="https://www.linkedin.com/company/sentimenti/" target="_blank" title="Śledź na LinkedIn"><span aria-hidden="true" class="et_pb_social_media_follow_network_name">Obserwuj</span></a></li>
+</ul>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_sidebar_1_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light et_pb_sidebar_no_border">
+<div class="et_pb_widget widget_nav_menu" id="nav_menu-7"><div class="menu-rodo-pl-container"><ul class="menu" id="menu-rodo-pl"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6418" id="menu-item-6418"><a href="/polityka-prywatnosci/" rel="privacy-policy">Polityka prywatności RODO</a></li>
+</ul></div></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_right et_pb_text_align_center-phone et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Design: <a href="https://ballaun.art/" rel="noopener" style="color: white;" target="_blank">ballaun.art</a></div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: index-->
+<div class="modal-cacsp-backdrop"></div>
+<div class="modal-cacsp-position">
+<div class="modal-cacsp-box modal-cacsp-box-info">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Używamy plików cookie, aby zapewnić prawidłowe działanie naszej strony internetowej i usług. Te pliki cookie są niezbędne i są ustawiane automatycznie. Chcielibyśmy również używać analitycznych plików cookie, aby zrozumieć, w jaki sposób wchodzisz w interakcję z naszą witryną i marketingowymi plikami cookie, aby zapewnić spersonalizowane treści i reklamy.
+Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików cookie zarówno do podstawowych, jak i nieistotnych celów. Kliknij „Ustawienia”, aby wybrać typy plików cookie, które chcesz włączyć lub wyłączyć. Więcej informacji znajdziesz w naszej Polityce prywatności RODO.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-settings" href="#">
+							Ustawienia						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+<div class="modal-cacsp-box modal-cacsp-box-settings">
+<div class="modal-cacsp-box-header">
+						Polityka Cookies					</div>
+<div class="modal-cacsp-box-content">
+						Wybierz, jakie pliki cookies chcesz zaakceptować. Twój wybór zostanie zachowany przez rok.													<a href="/polityka-prywatnosci/" rel="noopener noreferrer" target="_blank">
+								Przeczytaj naszą politykę cookie							</a>
+</div>
+<div class="modal-cacsp-box-settings-list">
+<ul>
+<li>
+<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+<span>Konieczne<br/>
+<span>Te pliki cookie nie są opcjonalne. Są one potrzebne do funkcjonowania strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</span>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics" href="#statistics">
+<span>Statystyka<br/>
+<span>Abyśmy mogli poprawić funkcjonalność i strukturę strony internetowej, na podstawie tego, jak strona jest używana.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="experience" href="#experience">
+<span>Doświadczenie<br/>
+<span>Aby nasza strona internetowa działała jak najlepiej podczas twojego przejścia na nią. Jeśli odrzucisz te pliki cookie, niektóre funkcje znikną ze strony internetowej.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+<li>
+<a class="modal-cacsp-toggle-switch" data-accepted-cookie="marketing" href="#marketing">
+<span>Marketing<br/>
+<span>Udostępniając swoje zainteresowania i zachowania podczas odwiedzania naszej strony, zwiększasz szansę na zobaczenie spersonalizowanych treści i ofert.</span>
+</span>
+<span>
+<span class="modal-cacsp-toggle">
+<span class="modal-cacsp-toggle-switch-handle"></span>
+</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="modal-cacsp-btns">
+<a class="modal-cacsp-btn modal-cacsp-btn-save" href="#">
+							Zapisz						</a>
+<a class="modal-cacsp-btn modal-cacsp-btn-accept-all" href="#">
+							Zaakceptuj wszystko						</a>
+</div>
+</div>
+</div>
+<!--googleon: index-->
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Basic:regular&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6Fc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Basic';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/basic/v18/xfu_0WLxV2_XKTN-6FE.woff2) format('woff2');}</style><script id="cookies-and-content-security-policy-cookie-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie.min.js?ver=2.41" type="text/javascript"></script>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" type="text/javascript"></script>
+<script id="jquery-js-after" type="text/javascript">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var cacsp_ajax_object = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"53e1f30221"};
+var cacspMessages = {"cacspReviewSettingsDescription":"Twoje ustawienia mog\u0105 uniemo\u017cliwi\u0107 ci obejrzenie tej tre\u015bci. Najprawdopodobniej masz wy\u0142\u0105czone Do\u015bwiadczenie.","cacspReviewSettingsButton":"Przegl\u0105daj swoje ustawienia","cacspNotAllowedDescription":"Ta tre\u015b\u0107 nie mo\u017ce by\u0107 wczytana, gdy\u017c nie jest dozwolona na witrynie.","cacspNotAllowedButton":"Skontaktuj si\u0119 z administratorem","cacspExpires":"365","cacspWpEngineCompatibilityMode":"0","cacspTimeout":"1000","cacspOptionDisableContentNotAllowedMessage":"0","cacspOptionGoogleConsentMode":"0","cacspOptionSaveConsent":"0"};
+//# sourceURL=cookies-and-content-security-policy-js-extra
+/* ]]> */
+</script>
+<script id="cookies-and-content-security-policy-js" src="/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js?ver=2.41" type="text/javascript"></script>
+<script id="cookies-and-content-security-policy-error-message-js" src="/wp-content/uploads/cookies-and-content-security-policy-error-message.js?ver=2.41&amp;mod%3D20260116142405" type="text/javascript"></script>
+<script id="df-script-js" src="/wp-content/plugins/filter-for-divi/df-script.js?ver=2.0.2" type="text/javascript"></script>
+<script id="pll_cookie_script-js-after" type="text/javascript">
+/* <![CDATA[ */
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=pl; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+/* ]]> */
+</script>
+<script id="divi-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"/wp-admin/admin-ajax.php","images_uri":"/wp-content/themes/Divi/images","builder_images_uri":"/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"2b0e8fb0d2","subscription_failed":"Prosz\u0119, sprawd\u017a pola poni\u017cej, aby upewni\u0107 si\u0119, \u017ce wpisa\u0142e\u015b poprawn\u0105 informacj\u0119.","et_ab_log_nonce":"ea219785f5","fill_message":"Prosz\u0119 wype\u0142ni\u0107 nast\u0119puj\u0105ce pola:","contact_error_message":"Napraw poni\u017csze b\u0142\u0119dy:","invalid":"Nieprawid\u0142owy adres e-mail","captcha":"Captcha","prev":"Przed","previous":"Poprzednie","next":"Dalej","wrong_captcha":"Wpisa\u0142e\u015b/-a\u015b w captcha nieprawid\u0142owy numer.","wrong_checkbox":"Pole wyboru","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"3586","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#e6007a","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script id="divi-custom-script-js" src="/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="smoothscroll-js" src="/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.1" type="text/javascript"></script>
+<script id="es6-promise-js" src="/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-recaptcha-v3-js" src="https://www.google.com/recaptcha/api.js?render=6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO&amp;ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-api-spam-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"6Lcvv8YnAAAAAJ_bU2d7l81-vtnX57WxKaPcwPAO","page_action":{"action":"iphone_12_ladowarka_sluchawki_zlosc_smutek_twitter_eng"}};
+//# sourceURL=et-core-api-spam-recaptcha-js-extra
+/* ]]> */
+</script>
+<script id="et-core-api-spam-recaptcha-js" src="/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=4.27.1" type="text/javascript"></script>
+<script id="fitvids-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.1" type="text/javascript"></script>
+<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=6.9.11" type="text/javascript"></script>
+<script id="jquery-mobile-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.27.1" type="text/javascript"></script>
+<script id="magnific-popup-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.1" type="text/javascript"></script>
+<script id="easypiechart-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.27.1" type="text/javascript"></script>
+<script id="salvattore-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-core-common-js" src="/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.1" type="text/javascript"></script>
+<script id="ivory-search-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+//# sourceURL=ivory-search-scripts-js-extra
+/* ]]> */
+</script>
+<script id="ivory-search-scripts-js" src="/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.13" type="text/javascript"></script>
+<script id="et-builder-modules-script-motion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+//# sourceURL=et-builder-modules-script-motion-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-motion-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.27.1" type="text/javascript"></script>
+<script id="et-builder-modules-script-sticky-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+//# sourceURL=et-builder-modules-script-sticky-js-extra
+/* ]]> */
+</script>
+<script id="et-builder-modules-script-sticky-js" src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.27.1" type="text/javascript"></script>
+<span class="et_pb_scroll_top et-pb-icon"></span>
+</body>
+</html>
